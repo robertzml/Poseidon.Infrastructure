@@ -18,9 +18,20 @@ namespace Poseidon.Infrastructure.ClientDx
     /// </summary>
     public partial class FrmElevatorManage : BaseMdiForm
     {
+        #region Constructor
         public FrmElevatorManage()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.elevatorGroupMod.Init();
+
+            base.InitForm();
+        }
+        #endregion //Function
     }
 }

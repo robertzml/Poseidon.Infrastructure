@@ -10,19 +10,42 @@ using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Infrastructure.Core.BL;
+    using Poseidon.Infrastructure.Core.DL;
 
     /// <summary>
     /// 电梯分组管理组件
     /// </summary>
-    public partial class ElevatorGroupCtrl : DevExpress.XtraEditors.XtraUserControl
+    public partial class ElevatorGroupMod : DevExpress.XtraEditors.XtraUserControl
     {
         #region Constructor
-        public ElevatorGroupCtrl()
+        public ElevatorGroupMod()
         {
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        /// <summary>
+        /// 载入电梯数据
+        /// </summary>
+        private void LoadData()
+        {
+            this.elevatorGrid.DataSource = BusinessFactory<ElevatorBusiness>.Instance.FindAll().ToList();
+        }
+        #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public void Init()
+        {
+            LoadData();
+        }
+        #endregion //Method
 
         #region Event
         /// <summary>

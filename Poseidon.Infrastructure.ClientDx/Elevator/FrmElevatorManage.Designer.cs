@@ -32,8 +32,8 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.elevatorGroupCtrl = new Poseidon.Infrastructure.ClientDx.ElevatorGroupCtrl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -82,23 +82,24 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Controls.Add(this.elevatorGroupCtrl);
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Controls.Add(this.elevatorGroupMod);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(550, 492);
+            // 
+            // elevatorGroupMod
+            // 
+            this.elevatorGroupMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorGroupMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorGroupMod.Name = "elevatorGroupMod";
+            this.elevatorGroupMod.Size = new System.Drawing.Size(550, 492);
+            this.elevatorGroupMod.TabIndex = 0;
             // 
             // navigationPage2
             // 
             this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(550, 492);
-            // 
-            // elevatorGroupCtrl
-            // 
-            this.elevatorGroupCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elevatorGroupCtrl.Location = new System.Drawing.Point(0, 0);
-            this.elevatorGroupCtrl.Name = "elevatorGroupCtrl";
-            this.elevatorGroupCtrl.Size = new System.Drawing.Size(550, 492);
-            this.elevatorGroupCtrl.TabIndex = 0;
             // 
             // FrmElevatorManage
             // 
@@ -124,6 +125,6 @@
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
-        private ElevatorGroupCtrl elevatorGroupCtrl;
+        private ElevatorGroupMod elevatorGroupMod;
     }
 }
