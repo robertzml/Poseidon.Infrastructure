@@ -30,17 +30,82 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Poseidon.Base">
+      <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Common">
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Core">
+      <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Winform.Base">
+      <HintPath>..\..\Assembly\Poseidon.Winform.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Winform.Core">
+      <HintPath>..\..\Assembly\Poseidon.Winform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\ElevatorGroupCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ElevatorGroupCtrl.Designer.cs">
+      <DependentUpon>ElevatorGroupCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorManage.Designer.cs">
+      <DependentUpon>FrmElevatorManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorAdd.Designer.cs">
+      <DependentUpon>FrmElevatorAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Poseidon.Infrastructure.Core\Poseidon.Infrastructure.Core.csproj">
+      <Project>{9491e170-46f1-4cf0-b0c4-8b32e1f4cd00}</Project>
+      <Name>Poseidon.Infrastructure.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Component\ElevatorGroupCtrl.resx">
+      <DependentUpon>ElevatorGroupCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\FrmElevatorAdd.resx">
+      <DependentUpon>FrmElevatorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\FrmElevatorManage.resx">
+      <DependentUpon>FrmElevatorManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
