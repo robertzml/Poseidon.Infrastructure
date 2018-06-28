@@ -63,11 +63,12 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(160, 54);
+            this.btnAdd.Location = new System.Drawing.Point(36, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "添加电梯";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ElevatorGroupCtrl
             // 

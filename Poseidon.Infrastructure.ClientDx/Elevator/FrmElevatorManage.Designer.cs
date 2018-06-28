@@ -33,10 +33,12 @@
             this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.elevatorGroupCtrl = new Poseidon.Infrastructure.ClientDx.ElevatorGroupCtrl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.navigationFrame.SuspendLayout();
+            this.navigationPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -80,6 +82,7 @@
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Controls.Add(this.elevatorGroupCtrl);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(550, 492);
             // 
@@ -88,6 +91,14 @@
             this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(550, 492);
+            // 
+            // elevatorGroupCtrl
+            // 
+            this.elevatorGroupCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorGroupCtrl.Location = new System.Drawing.Point(0, 0);
+            this.elevatorGroupCtrl.Name = "elevatorGroupCtrl";
+            this.elevatorGroupCtrl.Size = new System.Drawing.Size(550, 492);
+            this.elevatorGroupCtrl.TabIndex = 0;
             // 
             // FrmElevatorManage
             // 
@@ -101,6 +112,7 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.navigationFrame.ResumeLayout(false);
+            this.navigationPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -112,5 +124,6 @@
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private ElevatorGroupCtrl elevatorGroupCtrl;
     }
 }
