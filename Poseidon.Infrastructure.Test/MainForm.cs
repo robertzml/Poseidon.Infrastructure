@@ -24,5 +24,10 @@ namespace Poseidon.Infrastructure.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmElevatorManage));
         }
+
+        private void menuModel_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmGroupManage));
+        }
     }
 }

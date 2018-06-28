@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
@@ -71,6 +72,24 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\ElevatorTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ElevatorTree.Designer.cs">
+      <DependentUpon>ElevatorTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupAdd.Designer.cs">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmGroupManage.Designer.cs">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ElevatorGroupMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +123,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Model\FrmGroupAdd.resx">
+      <DependentUpon>FrmGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupManage.resx">
+      <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElevatorGroupMod.resx">
       <DependentUpon>ElevatorGroupMod.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,12 +141,11 @@
     <EmbeddedResource Include="Grid\ElevatorGrid.resx">
       <DependentUpon>ElevatorGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Component\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
