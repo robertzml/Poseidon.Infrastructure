@@ -66,6 +66,15 @@ namespace Poseidon.Infrastructure.ClientDx
             this.txtStatus.Text = ((EntityStatus)this.currentGroup.Status).DisplayName();
             this.txtRemark.Text = this.currentGroup.Remark;
         }
+
+        /// <summary>
+        /// 载入分组项
+        /// </summary>
+        private void LoadGroupItems()
+        {
+            var data = BusinessFactory<GroupBusiness>.Instance.FindAllItems(this.currentGroup.Id).ToList();
+            this.groupItemGrid.DataSource = data;
+        }
         #endregion //Function
 
         #region Event
@@ -81,7 +90,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 return;
 
             SetGroupInfo();
-            //LoadOrganizations();
+            LoadGroupItems();
         }
 
         /// <summary>
@@ -107,6 +116,54 @@ namespace Poseidon.Infrastructure.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmGroupEdit), new object[] { this.currentGroup.Id });
+            LoadGroups();
+        }
+        
+        /// <summary>
+        /// 删除分组
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentGroup == null)
+                return;
+            if (MessageUtil.ConfirmYesNo("是否确认删除该分组") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<GroupBusiness>.Instance.Delete(this.currentGroup);
+                    LoadGroups();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    Logger.Instance.Exception("删除分组失败", pe);
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
+        
+        /// <summary>
+        /// 模型绑定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModelTypeBind_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmModelTypeBind), new object[] { this.currentGroup.Id });
+            LoadGroups();
+        }
+        
+        /// <summary>
+        /// 选择设施
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelectFacility_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmFacilitySelect), new object[] { this.currentGroup.Id });
             LoadGroups();
         }
         #endregion //Event

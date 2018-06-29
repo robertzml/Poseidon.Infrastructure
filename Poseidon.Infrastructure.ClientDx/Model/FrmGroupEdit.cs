@@ -31,9 +31,11 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmGroupEdit()
+        public FrmGroupEdit(string id)
         {
             InitializeComponent();
+
+            InitData(id);
         }
         #endregion //Constructor
 
@@ -91,7 +93,6 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Code = this.txtCode.Text;
-            entity.Module = this.txtModule.Text;
             entity.Remark = this.txtRemark.Text;
             if (this.cmbParent.EditValue == null)
                 entity.ParentId = null;

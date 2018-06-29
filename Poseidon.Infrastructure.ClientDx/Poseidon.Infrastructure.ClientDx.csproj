@@ -72,6 +72,18 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\FrmFacilitySelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmFacilitySelect.Designer.cs">
+      <DependentUpon>FrmFacilitySelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmModelTypeBind.Designer.cs">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\FrmGroupEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Model\FrmFacilitySelect.resx">
+      <DependentUpon>FrmFacilitySelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmGroupAdd.resx">
       <DependentUpon>FrmGroupAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmGroupManage.resx">
       <DependentUpon>FrmGroupManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmModelTypeBind.resx">
+      <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElevatorGroupMod.resx">
       <DependentUpon>ElevatorGroupMod.cs</DependentUpon>
@@ -145,6 +163,7 @@
       <DependentUpon>ElevatorGrid.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
