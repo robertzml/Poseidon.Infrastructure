@@ -96,7 +96,19 @@ namespace Poseidon.Infrastructure.ClientDx
             this.LoadGroups();
         }
 
-        #endregion //Event
+        /// <summary>
+        /// 编辑分组
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentGroup == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmGroupEdit), new object[] { this.currentGroup.Id });
+            LoadGroups();
+        }
+        #endregion //Event
     }
 }

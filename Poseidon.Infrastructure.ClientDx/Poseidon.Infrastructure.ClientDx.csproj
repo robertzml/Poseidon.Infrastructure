@@ -126,6 +126,9 @@
     <EmbeddedResource Include="Model\FrmGroupAdd.resx">
       <DependentUpon>FrmGroupAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmGroupEdit.resx">
+      <DependentUpon>FrmGroupEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmGroupManage.resx">
       <DependentUpon>FrmGroupManage.cs</DependentUpon>
     </EmbeddedResource>

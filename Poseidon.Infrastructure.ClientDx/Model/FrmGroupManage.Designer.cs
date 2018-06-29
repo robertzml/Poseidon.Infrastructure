@@ -45,11 +45,11 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -269,16 +269,6 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "操作";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(323, 22);
-            this.btnAdd.StyleController = this.layoutControl2;
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添加分组";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.btnEdit);
@@ -290,6 +280,26 @@
             this.layoutControl2.Size = new System.Drawing.Size(674, 91);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(339, 12);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(323, 22);
+            this.btnEdit.StyleController = this.layoutControl2;
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "编辑分组";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(323, 22);
+            this.btnAdd.StyleController = this.layoutControl2;
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "添加分组";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // layoutControlGroup2
             // 
@@ -311,15 +321,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(327, 71);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(339, 12);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(323, 22);
-            this.btnEdit.StyleController = this.layoutControl2;
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "编辑分组";
             // 
             // layoutControlItem7
             // 
