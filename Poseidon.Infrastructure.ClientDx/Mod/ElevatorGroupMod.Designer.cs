@@ -82,7 +82,7 @@
             this.elevatorGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elevatorGrid.Editable = false;
             this.elevatorGrid.EnableMasterView = false;
-            this.elevatorGrid.EnableMultiSelect = false;
+            this.elevatorGrid.EnableMultiSelect = true;
             this.elevatorGrid.Location = new System.Drawing.Point(2, 21);
             this.elevatorGrid.Name = "elevatorGrid";
             this.elevatorGrid.ShowAddMenu = false;

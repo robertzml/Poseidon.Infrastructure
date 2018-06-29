@@ -147,6 +147,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Elevator\FrmElevatorEdit.resx">
+      <DependentUpon>FrmElevatorEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorList.resx">
       <DependentUpon>FrmElevatorList.cs</DependentUpon>
     </EmbeddedResource>

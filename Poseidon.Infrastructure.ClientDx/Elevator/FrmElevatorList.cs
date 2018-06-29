@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
-{  
+{
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.BL;
@@ -55,7 +55,7 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmElevatorAdd));
             LoadData();
         }
-        
+
         /// <summary>
         /// 编辑电梯
         /// </summary>
@@ -63,7 +63,12 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            var elevator = this.elevatorGrid.GetCurrentSelect();
+            if (elevator == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmElevatorEdit), new object[] { elevator.Id });
+            LoadData();
         }
         #endregion //Event
     }

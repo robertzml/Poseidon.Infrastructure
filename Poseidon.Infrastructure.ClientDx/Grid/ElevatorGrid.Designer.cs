@@ -60,19 +60,19 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
             this.colModel,
             this.colRegistrationNumber,
-            this.colRescueNumber,
             this.colCapacity,
             this.colSpeed,
             this.colStation,
             this.colVendor,
             this.colPosition,
+            this.colRescueNumber,
             this.colRecordBag,
             this.colRecordNumber,
             this.colModelType,
             this.colDatasetCode,
-            this.colName,
             this.colRemark,
             this.colStatus,
             this.colId});
@@ -84,30 +84,35 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colModel
             // 
+            this.colModel.Caption = "型号";
             this.colModel.FieldName = "Model";
             this.colModel.Name = "colModel";
             this.colModel.Visible = true;
-            this.colModel.VisibleIndex = 0;
+            this.colModel.VisibleIndex = 1;
             // 
             // colRegistrationNumber
             // 
+            this.colRegistrationNumber.Caption = "注册号";
             this.colRegistrationNumber.FieldName = "RegistrationNumber";
             this.colRegistrationNumber.Name = "colRegistrationNumber";
             this.colRegistrationNumber.Visible = true;
-            this.colRegistrationNumber.VisibleIndex = 1;
+            this.colRegistrationNumber.VisibleIndex = 2;
             // 
             // colRescueNumber
             // 
+            this.colRescueNumber.Caption = "救援识别码";
             this.colRescueNumber.FieldName = "RescueNumber";
             this.colRescueNumber.Name = "colRescueNumber";
             this.colRescueNumber.Visible = true;
-            this.colRescueNumber.VisibleIndex = 2;
+            this.colRescueNumber.VisibleIndex = 8;
             // 
             // colCapacity
             // 
+            this.colCapacity.Caption = "载重(kg)";
             this.colCapacity.FieldName = "Capacity";
             this.colCapacity.Name = "colCapacity";
             this.colCapacity.Visible = true;
@@ -115,6 +120,7 @@
             // 
             // colSpeed
             // 
+            this.colSpeed.Caption = "速度(m/s)";
             this.colSpeed.FieldName = "Speed";
             this.colSpeed.Name = "colSpeed";
             this.colSpeed.Visible = true;
@@ -122,6 +128,7 @@
             // 
             // colStation
             // 
+            this.colStation.Caption = "层站";
             this.colStation.FieldName = "Station";
             this.colStation.Name = "colStation";
             this.colStation.Visible = true;
@@ -129,6 +136,7 @@
             // 
             // colVendor
             // 
+            this.colVendor.Caption = "生产厂商";
             this.colVendor.FieldName = "Vendor";
             this.colVendor.Name = "colVendor";
             this.colVendor.Visible = true;
@@ -136,6 +144,7 @@
             // 
             // colPosition
             // 
+            this.colPosition.Caption = "安装地点";
             this.colPosition.FieldName = "Position";
             this.colPosition.Name = "colPosition";
             this.colPosition.Visible = true;
@@ -143,59 +152,61 @@
             // 
             // colRecordBag
             // 
+            this.colRecordBag.Caption = "档案袋";
             this.colRecordBag.FieldName = "RecordBag";
             this.colRecordBag.Name = "colRecordBag";
             this.colRecordBag.Visible = true;
-            this.colRecordBag.VisibleIndex = 8;
+            this.colRecordBag.VisibleIndex = 9;
             // 
             // colRecordNumber
             // 
+            this.colRecordNumber.Caption = "档案号";
             this.colRecordNumber.FieldName = "RecordNumber";
             this.colRecordNumber.Name = "colRecordNumber";
             this.colRecordNumber.Visible = true;
-            this.colRecordNumber.VisibleIndex = 9;
+            this.colRecordNumber.VisibleIndex = 10;
             // 
             // colModelType
             // 
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
-            this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 10;
             // 
             // colDatasetCode
             // 
             this.colDatasetCode.FieldName = "DatasetCode";
             this.colDatasetCode.Name = "colDatasetCode";
-            this.colDatasetCode.Visible = true;
-            this.colDatasetCode.VisibleIndex = 11;
             // 
             // colName
             // 
+            this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 12;
+            this.colName.VisibleIndex = 0;
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 13;
+            this.colRemark.VisibleIndex = 11;
             // 
             // colStatus
             // 
+            this.colStatus.AppearanceCell.Options.UseTextOptions = true;
+            this.colStatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colStatus.Caption = "状态";
             this.colStatus.FieldName = "Status";
+            this.colStatus.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 14;
+            this.colStatus.VisibleIndex = 12;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 15;
             // 
             // ElevatorGrid
             // 
