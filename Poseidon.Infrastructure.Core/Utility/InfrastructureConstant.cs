@@ -16,6 +16,11 @@ namespace Poseidon.Infrastructure.Core.Utility
         /// 模块名称 Infrastructure
         /// </summary>
         public static readonly string ModuleName = "Infrastructure";
+
+        /// <summary>
+        /// 电梯分组代码
+        /// </summary>
+        public static readonly string ElevatorGroupCode = "Elevator";
         #endregion //Field
     }
 }

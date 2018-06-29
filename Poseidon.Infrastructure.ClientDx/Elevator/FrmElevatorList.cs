@@ -1,33 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
-{
+{  
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.BL;
-    using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
-    /// 电梯分组管理组件
+    /// 电梯列表
     /// </summary>
-    public partial class ElevatorGroupMod : DevExpress.XtraEditors.XtraUserControl
+    public partial class FrmElevatorList : BaseMdiForm
     {
         #region Constructor
-        public ElevatorGroupMod()
+        public FrmElevatorList()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
         #region Function
+        protected override void InitForm()
+        {
+            LoadData();
+
+            base.InitForm();
+        }
+
         /// <summary>
         /// 载入电梯数据
         /// </summary>
@@ -37,18 +44,27 @@ namespace Poseidon.Infrastructure.ClientDx
         }
         #endregion //Function
 
-        #region Method
+        #region Event
         /// <summary>
-        /// 初始化
+        /// 添加电梯
         /// </summary>
-        public void Init()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            ChildFormManage.ShowDialogForm(typeof(FrmElevatorAdd));
             LoadData();
         }
-        #endregion //Method
+        
+        /// <summary>
+        /// 编辑电梯
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
 
-        #region Event
-      
+        }
         #endregion //Event
     }
 }

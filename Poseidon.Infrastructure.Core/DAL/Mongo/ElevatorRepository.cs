@@ -50,7 +50,12 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.RegistrationNumber = doc["registrationNumber"].ToString();
             entity.RescueNumber = doc["rescueNumber"].ToString();
             entity.Capacity = doc["capacity"].ToInt32();
+            entity.Speed = doc["speed"].ToDouble();
+            entity.Station = doc["station"].ToString();
+            entity.Vendor = doc["vendor"].ToString();
             entity.Position = doc["position"].ToString();
+            entity.RecordBag = doc["recordBag"].ToString();
+            entity.RecordNumber = doc["recordNumber"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.DatasetCode = doc["datasetCode"].ToString();
             entity.Remark = doc["remark"].ToString();
@@ -73,7 +78,12 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "registrationNumber", entity.RegistrationNumber },
                 { "rescueNumber", entity.RescueNumber },
                 { "capacity", entity.Capacity },
+                { "speed", entity.Speed },
+                { "station", entity.Station },
+                { "vendor", entity.Vendor },
                 { "position", entity.Position },
+                { "recordBag", entity.RecordBag },
+                { "recordNumber", entity.RecordNumber },
                 { "modelType", entity.ModelType },
                 { "datasetCode", entity.DatasetCode },
                 { "remark", entity.Remark },

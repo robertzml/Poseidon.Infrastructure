@@ -33,6 +33,7 @@
             this.menuElevatorMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuModel = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuElevatorList = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             // menuElevator
             // 
             this.menuElevator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuElevatorMan});
+            this.menuElevatorMan,
+            this.menuElevatorList});
             this.menuElevator.Name = "menuElevator";
             this.menuElevator.Size = new System.Drawing.Size(68, 21);
             this.menuElevator.Text = "电梯管理";
@@ -58,7 +60,7 @@
             // menuElevatorMan
             // 
             this.menuElevatorMan.Name = "menuElevatorMan";
-            this.menuElevatorMan.Size = new System.Drawing.Size(124, 22);
+            this.menuElevatorMan.Size = new System.Drawing.Size(152, 22);
             this.menuElevatorMan.Text = "电梯管理";
             this.menuElevatorMan.Click += new System.EventHandler(this.menuElevatorMan_Click);
             // 
@@ -73,9 +75,16 @@
             // menuModel
             // 
             this.menuModel.Name = "menuModel";
-            this.menuModel.Size = new System.Drawing.Size(152, 22);
+            this.menuModel.Size = new System.Drawing.Size(124, 22);
             this.menuModel.Text = "模型管理";
             this.menuModel.Click += new System.EventHandler(this.menuModel_Click);
+            // 
+            // menuElevatorList
+            // 
+            this.menuElevatorList.Name = "menuElevatorList";
+            this.menuElevatorList.Size = new System.Drawing.Size(152, 22);
+            this.menuElevatorList.Text = "电梯列表";
+            this.menuElevatorList.Click += new System.EventHandler(this.menuElevatorList_Click);
             // 
             // MainForm
             // 
@@ -101,6 +110,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuElevatorMan;
         private System.Windows.Forms.ToolStripMenuItem menuSystem;
         private System.Windows.Forms.ToolStripMenuItem menuModel;
+        private System.Windows.Forms.ToolStripMenuItem menuElevatorList;
     }
 }
 

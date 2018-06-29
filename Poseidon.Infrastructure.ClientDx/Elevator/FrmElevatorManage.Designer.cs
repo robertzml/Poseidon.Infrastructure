@@ -30,14 +30,16 @@
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.elevatorTree = new Poseidon.Winform.Core.GroupChildrenTree();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.navigationFrame.SuspendLayout();
+            this.groupControl1.SuspendLayout();
+            this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.navigationFrame);
+            this.splitContainerControl1.Panel2.Controls.Add(this.navFrame);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(806, 492);
             this.splitContainerControl1.SplitterPosition = 251;
@@ -57,6 +59,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.elevatorTree);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -64,21 +67,21 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "电梯列表";
             // 
-            // navigationFrame
+            // navFrame
             // 
-            this.navigationFrame.Controls.Add(this.navigationPage1);
-            this.navigationFrame.Controls.Add(this.navigationPage2);
-            this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame.Location = new System.Drawing.Point(0, 0);
-            this.navigationFrame.Name = "navigationFrame";
-            this.navigationFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
+            this.navFrame.Controls.Add(this.navigationPage1);
+            this.navFrame.Controls.Add(this.navigationPage2);
+            this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navFrame.Location = new System.Drawing.Point(0, 0);
+            this.navFrame.Name = "navFrame";
+            this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
             this.navigationPage1,
             this.navigationPage2});
-            this.navigationFrame.SelectedPage = this.navigationPage2;
-            this.navigationFrame.SelectedPageIndex = 0;
-            this.navigationFrame.Size = new System.Drawing.Size(550, 492);
-            this.navigationFrame.TabIndex = 0;
-            this.navigationFrame.Text = "navigationFrame1";
+            this.navFrame.SelectedPage = this.navigationPage2;
+            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.Size = new System.Drawing.Size(550, 492);
+            this.navFrame.TabIndex = 0;
+            this.navFrame.Text = "navigationFrame1";
             // 
             // navigationPage1
             // 
@@ -101,6 +104,17 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(550, 492);
             // 
+            // elevatorTree
+            // 
+            this.elevatorTree.CascadeEntity = false;
+            this.elevatorTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorTree.Location = new System.Drawing.Point(2, 21);
+            this.elevatorTree.Name = "elevatorTree";
+            this.elevatorTree.ShowFindPanel = false;
+            this.elevatorTree.Size = new System.Drawing.Size(247, 469);
+            this.elevatorTree.TabIndex = 0;
+            this.elevatorTree.GroupSelected += new System.EventHandler(this.elevatorTree_GroupSelected);
+            // 
             // FrmElevatorManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -112,7 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.navigationFrame.ResumeLayout(false);
+            this.groupControl1.ResumeLayout(false);
+            this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -122,9 +137,10 @@
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame;
+        private DevExpress.XtraBars.Navigation.NavigationFrame navFrame;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private ElevatorGroupMod elevatorGroupMod;
+        private Winform.Core.GroupChildrenTree elevatorTree;
     }
 }

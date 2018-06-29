@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Infrastructure.Core.DL
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Core.DL;
 
     /// <summary>
@@ -40,10 +41,48 @@ namespace Poseidon.Infrastructure.Core.DL
         public int Capacity { get; set; }
 
         /// <summary>
+        /// 速度(m/s)
+        /// </summary>
+        [Display(Name = "速度(m/s)")]
+        public double Speed { get; set; }
+
+        /// <summary>
+        /// 层站
+        /// </summary>
+        [Display(Name = "层站")]
+        public string Station { get; set; }
+
+        /// <summary>
+        /// 生产厂商
+        /// </summary>
+        [Display(Name = "生产厂商")]
+        public string Vendor { get; set; }
+
+        /// <summary>
         /// 安装地点
         /// </summary>
         [Display(Name = "安装地点")]
         public string Position { get; set; }
+
+        /// <summary>
+        /// 档案袋
+        /// </summary>
+        [Display(Name = "档案袋")]
+        public string RecordBag { get; set; }
+
+        /// <summary>
+        /// 档案号
+        /// </summary>
+        [Display(Name = "档案号")]
+        public string RecordNumber { get; set; }
         #endregion //Property
+    }
+
+    /// <summary>
+    /// 电梯管理员类
+    /// </summary>
+    public class ElevatorManager : BaseEntity
+    {
+
     }
 }

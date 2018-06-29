@@ -30,12 +30,10 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.elevatorGrid = new Poseidon.Infrastructure.ClientDx.ElevatorGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             this.SuspendLayout();
@@ -58,22 +56,12 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.btnAdd);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(806, 157);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(42, 57);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 27);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添加电梯";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupControl2
             // 
@@ -105,16 +93,15 @@
             this.elevatorGrid.Size = new System.Drawing.Size(802, 321);
             this.elevatorGrid.TabIndex = 0;
             // 
-            // ElevatorGroupCtrl
+            // ElevatorGroupMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "ElevatorGroupCtrl";
+            this.Name = "ElevatorGroupMod";
             this.Size = new System.Drawing.Size(812, 513);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -125,7 +112,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private ElevatorGrid elevatorGrid;
     }

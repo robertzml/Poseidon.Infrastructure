@@ -58,7 +58,12 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.RegistrationNumber = this.txtRegistrationNumber.Text;
             entity.RescueNumber = this.txtRescueNumber.Text;
             entity.Capacity = Convert.ToInt32(this.spCapacity.Value);
+            entity.Speed = Convert.ToDouble(this.spSpeed.Value);
+            entity.Station = this.txtStation.Text;
+            entity.Vendor = this.txtVendor.Text;
             entity.Position = this.txtPosition.Text;
+            entity.RecordBag = this.txtRecordBag.Text;
+            entity.RecordNumber = this.txtRecordNumber.Text;
             entity.DatasetCode = this.txtDatasetCode.Text;
             entity.Remark = this.txtRemark.Text;
         }

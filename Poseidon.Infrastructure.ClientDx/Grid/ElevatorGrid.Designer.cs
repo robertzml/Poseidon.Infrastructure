@@ -32,7 +32,12 @@
             this.colRegistrationNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRescueNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCapacity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSpeed = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVendor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPosition = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordBag = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDatasetCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +64,12 @@
             this.colRegistrationNumber,
             this.colRescueNumber,
             this.colCapacity,
+            this.colSpeed,
+            this.colStation,
+            this.colVendor,
             this.colPosition,
+            this.colRecordBag,
+            this.colRecordNumber,
             this.colModelType,
             this.colDatasetCode,
             this.colName,
@@ -103,54 +113,89 @@
             this.colCapacity.Visible = true;
             this.colCapacity.VisibleIndex = 3;
             // 
+            // colSpeed
+            // 
+            this.colSpeed.FieldName = "Speed";
+            this.colSpeed.Name = "colSpeed";
+            this.colSpeed.Visible = true;
+            this.colSpeed.VisibleIndex = 4;
+            // 
+            // colStation
+            // 
+            this.colStation.FieldName = "Station";
+            this.colStation.Name = "colStation";
+            this.colStation.Visible = true;
+            this.colStation.VisibleIndex = 5;
+            // 
+            // colVendor
+            // 
+            this.colVendor.FieldName = "Vendor";
+            this.colVendor.Name = "colVendor";
+            this.colVendor.Visible = true;
+            this.colVendor.VisibleIndex = 6;
+            // 
             // colPosition
             // 
             this.colPosition.FieldName = "Position";
             this.colPosition.Name = "colPosition";
             this.colPosition.Visible = true;
-            this.colPosition.VisibleIndex = 4;
+            this.colPosition.VisibleIndex = 7;
+            // 
+            // colRecordBag
+            // 
+            this.colRecordBag.FieldName = "RecordBag";
+            this.colRecordBag.Name = "colRecordBag";
+            this.colRecordBag.Visible = true;
+            this.colRecordBag.VisibleIndex = 8;
+            // 
+            // colRecordNumber
+            // 
+            this.colRecordNumber.FieldName = "RecordNumber";
+            this.colRecordNumber.Name = "colRecordNumber";
+            this.colRecordNumber.Visible = true;
+            this.colRecordNumber.VisibleIndex = 9;
             // 
             // colModelType
             // 
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
             this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 5;
+            this.colModelType.VisibleIndex = 10;
             // 
             // colDatasetCode
             // 
             this.colDatasetCode.FieldName = "DatasetCode";
             this.colDatasetCode.Name = "colDatasetCode";
             this.colDatasetCode.Visible = true;
-            this.colDatasetCode.VisibleIndex = 6;
+            this.colDatasetCode.VisibleIndex = 11;
             // 
             // colName
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 7;
+            this.colName.VisibleIndex = 12;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
+            this.colRemark.VisibleIndex = 13;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 9;
+            this.colStatus.VisibleIndex = 14;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.Visible = true;
-            this.colId.VisibleIndex = 10;
+            this.colId.VisibleIndex = 15;
             // 
             // ElevatorGrid
             // 
@@ -170,7 +215,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRegistrationNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colRescueNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colCapacity;
+        private DevExpress.XtraGrid.Columns.GridColumn colSpeed;
+        private DevExpress.XtraGrid.Columns.GridColumn colStation;
+        private DevExpress.XtraGrid.Columns.GridColumn colVendor;
         private DevExpress.XtraGrid.Columns.GridColumn colPosition;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordBag;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colModelType;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasetCode;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
