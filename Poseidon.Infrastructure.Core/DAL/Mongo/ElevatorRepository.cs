@@ -69,6 +69,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 foreach (BsonDocument item in array)
                 {
                     ElevatorManager manager = new ElevatorManager();
+                    manager.Id = item["_id"].ToString();
                     manager.ElevatorId = item["elevatorId"].ToString();
                     manager.Name = item["name"].ToString();
                     manager.Telephone = item["telephone"].ToString();
@@ -120,6 +121,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 {
                     BsonDocument record = new BsonDocument
                     {
+                        { "_id", ObjectId.GenerateNewId() },
                         { "elevatorId", item.ElevatorId },
                         { "name", item.Name },
                         { "telephone", item.Telephone },

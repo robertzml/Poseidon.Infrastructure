@@ -42,6 +42,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnEditManager = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -118,6 +121,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnEditManager);
             this.layoutControl1.Controls.Add(this.btnDeleteManager);
             this.layoutControl1.Controls.Add(this.btnAddManager);
             this.layoutControl1.Controls.Add(this.managersGrid);
@@ -131,12 +135,13 @@
             // 
             // btnDeleteManager
             // 
-            this.btnDeleteManager.Location = new System.Drawing.Point(806, 38);
+            this.btnDeleteManager.Location = new System.Drawing.Point(806, 64);
             this.btnDeleteManager.Name = "btnDeleteManager";
             this.btnDeleteManager.Size = new System.Drawing.Size(89, 22);
             this.btnDeleteManager.StyleController = this.layoutControl1;
             this.btnDeleteManager.TabIndex = 6;
             this.btnDeleteManager.Text = "删除管理员";
+            this.btnDeleteManager.Click += new System.EventHandler(this.btnDeleteManager_Click);
             // 
             // btnAddManager
             // 
@@ -174,7 +179,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(907, 161);
@@ -201,11 +207,30 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDeleteManager;
-            this.layoutControlItem3.Location = new System.Drawing.Point(794, 26);
+            this.layoutControlItem3.Location = new System.Drawing.Point(794, 52);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(93, 115);
+            this.layoutControlItem3.Size = new System.Drawing.Size(93, 89);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // btnEditManager
+            // 
+            this.btnEditManager.Location = new System.Drawing.Point(806, 38);
+            this.btnEditManager.Name = "btnEditManager";
+            this.btnEditManager.Size = new System.Drawing.Size(89, 22);
+            this.btnEditManager.StyleController = this.layoutControl1;
+            this.btnEditManager.TabIndex = 7;
+            this.btnEditManager.Text = "编辑管理员";
+            this.btnEditManager.Click += new System.EventHandler(this.btnEditManager_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnEditManager;
+            this.layoutControlItem4.Location = new System.Drawing.Point(794, 26);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(93, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // ElevatorReceiptMod
             // 
@@ -227,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +273,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.SimpleButton btnEditManager;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

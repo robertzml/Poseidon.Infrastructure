@@ -45,6 +45,25 @@ namespace Poseidon.Infrastructure.Core.BL
             base.Update(elevator);
             return;
         }
+
+        /// <summary>
+        /// 编辑管理员
+        /// </summary>
+        /// <param name="id">电梯ID</param>
+        /// <param name="manager">管理员信息</param>
+        public void EditManager(string id, ElevatorManager manager)
+        {
+            var elevator = this.baseDal.FindById(id);
+
+            var old = elevator.Managers.Find(r => r.Id == manager.Id);
+            elevator.Managers.Remove(old);
+
+            elevator.Managers.Add(manager);
+            elevator.Managers = elevator.Managers.OrderByDescending(r => r.StartDate).ToList();
+
+            base.Update(elevator);
+            return;
+        }
         #endregion //Method
     }
 }
