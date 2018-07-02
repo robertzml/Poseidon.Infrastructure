@@ -47,6 +47,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Model = doc["model"].ToString();
+            entity.InstallDate = doc["installDate"].ToLocalTime();
             entity.RegistrationNumber = doc["registrationNumber"].ToString();
             entity.RescueNumber = doc["rescueNumber"].ToString();
             entity.Capacity = doc["capacity"].ToInt32();
@@ -75,6 +76,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             {
                 { "name", entity.Name },
                 { "model", entity.Model },
+                { "installDate", entity.InstallDate },
                 { "registrationNumber", entity.RegistrationNumber },
                 { "rescueNumber", entity.RescueNumber },
                 { "capacity", entity.Capacity },

@@ -52,6 +52,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.txtName.Text = this.currentElevator.Name;
             this.txtModel.Text = this.currentElevator.Model;
+            this.dpInstallDate.DateTime = this.currentElevator.InstallDate;
             this.txtRegistrationNumber.Text = this.currentElevator.RegistrationNumber;
             this.txtRescueNumber.Text = this.currentElevator.RescueNumber;
             this.txtPosition.Text = this.currentElevator.Position;
@@ -80,6 +81,11 @@ namespace Poseidon.Infrastructure.ClientDx
                 errorMessage = "名称不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
+            if (this.dpInstallDate.EditValue == null)
+            {
+                errorMessage = "请选择安装日期";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
 
             return new Tuple<bool, string>(true, "");
         }
@@ -92,6 +98,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Model = this.txtModel.Text;
+            entity.InstallDate = this.dpInstallDate.DateTime;
             entity.RegistrationNumber = this.txtRegistrationNumber.Text;
             entity.RescueNumber = this.txtRescueNumber.Text;
             entity.Capacity = Convert.ToInt32(this.spCapacity.Value);

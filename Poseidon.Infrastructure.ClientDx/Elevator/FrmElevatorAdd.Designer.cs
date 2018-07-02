@@ -30,6 +30,11 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtRecordNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecordBag = new DevExpress.XtraEditors.TextEdit();
+            this.txtVendor = new DevExpress.XtraEditors.TextEdit();
+            this.txtStation = new DevExpress.XtraEditors.TextEdit();
+            this.spSpeed = new DevExpress.XtraEditors.SpinEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtDatasetCode = new DevExpress.XtraEditors.TextEdit();
             this.spCapacity = new DevExpress.XtraEditors.SpinEdit();
@@ -47,16 +52,13 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spSpeed = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtStation = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtVendor = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRecordBag = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRecordNumber = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dpInstallDate = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -65,6 +67,11 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSpeed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spCapacity.Properties)).BeginInit();
@@ -82,16 +89,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSpeed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -129,6 +134,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.dpInstallDate);
             this.layoutControl1.Controls.Add(this.txtRecordNumber);
             this.layoutControl1.Controls.Add(this.txtRecordBag);
             this.layoutControl1.Controls.Add(this.txtVendor);
@@ -149,6 +155,53 @@
             this.layoutControl1.Size = new System.Drawing.Size(440, 299);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtRecordNumber
+            // 
+            this.txtRecordNumber.Location = new System.Drawing.Point(285, 180);
+            this.txtRecordNumber.Name = "txtRecordNumber";
+            this.txtRecordNumber.Size = new System.Drawing.Size(143, 20);
+            this.txtRecordNumber.StyleController = this.layoutControl1;
+            this.txtRecordNumber.TabIndex = 16;
+            // 
+            // txtRecordBag
+            // 
+            this.txtRecordBag.Location = new System.Drawing.Point(75, 180);
+            this.txtRecordBag.Name = "txtRecordBag";
+            this.txtRecordBag.Size = new System.Drawing.Size(143, 20);
+            this.txtRecordBag.StyleController = this.layoutControl1;
+            this.txtRecordBag.TabIndex = 15;
+            // 
+            // txtVendor
+            // 
+            this.txtVendor.Location = new System.Drawing.Point(75, 156);
+            this.txtVendor.Name = "txtVendor";
+            this.txtVendor.Size = new System.Drawing.Size(353, 20);
+            this.txtVendor.StyleController = this.layoutControl1;
+            this.txtVendor.TabIndex = 14;
+            // 
+            // txtStation
+            // 
+            this.txtStation.Location = new System.Drawing.Point(285, 132);
+            this.txtStation.Name = "txtStation";
+            this.txtStation.Size = new System.Drawing.Size(143, 20);
+            this.txtStation.StyleController = this.layoutControl1;
+            this.txtStation.TabIndex = 13;
+            // 
+            // spSpeed
+            // 
+            this.spSpeed.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spSpeed.Location = new System.Drawing.Point(75, 132);
+            this.spSpeed.Name = "spSpeed";
+            this.spSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spSpeed.Size = new System.Drawing.Size(143, 20);
+            this.spSpeed.StyleController = this.layoutControl1;
+            this.spSpeed.TabIndex = 12;
             // 
             // txtRemark
             // 
@@ -185,9 +238,9 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(75, 84);
+            this.txtPosition.Location = new System.Drawing.Point(285, 84);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(353, 20);
+            this.txtPosition.Size = new System.Drawing.Size(143, 20);
             this.txtPosition.StyleController = this.layoutControl1;
             this.txtPosition.TabIndex = 8;
             // 
@@ -240,7 +293,8 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12,
-            this.layoutControlItem13});
+            this.layoutControlItem13,
+            this.layoutControlItem14});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(440, 299);
@@ -285,9 +339,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtPosition;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem5.Location = new System.Drawing.Point(210, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(420, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(210, 24);
             this.layoutControlItem5.Text = "安装地点";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -318,21 +372,6 @@
             this.layoutControlItem8.Text = "备注";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // spSpeed
-            // 
-            this.spSpeed.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spSpeed.Location = new System.Drawing.Point(75, 132);
-            this.spSpeed.Name = "spSpeed";
-            this.spSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spSpeed.Size = new System.Drawing.Size(143, 20);
-            this.spSpeed.StyleController = this.layoutControl1;
-            this.spSpeed.TabIndex = 12;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.spSpeed;
@@ -341,14 +380,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(210, 24);
             this.layoutControlItem9.Text = "速度(m/s)";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtStation
-            // 
-            this.txtStation.Location = new System.Drawing.Point(285, 132);
-            this.txtStation.Name = "txtStation";
-            this.txtStation.Size = new System.Drawing.Size(143, 20);
-            this.txtStation.StyleController = this.layoutControl1;
-            this.txtStation.TabIndex = 13;
             // 
             // layoutControlItem10
             // 
@@ -359,14 +390,6 @@
             this.layoutControlItem10.Text = "层站";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtVendor
-            // 
-            this.txtVendor.Location = new System.Drawing.Point(75, 156);
-            this.txtVendor.Name = "txtVendor";
-            this.txtVendor.Size = new System.Drawing.Size(353, 20);
-            this.txtVendor.StyleController = this.layoutControl1;
-            this.txtVendor.TabIndex = 14;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtVendor;
@@ -375,14 +398,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(420, 24);
             this.layoutControlItem11.Text = "生产厂商";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtRecordBag
-            // 
-            this.txtRecordBag.Location = new System.Drawing.Point(75, 180);
-            this.txtRecordBag.Name = "txtRecordBag";
-            this.txtRecordBag.Size = new System.Drawing.Size(143, 20);
-            this.txtRecordBag.StyleController = this.layoutControl1;
-            this.txtRecordBag.TabIndex = 15;
             // 
             // layoutControlItem12
             // 
@@ -393,14 +408,6 @@
             this.layoutControlItem12.Text = "档案袋";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtRecordNumber
-            // 
-            this.txtRecordNumber.Location = new System.Drawing.Point(285, 180);
-            this.txtRecordNumber.Name = "txtRecordNumber";
-            this.txtRecordNumber.Size = new System.Drawing.Size(143, 20);
-            this.txtRecordNumber.StyleController = this.layoutControl1;
-            this.txtRecordNumber.TabIndex = 16;
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.txtRecordNumber;
@@ -409,6 +416,35 @@
             this.layoutControlItem13.Size = new System.Drawing.Size(210, 24);
             this.layoutControlItem13.Text = "档案号";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // dpInstallDate
+            // 
+            this.dpInstallDate.EditValue = null;
+            this.dpInstallDate.Location = new System.Drawing.Point(75, 84);
+            this.dpInstallDate.Name = "dpInstallDate";
+            this.dpInstallDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dpInstallDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInstallDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInstallDate.Properties.DisplayFormat.FormatString = "yyyy-MM";
+            this.dpInstallDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dpInstallDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpInstallDate.Properties.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearView;
+            this.dpInstallDate.Properties.VistaCalendarViewStyle = ((DevExpress.XtraEditors.VistaCalendarViewStyle)(((DevExpress.XtraEditors.VistaCalendarViewStyle.YearView | DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView) 
+            | DevExpress.XtraEditors.VistaCalendarViewStyle.CenturyView)));
+            this.dpInstallDate.Size = new System.Drawing.Size(143, 20);
+            this.dpInstallDate.StyleController = this.layoutControl1;
+            this.dpInstallDate.TabIndex = 17;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.dpInstallDate;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(210, 24);
+            this.layoutControlItem14.Text = "安装日期";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(60, 14);
             // 
             // FrmElevatorAdd
             // 
@@ -427,6 +463,11 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSpeed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spCapacity.Properties)).EndInit();
@@ -444,16 +485,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSpeed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +528,7 @@
         private DevExpress.XtraEditors.TextEdit txtRecordBag;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.DateEdit dpInstallDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }

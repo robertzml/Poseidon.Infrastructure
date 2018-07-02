@@ -44,6 +44,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInstallDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -55,7 +56,7 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            this.dgcEntity.Size = new System.Drawing.Size(735, 378);
             // 
             // dgvEntity
             // 
@@ -67,6 +68,7 @@
             this.colSpeed,
             this.colStation,
             this.colVendor,
+            this.colInstallDate,
             this.colPosition,
             this.colRescueNumber,
             this.colRecordBag,
@@ -108,7 +110,7 @@
             this.colRescueNumber.FieldName = "RescueNumber";
             this.colRescueNumber.Name = "colRescueNumber";
             this.colRescueNumber.Visible = true;
-            this.colRescueNumber.VisibleIndex = 8;
+            this.colRescueNumber.VisibleIndex = 9;
             // 
             // colCapacity
             // 
@@ -140,7 +142,7 @@
             this.colVendor.FieldName = "Vendor";
             this.colVendor.Name = "colVendor";
             this.colVendor.Visible = true;
-            this.colVendor.VisibleIndex = 6;
+            this.colVendor.VisibleIndex = 7;
             // 
             // colPosition
             // 
@@ -148,7 +150,7 @@
             this.colPosition.FieldName = "Position";
             this.colPosition.Name = "colPosition";
             this.colPosition.Visible = true;
-            this.colPosition.VisibleIndex = 7;
+            this.colPosition.VisibleIndex = 8;
             // 
             // colRecordBag
             // 
@@ -156,7 +158,7 @@
             this.colRecordBag.FieldName = "RecordBag";
             this.colRecordBag.Name = "colRecordBag";
             this.colRecordBag.Visible = true;
-            this.colRecordBag.VisibleIndex = 9;
+            this.colRecordBag.VisibleIndex = 10;
             // 
             // colRecordNumber
             // 
@@ -164,7 +166,7 @@
             this.colRecordNumber.FieldName = "RecordNumber";
             this.colRecordNumber.Name = "colRecordNumber";
             this.colRecordNumber.Visible = true;
-            this.colRecordNumber.VisibleIndex = 10;
+            this.colRecordNumber.VisibleIndex = 11;
             // 
             // colModelType
             // 
@@ -190,7 +192,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 11;
+            this.colRemark.VisibleIndex = 12;
             // 
             // colStatus
             // 
@@ -201,18 +203,29 @@
             this.colStatus.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 12;
+            this.colStatus.VisibleIndex = 13;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
+            // colInstallDate
+            // 
+            this.colInstallDate.Caption = "安装日期";
+            this.colInstallDate.DisplayFormat.FormatString = "yyyy-MM";
+            this.colInstallDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colInstallDate.FieldName = "InstallDate";
+            this.colInstallDate.Name = "colInstallDate";
+            this.colInstallDate.Visible = true;
+            this.colInstallDate.VisibleIndex = 6;
+            // 
             // ElevatorGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ElevatorGrid";
+            this.Size = new System.Drawing.Size(735, 378);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -238,5 +251,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colInstallDate;
     }
 }

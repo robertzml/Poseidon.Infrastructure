@@ -29,6 +29,12 @@ namespace Poseidon.Infrastructure.Core.DL
         public string RegistrationNumber { get; set; }
 
         /// <summary>
+        /// 安装日期
+        /// </summary>
+        [Display(Name = "安装日期")]
+        public DateTime InstallDate { get; set; }
+
+        /// <summary>
         /// 救援识别码
         /// </summary>
         [Display(Name = "救援识别码")]

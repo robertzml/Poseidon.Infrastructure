@@ -72,6 +72,18 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\ElevatorInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ElevatorInfoView.Designer.cs">
+      <DependentUpon>ElevatorInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ElevatorReceiptMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ElevatorReceiptMod.Designer.cs">
+      <DependentUpon>ElevatorReceiptMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Elevator\FrmElevatorList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Component\ElevatorInfoView.resx">
+      <DependentUpon>ElevatorInfoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorEdit.resx">
       <DependentUpon>FrmElevatorEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,14 +195,15 @@
     <EmbeddedResource Include="Grid\ElevatorGrid.resx">
       <DependentUpon>ElevatorGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ElevatorReceiptMod.resx">
+      <DependentUpon>ElevatorReceiptMod.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Component\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

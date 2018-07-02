@@ -57,6 +57,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dpInstallDate = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -92,6 +94,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -129,6 +134,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.dpInstallDate);
             this.layoutControl1.Controls.Add(this.txtRecordNumber);
             this.layoutControl1.Controls.Add(this.txtRecordBag);
             this.layoutControl1.Controls.Add(this.txtVendor);
@@ -232,9 +238,9 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(75, 84);
+            this.txtPosition.Location = new System.Drawing.Point(285, 84);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(353, 20);
+            this.txtPosition.Size = new System.Drawing.Size(143, 20);
             this.txtPosition.StyleController = this.layoutControl1;
             this.txtPosition.TabIndex = 8;
             // 
@@ -287,7 +293,8 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12,
-            this.layoutControlItem13});
+            this.layoutControlItem13,
+            this.layoutControlItem14});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(440, 299);
@@ -332,9 +339,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtPosition;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem5.Location = new System.Drawing.Point(210, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(420, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(210, 24);
             this.layoutControlItem5.Text = "安装地点";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -410,6 +417,34 @@
             this.layoutControlItem13.Text = "档案号";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(60, 14);
             // 
+            // dpInstallDate
+            // 
+            this.dpInstallDate.EditValue = null;
+            this.dpInstallDate.Location = new System.Drawing.Point(75, 84);
+            this.dpInstallDate.Name = "dpInstallDate";
+            this.dpInstallDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dpInstallDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInstallDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInstallDate.Properties.DisplayFormat.FormatString = "yyyy-MM";
+            this.dpInstallDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dpInstallDate.Properties.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearView;
+            this.dpInstallDate.Properties.VistaCalendarViewStyle = ((DevExpress.XtraEditors.VistaCalendarViewStyle)(((DevExpress.XtraEditors.VistaCalendarViewStyle.YearView | DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView) 
+            | DevExpress.XtraEditors.VistaCalendarViewStyle.CenturyView)));
+            this.dpInstallDate.Size = new System.Drawing.Size(143, 20);
+            this.dpInstallDate.StyleController = this.layoutControl1;
+            this.dpInstallDate.TabIndex = 17;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.dpInstallDate;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(210, 24);
+            this.layoutControlItem14.Text = "安装日期";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(60, 14);
+            // 
             // FrmElevatorEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -454,6 +489,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInstallDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +527,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.DateEdit dpInstallDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }
