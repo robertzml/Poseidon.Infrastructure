@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.trGroup = new Poseidon.Winform.Core.GroupsTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.TextEdit();
@@ -57,7 +58,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.trGroup = new Poseidon.Winform.Core.GroupsTree();
             this.groupItemGrid = new Poseidon.Winform.Core.GroupItemGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -120,6 +120,18 @@
             this.groupControl1.Size = new System.Drawing.Size(194, 529);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "分组列表";
+            // 
+            // trGroup
+            // 
+            this.trGroup.DataSource = null;
+            this.trGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trGroup.Location = new System.Drawing.Point(2, 21);
+            this.trGroup.Name = "trGroup";
+            this.trGroup.ShowCode = false;
+            this.trGroup.ShowRemark = false;
+            this.trGroup.Size = new System.Drawing.Size(190, 506);
+            this.trGroup.TabIndex = 0;
+            this.trGroup.GroupSelected += new System.Action<object, System.EventArgs>(this.trGroup_GroupSelected);
             // 
             // groupControl2
             // 
@@ -405,18 +417,6 @@
             this.groupControl4.Size = new System.Drawing.Size(678, 309);
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "分组项";
-            // 
-            // trGroup
-            // 
-            this.trGroup.DataSource = null;
-            this.trGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trGroup.Location = new System.Drawing.Point(2, 21);
-            this.trGroup.Name = "trGroup";
-            this.trGroup.ShowCode = false;
-            this.trGroup.ShowRemark = false;
-            this.trGroup.Size = new System.Drawing.Size(190, 506);
-            this.trGroup.TabIndex = 0;
-            this.trGroup.GroupSelected += new System.Action<object, System.EventArgs>(this.trGroup_GroupSelected);
             // 
             // groupItemGrid
             // 

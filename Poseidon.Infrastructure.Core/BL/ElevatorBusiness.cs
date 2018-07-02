@@ -26,5 +26,25 @@ namespace Poseidon.Infrastructure.Core.BL
             this.baseDal = RepositoryFactory<IElevatorRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 设置管理员
+        /// </summary>
+        /// <param name="id">电梯ID</param>
+        /// <param name="managers">管理员信息</param>
+        public void SetManagers(string id, List<ElevatorManager> managers)
+        {
+            var elevator = this.baseDal.FindById(id);
+            foreach (var item in managers)
+            {
+                item.ElevatorId = id;
+            }
+            elevator.Managers = managers;
+
+            base.Update(elevator);
+            return;
+        }
+        #endregion //Method
     }
 }

@@ -13,8 +13,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Base.System;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
-    using Poseidon.Infrastructure.Core.DL;
-    
+    using Poseidon.Infrastructure.Core.DL;    
 
     /// <summary>
     /// 电梯表格控件

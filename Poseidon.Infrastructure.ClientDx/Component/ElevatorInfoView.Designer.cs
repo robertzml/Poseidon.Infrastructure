@@ -30,71 +30,71 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtModel = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPosition = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCapacity = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtSpeed = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtStation = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtVendor = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRegistrationNumber = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRescueNumber = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRecordBag = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRecordNumber = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtDatasetCode = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtInstallDate = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtStatus = new DevExpress.XtraEditors.TextEdit();
+            this.txtInstallDate = new DevExpress.XtraEditors.TextEdit();
+            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
+            this.txtDatasetCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecordNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtRecordBag = new DevExpress.XtraEditors.TextEdit();
+            this.txtRescueNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtRegistrationNumber = new DevExpress.XtraEditors.TextEdit();
+            this.txtVendor = new DevExpress.XtraEditors.TextEdit();
+            this.txtStation = new DevExpress.XtraEditors.TextEdit();
+            this.txtSpeed = new DevExpress.XtraEditors.TextEdit();
+            this.txtCapacity = new DevExpress.XtraEditors.TextEdit();
+            this.txtPosition = new DevExpress.XtraEditors.TextEdit();
+            this.txtModel = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCapacity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRescueNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInstallDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInstallDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRescueNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCapacity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +132,171 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(75, 84);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.txtStatus.Properties.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(333, 20);
+            this.txtStatus.StyleController = this.layoutControl1;
+            this.txtStatus.TabIndex = 18;
+            // 
+            // txtInstallDate
+            // 
+            this.txtInstallDate.Location = new System.Drawing.Point(676, 12);
+            this.txtInstallDate.Name = "txtInstallDate";
+            this.txtInstallDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtInstallDate.Properties.Appearance.Options.UseBackColor = true;
+            this.txtInstallDate.Properties.ReadOnly = true;
+            this.txtInstallDate.Size = new System.Drawing.Size(113, 20);
+            this.txtInstallDate.StyleController = this.layoutControl1;
+            this.txtInstallDate.TabIndex = 17;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(75, 108);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRemark.Properties.ReadOnly = true;
+            this.txtRemark.Size = new System.Drawing.Size(714, 48);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 16;
+            // 
+            // txtDatasetCode
+            // 
+            this.txtDatasetCode.Location = new System.Drawing.Point(475, 84);
+            this.txtDatasetCode.Name = "txtDatasetCode";
+            this.txtDatasetCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtDatasetCode.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDatasetCode.Properties.ReadOnly = true;
+            this.txtDatasetCode.Size = new System.Drawing.Size(314, 20);
+            this.txtDatasetCode.StyleController = this.layoutControl1;
+            this.txtDatasetCode.TabIndex = 15;
+            // 
+            // txtRecordNumber
+            // 
+            this.txtRecordNumber.Location = new System.Drawing.Point(475, 60);
+            this.txtRecordNumber.Name = "txtRecordNumber";
+            this.txtRecordNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecordNumber.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecordNumber.Properties.ReadOnly = true;
+            this.txtRecordNumber.Size = new System.Drawing.Size(134, 20);
+            this.txtRecordNumber.StyleController = this.layoutControl1;
+            this.txtRecordNumber.TabIndex = 14;
+            // 
+            // txtRecordBag
+            // 
+            this.txtRecordBag.Location = new System.Drawing.Point(676, 60);
+            this.txtRecordBag.Name = "txtRecordBag";
+            this.txtRecordBag.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRecordBag.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRecordBag.Properties.ReadOnly = true;
+            this.txtRecordBag.Size = new System.Drawing.Size(113, 20);
+            this.txtRecordBag.StyleController = this.layoutControl1;
+            this.txtRecordBag.TabIndex = 13;
+            // 
+            // txtRescueNumber
+            // 
+            this.txtRescueNumber.Location = new System.Drawing.Point(270, 60);
+            this.txtRescueNumber.Name = "txtRescueNumber";
+            this.txtRescueNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRescueNumber.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRescueNumber.Properties.ReadOnly = true;
+            this.txtRescueNumber.Size = new System.Drawing.Size(138, 20);
+            this.txtRescueNumber.StyleController = this.layoutControl1;
+            this.txtRescueNumber.TabIndex = 12;
+            // 
+            // txtRegistrationNumber
+            // 
+            this.txtRegistrationNumber.Location = new System.Drawing.Point(75, 60);
+            this.txtRegistrationNumber.Name = "txtRegistrationNumber";
+            this.txtRegistrationNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRegistrationNumber.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRegistrationNumber.Properties.ReadOnly = true;
+            this.txtRegistrationNumber.Size = new System.Drawing.Size(128, 20);
+            this.txtRegistrationNumber.StyleController = this.layoutControl1;
+            this.txtRegistrationNumber.TabIndex = 11;
+            // 
+            // txtVendor
+            // 
+            this.txtVendor.Location = new System.Drawing.Point(75, 36);
+            this.txtVendor.Name = "txtVendor";
+            this.txtVendor.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtVendor.Properties.Appearance.Options.UseBackColor = true;
+            this.txtVendor.Properties.ReadOnly = true;
+            this.txtVendor.Size = new System.Drawing.Size(128, 20);
+            this.txtVendor.StyleController = this.layoutControl1;
+            this.txtVendor.TabIndex = 10;
+            // 
+            // txtStation
+            // 
+            this.txtStation.Location = new System.Drawing.Point(475, 36);
+            this.txtStation.Name = "txtStation";
+            this.txtStation.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtStation.Properties.Appearance.Options.UseBackColor = true;
+            this.txtStation.Properties.ReadOnly = true;
+            this.txtStation.Size = new System.Drawing.Size(134, 20);
+            this.txtStation.StyleController = this.layoutControl1;
+            this.txtStation.TabIndex = 9;
+            // 
+            // txtSpeed
+            // 
+            this.txtSpeed.Location = new System.Drawing.Point(270, 36);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtSpeed.Properties.Appearance.Options.UseBackColor = true;
+            this.txtSpeed.Properties.ReadOnly = true;
+            this.txtSpeed.Size = new System.Drawing.Size(138, 20);
+            this.txtSpeed.StyleController = this.layoutControl1;
+            this.txtSpeed.TabIndex = 8;
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Location = new System.Drawing.Point(676, 36);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCapacity.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCapacity.Properties.ReadOnly = true;
+            this.txtCapacity.Size = new System.Drawing.Size(113, 20);
+            this.txtCapacity.StyleController = this.layoutControl1;
+            this.txtCapacity.TabIndex = 7;
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(475, 12);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtPosition.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPosition.Properties.ReadOnly = true;
+            this.txtPosition.Size = new System.Drawing.Size(134, 20);
+            this.txtPosition.StyleController = this.layoutControl1;
+            this.txtPosition.TabIndex = 6;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(270, 12);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtModel.Properties.Appearance.Options.UseBackColor = true;
+            this.txtModel.Properties.ReadOnly = true;
+            this.txtModel.Size = new System.Drawing.Size(138, 20);
+            this.txtModel.StyleController = this.layoutControl1;
+            this.txtModel.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(75, 12);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Properties.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(128, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -157,17 +322,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(801, 168);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(76, 12);
-            this.txtName.Name = "txtName";
-            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(127, 20);
-            this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtName;
@@ -176,17 +330,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(195, 24);
             this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(271, 12);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtModel.Properties.Appearance.Options.UseBackColor = true;
-            this.txtModel.Properties.ReadOnly = true;
-            this.txtModel.Size = new System.Drawing.Size(137, 20);
-            this.txtModel.StyleController = this.layoutControl1;
-            this.txtModel.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -197,17 +340,6 @@
             this.layoutControlItem2.Text = "型号";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtPosition
-            // 
-            this.txtPosition.Location = new System.Drawing.Point(476, 12);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtPosition.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPosition.Properties.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(133, 20);
-            this.txtPosition.StyleController = this.layoutControl1;
-            this.txtPosition.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtPosition;
@@ -217,56 +349,14 @@
             this.layoutControlItem3.Text = "安装地点";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Location = new System.Drawing.Point(677, 36);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtCapacity.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCapacity.Properties.ReadOnly = true;
-            this.txtCapacity.Size = new System.Drawing.Size(112, 20);
-            this.txtCapacity.StyleController = this.layoutControl1;
-            this.txtCapacity.TabIndex = 7;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtCapacity;
-            this.layoutControlItem4.Location = new System.Drawing.Point(601, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(180, 24);
-            this.layoutControlItem4.Text = "载重";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtSpeed
-            // 
-            this.txtSpeed.Location = new System.Drawing.Point(271, 36);
-            this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtSpeed.Properties.Appearance.Options.UseBackColor = true;
-            this.txtSpeed.Properties.ReadOnly = true;
-            this.txtSpeed.Size = new System.Drawing.Size(137, 20);
-            this.txtSpeed.StyleController = this.layoutControl1;
-            this.txtSpeed.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtSpeed;
             this.layoutControlItem5.Location = new System.Drawing.Point(195, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(205, 24);
-            this.layoutControlItem5.Text = "速度";
+            this.layoutControlItem5.Text = "速度(m/s)";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtStation
-            // 
-            this.txtStation.Location = new System.Drawing.Point(476, 36);
-            this.txtStation.Name = "txtStation";
-            this.txtStation.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtStation.Properties.Appearance.Options.UseBackColor = true;
-            this.txtStation.Properties.ReadOnly = true;
-            this.txtStation.Size = new System.Drawing.Size(133, 20);
-            this.txtStation.StyleController = this.layoutControl1;
-            this.txtStation.TabIndex = 9;
             // 
             // layoutControlItem6
             // 
@@ -277,57 +367,6 @@
             this.layoutControlItem6.Text = "层站";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtVendor
-            // 
-            this.txtVendor.Location = new System.Drawing.Point(76, 36);
-            this.txtVendor.Name = "txtVendor";
-            this.txtVendor.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtVendor.Properties.Appearance.Options.UseBackColor = true;
-            this.txtVendor.Properties.ReadOnly = true;
-            this.txtVendor.Size = new System.Drawing.Size(127, 20);
-            this.txtVendor.StyleController = this.layoutControl1;
-            this.txtVendor.TabIndex = 10;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.txtVendor;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(195, 24);
-            this.layoutControlItem7.Text = "生产厂商";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtRegistrationNumber
-            // 
-            this.txtRegistrationNumber.Location = new System.Drawing.Point(76, 60);
-            this.txtRegistrationNumber.Name = "txtRegistrationNumber";
-            this.txtRegistrationNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRegistrationNumber.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRegistrationNumber.Properties.ReadOnly = true;
-            this.txtRegistrationNumber.Size = new System.Drawing.Size(127, 20);
-            this.txtRegistrationNumber.StyleController = this.layoutControl1;
-            this.txtRegistrationNumber.TabIndex = 11;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtRegistrationNumber;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(195, 24);
-            this.layoutControlItem8.Text = "注册号";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtRescueNumber
-            // 
-            this.txtRescueNumber.Location = new System.Drawing.Point(271, 60);
-            this.txtRescueNumber.Name = "txtRescueNumber";
-            this.txtRescueNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRescueNumber.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRescueNumber.Properties.ReadOnly = true;
-            this.txtRescueNumber.Size = new System.Drawing.Size(137, 20);
-            this.txtRescueNumber.StyleController = this.layoutControl1;
-            this.txtRescueNumber.TabIndex = 12;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtRescueNumber;
@@ -336,57 +375,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(205, 24);
             this.layoutControlItem9.Text = "救援识别码";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtRecordBag
-            // 
-            this.txtRecordBag.Location = new System.Drawing.Point(677, 60);
-            this.txtRecordBag.Name = "txtRecordBag";
-            this.txtRecordBag.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRecordBag.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRecordBag.Properties.ReadOnly = true;
-            this.txtRecordBag.Size = new System.Drawing.Size(112, 20);
-            this.txtRecordBag.StyleController = this.layoutControl1;
-            this.txtRecordBag.TabIndex = 13;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtRecordBag;
-            this.layoutControlItem10.Location = new System.Drawing.Point(601, 48);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(180, 24);
-            this.layoutControlItem10.Text = "档案袋";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtRecordNumber
-            // 
-            this.txtRecordNumber.Location = new System.Drawing.Point(476, 60);
-            this.txtRecordNumber.Name = "txtRecordNumber";
-            this.txtRecordNumber.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRecordNumber.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRecordNumber.Properties.ReadOnly = true;
-            this.txtRecordNumber.Size = new System.Drawing.Size(133, 20);
-            this.txtRecordNumber.StyleController = this.layoutControl1;
-            this.txtRecordNumber.TabIndex = 14;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txtRecordNumber;
-            this.layoutControlItem11.Location = new System.Drawing.Point(400, 48);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(201, 24);
-            this.layoutControlItem11.Text = "档案号";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtDatasetCode
-            // 
-            this.txtDatasetCode.Location = new System.Drawing.Point(476, 84);
-            this.txtDatasetCode.Name = "txtDatasetCode";
-            this.txtDatasetCode.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtDatasetCode.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDatasetCode.Properties.ReadOnly = true;
-            this.txtDatasetCode.Size = new System.Drawing.Size(313, 20);
-            this.txtDatasetCode.StyleController = this.layoutControl1;
-            this.txtDatasetCode.TabIndex = 15;
             // 
             // layoutControlItem12
             // 
@@ -397,17 +385,6 @@
             this.layoutControlItem12.Text = "数据集代码";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(76, 108);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(713, 48);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 16;
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.txtRemark;
@@ -416,17 +393,6 @@
             this.layoutControlItem13.Size = new System.Drawing.Size(781, 52);
             this.layoutControlItem13.Text = "备注";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // txtInstallDate
-            // 
-            this.txtInstallDate.Location = new System.Drawing.Point(677, 12);
-            this.txtInstallDate.Name = "txtInstallDate";
-            this.txtInstallDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtInstallDate.Properties.Appearance.Options.UseBackColor = true;
-            this.txtInstallDate.Properties.ReadOnly = true;
-            this.txtInstallDate.Size = new System.Drawing.Size(112, 20);
-            this.txtInstallDate.StyleController = this.layoutControl1;
-            this.txtInstallDate.TabIndex = 17;
             // 
             // layoutControlItem14
             // 
@@ -437,16 +403,50 @@
             this.layoutControlItem14.Text = "安装日期 ";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // txtStatus
+            // layoutControlItem4
             // 
-            this.txtStatus.Location = new System.Drawing.Point(76, 84);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtStatus.Properties.Appearance.Options.UseBackColor = true;
-            this.txtStatus.Properties.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(332, 20);
-            this.txtStatus.StyleController = this.layoutControl1;
-            this.txtStatus.TabIndex = 18;
+            this.layoutControlItem4.Control = this.txtCapacity;
+            this.layoutControlItem4.Location = new System.Drawing.Point(601, 24);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(180, 24);
+            this.layoutControlItem4.Text = "载重(kg)";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.txtVendor;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(195, 24);
+            this.layoutControlItem7.Text = "生产厂商";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtRecordBag;
+            this.layoutControlItem10.Location = new System.Drawing.Point(601, 48);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(180, 24);
+            this.layoutControlItem10.Text = "档案袋";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.txtRegistrationNumber;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(195, 24);
+            this.layoutControlItem8.Text = "注册号";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtRecordNumber;
+            this.layoutControlItem11.Location = new System.Drawing.Point(400, 48);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem11.Text = "档案号";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem15
             // 
@@ -468,36 +468,36 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCapacity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRescueNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInstallDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInstallDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatasetCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecordBag.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRescueNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVendor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSpeed.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCapacity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.ResumeLayout(false);
 

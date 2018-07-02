@@ -30,17 +30,19 @@
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.elevatorTree = new Poseidon.Winform.Core.GroupChildrenTree();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.elevatorTree = new Poseidon.Winform.Core.GroupChildrenTree();
+            this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
+            this.elevatorReceiptMod = new Poseidon.Infrastructure.ClientDx.ElevatorReceiptMod();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -52,7 +54,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.navFrame);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(806, 492);
+            this.splitContainerControl1.Size = new System.Drawing.Size(935, 580);
             this.splitContainerControl1.SplitterPosition = 251;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -63,46 +65,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(251, 492);
+            this.groupControl1.Size = new System.Drawing.Size(251, 580);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "电梯列表";
-            // 
-            // navFrame
-            // 
-            this.navFrame.Controls.Add(this.navigationPage1);
-            this.navFrame.Controls.Add(this.navigationPage2);
-            this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navFrame.Location = new System.Drawing.Point(0, 0);
-            this.navFrame.Name = "navFrame";
-            this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
-            this.navigationPage1,
-            this.navigationPage2});
-            this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 0;
-            this.navFrame.Size = new System.Drawing.Size(550, 492);
-            this.navFrame.TabIndex = 0;
-            this.navFrame.Text = "navigationFrame1";
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Caption = "navigationPage1";
-            this.navigationPage1.Controls.Add(this.elevatorGroupMod);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(550, 492);
-            // 
-            // elevatorGroupMod
-            // 
-            this.elevatorGroupMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elevatorGroupMod.Location = new System.Drawing.Point(0, 0);
-            this.elevatorGroupMod.Name = "elevatorGroupMod";
-            this.elevatorGroupMod.Size = new System.Drawing.Size(550, 492);
-            this.elevatorGroupMod.TabIndex = 0;
-            // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(550, 492);
             // 
             // elevatorTree
             // 
@@ -111,15 +76,63 @@
             this.elevatorTree.Location = new System.Drawing.Point(2, 21);
             this.elevatorTree.Name = "elevatorTree";
             this.elevatorTree.ShowFindPanel = false;
-            this.elevatorTree.Size = new System.Drawing.Size(247, 469);
+            this.elevatorTree.Size = new System.Drawing.Size(247, 557);
             this.elevatorTree.TabIndex = 0;
             this.elevatorTree.GroupSelected += new System.EventHandler(this.elevatorTree_GroupSelected);
+            this.elevatorTree.EntitySelected += new System.EventHandler(this.elevatorTree_EntitySelected);
+            // 
+            // navFrame
+            // 
+            this.navFrame.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            this.navFrame.Controls.Add(this.navigationPage1);
+            this.navFrame.Controls.Add(this.navigationPage2);
+            this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navFrame.Location = new System.Drawing.Point(0, 0);
+            this.navFrame.Name = "navFrame";
+            this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
+            this.navigationPage1,
+            this.navigationPage2});
+            this.navFrame.SelectedPage = this.navigationPage1;
+            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.Size = new System.Drawing.Size(679, 580);
+            this.navFrame.TabIndex = 0;
+            this.navFrame.Text = "navigationFrame1";
+            // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Controls.Add(this.elevatorGroupMod);
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(679, 580);
+            // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.elevatorReceiptMod);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(679, 580);
+            // 
+            // elevatorGroupMod
+            // 
+            this.elevatorGroupMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorGroupMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorGroupMod.Name = "elevatorGroupMod";
+            this.elevatorGroupMod.Size = new System.Drawing.Size(679, 580);
+            this.elevatorGroupMod.TabIndex = 0;
+            // 
+            // elevatorReceiptMod
+            // 
+            this.elevatorReceiptMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorReceiptMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorReceiptMod.Name = "elevatorReceiptMod";
+            this.elevatorReceiptMod.Size = new System.Drawing.Size(679, 580);
+            this.elevatorReceiptMod.TabIndex = 0;
             // 
             // FrmElevatorManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 492);
+            this.ClientSize = new System.Drawing.Size(935, 580);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "FrmElevatorManage";
             this.Text = "电梯管理";
@@ -129,6 +142,7 @@
             this.groupControl1.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,5 +156,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private ElevatorGroupMod elevatorGroupMod;
         private Winform.Core.GroupChildrenTree elevatorTree;
+        private ElevatorReceiptMod elevatorReceiptMod;
     }
 }

@@ -62,6 +62,27 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
+            entity.Managers = new List<ElevatorManager>();
+            if (doc.Contains("managers"))
+            {
+                BsonArray array = doc["managers"].AsBsonArray;
+                foreach (BsonDocument item in array)
+                {
+                    ElevatorManager manager = new ElevatorManager();
+                    manager.ElevatorId = item["elevatorId"].ToString();
+                    manager.Name = item["name"].ToString();
+                    manager.Telephone = item["telephone"].ToString();
+                    if (item.Contains("startDate"))
+                        manager.StartDate = item["startDate"].ToLocalTime();
+                    if (item.Contains("endDate"))
+                        manager.EndDate = item["endDate"].ToLocalTime();
+
+                    manager.Remark = item["remark"].ToString();
+
+                    entity.Managers.Add(manager);
+                }
+            }
+
             return entity;
         }
 
@@ -91,6 +112,29 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
+
+            if (entity.Managers != null && entity.Managers.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.Managers)
+                {
+                    BsonDocument record = new BsonDocument
+                    {
+                        { "elevatorId", item.ElevatorId },
+                        { "name", item.Name },
+                        { "telephone", item.Telephone },
+                        { "startDate", item.StartDate },
+                        { "remark", item.Remark }
+                    };
+
+                    if (item.EndDate != null)
+                        record.Add("endDate", item.EndDate.Value);
+
+                    array.Add(record);
+                }
+
+                doc.Add("managers", array);
+            }
 
             return doc;
         }

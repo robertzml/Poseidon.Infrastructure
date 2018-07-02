@@ -68,6 +68,28 @@ namespace Poseidon.Infrastructure.ClientDx
             if (elevator != null)
                 this.Display();
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.txtName.Text = "";
+            this.txtModel.Text = "";
+            this.txtInstallDate.Text = "";
+            this.txtRegistrationNumber.Text = "";
+            this.txtRescueNumber.Text = "";
+            this.txtPosition.Text = "";
+            this.txtSpeed.Text = "";
+            this.txtStation.Text = "";
+            this.txtCapacity.Text = "";
+            this.txtVendor.Text = "";
+            this.txtRecordBag.Text = "";
+            this.txtRecordNumber.Text = "";
+            this.txtDatasetCode.Text = "";
+            this.txtStatus.Text = "";
+            this.txtRemark.Text = "";
+        }
         #endregion //Method
     }
 }

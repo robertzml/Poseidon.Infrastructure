@@ -81,6 +81,12 @@ namespace Poseidon.Infrastructure.Core.DL
         /// </summary>
         [Display(Name = "档案号")]
         public string RecordNumber { get; set; }
+
+        /// <summary>
+        /// 电梯管理员
+        /// </summary>
+        [Display(Name = "电梯管理员")]
+        public List<ElevatorManager> Managers { get; set; }
         #endregion //Property
     }
 
@@ -89,6 +95,40 @@ namespace Poseidon.Infrastructure.Core.DL
     /// </summary>
     public class ElevatorManager : BaseEntity
     {
+        /// <summary>
+        /// 电梯ID
+        /// </summary>
+        [Display(Name = "电梯ID")]
+        public string ElevatorId { get; set; }
 
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        [Display(Name = "姓名")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 电话
+        /// </summary>
+        [Display(Name = "电话")]
+        public string Telephone { get; set; }
+
+        /// <summary>
+        /// 开始日期
+        /// </summary>
+        [Display(Name = "开始日期")]
+        public DateTime StartDate { get; set; }
+
+        /// <summary>
+        /// 结束日期
+        /// </summary>
+        [Display(Name = "结束日期")]
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Display(Name = "备注")]
+        public string Remark { get; set; }
     }
 }

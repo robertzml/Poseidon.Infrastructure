@@ -49,6 +49,19 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorGroupMod.Init();
             //this.groupMod.SetGroup(id);
         }
+        
+        /// <summary>
+        /// 电梯选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void elevatorTree_EntitySelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+            var id = this.elevatorTree.GetCurrentSelectId();
+
+            this.elevatorReceiptMod.SetElevator(id);
+        }
         #endregion //Event
     }
 }
