@@ -29,14 +29,78 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         #endregion //Constructor
 
         #region Function
+        /// <summary>
+        /// BsonDocument转实体对象
+        /// </summary>
+        /// <param name="doc">Bson文档</param>
+        /// <returns></returns>
         protected override MaintenanceInfo DocToEntity(BsonDocument doc)
         {
-            throw new NotImplementedException();
+            MaintenanceInfo entity = new MaintenanceInfo();
+            entity.Id = doc["_id"].ToString();
+            entity.FacilityId = doc["facilityId"].ToString();
+            entity.FacilityName = doc["facilityName"].ToString();
+            entity.MaintenanceCompanyId = doc["maintenanceCompanyId"].ToString();
+            entity.MaintenanceCompanyName = doc["maintenanceCompanyName"].ToString();
+            entity.StartDate = doc["startDate"].ToLocalTime();
+            entity.EndDate = doc["endDate"].ToLocalTime();
+            entity.MaintenanceFee = doc["maintenanceFee"].ToDecimal();
+            entity.IsFree = doc["isFree"].ToBoolean();
+
+            var createBy = doc["createBy"].ToBsonDocument();
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = createBy["userId"].ToString(),
+                Name = createBy["name"].ToString(),
+                Time = createBy["time"].ToLocalTime()
+            };
+
+            var updateBy = doc["updateBy"].ToBsonDocument();
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = updateBy["userId"].ToString(),
+                Name = updateBy["name"].ToString(),
+                Time = updateBy["time"].ToLocalTime()
+            };
+
+            entity.Remark = doc["remark"].ToString();
+            entity.Status = doc["status"].ToInt32();
+
+            return entity;
         }
 
+        /// <summary>
+        /// 实体对象转BsonDocument
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
         protected override BsonDocument EntityToDoc(MaintenanceInfo entity)
         {
-            throw new NotImplementedException();
+            BsonDocument doc = new BsonDocument
+            {
+                { "facilityId", entity.FacilityId },
+                { "facilityName", entity.FacilityName },
+                { "maintenanceCompanyId", entity.MaintenanceCompanyId },
+                { "maintenanceCompanyName", entity.MaintenanceCompanyName },
+                { "startDate", entity.StartDate },
+                { "endDate", entity.EndDate },
+                { "maintenanceFee", entity.MaintenanceFee },
+                { "isFree", entity.IsFree },
+                { "createBy", new BsonDocument {
+                    { "userId", entity.CreateBy.UserId },
+                    { "name", entity.CreateBy.Name },
+                    { "time", entity.CreateBy.Time }
+                }},
+                { "updateBy", new BsonDocument {
+                    { "userId", entity.UpdateBy.UserId },
+                    { "name", entity.UpdateBy.Name },
+                    { "time", entity.UpdateBy.Time }
+                }},
+                { "remark", entity.Remark },
+                { "status", entity.Status }
+            };
+
+            return doc;
         }
         #endregion //Function
     }

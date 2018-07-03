@@ -67,6 +67,8 @@ namespace Poseidon.Infrastructure.ClientDx
             this.currentElevator = elevator;
             if (elevator != null)
                 this.Display();
+            else
+                this.Clear();
         }
 
         /// <summary>

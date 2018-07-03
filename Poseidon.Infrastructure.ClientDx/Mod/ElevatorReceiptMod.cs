@@ -54,6 +54,14 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorInfoView.SetElevator(currentElevator);
             this.managersGrid.DataSource = this.currentElevator.Managers;
         }
+
+        /// <summary>
+        /// 显示维保信息
+        /// </summary>
+        private void DisplayMaintenanceInfo()
+        {
+
+        }
         #endregion //Function
 
         #region Method

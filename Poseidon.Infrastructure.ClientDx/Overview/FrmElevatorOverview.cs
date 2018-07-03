@@ -15,12 +15,12 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
-    /// 电梯管理窗体
+    /// 电梯总览
     /// </summary>
-    public partial class FrmElevatorManage : BaseMdiForm
+    public partial class FrmElevatorOverview : BaseMdiForm
     {
         #region Constructor
-        public FrmElevatorManage()
+        public FrmElevatorOverview()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace Poseidon.Infrastructure.ClientDx
         protected override void InitForm()
         {
             this.elevatorTree.SetGroupCode(InfrastructureConstant.ElevatorGroupCode, true);
-            
+
             base.InitForm();
         }
         #endregion //Function
@@ -43,9 +43,24 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void elevatorTree_EntitySelected(object sender, EventArgs e)
         {
+            this.navFrame.SelectedPageIndex = 1;
             var id = this.elevatorTree.GetCurrentSelectId();
 
-            this.elevatorReceiptMod.SetElevator(id);
+            //this.elevatorReceiptMod.SetElevator(id);
+        }
+
+        /// <summary>
+        /// 电梯分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void elevatorTree_GroupSelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 0;
+            var id = this.elevatorTree.GetCurrentSelectId();
+
+            this.elevatorGroupMod.Init();
+            //this.groupMod.SetGroup(id);
         }
         #endregion //Event
     }
