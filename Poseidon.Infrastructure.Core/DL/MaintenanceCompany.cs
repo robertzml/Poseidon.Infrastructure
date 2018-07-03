@@ -16,6 +16,12 @@ namespace Poseidon.Infrastructure.Core.DL
     {
         #region Property
         /// <summary>
+        /// 简称
+        /// </summary>
+        [Display(Name = "简称")]
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// 地址
         /// </summary>
         [Display(Name = "地址")]

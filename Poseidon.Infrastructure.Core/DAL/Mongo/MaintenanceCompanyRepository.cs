@@ -46,6 +46,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             MaintenanceCompany entity = new MaintenanceCompany();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
+            entity.ShortName = doc["shortName"].ToString();
             entity.Address = doc["address"].ToString();
             entity.Contact = doc["contact"].ToString();
             entity.ModelType = doc["modelType"].ToString();
@@ -65,6 +66,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             BsonDocument doc = new BsonDocument
             {
                 { "name", entity.Name },
+                { "shortName", entity.ShortName },
                 { "address", entity.Address },
                 { "contact", entity.Contact },
                 { "modelType", entity.ModelType },
