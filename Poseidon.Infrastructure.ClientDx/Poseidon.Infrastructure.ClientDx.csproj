@@ -90,6 +90,12 @@
     <Compile Include="Elevator\FrmElevatorManagerEdit.Designer.cs">
       <DependentUpon>FrmElevatorManagerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceCompany\FrmMaintenanceCompanyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceCompany\FrmMaintenanceCompanyEdit.Designer.cs">
+      <DependentUpon>FrmMaintenanceCompanyEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\MaintenanceCompanyGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyAdd.resx">
       <DependentUpon>FrmMaintenanceCompanyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyEdit.resx">
+      <DependentUpon>FrmMaintenanceCompanyEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyManange.resx">
       <DependentUpon>FrmMaintenanceCompanyManange.cs</DependentUpon>

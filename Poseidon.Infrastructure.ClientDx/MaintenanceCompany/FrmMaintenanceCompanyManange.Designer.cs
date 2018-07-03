@@ -136,6 +136,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "编辑维保公司";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // layoutControlItem2
             // 

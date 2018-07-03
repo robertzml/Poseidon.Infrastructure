@@ -56,6 +56,21 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceCompanyAdd));
             LoadData();
         }
+       
+        /// <summary>
+        /// 编辑维保公司
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var company = this.companyGrid.GetCurrentSelect();
+            if (company == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceCompanyEdit), new object[] { company.Id });
+            LoadData();
+        }
         #endregion //Event
     }
 }
