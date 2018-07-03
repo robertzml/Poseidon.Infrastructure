@@ -27,7 +27,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
 
         #region Constructor
         /// <summary>
-        /// 电梯数据访问类
+        /// 维保单位数据访问类
         /// </summary>
         public MaintenanceCompanyRepository()
         {
