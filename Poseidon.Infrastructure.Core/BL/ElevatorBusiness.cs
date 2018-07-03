@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 namespace Poseidon.Infrastructure.Core.BL
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
-    using Poseidon.Core.DL;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.IDAL;
 
     /// <summary>
     /// 电梯业务类
     /// </summary>
-    public class ElevatorBusiness : AbstractBusiness<Elevator>
+    public class ElevatorBusiness : AbstractBusiness<Elevator>, IBaseBL<Elevator>
     {
         #region Constructor
         /// <summary>

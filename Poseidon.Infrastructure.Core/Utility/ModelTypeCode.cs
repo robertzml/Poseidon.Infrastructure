@@ -16,6 +16,8 @@ namespace Poseidon.Infrastructure.Core.Utility
         /// 电梯模型
         /// </summary>
         public static readonly string Elevator = "Infrastructure.Elevator";
+
+        public static readonly string MaintenanceCompany = "Infrastructure.MaintenanceCompany";
         #endregion //Field
     }
 }
