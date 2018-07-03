@@ -41,9 +41,10 @@
             this.managersGrid = new Poseidon.Infrastructure.ClientDx.ElevatorManagerGrid();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPageCompany = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnEditMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
@@ -71,9 +72,10 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.tabPageCompany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -92,14 +94,13 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tabInfo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabManage, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(923, 590);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -110,7 +111,7 @@
             this.tabInfo.Location = new System.Drawing.Point(3, 3);
             this.tabInfo.Name = "tabInfo";
             this.tabInfo.SelectedTabPage = this.tabPageInfo;
-            this.tabInfo.Size = new System.Drawing.Size(917, 194);
+            this.tabInfo.Size = new System.Drawing.Size(917, 214);
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageInfo,
@@ -121,7 +122,7 @@
             // 
             this.tabPageInfo.Controls.Add(this.elevatorInfoView);
             this.tabPageInfo.Name = "tabPageInfo";
-            this.tabPageInfo.Size = new System.Drawing.Size(911, 165);
+            this.tabPageInfo.Size = new System.Drawing.Size(911, 185);
             this.tabPageInfo.Text = "基本信息";
             // 
             // elevatorInfoView
@@ -129,7 +130,7 @@
             this.elevatorInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elevatorInfoView.Location = new System.Drawing.Point(0, 0);
             this.elevatorInfoView.Name = "elevatorInfoView";
-            this.elevatorInfoView.Size = new System.Drawing.Size(911, 165);
+            this.elevatorInfoView.Size = new System.Drawing.Size(911, 185);
             this.elevatorInfoView.TabIndex = 0;
             // 
             // tabPageManager
@@ -164,9 +165,9 @@
             // 
             // btnEditManager
             // 
-            this.btnEditManager.Location = new System.Drawing.Point(806, 38);
+            this.btnEditManager.Location = new System.Drawing.Point(777, 65);
             this.btnEditManager.Name = "btnEditManager";
-            this.btnEditManager.Size = new System.Drawing.Size(89, 22);
+            this.btnEditManager.Size = new System.Drawing.Size(110, 22);
             this.btnEditManager.StyleController = this.layoutControl1;
             this.btnEditManager.TabIndex = 7;
             this.btnEditManager.Text = "编辑管理员";
@@ -174,9 +175,9 @@
             // 
             // btnDeleteManager
             // 
-            this.btnDeleteManager.Location = new System.Drawing.Point(806, 64);
+            this.btnDeleteManager.Location = new System.Drawing.Point(777, 91);
             this.btnDeleteManager.Name = "btnDeleteManager";
-            this.btnDeleteManager.Size = new System.Drawing.Size(89, 22);
+            this.btnDeleteManager.Size = new System.Drawing.Size(110, 22);
             this.btnDeleteManager.StyleController = this.layoutControl1;
             this.btnDeleteManager.TabIndex = 6;
             this.btnDeleteManager.Text = "删除管理员";
@@ -184,9 +185,9 @@
             // 
             // btnAddManager
             // 
-            this.btnAddManager.Location = new System.Drawing.Point(806, 12);
+            this.btnAddManager.Location = new System.Drawing.Point(777, 39);
             this.btnAddManager.Name = "btnAddManager";
-            this.btnAddManager.Size = new System.Drawing.Size(89, 22);
+            this.btnAddManager.Size = new System.Drawing.Size(110, 22);
             this.btnAddManager.StyleController = this.layoutControl1;
             this.btnAddManager.TabIndex = 5;
             this.btnAddManager.Text = "添加管理员";
@@ -208,7 +209,7 @@
             this.managersGrid.ShowLineNumber = true;
             this.managersGrid.ShowMenu = false;
             this.managersGrid.ShowNavigator = false;
-            this.managersGrid.Size = new System.Drawing.Size(790, 137);
+            this.managersGrid.Size = new System.Drawing.Size(753, 137);
             this.managersGrid.TabIndex = 4;
             // 
             // layoutControlGroup1
@@ -217,9 +218,7 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlGroup5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(907, 161);
@@ -230,36 +229,48 @@
             this.layoutControlItem1.Control = this.managersGrid;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(794, 141);
+            this.layoutControlItem1.Size = new System.Drawing.Size(757, 141);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlGroup5
+            // 
+            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem3});
+            this.layoutControlGroup5.Location = new System.Drawing.Point(757, 0);
+            this.layoutControlGroup5.Name = "layoutControlGroup5";
+            this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(130, 141);
+            this.layoutControlGroup5.Text = "操作";
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnAddManager;
-            this.layoutControlItem2.Location = new System.Drawing.Point(794, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(93, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnDeleteManager;
-            this.layoutControlItem3.Location = new System.Drawing.Point(794, 52);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(93, 89);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnEditManager;
-            this.layoutControlItem4.Location = new System.Drawing.Point(794, 26);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(93, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnDeleteManager;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(114, 54);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // tabPageCompany
             // 
@@ -299,6 +310,7 @@
             this.btnAddMaintenanceInfo.StyleController = this.layoutControl2;
             this.btnAddMaintenanceInfo.TabIndex = 6;
             this.btnAddMaintenanceInfo.Text = "添加维保记录";
+            this.btnAddMaintenanceInfo.Click += new System.EventHandler(this.btnAddMaintenanceInfo_Click);
             // 
             // mainCompanyInfo
             // 
@@ -325,6 +337,7 @@
             this.mainInfoGrid.ShowNavigator = false;
             this.mainInfoGrid.Size = new System.Drawing.Size(452, 141);
             this.mainInfoGrid.TabIndex = 4;
+            this.mainInfoGrid.RowSelected += new System.Action<object, System.EventArgs>(this.mainInfoGrid_RowSelected);
             // 
             // layoutControlGroup2
             // 
@@ -399,10 +412,10 @@
             // tabManage
             // 
             this.tabManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabManage.Location = new System.Drawing.Point(3, 203);
+            this.tabManage.Location = new System.Drawing.Point(3, 223);
             this.tabManage.Name = "tabManage";
             this.tabManage.SelectedTabPage = this.xtraTabPage1;
-            this.tabManage.Size = new System.Drawing.Size(917, 384);
+            this.tabManage.Size = new System.Drawing.Size(917, 364);
             this.tabManage.TabIndex = 1;
             this.tabManage.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -411,7 +424,7 @@
             // xtraTabPage1
             // 
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(911, 355);
+            this.xtraTabPage1.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage1.Text = "日常运行";
             // 
             // xtraTabPage2
@@ -438,9 +451,10 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.tabPageCompany.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -491,5 +505,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
     }
 }

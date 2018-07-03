@@ -60,7 +60,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private void DisplayMaintenanceInfo()
         {
-
+            this.mainInfoGrid.DataSource = BusinessFactory<MaintenanceInfoBusiness>.Instance.FindByFacility(this.currentElevator.Id).ToList();
         }
         #endregion //Function
 
@@ -74,6 +74,7 @@ namespace Poseidon.Infrastructure.ClientDx
             LoadElevator(id);
 
             DisplayInfo();
+            DisplayMaintenanceInfo();
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.elevatorInfoView.Clear();
             this.managersGrid.Clear();
+            this.mainInfoGrid.Clear();
         }
         #endregion //Method
 
@@ -94,6 +96,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnAddManager_Click(object sender, EventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             ChildFormManage.ShowDialogForm(typeof(FrmElevatorManagerAdd), new object[] { this.currentElevator.Id });
 
             LoadElevator(this.currentElevator.Id);
@@ -107,6 +112,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnEditManager_Click(object sender, EventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             var manager = this.managersGrid.GetCurrentSelect();
             if (manager == null)
                 return;
@@ -116,7 +124,7 @@ namespace Poseidon.Infrastructure.ClientDx
             LoadElevator(this.currentElevator.Id);
             DisplayInfo();
         }
-        
+
         /// <summary>
         /// 删除电梯管理员
         /// </summary>
@@ -124,6 +132,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnDeleteManager_Click(object sender, EventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             var manager = this.managersGrid.GetCurrentSelect();
             if (manager == null)
                 return;
@@ -146,6 +157,37 @@ namespace Poseidon.Infrastructure.ClientDx
                     MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
                 }
             }
+        }
+
+        /// <summary>
+        /// 维保信息选择
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void mainInfoGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var info = this.mainInfoGrid.GetCurrentSelect();
+            if (info == null)
+            {
+                this.mainCompanyInfo.Clear();
+            }
+
+            var company = BusinessFactory<MaintenanceCompanyBusiness>.Instance.FindById(info.MaintenanceCompanyId);
+            this.mainCompanyInfo.SetMaintenanceCompany(company);
+        }
+
+        /// <summary>
+        /// 添加维保信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddMaintenanceInfo_Click(object sender, EventArgs e)
+        {
+            if (this.currentElevator == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoAdd), new object[] { this.currentElevator.Id });
+            DisplayMaintenanceInfo();
         }
         #endregion //Event
     }

@@ -28,6 +28,26 @@ namespace Poseidon.Infrastructure.Core.BL
 
         #region Method
         /// <summary>
+        /// 按设施查找维保信息
+        /// </summary>
+        /// <param name="facilityId">设施ID</param>
+        /// <returns></returns>
+        public IEnumerable<MaintenanceInfo> FindByFacility(string facilityId)
+        {
+            return this.baseDal.FindListByField("facilityId", facilityId);
+        }
+
+        /// <summary>
+        /// 按维保公司查找维保信息
+        /// </summary>
+        /// <param name="maintenanceCompanyId">维保公司ID</param>
+        /// <returns></returns>
+        public IEnumerable<MaintenanceInfo> FindByCompany(string maintenanceCompanyId)
+        {
+            return this.baseDal.FindListByField("maintenanceCompanyId", maintenanceCompanyId);
+        }
+
+        /// <summary>
         /// 添加维保信息
         /// </summary>
         /// <param name="entity">实体对象</param>
