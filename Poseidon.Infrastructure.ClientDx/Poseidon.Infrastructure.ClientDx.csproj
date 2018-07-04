@@ -96,6 +96,12 @@
     <Compile Include="Component\MaintenanceCompanyInfo.Designer.cs">
       <DependentUpon>MaintenanceCompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maintenance\FrmMaintenanceInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmMaintenanceInfoEdit.Designer.cs">
+      <DependentUpon>FrmMaintenanceInfoEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintenance\FrmMaintenanceInfoAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoAdd.resx">
       <DependentUpon>FrmMaintenanceInfoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoEdit.resx">
+      <DependentUpon>FrmMaintenanceInfoEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmFacilitySelect.resx">
       <DependentUpon>FrmFacilitySelect.cs</DependentUpon>

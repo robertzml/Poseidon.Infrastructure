@@ -189,6 +189,56 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoAdd), new object[] { this.currentElevator.Id });
             DisplayMaintenanceInfo();
         }
+
+        /// <summary>
+        /// 编辑维保信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditMaintenanceInfo_Click(object sender, EventArgs e)
+        {
+            if (this.currentElevator == null)
+                return;
+
+            var info = this.mainInfoGrid.GetCurrentSelect();
+            if (info == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoEdit), new object[] { info.Id });
+
+            DisplayMaintenanceInfo();
+        }
+
+        /// <summary>
+        /// 删除维保信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeleteMaintenanceInfo_Click(object sender, EventArgs e)
+        {
+            if (this.currentElevator == null)
+                return;
+
+            var info = this.mainInfoGrid.GetCurrentSelect();
+            if (info == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否删除选择维保信息") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<MaintenanceInfoBusiness>.Instance.Delete(info);
+                    DisplayMaintenanceInfo();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    Logger.Instance.Exception("删除维保信息失败", pe);
+                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
         #endregion //Event
     }
 }

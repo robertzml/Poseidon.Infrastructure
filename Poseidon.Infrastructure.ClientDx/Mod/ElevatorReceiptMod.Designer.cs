@@ -61,6 +61,8 @@
             this.tabManage = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnDeleteMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -137,7 +140,7 @@
             // 
             this.tabPageManager.Controls.Add(this.panelControl1);
             this.tabPageManager.Name = "tabPageManager";
-            this.tabPageManager.Size = new System.Drawing.Size(911, 165);
+            this.tabPageManager.Size = new System.Drawing.Size(911, 185);
             this.tabPageManager.Text = "管理员";
             // 
             // panelControl1
@@ -146,7 +149,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(911, 165);
+            this.panelControl1.Size = new System.Drawing.Size(911, 185);
             this.panelControl1.TabIndex = 0;
             // 
             // layoutControl1
@@ -159,7 +162,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(907, 161);
+            this.layoutControl1.Size = new System.Drawing.Size(907, 181);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -209,7 +212,7 @@
             this.managersGrid.ShowLineNumber = true;
             this.managersGrid.ShowMenu = false;
             this.managersGrid.ShowNavigator = false;
-            this.managersGrid.Size = new System.Drawing.Size(753, 137);
+            this.managersGrid.Size = new System.Drawing.Size(753, 157);
             this.managersGrid.TabIndex = 4;
             // 
             // layoutControlGroup1
@@ -221,7 +224,7 @@
             this.layoutControlGroup5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(907, 161);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(907, 181);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -229,7 +232,7 @@
             this.layoutControlItem1.Control = this.managersGrid;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(757, 141);
+            this.layoutControlItem1.Size = new System.Drawing.Size(757, 161);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -242,7 +245,7 @@
             this.layoutControlGroup5.Location = new System.Drawing.Point(757, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(130, 141);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(130, 161);
             this.layoutControlGroup5.Text = "操作";
             // 
             // layoutControlItem2
@@ -268,7 +271,7 @@
             this.layoutControlItem3.Control = this.btnDeleteManager;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(114, 54);
+            this.layoutControlItem3.Size = new System.Drawing.Size(114, 74);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -276,11 +279,12 @@
             // 
             this.tabPageCompany.Controls.Add(this.layoutControl2);
             this.tabPageCompany.Name = "tabPageCompany";
-            this.tabPageCompany.Size = new System.Drawing.Size(911, 165);
+            this.tabPageCompany.Size = new System.Drawing.Size(911, 185);
             this.tabPageCompany.Text = "维保信息";
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.btnDeleteMaintenanceInfo);
             this.layoutControl2.Controls.Add(this.btnEditMaintenanceInfo);
             this.layoutControl2.Controls.Add(this.btnAddMaintenanceInfo);
             this.layoutControl2.Controls.Add(this.mainCompanyInfo);
@@ -289,34 +293,35 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(911, 165);
+            this.layoutControl2.Size = new System.Drawing.Size(911, 185);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // btnEditMaintenanceInfo
             // 
-            this.btnEditMaintenanceInfo.Location = new System.Drawing.Point(808, 65);
+            this.btnEditMaintenanceInfo.Location = new System.Drawing.Point(802, 65);
             this.btnEditMaintenanceInfo.Name = "btnEditMaintenanceInfo";
-            this.btnEditMaintenanceInfo.Size = new System.Drawing.Size(83, 22);
+            this.btnEditMaintenanceInfo.Size = new System.Drawing.Size(89, 22);
             this.btnEditMaintenanceInfo.StyleController = this.layoutControl2;
             this.btnEditMaintenanceInfo.TabIndex = 7;
-            this.btnEditMaintenanceInfo.Text = "编辑维保记录";
+            this.btnEditMaintenanceInfo.Text = "编辑维保信息";
+            this.btnEditMaintenanceInfo.Click += new System.EventHandler(this.btnEditMaintenanceInfo_Click);
             // 
             // btnAddMaintenanceInfo
             // 
-            this.btnAddMaintenanceInfo.Location = new System.Drawing.Point(808, 39);
+            this.btnAddMaintenanceInfo.Location = new System.Drawing.Point(802, 39);
             this.btnAddMaintenanceInfo.Name = "btnAddMaintenanceInfo";
-            this.btnAddMaintenanceInfo.Size = new System.Drawing.Size(83, 22);
+            this.btnAddMaintenanceInfo.Size = new System.Drawing.Size(89, 22);
             this.btnAddMaintenanceInfo.StyleController = this.layoutControl2;
             this.btnAddMaintenanceInfo.TabIndex = 6;
-            this.btnAddMaintenanceInfo.Text = "添加维保记录";
+            this.btnAddMaintenanceInfo.Text = "添加维保信息";
             this.btnAddMaintenanceInfo.Click += new System.EventHandler(this.btnAddMaintenanceInfo_Click);
             // 
             // mainCompanyInfo
             // 
-            this.mainCompanyInfo.Location = new System.Drawing.Point(476, 39);
+            this.mainCompanyInfo.Location = new System.Drawing.Point(480, 39);
             this.mainCompanyInfo.Name = "mainCompanyInfo";
-            this.mainCompanyInfo.Size = new System.Drawing.Size(312, 106);
+            this.mainCompanyInfo.Size = new System.Drawing.Size(302, 126);
             this.mainCompanyInfo.TabIndex = 5;
             // 
             // mainInfoGrid
@@ -335,7 +340,7 @@
             this.mainInfoGrid.ShowLineNumber = true;
             this.mainInfoGrid.ShowMenu = false;
             this.mainInfoGrid.ShowNavigator = false;
-            this.mainInfoGrid.Size = new System.Drawing.Size(452, 141);
+            this.mainInfoGrid.Size = new System.Drawing.Size(456, 161);
             this.mainInfoGrid.TabIndex = 4;
             this.mainInfoGrid.RowSelected += new System.Action<object, System.EventArgs>(this.mainInfoGrid_RowSelected);
             // 
@@ -349,7 +354,7 @@
             this.layoutControlGroup4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(911, 165);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(911, 185);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem5
@@ -357,7 +362,7 @@
             this.layoutControlItem5.Control = this.mainInfoGrid;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(456, 145);
+            this.layoutControlItem5.Size = new System.Drawing.Size(460, 165);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -365,10 +370,10 @@
             // 
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem6});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(456, 0);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(460, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(332, 145);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(322, 165);
             this.layoutControlGroup3.Text = "维保公司信息";
             // 
             // layoutControlItem6
@@ -376,7 +381,7 @@
             this.layoutControlItem6.Control = this.mainCompanyInfo;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(316, 110);
+            this.layoutControlItem6.Size = new System.Drawing.Size(306, 130);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -384,11 +389,12 @@
             // 
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem7,
-            this.layoutControlItem8});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(788, 0);
+            this.layoutControlItem8,
+            this.layoutControlItem9});
+            this.layoutControlGroup4.Location = new System.Drawing.Point(782, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup4.Size = new System.Drawing.Size(103, 145);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(109, 165);
             this.layoutControlGroup4.Text = "操作";
             // 
             // layoutControlItem7
@@ -396,7 +402,7 @@
             this.layoutControlItem7.Control = this.btnAddMaintenanceInfo;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(87, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(93, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -405,7 +411,7 @@
             this.layoutControlItem8.Control = this.btnEditMaintenanceInfo;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(87, 84);
+            this.layoutControlItem8.Size = new System.Drawing.Size(93, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -430,8 +436,27 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(911, 355);
+            this.xtraTabPage2.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage2.Text = "维修改造";
+            // 
+            // btnDeleteMaintenanceInfo
+            // 
+            this.btnDeleteMaintenanceInfo.Location = new System.Drawing.Point(802, 91);
+            this.btnDeleteMaintenanceInfo.Name = "btnDeleteMaintenanceInfo";
+            this.btnDeleteMaintenanceInfo.Size = new System.Drawing.Size(89, 22);
+            this.btnDeleteMaintenanceInfo.StyleController = this.layoutControl2;
+            this.btnDeleteMaintenanceInfo.TabIndex = 8;
+            this.btnDeleteMaintenanceInfo.Text = "删除维保信息";
+            this.btnDeleteMaintenanceInfo.Click += new System.EventHandler(this.btnDeleteMaintenanceInfo_Click);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnDeleteMaintenanceInfo;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(93, 78);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
             // 
             // ElevatorReceiptMod
             // 
@@ -467,6 +492,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +532,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteMaintenanceInfo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }
