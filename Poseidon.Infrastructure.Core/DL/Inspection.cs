@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Infrastructure.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 设施检验信息类
@@ -36,6 +37,7 @@ namespace Poseidon.Infrastructure.Core.DL
         /// <summary>
         /// 检验类型
         /// </summary>
+        [Dict("Energy.Expense.FeeType")]
         [Display(Name = "检验类型")]
         public int Type { get; set; }
 

@@ -24,7 +24,7 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 当前关联账户
+        /// 当前关联电梯
         /// </summary>
         private Elevator currentElevator;
         #endregion //Field

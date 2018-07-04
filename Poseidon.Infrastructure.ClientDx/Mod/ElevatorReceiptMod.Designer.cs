@@ -64,6 +64,7 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
+            this.inspectionMod1 = new Poseidon.Infrastructure.ClientDx.InspectionMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
+            this.tabPageInspection.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -462,9 +464,18 @@
             // 
             // tabPageInspection
             // 
+            this.tabPageInspection.Controls.Add(this.inspectionMod1);
             this.tabPageInspection.Name = "tabPageInspection";
-            this.tabPageInspection.Size = new System.Drawing.Size(0, 0);
-            this.tabPageInspection.Text = "检验信息";
+            this.tabPageInspection.Size = new System.Drawing.Size(911, 335);
+            this.tabPageInspection.Text = "设施检验";
+            // 
+            // inspectionMod1
+            // 
+            this.inspectionMod1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inspectionMod1.Location = new System.Drawing.Point(0, 0);
+            this.inspectionMod1.Name = "inspectionMod1";
+            this.inspectionMod1.Size = new System.Drawing.Size(911, 335);
+            this.inspectionMod1.TabIndex = 0;
             // 
             // ElevatorReceiptMod
             // 
@@ -501,6 +512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
+            this.tabPageInspection.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -543,5 +555,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDeleteMaintenanceInfo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraTab.XtraTabPage tabPageInspection;
+        private InspectionMod inspectionMod1;
     }
 }
