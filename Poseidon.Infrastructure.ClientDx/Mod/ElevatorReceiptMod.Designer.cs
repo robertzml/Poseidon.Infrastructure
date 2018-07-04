@@ -47,6 +47,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPageCompany = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDeleteMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
             this.mainCompanyInfo = new Poseidon.Infrastructure.ClientDx.MaintenanceCompanyInfo();
@@ -58,11 +59,11 @@
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabManage = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.btnDeleteMaintenanceInfo = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -88,9 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -297,6 +298,16 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // btnDeleteMaintenanceInfo
+            // 
+            this.btnDeleteMaintenanceInfo.Location = new System.Drawing.Point(802, 91);
+            this.btnDeleteMaintenanceInfo.Name = "btnDeleteMaintenanceInfo";
+            this.btnDeleteMaintenanceInfo.Size = new System.Drawing.Size(89, 22);
+            this.btnDeleteMaintenanceInfo.StyleController = this.layoutControl2;
+            this.btnDeleteMaintenanceInfo.TabIndex = 8;
+            this.btnDeleteMaintenanceInfo.Text = "删除维保信息";
+            this.btnDeleteMaintenanceInfo.Click += new System.EventHandler(this.btnDeleteMaintenanceInfo_Click);
+            // 
             // btnEditMaintenanceInfo
             // 
             this.btnEditMaintenanceInfo.Location = new System.Drawing.Point(802, 65);
@@ -415,6 +426,15 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnDeleteMaintenanceInfo;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(93, 78);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
             // tabManage
             // 
             this.tabManage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -425,7 +445,8 @@
             this.tabManage.TabIndex = 1;
             this.tabManage.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.tabPageInspection});
             // 
             // xtraTabPage1
             // 
@@ -439,24 +460,11 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage2.Text = "维修改造";
             // 
-            // btnDeleteMaintenanceInfo
+            // tabPageInspection
             // 
-            this.btnDeleteMaintenanceInfo.Location = new System.Drawing.Point(802, 91);
-            this.btnDeleteMaintenanceInfo.Name = "btnDeleteMaintenanceInfo";
-            this.btnDeleteMaintenanceInfo.Size = new System.Drawing.Size(89, 22);
-            this.btnDeleteMaintenanceInfo.StyleController = this.layoutControl2;
-            this.btnDeleteMaintenanceInfo.TabIndex = 8;
-            this.btnDeleteMaintenanceInfo.Text = "删除维保信息";
-            this.btnDeleteMaintenanceInfo.Click += new System.EventHandler(this.btnDeleteMaintenanceInfo_Click);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnDeleteMaintenanceInfo;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 52);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(93, 78);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.tabPageInspection.Name = "tabPageInspection";
+            this.tabPageInspection.Size = new System.Drawing.Size(0, 0);
+            this.tabPageInspection.Text = "检验信息";
             // 
             // ElevatorReceiptMod
             // 
@@ -490,9 +498,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,5 +542,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
         private DevExpress.XtraEditors.SimpleButton btnDeleteMaintenanceInfo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraTab.XtraTabPage tabPageInspection;
     }
 }

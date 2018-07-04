@@ -96,6 +96,12 @@
     <Compile Include="Component\MaintenanceCompanyInfo.Designer.cs">
       <DependentUpon>MaintenanceCompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inspection\FrmInspectionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspection\FrmInspectionAdd.Designer.cs">
+      <DependentUpon>FrmInspectionAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintenance\FrmMaintenanceInfoEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\MaintenanceInfoGrid.resx">
       <DependentUpon>MaintenanceInfoGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspection\FrmInspectionAdd.resx">
+      <DependentUpon>FrmInspectionAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyAdd.resx">
       <DependentUpon>FrmMaintenanceCompanyAdd.cs</DependentUpon>
