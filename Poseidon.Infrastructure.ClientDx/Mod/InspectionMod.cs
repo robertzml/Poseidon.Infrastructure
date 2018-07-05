@@ -90,6 +90,24 @@ namespace Poseidon.Infrastructure.ClientDx
 
             DisplayInfo();
         }
+        
+        /// <summary>
+        /// 编辑检验信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentFacility == null)
+                return;
+
+            var inspection = this.insGrid.GetCurrentSelect();
+            if (inspection == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmInspectionEdit), new object[] { inspection.Id });
+            DisplayInfo();
+        }
         #endregion //Event
     }
 }

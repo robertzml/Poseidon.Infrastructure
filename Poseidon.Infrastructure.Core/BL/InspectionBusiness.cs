@@ -76,6 +76,23 @@ namespace Poseidon.Infrastructure.Core.BL
             };
             return base.Update(entity);
         }
+
+        /// <summary>
+        /// 返回检验类
+        /// </summary>
+        /// <param name="modelType">模型类型</param>
+        /// <returns></returns>
+        public static Type GetInspectionType(string modelType)
+        {
+            if (modelType == Utility.ModelTypeCode.Elevator)
+            {
+                return typeof(ElevatorInspection);
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion //Method
     }
 }

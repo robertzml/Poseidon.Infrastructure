@@ -37,9 +37,8 @@ namespace Poseidon.Infrastructure.Core.DL
         /// <summary>
         /// 检验类型
         /// </summary>
-        [Dict("Infrastructure.Inspection.Elevator")]
         [Display(Name = "检验类型")]
-        public int Type { get; set; }
+        public virtual int Type { get; set; }
 
         /// <summary>
         /// 计划时间
@@ -76,6 +75,21 @@ namespace Poseidon.Infrastructure.Core.DL
         /// </summary>
         [Display(Name = "是否执行")]
         public bool IsDone { get; set; }
+        #endregion //Property
+    }
+
+    /// <summary>
+    /// 电梯检验类
+    /// </summary>
+    public class ElevatorInspection : Inspection
+    {
+        #region Property
+        /// <summary>
+        /// 检验类型
+        /// </summary>
+        [Dict("Infrastructure.Inspection.Elevator")]
+        [Display(Name = "检验类型")]
+        public override int Type { get; set; }
         #endregion //Property
     }
 }

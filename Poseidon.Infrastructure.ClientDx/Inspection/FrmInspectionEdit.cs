@@ -21,34 +21,41 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.DL;
 
     /// <summary>
-    /// 添加检验记录
+    /// 编辑检验记录
     /// </summary>
-    public partial class FrmInspectionAdd : BaseSingleForm
+    public partial class FrmInspectionEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
         /// 当前关联设施
         /// </summary>
         private Facility currentFacility;
+
+        /// <summary>
+        /// 当前关联检验
+        /// </summary>
+        private Inspection currentInspection;
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// 添加检验记录
+        /// 编辑检验记录
         /// </summary>
-        /// <param name="facilityId">设施ID</param>
-        public FrmInspectionAdd(string facilityId)
+        /// <param name="id">检验ID</param>
+        public FrmInspectionEdit(string id)
         {
             InitializeComponent();
 
-            InitData(facilityId);
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string facilityId)
+        private void InitData(string id)
         {
-            this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(facilityId);
+            this.currentInspection = BusinessFactory<InspectionBusiness>.Instance.FindById(id);
+
+            this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(currentInspection.FacilityId);
         }
 
         protected override void InitForm()
@@ -56,7 +63,19 @@ namespace Poseidon.Infrastructure.ClientDx
             this.txtFacilityName.Text = this.currentFacility.Name;
 
             var type = InspectionBusiness.GetInspectionType(this.currentFacility.ModelType);
-            ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
+            ControlUtil.BindDictToComboBox(this.cmbType, type, "Type", currentInspection.Type);
+
+            this.dpPlanDate.DateTime = this.currentInspection.PlanDate;
+
+            if (this.currentInspection.InspectionDate != null)
+                this.dpInspectionDate.DateTime = this.currentInspection.InspectionDate.Value;
+
+            this.txtInspectionCompany.Text = this.currentInspection.InspectionCompany;
+            this.spInspectionFee.Value = this.currentInspection.InspectionFee;
+            this.chkIsDone.Checked = this.currentInspection.IsDone;
+            this.txtInspectionResult.Text = this.currentInspection.InspectionResult;
+            this.txtRemark.Text = this.currentInspection.Remark;
+
             base.InitForm();
         }
 
@@ -88,9 +107,6 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="entity"></param>
         private void SetEntity(Inspection entity)
         {
-            entity.FacilityId = this.currentFacility.Id;
-            entity.FacilityName = this.currentFacility.Name;
-            entity.ModelType = this.currentFacility.ModelType;
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
             entity.PlanDate = this.dpPlanDate.DateTime;
 
@@ -103,7 +119,7 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.InspectionCompany = this.txtInspectionCompany.Text;
             entity.InspectionResult = this.txtInspectionResult.Text;
             entity.IsDone = this.chkIsDone.Checked;
-            
+
             entity.Remark = this.txtRemark.Text;
         }
         #endregion //Function
@@ -125,17 +141,17 @@ namespace Poseidon.Infrastructure.ClientDx
 
             try
             {
-                Inspection entity = new Inspection();
-                SetEntity(entity);
+                var inspection = BusinessFactory<InspectionBusiness>.Instance.FindById(this.currentInspection.Id);
+                SetEntity(inspection);
 
-                BusinessFactory<InspectionBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<InspectionBusiness>.Instance.Update(inspection, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
             }
             catch (PoseidonException pe)
             {
-                Logger.Instance.Exception("新增检验信息失败", pe);
+                Logger.Instance.Exception("编辑检验信息失败", pe);
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
         }
