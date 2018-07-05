@@ -46,7 +46,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.navFrame.SelectedPageIndex = 1;
             var id = this.elevatorTree.GetCurrentSelectId();
 
-            //this.elevatorReceiptMod.SetElevator(id);
+            this.elevatorOverviewMod.SetElevator(id);
         }
 
         /// <summary>

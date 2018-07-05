@@ -33,14 +33,16 @@
             this.elevatorTree = new Poseidon.Winform.Core.GroupChildrenTree();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
+            this.elevatorOverviewMod = new Poseidon.Infrastructure.ClientDx.ElevatorOverviewMod();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -91,7 +93,7 @@
             this.navigationPage1,
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage1;
-            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.SelectedPageIndex = 1;
             this.navFrame.Size = new System.Drawing.Size(646, 564);
             this.navFrame.TabIndex = 1;
             this.navFrame.Text = "navigationFrame1";
@@ -103,6 +105,12 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(646, 564);
             // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Controls.Add(this.elevatorOverviewMod);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(646, 564);
+            // 
             // elevatorGroupMod
             // 
             this.elevatorGroupMod.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,10 +119,13 @@
             this.elevatorGroupMod.Size = new System.Drawing.Size(646, 564);
             this.elevatorGroupMod.TabIndex = 0;
             // 
-            // navigationPage2
+            // elevatorOverviewMod
             // 
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(646, 564);
+            this.elevatorOverviewMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorOverviewMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorOverviewMod.Name = "elevatorOverviewMod";
+            this.elevatorOverviewMod.Size = new System.Drawing.Size(646, 564);
+            this.elevatorOverviewMod.TabIndex = 0;
             // 
             // FrmElevatorOverview
             // 
@@ -130,6 +141,7 @@
             this.groupControl1.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -143,5 +155,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private ElevatorGroupMod elevatorGroupMod;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private ElevatorOverviewMod elevatorOverviewMod;
     }
 }

@@ -41,9 +41,11 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType)).BeginInit();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -52,6 +54,8 @@
             // 
             // dgcEntity
             // 
+            this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmbType});
             this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
@@ -89,28 +93,30 @@
             this.colFacilityName.FieldName = "FacilityName";
             this.colFacilityName.Name = "colFacilityName";
             this.colFacilityName.Visible = true;
-            this.colFacilityName.VisibleIndex = 1;
+            this.colFacilityName.VisibleIndex = 0;
             // 
             // colModelType
             // 
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
             this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 2;
+            this.colModelType.VisibleIndex = 1;
             // 
             // colType
             // 
+            this.colType.Caption = "检验类型";
+            this.colType.ColumnEdit = this.cmbType;
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 3;
+            this.colType.VisibleIndex = 2;
             // 
             // colPlanDate
             // 
             this.colPlanDate.FieldName = "PlanDate";
             this.colPlanDate.Name = "colPlanDate";
             this.colPlanDate.Visible = true;
-            this.colPlanDate.VisibleIndex = 4;
+            this.colPlanDate.VisibleIndex = 3;
             // 
             // colInspectionDate
             // 
@@ -145,14 +151,14 @@
             this.colIsDone.FieldName = "IsDone";
             this.colIsDone.Name = "colIsDone";
             this.colIsDone.Visible = true;
-            this.colIsDone.VisibleIndex = 9;
+            this.colIsDone.VisibleIndex = 4;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 12;
+            this.colRemark.VisibleIndex = 9;
             // 
             // colStatus
             // 
@@ -164,6 +170,13 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
+            // cmbType
+            // 
+            this.cmbType.AutoHeight = false;
+            this.cmbType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbType.Name = "cmbType";
+            // 
             // InspectionGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -172,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,5 +205,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbType;
     }
 }

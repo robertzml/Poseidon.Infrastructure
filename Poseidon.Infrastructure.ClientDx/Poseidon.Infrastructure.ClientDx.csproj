@@ -78,6 +78,12 @@
     <Compile Include="Component\ElevatorInfoView.Designer.cs">
       <DependentUpon>ElevatorInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ElevatorOverviewMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ElevatorOverviewMod.Designer.cs">
+      <DependentUpon>ElevatorOverviewMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Elevator\FrmElevatorManagerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\ElevatorGrid.resx">
       <DependentUpon>ElevatorGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ElevatorOverviewMod.resx">
+      <DependentUpon>ElevatorOverviewMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElevatorReceiptMod.resx">
       <DependentUpon>ElevatorReceiptMod.cs</DependentUpon>

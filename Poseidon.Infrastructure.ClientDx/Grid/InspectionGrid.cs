@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace Poseidon.Infrastructure.ClientDx
 {
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
+    using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
 
     /// <summary>
@@ -24,5 +26,16 @@ namespace Poseidon.Infrastructure.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 初始化控件
+        /// </summary>
+        public void Init(string modelType)
+        {
+            var type = InspectionBusiness.GetInspectionType(modelType);
+            ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
+        }
+        #endregion //Method
     }
 }

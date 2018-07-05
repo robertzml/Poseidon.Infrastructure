@@ -15,6 +15,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Core.DL;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Infrastructure.Core.Utility;
     using Poseidon.Winform.Base;
 
     /// <summary>
@@ -63,6 +64,8 @@ namespace Poseidon.Infrastructure.ClientDx
         public void SetFacility(string id)
         {
             LoadFacility(id);
+
+            this.insGrid.Init(ModelTypeCode.Elevator);
             DisplayInfo();
         }
 
@@ -90,7 +93,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             DisplayInfo();
         }
-        
+
         /// <summary>
         /// 编辑检验信息
         /// </summary>
