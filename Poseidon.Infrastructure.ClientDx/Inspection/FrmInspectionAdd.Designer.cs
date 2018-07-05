@@ -30,24 +30,24 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtFacilityName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbType = new DevExpress.XtraEditors.ImageComboBoxEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dpPlanDate = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dpInspectionDate = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtInspectionCompany = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spInspectionFee = new DevExpress.XtraEditors.SpinEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtInspectionResult = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.chkIsDone = new DevExpress.XtraEditors.CheckEdit();
+            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
+            this.txtInspectionResult = new DevExpress.XtraEditors.MemoEdit();
+            this.spInspectionFee = new DevExpress.XtraEditors.SpinEdit();
+            this.txtInspectionCompany = new DevExpress.XtraEditors.TextEdit();
+            this.dpInspectionDate = new DevExpress.XtraEditors.DateEdit();
+            this.dpPlanDate = new DevExpress.XtraEditors.DateEdit();
+            this.cmbType = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.txtFacilityName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -57,26 +57,26 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsDone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionResult.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spInspectionFee.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpInspectionDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpInspectionDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spInspectionFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionResult.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsDone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +132,104 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // chkIsDone
+            // 
+            this.chkIsDone.Location = new System.Drawing.Point(12, 108);
+            this.chkIsDone.Name = "chkIsDone";
+            this.chkIsDone.Properties.Caption = "是否执行";
+            this.chkIsDone.Size = new System.Drawing.Size(436, 19);
+            this.chkIsDone.StyleController = this.layoutControl1;
+            this.chkIsDone.TabIndex = 12;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(63, 210);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(385, 87);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 11;
+            // 
+            // txtInspectionResult
+            // 
+            this.txtInspectionResult.Location = new System.Drawing.Point(63, 131);
+            this.txtInspectionResult.Name = "txtInspectionResult";
+            this.txtInspectionResult.Size = new System.Drawing.Size(385, 75);
+            this.txtInspectionResult.StyleController = this.layoutControl1;
+            this.txtInspectionResult.TabIndex = 10;
+            // 
+            // spInspectionFee
+            // 
+            this.spInspectionFee.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spInspectionFee.Location = new System.Drawing.Point(283, 84);
+            this.spInspectionFee.Name = "spInspectionFee";
+            this.spInspectionFee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spInspectionFee.Size = new System.Drawing.Size(165, 20);
+            this.spInspectionFee.StyleController = this.layoutControl1;
+            this.spInspectionFee.TabIndex = 9;
+            // 
+            // txtInspectionCompany
+            // 
+            this.txtInspectionCompany.Location = new System.Drawing.Point(63, 84);
+            this.txtInspectionCompany.Name = "txtInspectionCompany";
+            this.txtInspectionCompany.Size = new System.Drawing.Size(165, 20);
+            this.txtInspectionCompany.StyleController = this.layoutControl1;
+            this.txtInspectionCompany.TabIndex = 8;
+            // 
+            // dpInspectionDate
+            // 
+            this.dpInspectionDate.EditValue = null;
+            this.dpInspectionDate.Location = new System.Drawing.Point(283, 60);
+            this.dpInspectionDate.Name = "dpInspectionDate";
+            this.dpInspectionDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInspectionDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInspectionDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpInspectionDate.Size = new System.Drawing.Size(165, 20);
+            this.dpInspectionDate.StyleController = this.layoutControl1;
+            this.dpInspectionDate.TabIndex = 7;
+            // 
+            // dpPlanDate
+            // 
+            this.dpPlanDate.EditValue = null;
+            this.dpPlanDate.Location = new System.Drawing.Point(63, 60);
+            this.dpPlanDate.Name = "dpPlanDate";
+            this.dpPlanDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.dpPlanDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpPlanDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpPlanDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpPlanDate.Size = new System.Drawing.Size(165, 20);
+            this.dpPlanDate.StyleController = this.layoutControl1;
+            this.dpPlanDate.TabIndex = 6;
+            // 
+            // cmbType
+            // 
+            this.cmbType.Location = new System.Drawing.Point(63, 36);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbType.Size = new System.Drawing.Size(385, 20);
+            this.cmbType.StyleController = this.layoutControl1;
+            this.cmbType.TabIndex = 5;
+            // 
+            // txtFacilityName
+            // 
+            this.txtFacilityName.Location = new System.Drawing.Point(63, 12);
+            this.txtFacilityName.Name = "txtFacilityName";
+            this.txtFacilityName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtFacilityName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtFacilityName.Properties.ReadOnly = true;
+            this.txtFacilityName.Size = new System.Drawing.Size(385, 20);
+            this.txtFacilityName.StyleController = this.layoutControl1;
+            this.txtFacilityName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -151,17 +249,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(460, 309);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtFacilityName
-            // 
-            this.txtFacilityName.Location = new System.Drawing.Point(64, 12);
-            this.txtFacilityName.Name = "txtFacilityName";
-            this.txtFacilityName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtFacilityName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtFacilityName.Properties.ReadOnly = true;
-            this.txtFacilityName.Size = new System.Drawing.Size(384, 20);
-            this.txtFacilityName.StyleController = this.layoutControl1;
-            this.txtFacilityName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtFacilityName;
@@ -170,16 +257,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(440, 24);
             this.layoutControlItem1.Text = "设施名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // cmbType
-            // 
-            this.cmbType.Location = new System.Drawing.Point(64, 36);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbType.Size = new System.Drawing.Size(384, 20);
-            this.cmbType.StyleController = this.layoutControl1;
-            this.cmbType.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -190,21 +267,6 @@
             this.layoutControlItem2.Text = "检验类型";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // dpPlanDate
-            // 
-            this.dpPlanDate.EditValue = null;
-            this.dpPlanDate.Location = new System.Drawing.Point(64, 60);
-            this.dpPlanDate.Name = "dpPlanDate";
-            this.dpPlanDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.dpPlanDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpPlanDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpPlanDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpPlanDate.Size = new System.Drawing.Size(164, 20);
-            this.dpPlanDate.StyleController = this.layoutControl1;
-            this.dpPlanDate.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.dpPlanDate;
@@ -213,20 +275,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(220, 24);
             this.layoutControlItem3.Text = "计划时间";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // dpInspectionDate
-            // 
-            this.dpInspectionDate.EditValue = null;
-            this.dpInspectionDate.Location = new System.Drawing.Point(284, 60);
-            this.dpInspectionDate.Name = "dpInspectionDate";
-            this.dpInspectionDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpInspectionDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpInspectionDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpInspectionDate.Size = new System.Drawing.Size(164, 20);
-            this.dpInspectionDate.StyleController = this.layoutControl1;
-            this.dpInspectionDate.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -237,14 +285,6 @@
             this.layoutControlItem4.Text = "检验时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtInspectionCompany
-            // 
-            this.txtInspectionCompany.Location = new System.Drawing.Point(64, 84);
-            this.txtInspectionCompany.Name = "txtInspectionCompany";
-            this.txtInspectionCompany.Size = new System.Drawing.Size(164, 20);
-            this.txtInspectionCompany.StyleController = this.layoutControl1;
-            this.txtInspectionCompany.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtInspectionCompany;
@@ -253,21 +293,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(220, 24);
             this.layoutControlItem5.Text = "检验单位";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // spInspectionFee
-            // 
-            this.spInspectionFee.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spInspectionFee.Location = new System.Drawing.Point(284, 84);
-            this.spInspectionFee.Name = "spInspectionFee";
-            this.spInspectionFee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spInspectionFee.Size = new System.Drawing.Size(164, 20);
-            this.spInspectionFee.StyleController = this.layoutControl1;
-            this.spInspectionFee.TabIndex = 9;
             // 
             // layoutControlItem6
             // 
@@ -278,14 +303,6 @@
             this.layoutControlItem6.Text = "检验费用";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtInspectionResult
-            // 
-            this.txtInspectionResult.Location = new System.Drawing.Point(64, 131);
-            this.txtInspectionResult.Name = "txtInspectionResult";
-            this.txtInspectionResult.Size = new System.Drawing.Size(384, 75);
-            this.txtInspectionResult.StyleController = this.layoutControl1;
-            this.txtInspectionResult.TabIndex = 10;
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtInspectionResult;
@@ -295,14 +312,6 @@
             this.layoutControlItem7.Text = "检验结果";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(64, 210);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(384, 87);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 11;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtRemark;
@@ -311,15 +320,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(440, 91);
             this.layoutControlItem8.Text = "备注";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // chkIsDone
-            // 
-            this.chkIsDone.Location = new System.Drawing.Point(12, 108);
-            this.chkIsDone.Name = "chkIsDone";
-            this.chkIsDone.Properties.Caption = "是否执行";
-            this.chkIsDone.Size = new System.Drawing.Size(436, 19);
-            this.chkIsDone.StyleController = this.layoutControl1;
-            this.chkIsDone.TabIndex = 12;
             // 
             // layoutControlItem9
             // 
@@ -347,26 +347,26 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIsDone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionResult.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spInspectionFee.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpInspectionDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpInspectionDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpPlanDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spInspectionFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInspectionResult.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsDone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 

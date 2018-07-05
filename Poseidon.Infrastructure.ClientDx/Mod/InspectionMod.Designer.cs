@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.insGrid = new Poseidon.Infrastructure.ClientDx.InspectionGrid();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.inspectionGrid1 = new Poseidon.Infrastructure.ClientDx.InspectionGrid();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -57,20 +57,40 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 117F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 539);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 629);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.inspectionGrid1);
+            this.groupControl1.Controls.Add(this.insGrid);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 103);
+            this.groupControl1.Location = new System.Drawing.Point(3, 120);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(895, 433);
+            this.groupControl1.Size = new System.Drawing.Size(1045, 506);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "检验信息";
+            // 
+            // insGrid
+            // 
+            this.insGrid.AllowFilter = true;
+            this.insGrid.AllowGroup = true;
+            this.insGrid.AllowSort = true;
+            this.insGrid.DataSource = null;
+            this.insGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.insGrid.Editable = false;
+            this.insGrid.EnableMasterView = false;
+            this.insGrid.EnableMultiSelect = true;
+            this.insGrid.Location = new System.Drawing.Point(2, 21);
+            this.insGrid.Name = "insGrid";
+            this.insGrid.ShowAddMenu = false;
+            this.insGrid.ShowFooter = false;
+            this.insGrid.ShowLineNumber = true;
+            this.insGrid.ShowMenu = false;
+            this.insGrid.ShowNavigator = false;
+            this.insGrid.Size = new System.Drawing.Size(1041, 483);
+            this.insGrid.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -78,29 +98,9 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(895, 94);
+            this.groupControl2.Size = new System.Drawing.Size(1045, 111);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
-            // 
-            // inspectionGrid1
-            // 
-            this.inspectionGrid1.AllowFilter = true;
-            this.inspectionGrid1.AllowGroup = true;
-            this.inspectionGrid1.AllowSort = true;
-            this.inspectionGrid1.DataSource = null;
-            this.inspectionGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inspectionGrid1.Editable = false;
-            this.inspectionGrid1.EnableMasterView = false;
-            this.inspectionGrid1.EnableMultiSelect = false;
-            this.inspectionGrid1.Location = new System.Drawing.Point(2, 21);
-            this.inspectionGrid1.Name = "inspectionGrid1";
-            this.inspectionGrid1.ShowAddMenu = false;
-            this.inspectionGrid1.ShowFooter = false;
-            this.inspectionGrid1.ShowLineNumber = true;
-            this.inspectionGrid1.ShowMenu = false;
-            this.inspectionGrid1.ShowNavigator = false;
-            this.inspectionGrid1.Size = new System.Drawing.Size(891, 410);
-            this.inspectionGrid1.TabIndex = 0;
             // 
             // layoutControl1
             // 
@@ -109,9 +109,19 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(891, 71);
+            this.layoutControl1.Size = new System.Drawing.Size(1041, 88);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(1017, 22);
+            this.btnAdd.StyleController = this.layoutControl1;
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "添加检验信息";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // layoutControlGroup1
             // 
@@ -121,35 +131,25 @@
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(891, 71);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1041, 88);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(867, 22);
-            this.btnAdd.StyleController = this.layoutControl1;
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "添加检验信息";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(871, 51);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1021, 68);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // InspectionMod
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InspectionMod";
-            this.Size = new System.Drawing.Size(901, 539);
+            this.Size = new System.Drawing.Size(1051, 629);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -167,7 +167,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private InspectionGrid inspectionGrid1;
+        private InspectionGrid insGrid;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnAdd;

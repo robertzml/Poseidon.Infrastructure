@@ -75,6 +75,8 @@ namespace Poseidon.Infrastructure.ClientDx
 
             DisplayInfo();
             DisplayMaintenanceInfo();
+
+            insMod.SetFacility(id);
         }
 
         /// <summary>
@@ -85,6 +87,8 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorInfoView.Clear();
             this.managersGrid.Clear();
             this.mainInfoGrid.Clear();
+
+            this.insMod.Clear();
         }
         #endregion //Method
 

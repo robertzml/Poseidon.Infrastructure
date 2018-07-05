@@ -12,18 +12,70 @@ namespace Poseidon.Infrastructure.Core.BL
     using Poseidon.Infrastructure.Core.IDAL;
 
     /// <summary>
-    /// 设施检修业务类
+    /// 设施检验业务类
     /// </summary>
     public class InspectionBusiness : AbstractBusiness<Inspection>, IBaseBL<Inspection>
     {
         #region Constructor
         /// <summary>
-        /// 设施检修业务类
+        /// 设施检验业务类
         /// </summary>
         public InspectionBusiness()
         {
             this.baseDal = RepositoryFactory<IInspectionRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 按设施查找检验信息
+        /// </summary>
+        /// <param name="facilityId">设施ID</param>
+        /// <returns></returns>
+        public IEnumerable<Inspection> FindByFacility(string facilityId)
+        {
+            return this.baseDal.FindListByField("facilityId", facilityId);
+        }
+
+        /// <summary>
+        /// 添加检验信息
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        public void Create(Inspection entity, LoginUser user)
+        {
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            entity.Status = 0;
+            base.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑检验信息
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        public bool Update(Inspection entity, LoginUser user)
+        {
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            return base.Update(entity);
+        }
+        #endregion //Method
     }
 }

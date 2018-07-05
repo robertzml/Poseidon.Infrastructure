@@ -37,7 +37,7 @@ namespace Poseidon.Infrastructure.Core.DL
         /// <summary>
         /// 检验类型
         /// </summary>
-        [Dict("Energy.Expense.FeeType")]
+        [Dict("Infrastructure.Inspection.Elevator")]
         [Display(Name = "检验类型")]
         public int Type { get; set; }
 

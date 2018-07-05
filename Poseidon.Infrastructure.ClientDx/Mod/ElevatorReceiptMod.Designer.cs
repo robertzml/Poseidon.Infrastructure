@@ -64,7 +64,7 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
-            this.inspectionMod1 = new Poseidon.Infrastructure.ClientDx.InspectionMod();
+            this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -464,18 +464,18 @@
             // 
             // tabPageInspection
             // 
-            this.tabPageInspection.Controls.Add(this.inspectionMod1);
+            this.tabPageInspection.Controls.Add(this.insMod);
             this.tabPageInspection.Name = "tabPageInspection";
             this.tabPageInspection.Size = new System.Drawing.Size(911, 335);
             this.tabPageInspection.Text = "设施检验";
             // 
-            // inspectionMod1
+            // insMod
             // 
-            this.inspectionMod1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inspectionMod1.Location = new System.Drawing.Point(0, 0);
-            this.inspectionMod1.Name = "inspectionMod1";
-            this.inspectionMod1.Size = new System.Drawing.Size(911, 335);
-            this.inspectionMod1.TabIndex = 0;
+            this.insMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.insMod.Location = new System.Drawing.Point(0, 0);
+            this.insMod.Name = "insMod";
+            this.insMod.Size = new System.Drawing.Size(911, 335);
+            this.insMod.TabIndex = 0;
             // 
             // ElevatorReceiptMod
             // 
@@ -555,6 +555,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDeleteMaintenanceInfo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraTab.XtraTabPage tabPageInspection;
-        private InspectionMod inspectionMod1;
+        private InspectionMod insMod;
     }
 }

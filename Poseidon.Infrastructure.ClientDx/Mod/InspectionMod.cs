@@ -13,6 +13,9 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
+    using Poseidon.Infrastructure.Core.BL;
+    using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Winform.Base;
 
     /// <summary>
     /// 设施检验模块
@@ -42,6 +45,14 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(id);
         }
+
+        /// <summary>
+        /// 显示数据
+        /// </summary>
+        private void DisplayInfo()
+        {
+            this.insGrid.DataSource = BusinessFactory<InspectionBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
+        }
         #endregion //Function
 
         #region Method
@@ -52,6 +63,15 @@ namespace Poseidon.Infrastructure.ClientDx
         public void SetFacility(string id)
         {
             LoadFacility(id);
+            DisplayInfo();
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.insGrid.Clear();
         }
         #endregion //Method
 
@@ -63,7 +83,12 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (this.currentFacility == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmInspectionAdd), new object[] { this.currentFacility.Id });
+
+            DisplayInfo();
         }
         #endregion //Event
     }

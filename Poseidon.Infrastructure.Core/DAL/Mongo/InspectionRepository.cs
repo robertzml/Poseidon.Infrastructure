@@ -28,7 +28,6 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         }
         #endregion //Constructor
 
-
         #region Function
         /// <summary>
         /// BsonDocument转实体对象

@@ -16,6 +16,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
 
@@ -29,11 +30,6 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 当前关联设施
         /// </summary>
         private Facility currentFacility;
-
-        /// <summary>
-        /// 设施类型
-        /// </summary>
-        private string modelType;
         #endregion //Field
 
         #region Constructor
@@ -42,25 +38,73 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         /// <param name="facilityId">设施ID</param>
         /// <param name="modelType">设施类型</param>
-        public FrmInspectionAdd(string facilityId, string modelType)
+        public FrmInspectionAdd(string facilityId)
         {
             InitializeComponent();
 
-            InitData(facilityId, modelType);
+            InitData(facilityId);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string facilityId, string modelType)
+        private void InitData(string facilityId)
         {
             this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(facilityId);
-            this.modelType = modelType;
         }
 
         protected override void InitForm()
         {
             this.txtFacilityName.Text = this.currentFacility.Name;
+
+            ControlUtil.BindDictToComboBox(this.cmbType, typeof(Inspection), "Type");
             base.InitForm();
+        }
+
+        /// <summary>
+        /// 输入检查
+        /// </summary>
+        /// <returns></returns>
+        private Tuple<bool, string> CheckInput()
+        {
+            string errorMessage = "";
+
+            if (this.cmbType.EditValue == null)
+            {
+                errorMessage = "请选择检验类型";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.dpPlanDate.EditValue == null)
+            {
+                errorMessage = "请选择计划日期";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetEntity(Inspection entity)
+        {
+            entity.FacilityId = this.currentFacility.Id;
+            entity.FacilityName = this.currentFacility.Name;
+            entity.ModelType = this.currentFacility.ModelType;
+            entity.Type = Convert.ToInt32(this.cmbType.EditValue);
+            entity.PlanDate = this.dpPlanDate.DateTime;
+
+            if (this.dpInspectionDate.EditValue != null)
+            {
+                entity.InspectionDate = this.dpInspectionDate.DateTime;
+            }
+
+            entity.InspectionFee = this.spInspectionFee.Value;
+            entity.InspectionCompany = this.txtInspectionCompany.Text;
+            entity.InspectionResult = this.txtInspectionResult.Text;
+            entity.IsDone = this.chkIsDone.Checked;
+            
+            entity.Remark = this.txtRemark.Text;
         }
         #endregion //Function
 
@@ -72,7 +116,28 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
 
+            try
+            {
+                Inspection entity = new Inspection();
+                SetEntity(entity);
+
+                BusinessFactory<InspectionBusiness>.Instance.Create(entity, this.currentUser);
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("新增检验信息失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }
