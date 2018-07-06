@@ -111,6 +111,11 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmInspectionEdit), new object[] { inspection.Id });
             DisplayInfo();
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion //Event
     }
 }

@@ -78,6 +78,18 @@
     <Compile Include="Component\ElevatorInfoView.Designer.cs">
       <DependentUpon>ElevatorInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\InspectionInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\InspectionInfoView.Designer.cs">
+      <DependentUpon>InspectionInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inspection\FrmInspectionPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspection\FrmInspectionPay.Designer.cs">
+      <DependentUpon>FrmInspectionPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ElevatorOverviewMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +276,9 @@
     <EmbeddedResource Include="Component\ElevatorInfoView.resx">
       <DependentUpon>ElevatorInfoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\InspectionInfoView.resx">
+      <DependentUpon>InspectionInfoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\MaintenanceCompanyInfo.resx">
       <DependentUpon>MaintenanceCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inspection\FrmInspectionEdit.resx">
       <DependentUpon>FrmInspectionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspection\FrmInspectionPay.resx">
+      <DependentUpon>FrmInspectionPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyAdd.resx">
       <DependentUpon>FrmMaintenanceCompanyAdd.cs</DependentUpon>
