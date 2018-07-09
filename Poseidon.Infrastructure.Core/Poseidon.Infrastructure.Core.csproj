@@ -51,6 +51,9 @@
     <Reference Include="Poseidon.Data">
       <HintPath>..\..\Assembly\Poseidon.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Finance.Core">
+      <HintPath>..\..\Assembly\Poseidon.Finance.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

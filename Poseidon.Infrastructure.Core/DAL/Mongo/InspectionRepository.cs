@@ -51,6 +51,16 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.InspectionResult = doc["inspectionResult"].ToString();
             entity.IsDone = doc["isDone"].ToBoolean();
 
+            entity.ExpenseIds = new List<string>();
+            if (doc.Contains("expenseIds"))
+            {
+                BsonArray array = doc["expenseIds"].AsBsonArray;
+                foreach (string item in array)
+                {
+                    entity.ExpenseIds.Add(item);
+                }
+            }
+
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
             {
@@ -107,6 +117,17 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
 
             if (entity.InspectionDate != null)
                 doc.Add("inspectionDate", entity.InspectionDate.Value);
+
+            if (entity.ExpenseIds != null && entity.ExpenseIds.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.ExpenseIds)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("expenseIds", array);
+            }
 
             return doc;
         }

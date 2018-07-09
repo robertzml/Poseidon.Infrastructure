@@ -9,11 +9,12 @@ namespace Poseidon.Infrastructure.Core.DL
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.Utility;
+    using Poseidon.Finance.Core.Utility;
 
     /// <summary>
     /// 设施检验信息类
     /// </summary>
-    public class Inspection : BusinessEntity
+    public class Inspection : BusinessEntity, IExpenseEntity
     {
         #region Property
         /// <summary>
@@ -75,6 +76,12 @@ namespace Poseidon.Infrastructure.Core.DL
         /// </summary>
         [Display(Name = "是否执行")]
         public bool IsDone { get; set; }
+
+        /// <summary>
+        /// 用款ID
+        /// </summary>
+        [Display(Name = "用款ID")]
+        public List<string> ExpenseIds { get; set; }
         #endregion //Property
     }
 

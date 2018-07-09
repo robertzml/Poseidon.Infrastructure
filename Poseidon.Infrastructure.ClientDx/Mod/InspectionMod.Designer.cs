@@ -33,12 +33,12 @@
             this.insGrid = new Poseidon.Infrastructure.ClientDx.InspectionGrid();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnPay = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnPay = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -121,6 +121,16 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(777, 12);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(252, 22);
+            this.btnPay.StyleController = this.layoutControl1;
+            this.btnPay.TabIndex = 6;
+            this.btnPay.Text = "付款";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(420, 12);
@@ -171,16 +181,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(357, 68);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // btnPay
-            // 
-            this.btnPay.Location = new System.Drawing.Point(777, 12);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(252, 22);
-            this.btnPay.StyleController = this.layoutControl1;
-            this.btnPay.TabIndex = 6;
-            this.btnPay.Text = "付款";
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // layoutControlItem3
             // 

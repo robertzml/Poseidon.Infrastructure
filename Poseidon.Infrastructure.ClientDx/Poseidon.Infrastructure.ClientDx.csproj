@@ -49,6 +49,13 @@
     <Reference Include="Poseidon.Core">
       <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Finance.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assembly\Poseidon.Finance.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Poseidon.Finance.Utility">
+      <HintPath>..\..\Assembly\Poseidon.Finance.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Winform.Base">
       <HintPath>..\..\Assembly\Poseidon.Winform.Base.dll</HintPath>
     </Reference>

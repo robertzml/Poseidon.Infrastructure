@@ -112,9 +112,21 @@ namespace Poseidon.Infrastructure.ClientDx
             DisplayInfo();
         }
 
+        /// <summary>
+        /// 增加用款信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPay_Click(object sender, EventArgs e)
         {
+            if (this.currentFacility == null)
+                return;
 
+            var inspection = this.insGrid.GetCurrentSelect();
+            if (inspection == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmInspectionPay), new object[] { inspection.Id });
         }
         #endregion //Event
     }

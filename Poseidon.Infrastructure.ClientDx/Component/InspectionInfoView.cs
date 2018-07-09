@@ -10,14 +10,17 @@ using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Common;
+    using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
     /// 检验信息控件
     /// </summary>
-    public partial class InspectionInfoView : DevExpress.XtraEditors.XtraUserControl
+    public partial class InspectionInfoView : BaseExpenseControl
     {
         #region Field
         /// <summary>
@@ -55,11 +58,24 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <summary>
         /// 初始化
         /// </summary>
-        /// <param name="elevator">电梯</param>
+        /// <param name="inspection">检验信息</param>
         public void Init(Inspection inspection)
         {
             this.currentInspection = inspection;
             if (inspection != null)
+                this.Display();
+            else
+                this.Clear();
+        }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="documentId">检验ID</param>
+        public override void Init(string documentId)
+        {
+            this.currentInspection = BusinessFactory<InspectionBusiness>.Instance.FindById(documentId);
+            if (currentInspection != null)
                 this.Display();
             else
                 this.Clear();
