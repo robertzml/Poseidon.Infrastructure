@@ -37,6 +37,19 @@ namespace Poseidon.Infrastructure.ClientDx
 
         #region Event
         /// <summary>
+        /// 电梯分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void elevatorTree_GroupSelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 0;
+            var id = this.elevatorTree.GetCurrentSelectId();
+            
+            this.elevatorGroupMod.Init(id);            
+        }
+
+        /// <summary>
         /// 电梯选择
         /// </summary>
         /// <param name="sender"></param>
@@ -47,20 +60,6 @@ namespace Poseidon.Infrastructure.ClientDx
             var id = this.elevatorTree.GetCurrentSelectId();
 
             this.elevatorOverviewMod.SetElevator(id);
-        }
-
-        /// <summary>
-        /// 电梯分组选择
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void elevatorTree_GroupSelected(object sender, EventArgs e)
-        {
-            this.navFrame.SelectedPageIndex = 0;
-            var id = this.elevatorTree.GetCurrentSelectId();
-
-            this.elevatorGroupMod.Init();
-            //this.groupMod.SetGroup(id);
         }
         #endregion //Event
     }
