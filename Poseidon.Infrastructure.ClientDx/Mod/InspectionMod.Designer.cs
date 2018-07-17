@@ -40,6 +40,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.expenseGrid1 = new Poseidon.Finance.Utility.ExpenseGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -51,6 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,22 +63,24 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 629);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 500);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.insGrid);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 120);
+            this.groupControl1.Location = new System.Drawing.Point(3, 123);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1045, 506);
+            this.groupControl1.Size = new System.Drawing.Size(894, 174);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "检验信息";
             // 
@@ -95,7 +101,7 @@
             this.insGrid.ShowLineNumber = true;
             this.insGrid.ShowMenu = false;
             this.insGrid.ShowNavigator = false;
-            this.insGrid.Size = new System.Drawing.Size(1041, 483);
+            this.insGrid.Size = new System.Drawing.Size(890, 151);
             this.insGrid.TabIndex = 0;
             // 
             // groupControl2
@@ -104,7 +110,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1045, 111);
+            this.groupControl2.Size = new System.Drawing.Size(894, 114);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
             // 
@@ -117,15 +123,15 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1041, 88);
+            this.layoutControl1.Size = new System.Drawing.Size(890, 91);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(777, 12);
+            this.btnPay.Location = new System.Drawing.Point(664, 12);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(252, 22);
+            this.btnPay.Size = new System.Drawing.Size(214, 22);
             this.btnPay.StyleController = this.layoutControl1;
             this.btnPay.TabIndex = 6;
             this.btnPay.Text = "付款";
@@ -133,9 +139,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(420, 12);
+            this.btnEdit.Location = new System.Drawing.Point(360, 12);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(353, 22);
+            this.btnEdit.Size = new System.Drawing.Size(300, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "编辑检验信息";
@@ -145,7 +151,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(12, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(404, 22);
+            this.btnAdd.Size = new System.Drawing.Size(344, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "添加检验信息";
@@ -161,7 +167,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1041, 88);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(890, 91);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -169,27 +175,59 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(408, 68);
+            this.layoutControlItem1.Size = new System.Drawing.Size(348, 71);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnEdit;
-            this.layoutControlItem2.Location = new System.Drawing.Point(408, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(348, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(357, 68);
+            this.layoutControlItem2.Size = new System.Drawing.Size(304, 71);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnPay;
-            this.layoutControlItem3.Location = new System.Drawing.Point(765, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(652, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(256, 68);
+            this.layoutControlItem3.Size = new System.Drawing.Size(218, 71);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.expenseGrid1);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 303);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(894, 194);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "用款信息";
+            // 
+            // expenseGrid1
+            // 
+            this.expenseGrid1.AllowFilter = true;
+            this.expenseGrid1.AllowGroup = true;
+            this.expenseGrid1.AllowSort = true;
+            this.expenseGrid1.DataSource = null;
+            this.expenseGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expenseGrid1.Editable = false;
+            this.expenseGrid1.EnableMasterView = false;
+            this.expenseGrid1.EnableMultiCheckSelect = false;
+            this.expenseGrid1.EnableMultiSelect = false;
+            this.expenseGrid1.Location = new System.Drawing.Point(2, 21);
+            this.expenseGrid1.Name = "expenseGrid1";
+            this.expenseGrid1.ShowAddMenu = false;
+            this.expenseGrid1.ShowAssembly = false;
+            this.expenseGrid1.ShowFooter = false;
+            this.expenseGrid1.ShowLineNumber = true;
+            this.expenseGrid1.ShowMenu = false;
+            this.expenseGrid1.ShowNavigator = false;
+            this.expenseGrid1.Size = new System.Drawing.Size(890, 171);
+            this.expenseGrid1.TabIndex = 0;
             // 
             // InspectionMod
             // 
@@ -197,7 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InspectionMod";
-            this.Size = new System.Drawing.Size(1051, 629);
+            this.Size = new System.Drawing.Size(900, 500);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -209,6 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +267,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton btnPay;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private Finance.Utility.ExpenseGrid expenseGrid1;
     }
 }

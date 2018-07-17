@@ -19,6 +19,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Winform.Core.Utility;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
     /// 检验付款窗体
@@ -63,8 +64,16 @@ namespace Poseidon.Infrastructure.ClientDx
             string collectionName = "infrastructure_inspection";
             string documentId = this.currentInspection.Id;
 
-            this.expenseMod.Init(moduleName, assemblyName, collectionName, documentId, this.currentUser);
-            base.InitForm();
+            //var form = new FrmExpenseAdd();
+            //form.FormBorderStyle = FormBorderStyle.None;
+            //form.TopLevel = false;
+
+            //this.panelControl1.Controls.Clear();
+            //this.panelControl1.Controls.Add(form);
+            //form.Dock = DockStyle.Fill;
+            //form.Show();
+            ////this.expenseMod.Init(moduleName, assemblyName, collectionName, documentId, this.currentUser);
+            //base.InitForm();
         }
         #endregion //Function
 
@@ -76,32 +85,32 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            var input = this.expenseMod.CheckInput();
-            if (!input.Item1)
-            {
-                MessageUtil.ShowError(input.Item2);
-                return;
-            }
+            //var input = this.expenseMod.CheckInput();
+            //if (!input.Item1)
+            //{
+            //    MessageUtil.ShowError(input.Item2);
+            //    return;
+            //}
 
-            try
-            {
-                bool result = this.expenseMod.SaveData();
+            //try
+            //{
+            //    bool result = this.expenseMod.SaveData();
 
-                if (result)
-                {
-                    MessageUtil.ShowInfo("保存成功");
-                    this.Close();
-                }
-                else
-                {
-                    MessageUtil.ShowInfo("保存失败");
-                }
-            }
-            catch (PoseidonException pe)
-            {
-                Logger.Instance.Exception("新增检验用款信息失败", pe);
-                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
-            }
+            //    if (result)
+            //    {
+            //        MessageUtil.ShowInfo("保存成功");
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageUtil.ShowInfo("保存失败");
+            //    }
+            //}
+            //catch (PoseidonException pe)
+            //{
+            //    Logger.Instance.Exception("新增检验用款信息失败", pe);
+            //    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            //}
         }
         #endregion //Event
     }

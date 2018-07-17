@@ -17,6 +17,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
     using Poseidon.Winform.Base;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
     /// 设施检验模块
@@ -126,7 +127,12 @@ namespace Poseidon.Infrastructure.ClientDx
             if (inspection == null)
                 return;
 
-            ChildFormManage.ShowDialogForm(typeof(FrmInspectionPay), new object[] { inspection.Id });
+            string moduleName = typeof(InspectionInfoView).FullName;
+            string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
+            string collectionName = "infrastructure_inspection";
+            string documentId = inspection.Id;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId });
         }
         #endregion //Event
     }

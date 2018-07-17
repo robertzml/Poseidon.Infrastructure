@@ -30,9 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.expenseMod = new Poseidon.Finance.Utility.ExpenseAddModule();
             this.inspectionView = new Poseidon.Infrastructure.ClientDx.InspectionInfoView();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -40,8 +39,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -73,7 +71,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -93,24 +91,6 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "检验信息";
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.expenseMod);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 229);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(518, 220);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "付款信息";
-            // 
-            // expenseMod
-            // 
-            this.expenseMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseMod.Location = new System.Drawing.Point(2, 21);
-            this.expenseMod.Name = "expenseMod";
-            this.expenseMod.Size = new System.Drawing.Size(514, 197);
-            this.expenseMod.TabIndex = 0;
-            // 
             // inspectionView
             // 
             this.inspectionView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,6 +98,14 @@
             this.inspectionView.Name = "inspectionView";
             this.inspectionView.Size = new System.Drawing.Size(514, 197);
             this.inspectionView.TabIndex = 0;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(3, 229);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(518, 220);
+            this.panelControl1.TabIndex = 1;
             // 
             // FrmInspectionPay
             // 
@@ -135,8 +123,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,8 +132,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private InspectionInfoView inspectionView;
-        private Finance.Utility.ExpenseAddModule expenseMod;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
