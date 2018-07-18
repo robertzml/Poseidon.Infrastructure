@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.colFacilityId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFacilityName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colPlanDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInspectionDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInspectionFee = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,11 +43,13 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmbType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuAddExpense = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -111,6 +115,13 @@
             this.colType.Visible = true;
             this.colType.VisibleIndex = 2;
             // 
+            // cmbType
+            // 
+            this.cmbType.AutoHeight = false;
+            this.cmbType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbType.Name = "cmbType";
+            // 
             // colPlanDate
             // 
             this.colPlanDate.FieldName = "PlanDate";
@@ -170,22 +181,33 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // cmbType
+            // contextMenuStrip1
             // 
-            this.cmbType.AutoHeight = false;
-            this.cmbType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbType.Name = "cmbType";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAddExpense});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            // 
+            // menuAddExpense
+            // 
+            this.menuAddExpense.Name = "menuAddExpense";
+            this.menuAddExpense.Size = new System.Drawing.Size(148, 22);
+            this.menuAddExpense.Text = "添加费用记录";
+            this.menuAddExpense.Click += new System.EventHandler(this.menuAddExpense_Click);
             // 
             // InspectionGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "InspectionGrid";
+            this.Load += new System.EventHandler(this.InspectionGrid_Load);
+            this.Controls.SetChildIndex(this.dataNavigator, 0);
+            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -206,5 +228,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbType;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuAddExpense;
     }
 }

@@ -17,6 +17,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
     using Poseidon.Winform.Base;
+    using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Utility;
 
     /// <summary>
@@ -114,7 +115,7 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
-        /// 增加用款信息
+        /// 增加费用记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -133,6 +134,25 @@ namespace Poseidon.Infrastructure.ClientDx
             string documentId = inspection.Id;
 
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId });
+        }
+        
+        /// <summary>
+        /// 选择检验信息
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void insGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var inspection = this.insGrid.GetCurrentSelect();
+            if (inspection == null)
+            {
+                this.expGrid.Clear();
+            }
+            else
+            {
+                var expense = BusinessFactory<ExpenseBusiness>.Instance.FindByDocumentId(inspection.Id);
+                this.expGrid.DataSource = expense.ToList();
+            }
         }
         #endregion //Event
     }

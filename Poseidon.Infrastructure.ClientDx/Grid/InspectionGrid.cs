@@ -14,12 +14,21 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Winform.Core.Utility;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Infrastructure.Core.Utility;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
     /// 设施检验表格控件
     /// </summary>
     public partial class InspectionGrid : WinEntityGrid<Inspection>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示添加费用菜单
+        /// </summary>
+        private bool showAddExpenseMenu = false;
+        #endregion //Field
+
         #region Constructor
         public InspectionGrid()
         {
@@ -37,5 +46,58 @@ namespace Poseidon.Infrastructure.ClientDx
             ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
         }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void InspectionGrid_Load(object sender, EventArgs e)
+        {
+            this.AppendMenu(this.contextMenuStrip1);
+
+            this.menuAddExpense.Visible = this.showAddExpenseMenu;
+        }
+       
+        /// <summary>
+        /// 添加支出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuAddExpense_Click(object sender, EventArgs e)
+        {
+            var inspection = this.GetCurrentSelect();
+
+            if (inspection != null)
+            {
+                string moduleName = typeof(InspectionInfoView).FullName;
+                string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
+                string collectionName = InfrastructureConstant.InspectionCollectionName;
+                string documentId = inspection.Id;
+
+                ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId });
+            }
+        }
+        #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示添加费用菜单
+        /// </summary>
+        [Description("是否显示添加费用菜单"), Category("菜单")]
+        public bool ShowAddExpenseMenu
+        {
+            get
+            {
+                return showAddExpenseMenu;
+            }
+
+            set
+            {
+                showAddExpenseMenu = value;
+            }
+        }
+        #endregion //Property
     }
 }

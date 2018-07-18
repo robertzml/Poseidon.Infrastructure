@@ -21,6 +21,11 @@ namespace Poseidon.Infrastructure.Core.Utility
         /// 电梯分组代码
         /// </summary>
         public static readonly string ElevatorGroupCode = "Elevator";
+
+        /// <summary>
+        /// 检验类集合名称
+        /// </summary>
+        public static readonly string InspectionCollectionName = "infrastructure_inspection";
         #endregion //Field
     }
 }

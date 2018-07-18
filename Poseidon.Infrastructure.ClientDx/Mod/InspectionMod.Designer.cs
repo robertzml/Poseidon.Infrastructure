@@ -41,7 +41,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.expenseGrid1 = new Poseidon.Finance.Utility.ExpenseGrid();
+            this.expGrid = new Poseidon.Finance.Utility.ExpenseGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -96,13 +96,15 @@
             this.insGrid.EnableMultiSelect = true;
             this.insGrid.Location = new System.Drawing.Point(2, 21);
             this.insGrid.Name = "insGrid";
+            this.insGrid.ShowAddExpenseMenu = true;
             this.insGrid.ShowAddMenu = false;
             this.insGrid.ShowFooter = false;
             this.insGrid.ShowLineNumber = true;
-            this.insGrid.ShowMenu = false;
+            this.insGrid.ShowMenu = true;
             this.insGrid.ShowNavigator = false;
             this.insGrid.Size = new System.Drawing.Size(890, 151);
             this.insGrid.TabIndex = 0;
+            this.insGrid.RowSelected += new System.Action<object, System.EventArgs>(this.insGrid_RowSelected);
             // 
             // groupControl2
             // 
@@ -199,35 +201,35 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.expenseGrid1);
+            this.groupControl3.Controls.Add(this.expGrid);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(3, 303);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(894, 194);
             this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "用款信息";
+            this.groupControl3.Text = "费用记录";
             // 
-            // expenseGrid1
+            // expGrid
             // 
-            this.expenseGrid1.AllowFilter = true;
-            this.expenseGrid1.AllowGroup = true;
-            this.expenseGrid1.AllowSort = true;
-            this.expenseGrid1.DataSource = null;
-            this.expenseGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseGrid1.Editable = false;
-            this.expenseGrid1.EnableMasterView = false;
-            this.expenseGrid1.EnableMultiCheckSelect = false;
-            this.expenseGrid1.EnableMultiSelect = false;
-            this.expenseGrid1.Location = new System.Drawing.Point(2, 21);
-            this.expenseGrid1.Name = "expenseGrid1";
-            this.expenseGrid1.ShowAddMenu = false;
-            this.expenseGrid1.ShowAssembly = false;
-            this.expenseGrid1.ShowFooter = false;
-            this.expenseGrid1.ShowLineNumber = true;
-            this.expenseGrid1.ShowMenu = false;
-            this.expenseGrid1.ShowNavigator = false;
-            this.expenseGrid1.Size = new System.Drawing.Size(890, 171);
-            this.expenseGrid1.TabIndex = 0;
+            this.expGrid.AllowFilter = true;
+            this.expGrid.AllowGroup = true;
+            this.expGrid.AllowSort = true;
+            this.expGrid.DataSource = null;
+            this.expGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expGrid.Editable = false;
+            this.expGrid.EnableMasterView = false;
+            this.expGrid.EnableMultiCheckSelect = false;
+            this.expGrid.EnableMultiSelect = false;
+            this.expGrid.Location = new System.Drawing.Point(2, 21);
+            this.expGrid.Name = "expGrid";
+            this.expGrid.ShowAddMenu = false;
+            this.expGrid.ShowAssembly = false;
+            this.expGrid.ShowFooter = true;
+            this.expGrid.ShowLineNumber = true;
+            this.expGrid.ShowMenu = false;
+            this.expGrid.ShowNavigator = false;
+            this.expGrid.Size = new System.Drawing.Size(890, 171);
+            this.expGrid.TabIndex = 0;
             // 
             // InspectionMod
             // 
@@ -268,6 +270,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPay;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private Finance.Utility.ExpenseGrid expenseGrid1;
+        private Finance.Utility.ExpenseGrid expGrid;
     }
 }

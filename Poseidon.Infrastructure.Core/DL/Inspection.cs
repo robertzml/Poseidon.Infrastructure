@@ -78,9 +78,9 @@ namespace Poseidon.Infrastructure.Core.DL
         public bool IsDone { get; set; }
 
         /// <summary>
-        /// 用款ID
+        /// 费用ID
         /// </summary>
-        [Display(Name = "用款ID")]
+        [Display(Name = "费用ID")]
         public List<string> ExpenseIds { get; set; }
         #endregion //Property
     }
