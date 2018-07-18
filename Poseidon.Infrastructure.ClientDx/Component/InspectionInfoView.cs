@@ -24,7 +24,7 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 关联电梯
+        /// 关联检验
         /// </summary>
         private Inspection currentInspection;
         #endregion //Field
@@ -51,6 +51,10 @@ namespace Poseidon.Infrastructure.ClientDx
             this.chkIsDone.Checked = this.currentInspection.IsDone;
             this.txtInspectionResult.Text = this.currentInspection.InspectionResult;
             this.txtRemark.Text = this.currentInspection.Remark;
+            this.txtCreator.Text = this.currentInspection.CreateBy.Name;
+            this.txtCreateTime.Text = this.currentInspection.CreateBy.Time.ToDateTimeString();
+            this.txtEditor.Text = this.currentInspection.UpdateBy.Name;
+            this.txtEditTime.Text = this.currentInspection.UpdateBy.Time.ToDateTimeString();
         }
         #endregion //Function
 
@@ -94,6 +98,10 @@ namespace Poseidon.Infrastructure.ClientDx
             this.txtInspectionFee.Text = "";
             this.chkIsDone.Checked = false;
             this.txtInspectionResult.Text = "";
+            this.txtCreator.Text = "";
+            this.txtCreateTime.Text = "";
+            this.txtEditor.Text = "";
+            this.txtEditTime.Text = "";
             this.txtRemark.Text = "";
         }
         #endregion //Method

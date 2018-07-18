@@ -113,28 +113,6 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmInspectionEdit), new object[] { inspection.Id });
             DisplayInfo();
         }
-
-        /// <summary>
-        /// 增加费用记录
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            if (this.currentFacility == null)
-                return;
-
-            var inspection = this.insGrid.GetCurrentSelect();
-            if (inspection == null)
-                return;
-
-            string moduleName = typeof(InspectionInfoView).FullName;
-            string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
-            string collectionName = "infrastructure_inspection";
-            string documentId = inspection.Id;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId });
-        }
         
         /// <summary>
         /// 选择检验信息
