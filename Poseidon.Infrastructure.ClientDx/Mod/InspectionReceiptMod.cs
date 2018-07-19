@@ -23,7 +23,7 @@ namespace Poseidon.Infrastructure.ClientDx
     /// <summary>
     /// 设施检验模块
     /// </summary>
-    public partial class InspectionMod : DevExpress.XtraEditors.XtraUserControl
+    public partial class InspectionReceiptMod : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -33,7 +33,7 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Field
 
         #region Constructor
-        public InspectionMod()
+        public InspectionReceiptMod()
         {
             InitializeComponent();
         }

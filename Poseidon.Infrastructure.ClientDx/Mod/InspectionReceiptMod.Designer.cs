@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Infrastructure.ClientDx
 {
-    partial class InspectionMod
+    partial class InspectionReceiptMod
     {
         /// <summary> 
         /// 必需的设计器变量。

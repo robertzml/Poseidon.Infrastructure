@@ -16,6 +16,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Finance.Utility;
+    using Poseidon.Core.Utility;
 
     /// <summary>
     /// 检验信息控件
@@ -43,7 +44,6 @@ namespace Poseidon.Infrastructure.ClientDx
         private void Display()
         {
             this.txtFacilityName.Text = this.currentInspection.FacilityName;
-            //this.txtType.Text = 
             this.txtPlanDate.Text = this.currentInspection.PlanDate.ToDateString();
             this.txtInspectionDate.Text = this.currentInspection.InspectionDate.ToDateString();
             this.txtInspectionCompany.Text = this.currentInspection.InspectionCompany;
@@ -55,6 +55,9 @@ namespace Poseidon.Infrastructure.ClientDx
             this.txtCreateTime.Text = this.currentInspection.CreateBy.Time.ToDateTimeString();
             this.txtEditor.Text = this.currentInspection.UpdateBy.Name;
             this.txtEditTime.Text = this.currentInspection.UpdateBy.Time.ToDateTimeString();
+
+            var type = InspectionBusiness.GetInspectionType(this.currentInspection.ModelType);
+            this.txtType.Text = DictUtility.GetDictValue(type, "Type", currentInspection.Type);
         }
         #endregion //Function
 

@@ -91,6 +91,12 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\InspectionOverviewMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\InspectionOverviewMod.Designer.cs">
+      <DependentUpon>InspectionOverviewMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inspection\FrmInspectionPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +139,11 @@
     <Compile Include="Grid\InspectionGrid.Designer.cs">
       <DependentUpon>InspectionGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\InspectionMod.cs">
+    <Compile Include="Mod\InspectionReceiptMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mod\InspectionMod.Designer.cs">
-      <DependentUpon>InspectionMod.cs</DependentUpon>
+    <Compile Include="Mod\InspectionReceiptMod.Designer.cs">
+      <DependentUpon>InspectionReceiptMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Inspection\FrmInspectionAdd.cs">
       <SubType>Form</SubType>
@@ -370,8 +376,11 @@
     <EmbeddedResource Include="Mod\ElevatorReceiptMod.resx">
       <DependentUpon>ElevatorReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\InspectionMod.resx">
-      <DependentUpon>InspectionMod.cs</DependentUpon>
+    <EmbeddedResource Include="Mod\InspectionReceiptMod.resx">
+      <DependentUpon>InspectionReceiptMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\InspectionOverviewMod.resx">
+      <DependentUpon>InspectionOverviewMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview\FrmElevatorOverview.resx">
       <DependentUpon>FrmElevatorOverview.cs</DependentUpon>

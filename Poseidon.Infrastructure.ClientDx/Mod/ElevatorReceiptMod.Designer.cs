@@ -64,7 +64,7 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
-            this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionMod();
+            this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionReceiptMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -555,6 +555,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDeleteMaintenanceInfo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraTab.XtraTabPage tabPageInspection;
-        private InspectionMod insMod;
+        private InspectionReceiptMod insMod;
     }
 }

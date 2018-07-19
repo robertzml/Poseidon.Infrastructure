@@ -66,6 +66,8 @@ namespace Poseidon.Infrastructure.ClientDx
             LoadElevator(id);
 
             DisplayInfo();
+
+            insOvMod.SetFacility(id);
             //DisplayMaintenanceInfo();
 
             //insMod.SetFacility(id);

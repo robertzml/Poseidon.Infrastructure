@@ -27,6 +27,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 是否显示添加费用菜单
         /// </summary>
         private bool showAddExpenseMenu = false;
+
+        /// <summary>
+        /// 是否显示设施类型
+        /// </summary>
+        private bool showModelTypeColumn = false;
         #endregion //Field
 
         #region Constructor
@@ -57,6 +62,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.AppendMenu(this.contextMenuStrip1);
 
+            this.colModelType.Visible = this.showModelTypeColumn;
             this.menuAddExpense.Visible = this.showAddExpenseMenu;
         }
        
@@ -96,6 +102,23 @@ namespace Poseidon.Infrastructure.ClientDx
             set
             {
                 showAddExpenseMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示设施类型
+        /// </summary>
+        [Description("是否显示设施类型"), Category("界面")]
+        public bool ShowModelTypeColumn
+        {
+            get
+            {
+                return showModelTypeColumn;
+            }
+
+            set
+            {
+                showModelTypeColumn = value;
             }
         }
         #endregion //Property

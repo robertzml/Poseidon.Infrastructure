@@ -15,7 +15,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
-    /// 电梯总览
+    /// 电梯总览窗体
     /// </summary>
     public partial class FrmElevatorOverview : BaseMdiForm
     {
