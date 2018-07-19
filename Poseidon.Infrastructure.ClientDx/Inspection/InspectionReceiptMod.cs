@@ -21,7 +21,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Finance.Utility;
 
     /// <summary>
-    /// 设施检验模块
+    /// 设施检验管理模块
     /// </summary>
     public partial class InspectionReceiptMod : DevExpress.XtraEditors.XtraUserControl
     {
@@ -113,7 +113,43 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmInspectionEdit), new object[] { inspection.Id });
             DisplayInfo();
         }
-        
+
+        /// <summary>
+        /// 删除检验信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentFacility == null)
+                return;
+
+            var inspection = this.insGrid.GetCurrentSelect();
+            if (inspection == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否删除该检验信息") == DialogResult.Yes)
+            {
+                bool could = BusinessFactory<InspectionBusiness>.Instance.CheckDelete(inspection.Id);
+                if (!could)
+                {
+                    MessageUtil.ShowWarning("该检验包含费用记录，不能删除");
+                    return;
+                }
+
+                var result = BusinessFactory<InspectionBusiness>.Instance.Delete(inspection.Id);
+                if (result)
+                {
+                    MessageUtil.ShowWarning("删除检验信息成功");
+                    DisplayInfo();
+                }
+                else
+                {
+                    MessageUtil.ShowWarning("删除检验信息失败");
+                }
+            }
+        }
+
         /// <summary>
         /// 选择检验信息
         /// </summary>

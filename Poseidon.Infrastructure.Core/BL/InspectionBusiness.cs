@@ -10,11 +10,13 @@ namespace Poseidon.Infrastructure.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.IDAL;
+    using Poseidon.Finance.Core.BL;
+    using Poseidon.Finance.Core.Utility;
 
     /// <summary>
     /// 设施检验业务类
     /// </summary>
-    public class InspectionBusiness : AbstractBusiness<Inspection>, IBaseBL<Inspection>
+    public class InspectionBusiness : AbstractBusiness<Inspection>, IBaseBL<Inspection>, IExpenseBusiness
     {
         #region Constructor
         /// <summary>
@@ -37,6 +39,45 @@ namespace Poseidon.Infrastructure.Core.BL
             return this.baseDal.FindListByField("facilityId", facilityId);
         }
 
+        /// <summary>
+        /// 检查检验信息是否能删除
+        /// </summary>
+        /// <param name="id">检验信息ID</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// 有费用记录的不能删除
+        /// </remarks>
+        public bool CheckDelete(string id)
+        {
+            var entity = this.baseDal.FindById(id);
+
+            if (entity.ExpenseIds.Count > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        #endregion //Method
+
+        #region Override
+        /// <summary>
+        /// 新增费用记录后操作
+        /// </summary>
+        /// <param name="expenseId">新费用ID</param>
+        /// <param name="documentId">检验记录ID</param>
+        public void AfterCreate(string expenseId, string documentId)
+        {
+            var entity = this.baseDal.FindById(documentId);
+            entity.ExpenseIds.Add(expenseId);
+
+            this.baseDal.Update(entity);
+        }
+        #endregion //Override
+
+        #region CRUD
         /// <summary>
         /// 添加检验信息
         /// </summary>
@@ -76,7 +117,9 @@ namespace Poseidon.Infrastructure.Core.BL
             };
             return base.Update(entity);
         }
+        #endregion //CRUD
 
+        #region Static
         /// <summary>
         /// 返回检验类
         /// </summary>
@@ -93,6 +136,6 @@ namespace Poseidon.Infrastructure.Core.BL
                 return null;
             }
         }
-        #endregion //Method
+        #endregion //Static
     }
 }

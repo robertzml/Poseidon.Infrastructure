@@ -91,17 +91,11 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\InspectionOverviewMod.cs">
+    <Compile Include="Inspection\InspectionOverviewMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mod\InspectionOverviewMod.Designer.cs">
+    <Compile Include="Inspection\InspectionOverviewMod.Designer.cs">
       <DependentUpon>InspectionOverviewMod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inspection\FrmInspectionPay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inspection\FrmInspectionPay.Designer.cs">
-      <DependentUpon>FrmInspectionPay.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\ElevatorOverviewMod.cs">
       <SubType>UserControl</SubType>
@@ -139,10 +133,10 @@
     <Compile Include="Grid\InspectionGrid.Designer.cs">
       <DependentUpon>InspectionGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\InspectionReceiptMod.cs">
+    <Compile Include="Inspection\InspectionReceiptMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Mod\InspectionReceiptMod.Designer.cs">
+    <Compile Include="Inspection\InspectionReceiptMod.Designer.cs">
       <DependentUpon>InspectionReceiptMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Inspection\FrmInspectionAdd.cs">
@@ -325,9 +319,6 @@
     <EmbeddedResource Include="Inspection\FrmInspectionEdit.resx">
       <DependentUpon>FrmInspectionEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inspection\FrmInspectionPay.resx">
-      <DependentUpon>FrmInspectionPay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceCompany\FrmMaintenanceCompanyAdd.resx">
       <DependentUpon>FrmMaintenanceCompanyAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,10 +367,10 @@
     <EmbeddedResource Include="Mod\ElevatorReceiptMod.resx">
       <DependentUpon>ElevatorReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\InspectionReceiptMod.resx">
+    <EmbeddedResource Include="Inspection\InspectionReceiptMod.resx">
       <DependentUpon>InspectionReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\InspectionOverviewMod.resx">
+    <EmbeddedResource Include="Inspection\InspectionOverviewMod.resx">
       <DependentUpon>InspectionOverviewMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview\FrmElevatorOverview.resx">
