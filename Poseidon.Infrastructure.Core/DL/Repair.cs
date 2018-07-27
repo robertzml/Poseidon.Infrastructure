@@ -36,9 +36,9 @@ namespace Poseidon.Infrastructure.Core.DL
         public string ModelType { get; set; }
 
         /// <summary>
-        /// 类型
+        /// 维修改造类型
         /// </summary>
-        [Display(Name = "类型")]
+        [Display(Name = "维修改造类型")]
         public virtual int Type { get; set; }
 
         /// <summary>
@@ -48,22 +48,43 @@ namespace Poseidon.Infrastructure.Core.DL
         public string ConstructionCompany { get; set; }
 
         /// <summary>
+        /// 开始日期
+        /// </summary>
+        [Display(Name = "开始日期")]
+        public DateTime StartDate { get; set; }
+
+        /// <summary>
+        /// 结束日期
+        /// </summary>
+        [Display(Name = "结束日期")]
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
         /// 维修改造费用
         /// </summary>
         [Display(Name = "维修改造费用")]
         public decimal RepairFee { get; set; }
 
         /// <summary>
-        /// 是否执行
-        /// </summary>
-        [Display(Name = "是否执行")]
-        public bool IsDone { get; set; }
-
-        /// <summary>
         /// 费用ID
         /// </summary>
         [Display(Name = "费用ID")]
         public List<string> ExpenseIds { get; set; }
+        #endregion //Property
+    }
+
+    /// <summary>
+    /// 电梯维修改造类
+    /// </summary>
+    public class ElevatorRepair : Repair
+    {
+        #region Property
+        /// <summary>
+        /// 维修改造类型
+        /// </summary>
+        [Dict("Infrastructure.Repair.Elevator")]
+        [Display(Name = "维修改造类型")]
+        public override int Type { get; set; }
         #endregion //Property
     }
 }

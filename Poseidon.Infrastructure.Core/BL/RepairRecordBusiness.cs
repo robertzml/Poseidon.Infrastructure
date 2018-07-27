@@ -27,5 +27,23 @@ namespace Poseidon.Infrastructure.Core.BL
             this.baseDal = RepositoryFactory<IRepairRecordRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region CRUD
+        /// <summary>
+        /// 添加一组维修改造记录
+        /// </summary>
+        /// <param name="repair">维修改造对象</param>
+        /// <param name="records">维修改造记录</param>
+        public void CreateMany(Repair repair, List<RepairRecord> records)
+        {
+            foreach (var item in records)
+            {
+                item.RepairId = repair.Id;
+                item.Status = 0;
+
+                base.Create(item);
+            }
+        }
+        #endregion //CRUD
     }
 }

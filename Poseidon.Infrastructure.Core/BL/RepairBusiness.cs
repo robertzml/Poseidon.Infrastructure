@@ -43,6 +43,18 @@ namespace Poseidon.Infrastructure.Core.BL
         }
         #endregion //Override
 
+        #region Method
+        /// <summary>
+        /// 按设施查找维修改造信息
+        /// </summary>
+        /// <param name="facilityId">设施ID</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByFacility(string facilityId)
+        {
+            return this.baseDal.FindListByField("facilityId", facilityId);
+        }
+        #endregion //Method
+
         #region CRUD
         /// <summary>
         /// 添加维修改造
@@ -84,5 +96,24 @@ namespace Poseidon.Infrastructure.Core.BL
             return base.Update(entity);
         }
         #endregion //CRUD
+
+        #region Static
+        /// <summary>
+        /// 返回维修改造类
+        /// </summary>
+        /// <param name="modelType">模型类型</param>
+        /// <returns></returns>
+        public static Type GetRepairType(string modelType)
+        {
+            if (modelType == Utility.ModelTypeCode.Elevator)
+            {
+                return typeof(ElevatorRepair);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        #endregion //Static
     }
 }

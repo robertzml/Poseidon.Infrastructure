@@ -85,7 +85,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <summary>
         /// 设置实体
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">实体对象</param>
         private void SetEntity(Inspection entity)
         {
             entity.FacilityId = this.currentFacility.Id;

@@ -44,7 +44,10 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.Type = doc["type"].ToInt32();
             entity.ConstructionCompany = doc["constructionCompany"].ToString();
             entity.RepairFee = doc["repairFee"].ToDecimal();
-            entity.IsDone = doc["isDone"].ToBoolean();
+            entity.StartDate = doc["startDate"].ToLocalTime();
+
+            if (doc.Contains("endDate"))
+                entity.EndDate = doc["endDate"].ToLocalTime();
 
             entity.ExpenseIds = new List<string>();
             if (doc.Contains("expenseIds"))
@@ -93,7 +96,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "type", entity.Type },
                 { "constructionCompany", entity.ConstructionCompany },
                 { "repairFee", entity.RepairFee },
-                { "isDone", entity.IsDone },
+                { "startDate", entity.StartDate },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -107,6 +110,9 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
+
+            if (entity.EndDate != null)
+                doc.Add("endDate", entity.EndDate.Value);
 
             if (entity.ExpenseIds != null && entity.ExpenseIds.Count > 0)
             {

@@ -65,6 +65,7 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionReceiptMod();
+            this.repairMod = new Poseidon.Infrastructure.ClientDx.RepairReceiptMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -93,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
             this.tabPageInspection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -458,6 +460,7 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.repairMod);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage2.Text = "维修改造";
@@ -476,6 +479,14 @@
             this.insMod.Name = "insMod";
             this.insMod.Size = new System.Drawing.Size(911, 335);
             this.insMod.TabIndex = 0;
+            // 
+            // repairMod
+            // 
+            this.repairMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairMod.Location = new System.Drawing.Point(0, 0);
+            this.repairMod.Name = "repairMod";
+            this.repairMod.Size = new System.Drawing.Size(911, 335);
+            this.repairMod.TabIndex = 0;
             // 
             // ElevatorReceiptMod
             // 
@@ -512,6 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
             this.tabPageInspection.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -556,5 +568,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraTab.XtraTabPage tabPageInspection;
         private InspectionReceiptMod insMod;
+        private RepairReceiptMod repairMod;
     }
 }

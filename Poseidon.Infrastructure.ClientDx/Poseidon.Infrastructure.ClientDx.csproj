@@ -97,6 +97,18 @@
     <Compile Include="Grid\RepairRecordGrid.Designer.cs">
       <DependentUpon>RepairRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\RepairGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\RepairGrid.Designer.cs">
+      <DependentUpon>RepairGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairReceiptMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairReceiptMod.Designer.cs">
+      <DependentUpon>RepairReceiptMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repair\FrmRepairAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +337,9 @@
     <EmbeddedResource Include="Grid\MaintenanceInfoGrid.resx">
       <DependentUpon>MaintenanceInfoGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grid\RepairGrid.resx">
+      <DependentUpon>RepairGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grid\RepairRecordGrid.resx">
       <DependentUpon>RepairRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,6 +409,9 @@
     <EmbeddedResource Include="Repair\FrmRepairAdd.resx">
       <DependentUpon>FrmRepairAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Repair\RepairReceiptMod.resx">
+      <DependentUpon>RepairReceiptMod.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />
@@ -401,6 +419,7 @@
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Inspection.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.MaintenanceCompany.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.MaintenanceInfo.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Repair.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.RepairRecord.datasource" />
     <None Include="Properties\licenses.licx" />
   </ItemGroup>
