@@ -77,6 +77,7 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Clear()
         {
             this.insGrid.Clear();
+            this.expGrid.Clear();
         }
         #endregion //Method
 

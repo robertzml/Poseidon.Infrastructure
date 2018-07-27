@@ -68,7 +68,7 @@ namespace Poseidon.Infrastructure.ClientDx
         }
        
         /// <summary>
-        /// 添加支出
+        /// 添加费用
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

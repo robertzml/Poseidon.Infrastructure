@@ -91,6 +91,12 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repair\FrmRepairEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair\FrmRepairEdit.Designer.cs">
+      <DependentUpon>FrmRepairEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\RepairRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\FrmRepairAdd.resx">
       <DependentUpon>FrmRepairAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair\FrmRepairEdit.resx">
+      <DependentUpon>FrmRepairEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\RepairReceiptMod.resx">
       <DependentUpon>RepairReceiptMod.cs</DependentUpon>

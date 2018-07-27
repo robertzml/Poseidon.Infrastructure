@@ -189,12 +189,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAddExpense});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // menuAddExpense
             // 
             this.menuAddExpense.Name = "menuAddExpense";
-            this.menuAddExpense.Size = new System.Drawing.Size(148, 22);
+            this.menuAddExpense.Size = new System.Drawing.Size(152, 22);
             this.menuAddExpense.Text = "添加费用记录";
             this.menuAddExpense.Click += new System.EventHandler(this.menuAddExpense_Click);
             // 

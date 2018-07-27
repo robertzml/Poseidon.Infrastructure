@@ -30,6 +30,16 @@ namespace Poseidon.Infrastructure.Core.BL
 
         #region CRUD
         /// <summary>
+        /// 根据维修改造查找记录
+        /// </summary>
+        /// <param name="repairId">维修改造ID</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecord> FindByRepair(string repairId)
+        {
+            return this.baseDal.FindListByField("repairId", repairId);
+        }
+
+        /// <summary>
         /// 添加一组维修改造记录
         /// </summary>
         /// <param name="repair">维修改造对象</param>
@@ -41,8 +51,34 @@ namespace Poseidon.Infrastructure.Core.BL
                 item.RepairId = repair.Id;
                 item.Status = 0;
 
-                base.Create(item);
+                this.baseDal.Create(item);
             }
+        }
+
+        /// <summary>
+        /// 更新维修改造记录
+        /// </summary>
+        /// <param name="repair">维修改造对象</param>
+        /// <param name="records">维修改造记录</param>
+        public void Update(Repair repair, List<RepairRecord> records)
+        {
+            this.baseDal.DeleteMany("repairId", repair.Id);
+
+            foreach (var item in records)
+            {
+                item.RepairId = repair.Id;
+                item.Status = 0;
+                this.baseDal.Create(item);
+            }
+        }
+
+        /// <summary>
+        /// 删除维修改造相关记录
+        /// </summary>
+        /// <param name="repairId">维修改造ID</param>
+        public void DeleteByRepair(string repairId)
+        {
+            this.baseDal.DeleteMany("repairId", repairId);
         }
         #endregion //CRUD
     }

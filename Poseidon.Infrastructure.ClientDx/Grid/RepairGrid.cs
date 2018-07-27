@@ -16,6 +16,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
+    using Poseidon.Finance.Utility;
 
     /// <summary>
     /// 维修改造表格控件
@@ -23,6 +24,11 @@ namespace Poseidon.Infrastructure.ClientDx
     public partial class RepairGrid : WinEntityGrid<Repair>
     {
         #region Field
+        /// <summary>
+        /// 是否显示添加费用菜单
+        /// </summary>
+        private bool showAddExpenseMenu = false;
+
         /// <summary>
         /// 是否显示设施类型
         /// </summary>
@@ -55,11 +61,52 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void RepairGrid_Load(object sender, EventArgs e)
         {
+            this.AppendMenu(this.contextMenuStrip1);
+
             this.colModelType.Visible = this.showModelTypeColumn;
+            this.menuAddExpense.Visible = this.showAddExpenseMenu;
+        }
+
+        /// <summary>
+        /// 添加费用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuAddExpense_Click(object sender, EventArgs e)
+        {
+            var repair = this.GetCurrentSelect();
+
+            if (repair != null)
+            {
+                string moduleName = typeof(InspectionInfoView).FullName;
+                string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
+                string collectionName = InfrastructureConstant.RepairCollectionName;
+                string documentId = repair.Id;
+
+                var repairBusiness = BusinessFactory<RepairBusiness>.Instance;
+                ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId, repairBusiness });
+            }
         }
         #endregion //Event
 
         #region Property
+        /// <summary>
+        /// 是否显示添加费用菜单
+        /// </summary>
+        [Description("是否显示添加费用菜单"), Category("菜单")]
+        public bool ShowAddExpenseMenu
+        {
+            get
+            {
+                return showAddExpenseMenu;
+            }
+
+            set
+            {
+                showAddExpenseMenu = value;
+            }
+        }
+
         /// <summary>
         /// 是否显示设施类型
         /// </summary>

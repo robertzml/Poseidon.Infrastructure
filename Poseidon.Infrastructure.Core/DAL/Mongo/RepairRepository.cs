@@ -42,6 +42,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.FacilityName = doc["facilityName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.Type = doc["type"].ToInt32();
+            entity.IsProject = doc["isProject"].ToBoolean();
             entity.ConstructionCompany = doc["constructionCompany"].ToString();
             entity.RepairFee = doc["repairFee"].ToDecimal();
             entity.StartDate = doc["startDate"].ToLocalTime();
@@ -94,6 +95,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "facilityName", entity.FacilityName },
                 { "modelType", entity.ModelType },
                 { "type", entity.Type },
+                { "isProject", entity.IsProject },
                 { "constructionCompany", entity.ConstructionCompany },
                 { "repairFee", entity.RepairFee },
                 { "startDate", entity.StartDate },

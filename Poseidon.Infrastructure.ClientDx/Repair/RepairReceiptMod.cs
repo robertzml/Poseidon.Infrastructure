@@ -77,12 +77,13 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Clear()
         {
             this.repairGrid.Clear();
+            this.recordGrid.Clear();
         }
         #endregion //Method
 
         #region Event
         /// <summary>
-        /// 新增
+        /// 新增维修改造
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -94,6 +95,80 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmRepairAdd), new object[] { this.currentFacility.Id });
 
             DisplayInfo();
+        }
+
+        /// <summary>
+        /// 编辑维修改造
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentFacility == null)
+                return;
+
+            var repair = this.repairGrid.GetCurrentSelect();
+            if (repair == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmRepairEdit), new object[] { repair.Id });
+            DisplayInfo();
+        }
+
+        /// <summary>
+        /// 删除维修改造
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentFacility == null)
+                return;
+
+            var repair = this.repairGrid.GetCurrentSelect();
+            if (repair == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否删除该维修改造信息") == DialogResult.Yes)
+            {
+                bool could = BusinessFactory<RepairBusiness>.Instance.CheckDelete(repair.Id);
+                if (!could)
+                {
+                    MessageUtil.ShowWarning("该维修改造包含费用记录，不能删除");
+                    return;
+                }
+
+                BusinessFactory<RepairRecordBusiness>.Instance.DeleteByRepair(repair.Id);
+                var result = BusinessFactory<RepairBusiness>.Instance.Delete(repair.Id);
+                if (result)
+                {
+                    MessageUtil.ShowWarning("删除维修改造信息成功");
+                    DisplayInfo();
+                }
+                else
+                {
+                    MessageUtil.ShowWarning("删除维修改造信息失败");
+                }
+            }
+        }
+
+        /// <summary>
+        /// 选择项
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void repairGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var repair = this.repairGrid.GetCurrentSelect();
+            if (repair == null)
+            {
+                this.recordGrid.Clear();
+            }
+            else
+            {
+                var records = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(repair.Id);
+                this.recordGrid.DataSource = records.ToList();
+            }
         }
         #endregion //Event
     }

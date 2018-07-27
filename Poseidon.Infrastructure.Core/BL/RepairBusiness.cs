@@ -53,6 +53,28 @@ namespace Poseidon.Infrastructure.Core.BL
         {
             return this.baseDal.FindListByField("facilityId", facilityId);
         }
+
+        /// <summary>
+        /// 检查维修改造信息是否能删除
+        /// </summary>
+        /// <param name="id">维修改造信息ID</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// 有费用记录的不能删除
+        /// </remarks>
+        public bool CheckDelete(string id)
+        {
+            var entity = this.baseDal.FindById(id);
+
+            if (entity.ExpenseIds.Count > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion //Method
 
         #region CRUD
@@ -75,6 +97,7 @@ namespace Poseidon.Infrastructure.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
+            entity.IsProject = false;
             entity.Status = 0;
             base.Create(entity);
         }

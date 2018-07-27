@@ -42,6 +42,12 @@ namespace Poseidon.Infrastructure.Core.DL
         public virtual int Type { get; set; }
 
         /// <summary>
+        /// 是否工程项目
+        /// </summary>
+        [Display(Name = "是否工程项目")]
+        public bool IsProject { get; set; }
+
+        /// <summary>
         /// 施工单位
         /// </summary>
         [Display(Name = "施工单位")]

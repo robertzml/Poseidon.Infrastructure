@@ -26,6 +26,11 @@ namespace Poseidon.Infrastructure.Core.Utility
         /// 检验类集合名称
         /// </summary>
         public static readonly string InspectionCollectionName = "infrastructure_inspection";
+
+        /// <summary>
+        /// 维修改造类集合名称
+        /// </summary>
+        public static readonly string RepairCollectionName = "infrastructure_repair";
         #endregion //Field
     }
 }
