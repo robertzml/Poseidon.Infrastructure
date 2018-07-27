@@ -42,7 +42,8 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.FacilityName = doc["facilityName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.Type = doc["type"].ToInt32();
-            entity.ConstructionCompany = doc["constructionCompany"].ToString();           
+            entity.ConstructionCompany = doc["constructionCompany"].ToString();
+            entity.RepairFee = doc["repairFee"].ToDecimal();
             entity.IsDone = doc["isDone"].ToBoolean();
 
             entity.ExpenseIds = new List<string>();
@@ -91,6 +92,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "modelType", entity.ModelType },
                 { "type", entity.Type },
                 { "constructionCompany", entity.ConstructionCompany },
+                { "repairFee", entity.RepairFee },
                 { "isDone", entity.IsDone },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },

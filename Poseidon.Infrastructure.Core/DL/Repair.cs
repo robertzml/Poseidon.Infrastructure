@@ -45,7 +45,13 @@ namespace Poseidon.Infrastructure.Core.DL
         /// 施工单位
         /// </summary>
         [Display(Name = "施工单位")]
-        public string ConstructionCompany { get; set; }        
+        public string ConstructionCompany { get; set; }
+
+        /// <summary>
+        /// 维修改造费用
+        /// </summary>
+        [Display(Name = "维修改造费用")]
+        public decimal RepairFee { get; set; }
 
         /// <summary>
         /// 是否执行
