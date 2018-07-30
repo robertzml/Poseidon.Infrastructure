@@ -30,16 +30,16 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtContact = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtShortName = new DevExpress.XtraEditors.TextEdit();
+            this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
+            this.txtContact = new DevExpress.XtraEditors.TextEdit();
+            this.txtAddress = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -49,16 +49,16 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +110,46 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtShortName
+            // 
+            this.txtShortName.Location = new System.Drawing.Point(51, 36);
+            this.txtShortName.Name = "txtShortName";
+            this.txtShortName.Size = new System.Drawing.Size(257, 20);
+            this.txtShortName.StyleController = this.layoutControl1;
+            this.txtShortName.TabIndex = 8;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(51, 108);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(257, 89);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 7;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Location = new System.Drawing.Point(51, 84);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(257, 20);
+            this.txtContact.StyleController = this.layoutControl1;
+            this.txtContact.TabIndex = 6;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(51, 60);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(257, 20);
+            this.txtAddress.StyleController = this.layoutControl1;
+            this.txtAddress.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(51, 12);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(257, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -125,14 +165,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(320, 209);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(52, 12);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(256, 20);
-            this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtName;
@@ -141,14 +173,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(52, 60);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(256, 20);
-            this.txtAddress.StyleController = this.layoutControl1;
-            this.txtAddress.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -159,14 +183,6 @@
             this.layoutControlItem2.Text = "地址";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(36, 14);
             // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(52, 84);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(256, 20);
-            this.txtContact.StyleController = this.layoutControl1;
-            this.txtContact.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtContact;
@@ -176,14 +192,6 @@
             this.layoutControlItem3.Text = "联系人";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(36, 14);
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(52, 108);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(256, 89);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 7;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtRemark;
@@ -192,14 +200,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(300, 93);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(36, 14);
-            // 
-            // txtShortName
-            // 
-            this.txtShortName.Location = new System.Drawing.Point(52, 36);
-            this.txtShortName.Name = "txtShortName";
-            this.txtShortName.Size = new System.Drawing.Size(256, 20);
-            this.txtShortName.StyleController = this.layoutControl1;
-            this.txtShortName.TabIndex = 8;
             // 
             // layoutControlItem5
             // 
@@ -227,16 +227,16 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContact.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 

@@ -91,6 +91,18 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Elevator\ElevatorManagerReceiptMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elevator\ElevatorManagerReceiptMod.Designer.cs">
+      <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\MaintenanceInfoReceiptMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maintenance\MaintenanceInfoReceiptMod.Designer.cs">
+      <DependentUpon>MaintenanceInfoReceiptMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repair\FrmRepairEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +331,9 @@
     <EmbeddedResource Include="Component\MaintenanceCompanyInfo.resx">
       <DependentUpon>MaintenanceCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\ElevatorManagerReceiptMod.resx">
+      <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorEdit.resx">
       <DependentUpon>FrmElevatorEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoEdit.resx">
       <DependentUpon>FrmMaintenanceInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\MaintenanceInfoReceiptMod.resx">
+      <DependentUpon>MaintenanceInfoReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmFacilitySelect.resx">
       <DependentUpon>FrmFacilitySelect.cs</DependentUpon>

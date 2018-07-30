@@ -15,11 +15,16 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.DL;
 
+    /// <summary>
+    /// 电梯管理员表格控件
+    /// </summary>
     public partial class ElevatorManagerGrid : WinEntityGrid<ElevatorManager>
     {
+        #region Constructor
         public ElevatorManagerGrid()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
     }
 }

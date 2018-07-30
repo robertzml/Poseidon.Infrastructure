@@ -105,7 +105,7 @@
             // 
             // colMaintenanceFee
             // 
-            this.colMaintenanceFee.Caption = "维保费用";
+            this.colMaintenanceFee.Caption = "维保费用(元)";
             this.colMaintenanceFee.FieldName = "MaintenanceFee";
             this.colMaintenanceFee.Name = "colMaintenanceFee";
             this.colMaintenanceFee.Visible = true;

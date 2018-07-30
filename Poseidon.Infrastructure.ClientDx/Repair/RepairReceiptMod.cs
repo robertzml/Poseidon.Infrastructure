@@ -76,6 +76,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
+            this.currentFacility = null;
             this.repairGrid.Clear();
             this.recordGrid.Clear();
         }

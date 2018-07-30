@@ -52,15 +52,8 @@ namespace Poseidon.Infrastructure.ClientDx
         private void DisplayInfo()
         {
             this.elevatorInfoView.SetElevator(currentElevator);
-            this.managersGrid.DataSource = this.currentElevator.Managers;
-        }
-
-        /// <summary>
-        /// 显示维保信息
-        /// </summary>
-        private void DisplayMaintenanceInfo()
-        {
-            this.mainInfoGrid.DataSource = BusinessFactory<MaintenanceInfoBusiness>.Instance.FindByFacility(this.currentElevator.Id).ToList();
+            this.elevatorManagerMod.SetElevator(currentElevator);
+            this.maintenanceInfoMod.SetElevator(currentElevator);
         }
         #endregion //Function
 
@@ -74,7 +67,6 @@ namespace Poseidon.Infrastructure.ClientDx
             LoadElevator(id);
 
             DisplayInfo();
-            DisplayMaintenanceInfo();
 
             repairMod.SetFacility(id);
             insMod.SetFacility(id);
@@ -86,8 +78,8 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Clear()
         {
             this.elevatorInfoView.Clear();
-            this.managersGrid.Clear();
-            this.mainInfoGrid.Clear();
+            this.elevatorManagerMod.Clear();
+            this.maintenanceInfoMod.Clear();
 
             repairMod.Clear();
             this.insMod.Clear();
@@ -95,156 +87,6 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Method
 
         #region Event
-        /// <summary>
-        /// 添加电梯管理员
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddManager_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmElevatorManagerAdd), new object[] { this.currentElevator.Id });
-
-            LoadElevator(this.currentElevator.Id);
-            DisplayInfo();
-        }
-
-        /// <summary>
-        /// 编辑电梯管理员
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEditManager_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            var manager = this.managersGrid.GetCurrentSelect();
-            if (manager == null)
-                return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmElevatorManagerEdit), new object[] { manager });
-
-            LoadElevator(this.currentElevator.Id);
-            DisplayInfo();
-        }
-
-        /// <summary>
-        /// 删除电梯管理员
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteManager_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            var manager = this.managersGrid.GetCurrentSelect();
-            if (manager == null)
-                return;
-
-            if (MessageUtil.ConfirmYesNo("是否删除选择管理员: " + manager.Name) == DialogResult.Yes)
-            {
-                try
-                {
-                    this.currentElevator.Managers.Remove(manager);
-                    BusinessFactory<ElevatorBusiness>.Instance.SetManagers(this.currentElevator.Id, this.currentElevator.Managers);
-
-                    LoadElevator(this.currentElevator.Id);
-                    DisplayInfo();
-
-                    MessageUtil.ShowInfo("删除成功");
-                }
-                catch (PoseidonException pe)
-                {
-                    Logger.Instance.Exception("删除管理员失败", pe);
-                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
-                }
-            }
-        }
-
-        /// <summary>
-        /// 维保信息选择
-        /// </summary>
-        /// <param name="arg1"></param>
-        /// <param name="arg2"></param>
-        private void mainInfoGrid_RowSelected(object arg1, EventArgs arg2)
-        {
-            var info = this.mainInfoGrid.GetCurrentSelect();
-            if (info == null)
-            {
-                this.mainCompanyInfo.Clear();
-            }
-
-            var company = BusinessFactory<MaintenanceCompanyBusiness>.Instance.FindById(info.MaintenanceCompanyId);
-            this.mainCompanyInfo.SetMaintenanceCompany(company);
-        }
-
-        /// <summary>
-        /// 添加维保信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddMaintenanceInfo_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoAdd), new object[] { this.currentElevator.Id });
-            DisplayMaintenanceInfo();
-        }
-
-        /// <summary>
-        /// 编辑维保信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEditMaintenanceInfo_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            var info = this.mainInfoGrid.GetCurrentSelect();
-            if (info == null)
-                return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoEdit), new object[] { info.Id });
-
-            DisplayMaintenanceInfo();
-        }
-
-        /// <summary>
-        /// 删除维保信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteMaintenanceInfo_Click(object sender, EventArgs e)
-        {
-            if (this.currentElevator == null)
-                return;
-
-            var info = this.mainInfoGrid.GetCurrentSelect();
-            if (info == null)
-                return;
-
-            if (MessageUtil.ConfirmYesNo("是否删除选择维保信息") == DialogResult.Yes)
-            {
-                try
-                {
-                    BusinessFactory<MaintenanceInfoBusiness>.Instance.Delete(info);
-                    DisplayMaintenanceInfo();
-
-                    MessageUtil.ShowInfo("删除成功");
-                }
-                catch (PoseidonException pe)
-                {
-                    Logger.Instance.Exception("删除维保信息失败", pe);
-                    MessageUtil.ShowError(string.Format("删除失败，错误消息:{0}", pe.Message));
-                }
-            }
-        }
         #endregion //Event
     }
 }
