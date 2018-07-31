@@ -78,8 +78,8 @@ namespace Poseidon.Infrastructure.ClientDx
 
             if (repair != null)
             {
-                string moduleName = typeof(InspectionInfoView).FullName;
-                string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
+                string moduleName = typeof(RepairInfoView).FullName;
+                string assemblyName = typeof(RepairInfoView).Assembly.GetName().Name;
                 string collectionName = InfrastructureConstant.RepairCollectionName;
                 string documentId = repair.Id;
 

@@ -79,6 +79,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.currentFacility = null;
             this.repairGrid.Clear();
             this.recordGrid.Clear();
+            this.expenseGrid.Clear();
         }
         #endregion //Method
 
@@ -164,11 +165,15 @@ namespace Poseidon.Infrastructure.ClientDx
             if (repair == null)
             {
                 this.recordGrid.Clear();
+                this.expenseGrid.Clear();
             }
             else
             {
                 var records = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(repair.Id);
                 this.recordGrid.DataSource = records.ToList();
+
+                var expense = BusinessFactory<ExpenseBusiness>.Instance.FindByDocumentId(repair.Id);
+                this.expenseGrid.DataSource = expense.ToList();
             }
         }
         #endregion //Event

@@ -103,6 +103,12 @@
     <Compile Include="Maintenance\MaintenanceInfoReceiptMod.Designer.cs">
       <DependentUpon>MaintenanceInfoReceiptMod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\RepairInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\RepairInfoView.Designer.cs">
+      <DependentUpon>RepairInfoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repair\FrmRepairEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\MaintenanceCompanyInfo.resx">
       <DependentUpon>MaintenanceCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\RepairInfoView.resx">
+      <DependentUpon>RepairInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\ElevatorManagerReceiptMod.resx">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
