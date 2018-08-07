@@ -83,7 +83,7 @@ namespace Poseidon.Infrastructure.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(Inspection entity, LoginUser user)
+        public void Create(Inspection entity, ILoginUser user)
         {
             entity.CreateBy = new UpdateStamp
             {
@@ -107,7 +107,7 @@ namespace Poseidon.Infrastructure.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Inspection entity, LoginUser user)
+        public bool Update(Inspection entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {
