@@ -38,14 +38,14 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             Repair entity = new Repair();
             entity.Id = doc["_id"].ToString();
-            entity.FacilityId = doc["facilityId"].ToString();
-            entity.FacilityName = doc["facilityName"].ToString();
-            entity.ModelType = doc["modelType"].ToString();
+            entity.Name = doc["name"].ToString();
             entity.Type = doc["type"].ToInt32();
-            entity.IsProject = doc["isProject"].ToBoolean();
+            entity.ModelType = doc["modelType"].ToString();
             entity.ConstructionCompany = doc["constructionCompany"].ToString();
             entity.RepairFee = doc["repairFee"].ToDecimal();
             entity.StartDate = doc["startDate"].ToLocalTime();
+            entity.IsProject = doc["isProject"].ToBoolean();
+            entity.ProjectId = doc["projectId"].ToString();
 
             if (doc.Contains("endDate"))
                 entity.EndDate = doc["endDate"].ToLocalTime();
@@ -91,14 +91,14 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
-                { "facilityId", entity.FacilityId },
-                { "facilityName", entity.FacilityName },
-                { "modelType", entity.ModelType },
+                { "name", entity.Name },
                 { "type", entity.Type },
-                { "isProject", entity.IsProject },
+                { "modelType", entity.ModelType },
                 { "constructionCompany", entity.ConstructionCompany },
                 { "repairFee", entity.RepairFee },
                 { "startDate", entity.StartDate },
+                { "isProject", entity.IsProject },
+                { "projectId", entity.ProjectId },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

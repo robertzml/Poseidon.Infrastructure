@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
 {
+    using Poseidon.Base.Framework;
+    using Poseidon.Core.BL;
+    using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.DL;
 
@@ -23,6 +26,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 使用计算总价列
         /// </summary>
         private bool useCalculatePrice = false;
+
+        /// <summary>
+        /// 模型类型代码
+        /// </summary>
+        private string modelType;
         #endregion //Field
 
         #region Constructor
@@ -32,11 +40,54 @@ namespace Poseidon.Infrastructure.ClientDx
         }
         #endregion //Constructor
 
+        #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="modelType">模型类型</param>
+        public void Init(string modelType)
+        {
+            this.modelType = modelType;
+            var facilities = BusinessFactory<FacilityBusiness>.Instance.FindByModelType(modelType);
+
+            this.bsFacility.DataSource = facilities;
+        }
+        #endregion //Method
+
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RepairRecordGrid_Load(object sender, EventArgs e)
         {
             this.colCalculatePrice.Visible = this.useCalculatePrice;
             this.colTotalPrice.Visible = !this.useCalculatePrice;
+        }
+
+        /// <summary>
+        /// 设施选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            int bsIndex = this.dgvEntity.GetDataSourceRowIndex(e.RowHandle);
+            if (bsIndex < 0 || bsIndex >= this.bsEntity.Count)
+                return;
+
+            var record = this.bsEntity[bsIndex] as RepairRecord;
+
+            if (e.Column.FieldName == "FacilityId")
+            {
+                var id = e.Value.ToString();
+
+                var list = this.bsFacility.DataSource as List<Facility>;
+                var fac = list.Find(r => r.Id == id);
+
+                record.FacilityName = fac.Name;
+            }
         }
         #endregion //Event
 
@@ -57,6 +108,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 useCalculatePrice = value;
             }
         }
+
         #endregion //Property
     }
 }

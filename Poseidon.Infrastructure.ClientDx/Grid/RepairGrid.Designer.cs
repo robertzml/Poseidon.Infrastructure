@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.colFacilityId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFacilityName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuAddExpense = new System.Windows.Forms.ToolStripMenuItem();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colConstructionCompany = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRepairFee = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsProject = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProjectId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreateBy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUpdateBy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuAddExpense = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -65,14 +66,15 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colFacilityId,
-            this.colFacilityName,
-            this.colModelType,
+            this.colName,
             this.colType,
+            this.colModelType,
             this.colConstructionCompany,
             this.colStartDate,
             this.colEndDate,
             this.colRepairFee,
+            this.colIsProject,
+            this.colProjectId,
             this.colCreateBy,
             this.colUpdateBy,
             this.colRemark,
@@ -87,107 +89,12 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             // 
-            // colFacilityId
-            // 
-            this.colFacilityId.FieldName = "FacilityId";
-            this.colFacilityId.Name = "colFacilityId";
-            // 
-            // colFacilityName
-            // 
-            this.colFacilityName.Caption = "设施名称";
-            this.colFacilityName.FieldName = "FacilityName";
-            this.colFacilityName.Name = "colFacilityName";
-            this.colFacilityName.Visible = true;
-            this.colFacilityName.VisibleIndex = 0;
-            // 
-            // colModelType
-            // 
-            this.colModelType.Caption = "设施模型类型";
-            this.colModelType.FieldName = "ModelType";
-            this.colModelType.Name = "colModelType";
-            this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 1;
-            // 
-            // colType
-            // 
-            this.colType.Caption = "维修改造类型";
-            this.colType.ColumnEdit = this.cmbType;
-            this.colType.FieldName = "Type";
-            this.colType.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
-            this.colType.Name = "colType";
-            this.colType.Visible = true;
-            this.colType.VisibleIndex = 2;
-            // 
             // cmbType
             // 
             this.cmbType.AutoHeight = false;
             this.cmbType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbType.Name = "cmbType";
-            // 
-            // colConstructionCompany
-            // 
-            this.colConstructionCompany.Caption = "施工单位";
-            this.colConstructionCompany.FieldName = "ConstructionCompany";
-            this.colConstructionCompany.Name = "colConstructionCompany";
-            this.colConstructionCompany.Visible = true;
-            this.colConstructionCompany.VisibleIndex = 3;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.Caption = "开始日期";
-            this.colStartDate.FieldName = "StartDate";
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.Visible = true;
-            this.colStartDate.VisibleIndex = 4;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.Caption = "结束日期";
-            this.colEndDate.FieldName = "EndDate";
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.Visible = true;
-            this.colEndDate.VisibleIndex = 5;
-            // 
-            // colRepairFee
-            // 
-            this.colRepairFee.Caption = "费用(元)";
-            this.colRepairFee.FieldName = "RepairFee";
-            this.colRepairFee.Name = "colRepairFee";
-            this.colRepairFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "RepairFee", "合计={0:0.##}")});
-            this.colRepairFee.Visible = true;
-            this.colRepairFee.VisibleIndex = 6;
-            // 
-            // colCreateBy
-            // 
-            this.colCreateBy.FieldName = "CreateBy";
-            this.colCreateBy.Name = "colCreateBy";
-            // 
-            // colUpdateBy
-            // 
-            this.colUpdateBy.FieldName = "UpdateBy";
-            this.colUpdateBy.Name = "colUpdateBy";
-            // 
-            // colRemark
-            // 
-            this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 8;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
             // 
             // contextMenuStrip1
             // 
@@ -202,6 +109,106 @@
             this.menuAddExpense.Size = new System.Drawing.Size(148, 22);
             this.menuAddExpense.Text = "添加费用记录";
             this.menuAddExpense.Click += new System.EventHandler(this.menuAddExpense_Click);
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colType
+            // 
+            this.colType.Caption = "维修改造类型";
+            this.colType.ColumnEdit = this.cmbType;
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 1;
+            // 
+            // colModelType
+            // 
+            this.colModelType.Caption = "设施模型类型";
+            this.colModelType.FieldName = "ModelType";
+            this.colModelType.Name = "colModelType";
+            // 
+            // colConstructionCompany
+            // 
+            this.colConstructionCompany.Caption = "施工单位";
+            this.colConstructionCompany.FieldName = "ConstructionCompany";
+            this.colConstructionCompany.Name = "colConstructionCompany";
+            this.colConstructionCompany.Visible = true;
+            this.colConstructionCompany.VisibleIndex = 2;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.Caption = "开始日期";
+            this.colStartDate.FieldName = "StartDate";
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.Visible = true;
+            this.colStartDate.VisibleIndex = 3;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.Caption = "结束日期";
+            this.colEndDate.FieldName = "EndDate";
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.Visible = true;
+            this.colEndDate.VisibleIndex = 4;
+            // 
+            // colRepairFee
+            // 
+            this.colRepairFee.Caption = "费用(元)";
+            this.colRepairFee.FieldName = "RepairFee";
+            this.colRepairFee.Name = "colRepairFee";
+            this.colRepairFee.Visible = true;
+            this.colRepairFee.VisibleIndex = 5;
+            // 
+            // colIsProject
+            // 
+            this.colIsProject.Caption = "是否工程项目";
+            this.colIsProject.FieldName = "IsProject";
+            this.colIsProject.Name = "colIsProject";
+            this.colIsProject.Visible = true;
+            this.colIsProject.VisibleIndex = 6;
+            // 
+            // colProjectId
+            // 
+            this.colProjectId.FieldName = "ProjectId";
+            this.colProjectId.Name = "colProjectId";
+            // 
+            // colCreateBy
+            // 
+            this.colCreateBy.FieldName = "CreateBy";
+            this.colCreateBy.Name = "colCreateBy";
+            // 
+            // colUpdateBy
+            // 
+            this.colUpdateBy.FieldName = "UpdateBy";
+            this.colUpdateBy.Name = "colUpdateBy";
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 7;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AppearanceCell.Options.UseTextOptions = true;
+            this.colStatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 8;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
             // 
             // RepairGrid
             // 
@@ -221,22 +228,22 @@
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.Columns.GridColumn colFacilityId;
-        private DevExpress.XtraGrid.Columns.GridColumn colFacilityName;
-        private DevExpress.XtraGrid.Columns.GridColumn colModelType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbType;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuAddExpense;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colType;
+        private DevExpress.XtraGrid.Columns.GridColumn colModelType;
         private DevExpress.XtraGrid.Columns.GridColumn colConstructionCompany;
         private DevExpress.XtraGrid.Columns.GridColumn colStartDate;
         private DevExpress.XtraGrid.Columns.GridColumn colEndDate;
         private DevExpress.XtraGrid.Columns.GridColumn colRepairFee;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsProject;
+        private DevExpress.XtraGrid.Columns.GridColumn colProjectId;
         private DevExpress.XtraGrid.Columns.GridColumn colCreateBy;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdateBy;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox cmbType;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuAddExpense;
     }
 }

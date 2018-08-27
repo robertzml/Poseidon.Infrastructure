@@ -30,6 +30,18 @@ namespace Poseidon.Infrastructure.Core.DL
         public string ModelType { get; set; }
 
         /// <summary>
+        /// 设施ID
+        /// </summary>
+        [Display(Name = "设施ID")]
+        public string FacilityId { get; set; }
+
+        /// <summary>
+        /// 设施名称
+        /// </summary>
+        [Display(Name = "设施名称")]
+        public string FacilityName { get; set; }
+
+        /// <summary>
         /// 项目名称
         /// </summary>
         [Display(Name = "项目名称")]

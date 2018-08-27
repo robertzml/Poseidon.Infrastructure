@@ -27,37 +27,35 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 当前关联设施
+        /// 模型类型代码
         /// </summary>
-        private Facility currentFacility;
+        private string modelType;
         #endregion //Field
 
         #region Constructor
         /// <summary>
         /// 添加维修改造
         /// </summary>
-        /// <param name="facilityId">设施ID</param>
-        public FrmRepairAdd(string facilityId)
+        /// <param name="modelType">模型类型</param>
+        public FrmRepairAdd(string modelType)
         {
             InitializeComponent();
 
-            InitData(facilityId);
+            InitData(modelType);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string facilityId)
+        private void InitData(string modelType)
         {
-            this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(facilityId);
+            this.modelType = modelType;
         }
 
         protected override void InitForm()
         {
-            this.txtFacilityName.Text = this.currentFacility.Name;
+            ControlUtil.BindDictToComboBox(this.cmbType, typeof(Repair), "Type");
 
-            var type = RepairBusiness.GetRepairType(this.currentFacility.ModelType);
-            ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
-
+            this.recordGrid.Init(this.modelType);
             this.recordGrid.DataSource = new List<RepairRecord>();
 
             base.InitForm();
@@ -71,6 +69,11 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             string errorMessage = "";
 
+            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
+                {
+                errorMessage = "请输入名称";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.cmbType.EditValue == null)
             {
                 errorMessage = "请选择维修改造类型";
@@ -100,13 +103,13 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="entity">实体对象</param>
         private void SetEntity(Repair entity)
         {
-            entity.FacilityId = this.currentFacility.Id;
-            entity.FacilityName = this.currentFacility.Name;
-            entity.ModelType = this.currentFacility.ModelType;
+            entity.Name = this.txtName.Text;
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
+            entity.ModelType = this.modelType;
             entity.ConstructionCompany = this.txtConstructionCompany.Text;
             entity.RepairFee = this.spRepairFee.Value;
             entity.StartDate = this.dpStartDate.DateTime;
+            entity.IsProject = this.chkIsProject.Checked;
 
             if (this.dpEndDate.EditValue == null)
                 entity.EndDate = null;
@@ -126,7 +129,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             foreach (var item in records)
             {
-                item.ModelType = this.currentFacility.ModelType;
+                item.ModelType = this.modelType;
                 item.TotalPrice = Math.Round(item.Count * item.UnitPrice, 2);
                 item.Remark = item.Remark ?? "";
             }

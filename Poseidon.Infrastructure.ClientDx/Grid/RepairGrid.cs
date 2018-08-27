@@ -46,10 +46,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <summary>
         /// 初始化控件
         /// </summary>
-        public void Init(string modelType)
+        public void Init()
         {
-            var type = RepairBusiness.GetRepairType(modelType);
-            ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
+            ControlUtil.BindDictToComboBox(this.cmbType, typeof(Repair), "Type");
         }
         #endregion //Method
 

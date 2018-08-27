@@ -40,6 +40,8 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.RepairId = doc["repairId"].ToString();
             entity.ModelType = doc["modelType"].ToString();
+            entity.FacilityId = doc["facilityId"].ToString();
+            entity.FacilityName = doc["facilityName"].ToString();
             entity.ItemName = doc["itemName"].ToString();
             entity.Count = doc["count"].ToDecimal();
             entity.Unit = doc["unit"].ToString();
@@ -62,6 +64,8 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             {
                 { "repairId", entity.RepairId },
                 { "modelType", entity.ModelType },
+                { "facilityId", entity.FacilityId },
+                { "facilityName", entity.FacilityName },
                 { "itemName", entity.ItemName },
                 { "count", entity.Count },
                 { "unit", entity.Unit },

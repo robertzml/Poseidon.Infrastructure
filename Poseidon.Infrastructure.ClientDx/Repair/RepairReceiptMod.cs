@@ -67,7 +67,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             LoadFacility(id);
 
-            this.repairGrid.Init(ModelTypeCode.Elevator);
+            this.repairGrid.Init();
             DisplayInfo();
         }
 

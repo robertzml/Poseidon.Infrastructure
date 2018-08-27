@@ -97,6 +97,12 @@
     <Compile Include="Elevator\ElevatorManagerReceiptMod.Designer.cs">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repair\FrmRepairManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repair\FrmRepairManage.Designer.cs">
+      <DependentUpon>FrmRepairManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintenance\MaintenanceInfoReceiptMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -445,9 +451,13 @@
     <EmbeddedResource Include="Repair\FrmRepairEdit.resx">
       <DependentUpon>FrmRepairEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Repair\FrmRepairManage.resx">
+      <DependentUpon>FrmRepairManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Repair\RepairReceiptMod.resx">
       <DependentUpon>RepairReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Core.DL.Facility.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />

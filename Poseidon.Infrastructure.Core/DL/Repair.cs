@@ -18,34 +18,23 @@ namespace Poseidon.Infrastructure.Core.DL
     {
         #region Property
         /// <summary>
-        /// 设施ID
+        /// 名称
         /// </summary>
-        [Display(Name = "设施ID")]
-        public string FacilityId { get; set; }
-
+        [Display(Name = "名称")]
+        public string Name { get; set; }
+             
         /// <summary>
-        /// 设施名称
+        /// 维修改造类型
         /// </summary>
-        [Display(Name = "设施名称")]
-        public string FacilityName { get; set; }
+        [Dict("Infrastructure.Repair")]
+        [Display(Name = "维修改造类型")]
+        public int Type { get; set; }
 
         /// <summary>
         /// 设施模型类型
         /// </summary>
         [Display(Name = "设施模型类型")]
         public string ModelType { get; set; }
-
-        /// <summary>
-        /// 维修改造类型
-        /// </summary>
-        [Display(Name = "维修改造类型")]
-        public virtual int Type { get; set; }
-
-        /// <summary>
-        /// 是否工程项目
-        /// </summary>
-        [Display(Name = "是否工程项目")]
-        public bool IsProject { get; set; }
 
         /// <summary>
         /// 施工单位
@@ -72,25 +61,22 @@ namespace Poseidon.Infrastructure.Core.DL
         public decimal RepairFee { get; set; }
 
         /// <summary>
+        /// 是否工程项目
+        /// </summary>
+        [Display(Name = "是否工程项目")]
+        public bool IsProject { get; set; }
+
+        /// <summary>
+        /// 工程项目ID
+        /// </summary>
+        [Display(Name = "工程项目ID")]
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// 费用ID
         /// </summary>
         [Display(Name = "费用ID")]
         public List<string> ExpenseIds { get; set; }
-        #endregion //Property
-    }
-
-    /// <summary>
-    /// 电梯维修改造类
-    /// </summary>
-    public class ElevatorRepair : Repair
-    {
-        #region Property
-        /// <summary>
-        /// 维修改造类型
-        /// </summary>
-        [Dict("Infrastructure.Repair.Elevator")]
-        [Display(Name = "维修改造类型")]
-        public override int Type { get; set; }
         #endregion //Property
     }
 }

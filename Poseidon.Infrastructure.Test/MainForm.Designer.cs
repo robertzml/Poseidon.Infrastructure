@@ -32,11 +32,13 @@
             this.menuElevator = new System.Windows.Forms.ToolStripMenuItem();
             this.menuElevatorMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuElevatorList = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuElevatorOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuModel = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaintenanceMan = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuElevatorOverview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRepair = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRepairMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuElevator,
             this.menuSystem,
-            this.menuCompany});
+            this.menuCompany,
+            this.menuRepair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(783, 25);
@@ -75,6 +78,13 @@
             this.menuElevatorList.Size = new System.Drawing.Size(152, 22);
             this.menuElevatorList.Text = "电梯列表";
             this.menuElevatorList.Click += new System.EventHandler(this.menuElevatorList_Click);
+            // 
+            // menuElevatorOverview
+            // 
+            this.menuElevatorOverview.Name = "menuElevatorOverview";
+            this.menuElevatorOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuElevatorOverview.Text = "电梯总览";
+            this.menuElevatorOverview.Click += new System.EventHandler(this.menuElevatorOverview_Click);
             // 
             // menuSystem
             // 
@@ -106,12 +116,20 @@
             this.menuMaintenanceMan.Text = "维保公司";
             this.menuMaintenanceMan.Click += new System.EventHandler(this.menuMaintenanceMan_Click);
             // 
-            // menuElevatorOverview
+            // menuRepair
             // 
-            this.menuElevatorOverview.Name = "menuElevatorOverview";
-            this.menuElevatorOverview.Size = new System.Drawing.Size(152, 22);
-            this.menuElevatorOverview.Text = "电梯总览";
-            this.menuElevatorOverview.Click += new System.EventHandler(this.menuElevatorOverview_Click);
+            this.menuRepair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRepairMan});
+            this.menuRepair.Name = "menuRepair";
+            this.menuRepair.Size = new System.Drawing.Size(68, 21);
+            this.menuRepair.Text = "维修改造";
+            // 
+            // menuRepairMan
+            // 
+            this.menuRepairMan.Name = "menuRepairMan";
+            this.menuRepairMan.Size = new System.Drawing.Size(152, 22);
+            this.menuRepairMan.Text = "维修改造管理";
+            this.menuRepairMan.Click += new System.EventHandler(this.menuRepairMan_Click);
             // 
             // MainForm
             // 
@@ -141,6 +159,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuCompany;
         private System.Windows.Forms.ToolStripMenuItem menuMaintenanceMan;
         private System.Windows.Forms.ToolStripMenuItem menuElevatorOverview;
+        private System.Windows.Forms.ToolStripMenuItem menuRepair;
+        private System.Windows.Forms.ToolStripMenuItem menuRepairMan;
     }
 }
 

@@ -39,10 +39,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -185,26 +185,6 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "维修改造列表";
             // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.recordGrid);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 322);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(457, 213);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "维修改造记录";
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.expenseGrid);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(466, 322);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(458, 213);
-            this.groupControl4.TabIndex = 3;
-            this.groupControl4.Text = "费用记录";
-            // 
             // repairGrid
             // 
             this.repairGrid.AllowFilter = true;
@@ -221,6 +201,7 @@
             this.repairGrid.ShowAddMenu = false;
             this.repairGrid.ShowDeleteMenu = false;
             this.repairGrid.ShowEditMenu = false;
+            this.repairGrid.ShowFindPanel = false;
             this.repairGrid.ShowFooter = true;
             this.repairGrid.ShowLineNumber = true;
             this.repairGrid.ShowMenu = false;
@@ -229,6 +210,16 @@
             this.repairGrid.Size = new System.Drawing.Size(917, 190);
             this.repairGrid.TabIndex = 0;
             this.repairGrid.RowSelected += new System.Action<object, System.EventArgs>(this.repairGrid_RowSelected);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.recordGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 322);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(457, 213);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "维修改造记录";
             // 
             // recordGrid
             // 
@@ -245,6 +236,7 @@
             this.recordGrid.ShowAddMenu = false;
             this.recordGrid.ShowDeleteMenu = false;
             this.recordGrid.ShowEditMenu = false;
+            this.recordGrid.ShowFindPanel = false;
             this.recordGrid.ShowFooter = true;
             this.recordGrid.ShowLineNumber = true;
             this.recordGrid.ShowMenu = false;
@@ -252,6 +244,16 @@
             this.recordGrid.Size = new System.Drawing.Size(453, 190);
             this.recordGrid.TabIndex = 0;
             this.recordGrid.UseCalculatePrice = false;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.expenseGrid);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(466, 322);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(458, 213);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "费用记录";
             // 
             // expenseGrid
             // 
@@ -270,6 +272,7 @@
             this.expenseGrid.ShowAssembly = false;
             this.expenseGrid.ShowDeleteMenu = false;
             this.expenseGrid.ShowEditMenu = false;
+            this.expenseGrid.ShowFindPanel = false;
             this.expenseGrid.ShowFooter = true;
             this.expenseGrid.ShowLineNumber = true;
             this.expenseGrid.ShowMenu = false;
