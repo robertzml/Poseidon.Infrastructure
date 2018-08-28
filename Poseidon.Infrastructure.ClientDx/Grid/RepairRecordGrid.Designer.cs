@@ -92,7 +92,6 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             this.dgvEntity.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dgvEntity_CellValueChanged);
-          
             // 
             // colRepairId
             // 
@@ -112,8 +111,6 @@
             this.colFacilityName.FieldName = "FacilityName";
             this.colFacilityName.Name = "colFacilityName";
             this.colFacilityName.OptionsColumn.AllowEdit = false;
-            this.colFacilityName.Visible = true;
-            this.colFacilityName.VisibleIndex = 1;
             // 
             // repoFacility
             // 
@@ -175,7 +172,7 @@
             this.colItemName.FieldName = "ItemName";
             this.colItemName.Name = "colItemName";
             this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 2;
+            this.colItemName.VisibleIndex = 1;
             // 
             // colCount
             // 
@@ -183,7 +180,7 @@
             this.colCount.FieldName = "Count";
             this.colCount.Name = "colCount";
             this.colCount.Visible = true;
-            this.colCount.VisibleIndex = 3;
+            this.colCount.VisibleIndex = 2;
             // 
             // colUnit
             // 
@@ -191,7 +188,7 @@
             this.colUnit.FieldName = "Unit";
             this.colUnit.Name = "colUnit";
             this.colUnit.Visible = true;
-            this.colUnit.VisibleIndex = 4;
+            this.colUnit.VisibleIndex = 3;
             // 
             // colUnitPrice
             // 
@@ -199,15 +196,17 @@
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 5;
+            this.colUnitPrice.VisibleIndex = 4;
             // 
             // colTotalPrice
             // 
             this.colTotalPrice.Caption = "总价(元)";
             this.colTotalPrice.FieldName = "TotalPrice";
             this.colTotalPrice.Name = "colTotalPrice";
+            this.colTotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPrice", "合计={0:0.##}")});
             this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 7;
+            this.colTotalPrice.VisibleIndex = 6;
             // 
             // colRemark
             // 
@@ -215,7 +214,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
+            this.colRemark.VisibleIndex = 7;
             // 
             // colStatus
             // 
@@ -229,18 +228,20 @@
             // 
             // colCalculatePrice
             // 
-            this.colCalculatePrice.Caption = "计算总价";
+            this.colCalculatePrice.Caption = "计算总价(元)";
             this.colCalculatePrice.FieldName = "colCalculatePrice";
             this.colCalculatePrice.Name = "colCalculatePrice";
             this.colCalculatePrice.OptionsColumn.AllowEdit = false;
+            this.colCalculatePrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colCalculatePrice", "合计={0:0.##}")});
             this.colCalculatePrice.UnboundExpression = "[Count] * [UnitPrice]";
             this.colCalculatePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalculatePrice.Visible = true;
-            this.colCalculatePrice.VisibleIndex = 6;
+            this.colCalculatePrice.VisibleIndex = 5;
             // 
             // colFacilityId
             // 
-            this.colFacilityId.Caption = "设施名称Id";
+            this.colFacilityId.Caption = "设施名称";
             this.colFacilityId.ColumnEdit = this.repoFacility;
             this.colFacilityId.FieldName = "FacilityId";
             this.colFacilityId.Name = "colFacilityId";

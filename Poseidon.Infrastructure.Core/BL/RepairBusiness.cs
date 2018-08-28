@@ -97,7 +97,7 @@ namespace Poseidon.Infrastructure.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
-            entity.IsProject = false;
+          
             entity.Status = 0;
             base.Create(entity);
         }

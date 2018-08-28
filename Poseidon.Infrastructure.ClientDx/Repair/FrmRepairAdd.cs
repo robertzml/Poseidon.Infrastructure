@@ -70,7 +70,7 @@ namespace Poseidon.Infrastructure.ClientDx
             string errorMessage = "";
 
             if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
-                {
+            {
                 errorMessage = "请输入名称";
                 return new Tuple<bool, string>(false, errorMessage);
             }
@@ -87,6 +87,11 @@ namespace Poseidon.Infrastructure.ClientDx
 
             foreach (var item in this.recordGrid.DataSource)
             {
+                if (string.IsNullOrEmpty(item.FacilityId))
+                {
+                    errorMessage = "请选择设施";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
                 if (string.IsNullOrEmpty(item.ItemName))
                 {
                     errorMessage = "项目名称不能为空";
@@ -110,6 +115,14 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.RepairFee = this.spRepairFee.Value;
             entity.StartDate = this.dpStartDate.DateTime;
             entity.IsProject = this.chkIsProject.Checked;
+            if (entity.IsProject)
+            {
+                entity.ProjectId = this.luProject.EditValue.ToString();
+            }
+            else
+            {
+                entity.ProjectId = "";
+            }
 
             if (this.dpEndDate.EditValue == null)
                 entity.EndDate = null;
@@ -163,7 +176,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 List<RepairRecord> records = SetRecords();
 
                 BusinessFactory<RepairBusiness>.Instance.Create(entity, this.currentUser);
-                BusinessFactory<RepairRecordBusiness>.Instance.CreateMany(entity, records);
+                BusinessFactory<RepairRecordBusiness>.Instance.CreateMany(entity, records, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

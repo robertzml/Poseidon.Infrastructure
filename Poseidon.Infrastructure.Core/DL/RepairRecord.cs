@@ -14,7 +14,7 @@ namespace Poseidon.Infrastructure.Core.DL
     /// <summary>
     /// 维修改造记录类
     /// </summary>
-    public class RepairRecord : BaseEntity
+    public class RepairRecord : BusinessEntity
     {
         #region Property
         /// <summary>
@@ -70,18 +70,6 @@ namespace Poseidon.Infrastructure.Core.DL
         /// </summary>
         [Display(Name = "总价")]
         public decimal TotalPrice { get; set; }
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        [Display(Name = "备注")]
-        public string Remark { get; set; }
-
-        /// <summary>
-        /// 状态
-        /// </summary>
-        [Display(Name = "状态")]
-        public int Status { get; set; }
         #endregion //Property
     }
 }

@@ -44,12 +44,27 @@ namespace Poseidon.Infrastructure.Core.BL
         /// </summary>
         /// <param name="repair">维修改造对象</param>
         /// <param name="records">维修改造记录</param>
-        public void CreateMany(Repair repair, List<RepairRecord> records)
+        /// <param name="user">操作用户</param>
+        public void CreateMany(Repair repair, List<RepairRecord> records, ILoginUser user)
         {
+            var now = DateTime.Now;
             foreach (var item in records)
             {
                 item.RepairId = repair.Id;
                 item.Status = 0;
+
+                item.CreateBy = new UpdateStamp
+                {
+                    UserId = user.Id,
+                    Name = user.Name,
+                    Time = now
+                };
+                item.UpdateBy = new UpdateStamp
+                {
+                    UserId = user.Id,
+                    Name = user.Name,
+                    Time = now
+                };
 
                 this.baseDal.Create(item);
             }
@@ -60,7 +75,7 @@ namespace Poseidon.Infrastructure.Core.BL
         /// </summary>
         /// <param name="repair">维修改造对象</param>
         /// <param name="records">维修改造记录</param>
-        public void Update(Repair repair, List<RepairRecord> records)
+        public void Update(Repair repair, List<RepairRecord> records, ILoginUser user)
         {
             this.baseDal.DeleteMany("repairId", repair.Id);
 

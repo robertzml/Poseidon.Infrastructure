@@ -47,6 +47,23 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.Unit = doc["unit"].ToString();
             entity.UnitPrice = doc["unitPrice"].ToDecimal();
             entity.TotalPrice = doc["totalPrice"].ToDecimal();
+
+            var createBy = doc["createBy"].ToBsonDocument();
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = createBy["userId"].ToString(),
+                Name = createBy["name"].ToString(),
+                Time = createBy["time"].ToLocalTime()
+            };
+
+            var updateBy = doc["updateBy"].ToBsonDocument();
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = updateBy["userId"].ToString(),
+                Name = updateBy["name"].ToString(),
+                Time = updateBy["time"].ToLocalTime()
+            };
+
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -71,6 +88,16 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "unit", entity.Unit },
                 { "unitPrice", entity.UnitPrice },
                 { "totalPrice", entity.TotalPrice },
+                { "createBy", new BsonDocument {
+                    { "userId", entity.CreateBy.UserId },
+                    { "name", entity.CreateBy.Name },
+                    { "time", entity.CreateBy.Time }
+                }},
+                { "updateBy", new BsonDocument {
+                    { "userId", entity.UpdateBy.UserId },
+                    { "name", entity.UpdateBy.Name },
+                    { "time", entity.UpdateBy.Time }
+                }},
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
