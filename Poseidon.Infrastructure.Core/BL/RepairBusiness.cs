@@ -55,6 +55,22 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 查找包含相关设施的维修改造项目
+        /// </summary>
+        /// <param name="facilityId">设施ID</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByFacility(string facilityId)
+        {
+            RepairRecordBusiness recordBusiness = new RepairRecordBusiness();
+            var records = recordBusiness.FindListByField("facilityId", facilityId);
+
+            var repairIds = records.Select(r => r.RepairId).Distinct().ToList();
+
+            var data = this.baseDal.FindListInIds(repairIds);
+            return data;
+        }
+
+        /// <summary>
         /// 检查维修改造信息是否能删除
         /// </summary>
         /// <param name="id">维修改造信息ID</param>

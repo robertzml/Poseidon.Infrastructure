@@ -30,6 +30,10 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtEditor = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreator = new DevExpress.XtraEditors.TextEdit();
             this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtEndDate = new DevExpress.XtraEditors.TextEdit();
@@ -47,18 +51,18 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCreator = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEditor = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStartDate.Properties)).BeginInit();
@@ -75,13 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +116,50 @@
             this.layoutControl1.Size = new System.Drawing.Size(531, 397);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtEditTime
+            // 
+            this.txtEditTime.Location = new System.Drawing.Point(317, 108);
+            this.txtEditTime.Name = "txtEditTime";
+            this.txtEditTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditTime.Properties.ReadOnly = true;
+            this.txtEditTime.Size = new System.Drawing.Size(202, 20);
+            this.txtEditTime.StyleController = this.layoutControl1;
+            this.txtEditTime.TabIndex = 15;
+            // 
+            // txtEditor
+            // 
+            this.txtEditor.Location = new System.Drawing.Point(63, 108);
+            this.txtEditor.Name = "txtEditor";
+            this.txtEditor.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditor.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditor.Properties.ReadOnly = true;
+            this.txtEditor.Size = new System.Drawing.Size(199, 20);
+            this.txtEditor.StyleController = this.layoutControl1;
+            this.txtEditor.TabIndex = 14;
+            // 
+            // txtCreateTime
+            // 
+            this.txtCreateTime.Location = new System.Drawing.Point(317, 84);
+            this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreateTime.Properties.ReadOnly = true;
+            this.txtCreateTime.Size = new System.Drawing.Size(202, 20);
+            this.txtCreateTime.StyleController = this.layoutControl1;
+            this.txtCreateTime.TabIndex = 13;
+            // 
+            // txtCreator
+            // 
+            this.txtCreator.Location = new System.Drawing.Point(63, 84);
+            this.txtCreator.Name = "txtCreator";
+            this.txtCreator.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreator.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreator.Properties.ReadOnly = true;
+            this.txtCreator.Size = new System.Drawing.Size(199, 20);
+            this.txtCreator.StyleController = this.layoutControl1;
+            this.txtCreator.TabIndex = 12;
             // 
             // recordGrid
             // 
@@ -312,17 +356,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // txtCreator
-            // 
-            this.txtCreator.Location = new System.Drawing.Point(63, 84);
-            this.txtCreator.Name = "txtCreator";
-            this.txtCreator.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtCreator.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCreator.Properties.ReadOnly = true;
-            this.txtCreator.Size = new System.Drawing.Size(199, 20);
-            this.txtCreator.StyleController = this.layoutControl1;
-            this.txtCreator.TabIndex = 12;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtCreator;
@@ -331,17 +364,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(254, 24);
             this.layoutControlItem9.Text = "创建人";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtCreateTime
-            // 
-            this.txtCreateTime.Location = new System.Drawing.Point(317, 84);
-            this.txtCreateTime.Name = "txtCreateTime";
-            this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCreateTime.Properties.ReadOnly = true;
-            this.txtCreateTime.Size = new System.Drawing.Size(202, 20);
-            this.txtCreateTime.StyleController = this.layoutControl1;
-            this.txtCreateTime.TabIndex = 13;
             // 
             // layoutControlItem10
             // 
@@ -352,17 +374,6 @@
             this.layoutControlItem10.Text = "创建时间";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtEditor
-            // 
-            this.txtEditor.Location = new System.Drawing.Point(63, 108);
-            this.txtEditor.Name = "txtEditor";
-            this.txtEditor.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtEditor.Properties.Appearance.Options.UseBackColor = true;
-            this.txtEditor.Properties.ReadOnly = true;
-            this.txtEditor.Size = new System.Drawing.Size(199, 20);
-            this.txtEditor.StyleController = this.layoutControl1;
-            this.txtEditor.TabIndex = 14;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtEditor;
@@ -371,17 +382,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(254, 24);
             this.layoutControlItem11.Text = "编辑人";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtEditTime
-            // 
-            this.txtEditTime.Location = new System.Drawing.Point(317, 108);
-            this.txtEditTime.Name = "txtEditTime";
-            this.txtEditTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtEditTime.Properties.Appearance.Options.UseBackColor = true;
-            this.txtEditTime.Properties.ReadOnly = true;
-            this.txtEditTime.Size = new System.Drawing.Size(202, 20);
-            this.txtEditTime.StyleController = this.layoutControl1;
-            this.txtEditTime.TabIndex = 15;
             // 
             // layoutControlItem12
             // 
@@ -403,6 +403,10 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStartDate.Properties)).EndInit();
@@ -419,13 +423,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 

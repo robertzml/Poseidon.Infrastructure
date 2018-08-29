@@ -48,6 +48,16 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(id);
         }
+
+        /// <summary>
+        /// 载入维修改造项目
+        /// </summary>
+        private void LoadRepair()
+        {
+            this.repairGrid.Init();
+
+            this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
+        }
         #endregion //Function
 
         #region Method
@@ -58,7 +68,39 @@ namespace Poseidon.Infrastructure.ClientDx
         public void SetFacility(string id)
         {
             LoadFacility(id);
+
+            LoadRepair();
+            this.accordionControl1.SelectedElement = this.accRepairItem;
+            this.navFrame.SelectedPageIndex = 0;
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+
         }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 菜单选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accordionControl1_ElementClick(object sender, DevExpress.XtraBars.Navigation.ElementClickEventArgs e)
+        {
+            var tag = e.Element.Tag.ToString();
+
+            switch (tag)
+            {
+                case "Repair":
+                    LoadRepair();
+                    this.navFrame.SelectedPageIndex = 0;
+                    break;
+            }
+        }
+        #endregion //Event
     }
 }

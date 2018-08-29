@@ -34,16 +34,18 @@
             this.elevatorInfoView = new Poseidon.Infrastructure.ClientDx.ElevatorInfoView();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.tabInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insOvMod = new Poseidon.Infrastructure.ClientDx.InspectionOverviewMod();
+            this.tabRepair = new DevExpress.XtraTab.XtraTabPage();
+            this.repairOvMod = new Poseidon.Infrastructure.ClientDx.RepairOverviewMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.tabInspection.SuspendLayout();
+            this.tabRepair.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -100,25 +102,19 @@
             this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabBusiness.Location = new System.Drawing.Point(3, 236);
             this.tabBusiness.Name = "tabBusiness";
-            this.tabBusiness.SelectedTabPage = this.xtraTabPage1;
+            this.tabBusiness.SelectedTabPage = this.tabInspection;
             this.tabBusiness.Size = new System.Drawing.Size(956, 411);
             this.tabBusiness.TabIndex = 1;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage3});
+            this.tabInspection,
+            this.tabRepair});
             // 
-            // xtraTabPage1
+            // tabInspection
             // 
-            this.xtraTabPage1.Controls.Add(this.insOvMod);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(950, 382);
-            this.xtraTabPage1.Text = "设施检验";
-            // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(950, 382);
-            this.xtraTabPage3.Text = "xtraTabPage3";
+            this.tabInspection.Controls.Add(this.insOvMod);
+            this.tabInspection.Name = "tabInspection";
+            this.tabInspection.Size = new System.Drawing.Size(950, 382);
+            this.tabInspection.Text = "设施检验";
             // 
             // insOvMod
             // 
@@ -127,6 +123,21 @@
             this.insOvMod.Name = "insOvMod";
             this.insOvMod.Size = new System.Drawing.Size(950, 382);
             this.insOvMod.TabIndex = 0;
+            // 
+            // tabRepair
+            // 
+            this.tabRepair.Controls.Add(this.repairOvMod);
+            this.tabRepair.Name = "tabRepair";
+            this.tabRepair.Size = new System.Drawing.Size(950, 382);
+            this.tabRepair.Text = "维修改造";
+            // 
+            // repairOvMod
+            // 
+            this.repairOvMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairOvMod.Location = new System.Drawing.Point(0, 0);
+            this.repairOvMod.Name = "repairOvMod";
+            this.repairOvMod.Size = new System.Drawing.Size(950, 382);
+            this.repairOvMod.TabIndex = 0;
             // 
             // ElevatorOverviewMod
             // 
@@ -141,7 +152,8 @@
             this.tabPageInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.tabInspection.ResumeLayout(false);
+            this.tabRepair.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -154,8 +166,9 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private ElevatorInfoView elevatorInfoView;
         private DevExpress.XtraTab.XtraTabControl tabBusiness;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage tabInspection;
+        private DevExpress.XtraTab.XtraTabPage tabRepair;
         private InspectionOverviewMod insOvMod;
+        private RepairOverviewMod repairOvMod;
     }
 }
