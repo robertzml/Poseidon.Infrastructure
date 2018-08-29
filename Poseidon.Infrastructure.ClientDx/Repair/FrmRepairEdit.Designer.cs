@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.dpEndDate = new DevExpress.XtraEditors.DateEdit();
@@ -37,7 +39,7 @@
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.spRepairFee = new DevExpress.XtraEditors.SpinEdit();
             this.txtConstructionCompany = new DevExpress.XtraEditors.TextEdit();
-            this.txtFacilityName = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -46,13 +48,13 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -65,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRepairFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConstructionCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -74,8 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -117,6 +117,40 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 502);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.recordGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 203);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(878, 296);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "维修改造记录";
+            // 
+            // recordGrid
+            // 
+            this.recordGrid.AllowFilter = false;
+            this.recordGrid.AllowGroup = false;
+            this.recordGrid.AllowSort = true;
+            this.recordGrid.DataSource = null;
+            this.recordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recordGrid.Editable = true;
+            this.recordGrid.EnableMasterView = false;
+            this.recordGrid.EnableMultiSelect = false;
+            this.recordGrid.Location = new System.Drawing.Point(2, 21);
+            this.recordGrid.Name = "recordGrid";
+            this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowDeleteMenu = false;
+            this.recordGrid.ShowEditMenu = false;
+            this.recordGrid.ShowFindPanel = false;
+            this.recordGrid.ShowFooter = true;
+            this.recordGrid.ShowLineNumber = true;
+            this.recordGrid.ShowMenu = false;
+            this.recordGrid.ShowNavigator = true;
+            this.recordGrid.Size = new System.Drawing.Size(874, 273);
+            this.recordGrid.TabIndex = 0;
+            this.recordGrid.UseCalculatePrice = true;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl1);
@@ -135,7 +169,7 @@
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.spRepairFee);
             this.layoutControl1.Controls.Add(this.txtConstructionCompany);
-            this.layoutControl1.Controls.Add(this.txtFacilityName);
+            this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
@@ -214,16 +248,15 @@
             this.txtConstructionCompany.StyleController = this.layoutControl1;
             this.txtConstructionCompany.TabIndex = 6;
             // 
-            // txtFacilityName
+            // txtName
             // 
-            this.txtFacilityName.Location = new System.Drawing.Point(63, 12);
-            this.txtFacilityName.Name = "txtFacilityName";
-            this.txtFacilityName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtFacilityName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtFacilityName.Properties.ReadOnly = true;
-            this.txtFacilityName.Size = new System.Drawing.Size(205, 20);
-            this.txtFacilityName.StyleController = this.layoutControl1;
-            this.txtFacilityName.TabIndex = 4;
+            this.txtName.Location = new System.Drawing.Point(63, 12);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Size = new System.Drawing.Size(205, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -244,11 +277,11 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.txtFacilityName;
+            this.layoutControlItem1.Control = this.txtName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(260, 24);
-            this.layoutControlItem1.Text = "设施名称";
+            this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem4
@@ -305,37 +338,6 @@
             this.layoutControlItem7.Text = "结束日期";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.recordGrid);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 203);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(878, 296);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "维修改造记录";
-            // 
-            // recordGrid
-            // 
-            this.recordGrid.AllowFilter = false;
-            this.recordGrid.AllowGroup = false;
-            this.recordGrid.AllowSort = true;
-            this.recordGrid.DataSource = null;
-            this.recordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recordGrid.Editable = true;
-            this.recordGrid.EnableMasterView = false;
-            this.recordGrid.EnableMultiSelect = false;
-            this.recordGrid.Location = new System.Drawing.Point(2, 21);
-            this.recordGrid.Name = "recordGrid";
-            this.recordGrid.ShowAddMenu = false;
-            this.recordGrid.ShowFooter = true;
-            this.recordGrid.ShowLineNumber = true;
-            this.recordGrid.ShowMenu = false;
-            this.recordGrid.ShowNavigator = true;
-            this.recordGrid.Size = new System.Drawing.Size(874, 273);
-            this.recordGrid.TabIndex = 0;
-            this.recordGrid.UseCalculatePrice = true;
-            // 
             // FrmRepairEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -348,6 +350,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -360,7 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRepairFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConstructionCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFacilityName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -369,8 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -386,7 +388,7 @@
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.SpinEdit spRepairFee;
         private DevExpress.XtraEditors.TextEdit txtConstructionCompany;
-        private DevExpress.XtraEditors.TextEdit txtFacilityName;
+        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;

@@ -176,7 +176,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 List<RepairRecord> records = SetRecords();
 
                 BusinessFactory<RepairBusiness>.Instance.Create(entity, this.currentUser);
-                BusinessFactory<RepairRecordBusiness>.Instance.CreateMany(entity, records, this.currentUser);
+                BusinessFactory<RepairRecordBusiness>.Instance.CreateMany(entity, records);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

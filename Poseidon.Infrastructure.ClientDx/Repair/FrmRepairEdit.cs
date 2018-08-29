@@ -27,11 +27,6 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 当前关联设施
-        /// </summary>
-        private Facility currentFacility;
-
-        /// <summary>
         /// 当前关联维修改造
         /// </summary>
         private Repair currentRepair;
@@ -60,17 +55,14 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.currentRepair = BusinessFactory<RepairBusiness>.Instance.FindById(id);
             this.repairRecords = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(id).ToList();
-
-            //this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(currentRepair.FacilityId);
         }
 
         protected override void InitForm()
         {
-            this.txtFacilityName.Text = this.currentFacility.Name;
+            this.txtName.Text = this.currentRepair.Name;
+            ControlUtil.BindDictToComboBox(this.cmbType, typeof(Repair), "Type");
 
-            //var type = RepairBusiness.GetRepairType(this.currentFacility.ModelType);
-            //ControlUtil.BindDictToComboBox(this.cmbType, type, "Type", currentRepair.Type);
-
+            this.cmbType.EditValue = this.currentRepair.Type;
             this.txtConstructionCompany.Text = this.currentRepair.ConstructionCompany;
             this.dpStartDate.DateTime = this.currentRepair.StartDate;
 
@@ -80,6 +72,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.spRepairFee.Value = this.currentRepair.RepairFee;
             this.txtRemark.Text = this.currentRepair.Remark;
 
+            this.recordGrid.Init(this.currentRepair.ModelType);
             this.recordGrid.DataSource = this.repairRecords;
             base.InitForm();
         }
@@ -92,6 +85,11 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             string errorMessage = "";
 
+            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                errorMessage = "请输入名称";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.cmbType.EditValue == null)
             {
                 errorMessage = "请选择维修改造类型";
@@ -105,6 +103,11 @@ namespace Poseidon.Infrastructure.ClientDx
 
             foreach (var item in this.recordGrid.DataSource)
             {
+                if (string.IsNullOrEmpty(item.FacilityId))
+                {
+                    errorMessage = "请选择设施";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
                 if (string.IsNullOrEmpty(item.ItemName))
                 {
                     errorMessage = "项目名称不能为空";
@@ -121,9 +124,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="entity">实体对象</param>
         private void SetEntity(Repair entity)
         {
-            //entity.FacilityId = this.currentFacility.Id;
-            //entity.FacilityName = this.currentFacility.Name;
-            //entity.ModelType = this.currentFacility.ModelType;
+            entity.Name = this.txtName.Text;
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
             entity.ConstructionCompany = this.txtConstructionCompany.Text;
             entity.RepairFee = this.spRepairFee.Value;
@@ -147,7 +148,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             foreach (var item in records)
             {
-                item.ModelType = this.currentFacility.ModelType;
+                item.ModelType = this.currentRepair.ModelType;
                 item.TotalPrice = Math.Round(item.Count * item.UnitPrice, 2);
                 item.Remark = item.Remark ?? "";
             }
@@ -181,7 +182,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 List<RepairRecord> records = SetRecords();
 
                 BusinessFactory<RepairBusiness>.Instance.Update(entity, this.currentUser);
-                BusinessFactory<RepairRecordBusiness>.Instance.Update(entity, records, this.currentUser);
+                BusinessFactory<RepairRecordBusiness>.Instance.Update(entity, records);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
