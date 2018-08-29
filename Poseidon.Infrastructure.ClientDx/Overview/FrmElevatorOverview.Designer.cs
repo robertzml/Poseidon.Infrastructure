@@ -33,8 +33,8 @@
             this.elevatorTree = new Poseidon.Winform.Core.GroupChildrenTree();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.elevatorGroupMod = new Poseidon.Infrastructure.ClientDx.ElevatorGroupMod();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.elevatorOverviewMod = new Poseidon.Infrastructure.ClientDx.ElevatorOverviewMod();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -54,7 +54,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.navFrame);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(861, 564);
+            this.splitContainerControl1.Size = new System.Drawing.Size(962, 564);
             this.splitContainerControl1.SplitterPosition = 210;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -94,7 +94,7 @@
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage1;
             this.navFrame.SelectedPageIndex = 1;
-            this.navFrame.Size = new System.Drawing.Size(646, 564);
+            this.navFrame.Size = new System.Drawing.Size(747, 564);
             this.navFrame.TabIndex = 1;
             this.navFrame.Text = "navigationFrame1";
             // 
@@ -103,35 +103,36 @@
             this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.elevatorGroupMod);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(646, 564);
-            // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Controls.Add(this.elevatorOverviewMod);
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(646, 564);
+            this.navigationPage1.Size = new System.Drawing.Size(747, 564);
             // 
             // elevatorGroupMod
             // 
             this.elevatorGroupMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elevatorGroupMod.Location = new System.Drawing.Point(0, 0);
             this.elevatorGroupMod.Name = "elevatorGroupMod";
-            this.elevatorGroupMod.Size = new System.Drawing.Size(646, 564);
+            this.elevatorGroupMod.Size = new System.Drawing.Size(747, 564);
             this.elevatorGroupMod.TabIndex = 0;
+            // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.elevatorOverviewMod);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(747, 564);
             // 
             // elevatorOverviewMod
             // 
             this.elevatorOverviewMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elevatorOverviewMod.Location = new System.Drawing.Point(0, 0);
             this.elevatorOverviewMod.Name = "elevatorOverviewMod";
-            this.elevatorOverviewMod.Size = new System.Drawing.Size(646, 564);
+            this.elevatorOverviewMod.Size = new System.Drawing.Size(747, 564);
             this.elevatorOverviewMod.TabIndex = 0;
             // 
             // FrmElevatorOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 564);
+            this.ClientSize = new System.Drawing.Size(962, 564);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "FrmElevatorOverview";
             this.Text = "电梯总览";

@@ -54,7 +54,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private void DisplayInfo()
         {
-            this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
+            //this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
         }
         #endregion //Function
 

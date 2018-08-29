@@ -65,10 +65,8 @@ namespace Poseidon.Infrastructure.ClientDx
         public void SetElevator(string id)
         {
             LoadElevator(id);
-
             DisplayInfo();
 
-            repairMod.SetFacility(id);
             insMod.SetFacility(id);
         }
 
@@ -81,7 +79,6 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorManagerMod.Clear();
             this.maintenanceInfoMod.Clear();
 
-            repairMod.Clear();
             this.insMod.Clear();
         }
         #endregion //Method

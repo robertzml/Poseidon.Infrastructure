@@ -35,13 +35,11 @@
             this.tabPageManager = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorManagerMod = new Poseidon.Infrastructure.ClientDx.ElevatorManagerReceiptMod();
             this.tabPageCompany = new DevExpress.XtraTab.XtraTabPage();
+            this.maintenanceInfoMod = new Poseidon.Infrastructure.ClientDx.MaintenanceInfoReceiptMod();
             this.tabManage = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.repairMod = new Poseidon.Infrastructure.ClientDx.RepairReceiptMod();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionReceiptMod();
-            this.maintenanceInfoMod = new Poseidon.Infrastructure.ClientDx.MaintenanceInfoReceiptMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -50,7 +48,6 @@
             this.tabPageCompany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
-            this.xtraTabPage2.SuspendLayout();
             this.tabPageInspection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +116,14 @@
             this.tabPageCompany.Size = new System.Drawing.Size(911, 185);
             this.tabPageCompany.Text = "维保信息";
             // 
+            // maintenanceInfoMod
+            // 
+            this.maintenanceInfoMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maintenanceInfoMod.Location = new System.Drawing.Point(0, 0);
+            this.maintenanceInfoMod.Name = "maintenanceInfoMod";
+            this.maintenanceInfoMod.Size = new System.Drawing.Size(911, 185);
+            this.maintenanceInfoMod.TabIndex = 0;
+            // 
             // tabManage
             // 
             this.tabManage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -129,7 +134,6 @@
             this.tabManage.TabIndex = 1;
             this.tabManage.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2,
             this.tabPageInspection});
             // 
             // xtraTabPage1
@@ -137,21 +141,6 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage1.Text = "日常运行";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.repairMod);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(911, 335);
-            this.xtraTabPage2.Text = "维修改造";
-            // 
-            // repairMod
-            // 
-            this.repairMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repairMod.Location = new System.Drawing.Point(0, 0);
-            this.repairMod.Name = "repairMod";
-            this.repairMod.Size = new System.Drawing.Size(911, 335);
-            this.repairMod.TabIndex = 0;
             // 
             // tabPageInspection
             // 
@@ -168,14 +157,6 @@
             this.insMod.Size = new System.Drawing.Size(911, 335);
             this.insMod.TabIndex = 0;
             // 
-            // maintenanceInfoMod
-            // 
-            this.maintenanceInfoMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.maintenanceInfoMod.Location = new System.Drawing.Point(0, 0);
-            this.maintenanceInfoMod.Name = "maintenanceInfoMod";
-            this.maintenanceInfoMod.Size = new System.Drawing.Size(911, 185);
-            this.maintenanceInfoMod.TabIndex = 0;
-            // 
             // ElevatorReceiptMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -191,7 +172,6 @@
             this.tabPageCompany.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
-            this.xtraTabPage2.ResumeLayout(false);
             this.tabPageInspection.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -207,10 +187,8 @@
         private DevExpress.XtraTab.XtraTabPage tabPageCompany;
         private DevExpress.XtraTab.XtraTabControl tabManage;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage tabPageInspection;
         private InspectionReceiptMod insMod;
-        private RepairReceiptMod repairMod;
         private ElevatorManagerReceiptMod elevatorManagerMod;
         private MaintenanceInfoReceiptMod maintenanceInfoMod;
     }

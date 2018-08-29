@@ -45,16 +45,6 @@ namespace Poseidon.Infrastructure.Core.BL
 
         #region Method
         /// <summary>
-        /// 按设施查找维修改造信息
-        /// </summary>
-        /// <param name="facilityId">设施ID</param>
-        /// <returns></returns>
-        public IEnumerable<Repair> FindByFacility(string facilityId)
-        {
-            return this.baseDal.FindListByField("facilityId", facilityId);
-        }
-
-        /// <summary>
         /// 按设施类型查找维修改造信息
         /// </summary>
         /// <param name="modelType">设施类型</param>

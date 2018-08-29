@@ -244,6 +244,7 @@
             this.recordGrid.Size = new System.Drawing.Size(453, 190);
             this.recordGrid.TabIndex = 0;
             this.recordGrid.UseCalculatePrice = false;
+            this.recordGrid.UseFacilityName = false;
             // 
             // groupControl4
             // 

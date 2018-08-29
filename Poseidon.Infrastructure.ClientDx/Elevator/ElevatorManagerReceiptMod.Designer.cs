@@ -119,6 +119,7 @@
             this.managerGrid.ShowAddMenu = false;
             this.managerGrid.ShowDeleteMenu = false;
             this.managerGrid.ShowEditMenu = false;
+            this.managerGrid.ShowFindPanel = false;
             this.managerGrid.ShowFooter = false;
             this.managerGrid.ShowLineNumber = true;
             this.managerGrid.ShowMenu = false;
@@ -185,12 +186,12 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // ElevatorMangerReceiptMod
+            // ElevatorManagerReceiptMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl1);
-            this.Name = "ElevatorMangerReceiptMod";
+            this.Name = "ElevatorManagerReceiptMod";
             this.Size = new System.Drawing.Size(757, 286);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
