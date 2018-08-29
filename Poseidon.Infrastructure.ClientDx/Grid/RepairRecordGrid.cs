@@ -28,6 +28,11 @@ namespace Poseidon.Infrastructure.ClientDx
         private bool useCalculatePrice = false;
 
         /// <summary>
+        /// 使用设施名称列
+        /// </summary>
+        private bool useFacilityName = false;
+
+        /// <summary>
         /// 模型类型代码
         /// </summary>
         private string modelType;
@@ -64,6 +69,9 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.colCalculatePrice.Visible = this.useCalculatePrice;
             this.colTotalPrice.Visible = !this.useCalculatePrice;
+
+            this.colFacilityId.Visible = !this.useFacilityName;
+            this.colFacilityName.Visible = this.useFacilityName;
         }
 
         /// <summary>
@@ -109,6 +117,22 @@ namespace Poseidon.Infrastructure.ClientDx
             }
         }
 
+        /// <summary>
+        /// 使用设施名称列
+        /// </summary>
+        [Description("使用设施名称列"), Category("界面")]
+        public bool UseFacilityName
+        {
+            get
+            {
+                return useFacilityName;
+            }
+
+            set
+            {
+                useFacilityName = value;
+            }
+        }
         #endregion //Property
     }
 }

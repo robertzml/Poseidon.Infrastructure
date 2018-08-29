@@ -55,6 +55,16 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 按设施类型查找维修改造信息
+        /// </summary>
+        /// <param name="modelType">设施类型</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByModelType(string modelType)
+        {
+            return this.baseDal.FindListByField("modelType", modelType);
+        }
+
+        /// <summary>
         /// 检查维修改造信息是否能删除
         /// </summary>
         /// <param name="id">维修改造信息ID</param>
@@ -97,7 +107,7 @@ namespace Poseidon.Infrastructure.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
-          
+
             entity.Status = 0;
             base.Create(entity);
         }

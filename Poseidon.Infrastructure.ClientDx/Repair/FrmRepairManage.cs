@@ -15,6 +15,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
+    using Poseidon.Finance.Core.BL;
 
     /// <summary>
     /// 维修改造管理窗体 
@@ -59,7 +60,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             LoadRepairs();
         }
-        
+
         /// <summary>
         /// 编辑维修改造
         /// </summary>
@@ -74,7 +75,7 @@ namespace Poseidon.Infrastructure.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmRepairEdit), new object[] { repair.Id });
             LoadRepairs();
         }
-        
+
         /// <summary>
         /// 删除维修改造
         /// </summary>
@@ -106,6 +107,29 @@ namespace Poseidon.Infrastructure.ClientDx
                 {
                     MessageUtil.ShowWarning("删除维修改造信息失败");
                 }
+            }
+        }
+
+        /// <summary>
+        /// 选择改造项目
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void repairGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var repair = this.repairGrid.GetCurrentSelect();
+            if (repair == null)
+            {
+                this.repairRecordGrid.Clear();
+                this.expenseGrid.Clear();
+            }
+            else
+            {
+                var records = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(repair.Id);
+                this.repairRecordGrid.DataSource = records.ToList();
+
+                var expense = BusinessFactory<ExpenseBusiness>.Instance.FindByDocumentId(repair.Id);
+                this.expenseGrid.DataSource = expense.ToList();
             }
         }
         #endregion //Event

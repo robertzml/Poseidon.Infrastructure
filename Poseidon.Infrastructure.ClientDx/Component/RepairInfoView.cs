@@ -43,7 +43,8 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private void Display()
         {
-            //this.txtFacilityName.Text = this.currentRepair.FacilityName;
+            this.txtName.Text = this.currentRepair.Name;
+            this.txtType.Text = DictUtility.GetDictValue(currentRepair, "Type", currentRepair.Type);
             this.txtConstructionCompany.Text = this.currentRepair.ConstructionCompany;
             this.txtRepairFee.Text = this.currentRepair.RepairFee.ToString();
             this.txtStartDate.Text = this.currentRepair.StartDate.ToDateString();
@@ -53,8 +54,10 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.txtRemark.Text = this.currentRepair.Remark;
 
-            //var type = RepairBusiness.GetRepairType(this.currentRepair.ModelType);
-            //this.txtType.Text = DictUtility.GetDictValue(type, "Type", currentRepair.Type);
+            this.txtCreator.Text = this.currentRepair.CreateBy.Name;
+            this.txtCreateTime.Text = this.currentRepair.CreateBy.Time.ToDateTimeString();
+            this.txtEditor.Text = this.currentRepair.UpdateBy.Name;
+            this.txtEditTime.Text = this.currentRepair.UpdateBy.Time.ToDateTimeString();
 
             var repairRecords = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(currentRepair.Id).ToList();
             this.recordGrid.DataSource = repairRecords;
@@ -93,12 +96,16 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
-            this.txtFacilityName.Text = "";
+            this.txtName.Text = "";
             this.txtConstructionCompany.Text = "";
             this.txtRepairFee.Text = "";
             this.txtStartDate.Text = "";
             this.txtEndDate.Text = "";
             this.txtType.Text = "";
+            this.txtCreator.Text = "";
+            this.txtCreateTime.Text = "";
+            this.txtEditor.Text = "";
+            this.txtEditTime.Text = "";
             this.txtRemark.Text = "";
 
             this.recordGrid.Clear();

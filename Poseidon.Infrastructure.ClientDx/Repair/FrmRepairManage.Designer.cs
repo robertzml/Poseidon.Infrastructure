@@ -31,15 +31,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.repairRecordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -47,34 +51,43 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 567);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupControl1, 2);
             this.groupControl1.Controls.Add(this.layoutControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(906, 114);
+            this.groupControl1.Size = new System.Drawing.Size(906, 94);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "操作";
             // 
@@ -87,9 +100,29 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(902, 91);
+            this.layoutControl1.Size = new System.Drawing.Size(902, 71);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(623, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(267, 22);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "删除维修改造";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(319, 12);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(300, 22);
+            this.btnEdit.StyleController = this.layoutControl1;
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "编辑维修改造";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -111,7 +144,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(902, 91);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(902, 71);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -119,38 +152,38 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(307, 71);
+            this.layoutControlItem1.Size = new System.Drawing.Size(307, 51);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.repairGrid);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 123);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(906, 441);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "维修改造信息";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(319, 12);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(300, 22);
-            this.btnEdit.StyleController = this.layoutControl1;
-            this.btnEdit.TabIndex = 5;
-            this.btnEdit.Text = "编辑维修改造";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnEdit;
             this.layoutControlItem2.Location = new System.Drawing.Point(307, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(304, 71);
+            this.layoutControlItem2.Size = new System.Drawing.Size(304, 51);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnDelete;
+            this.layoutControlItem3.Location = new System.Drawing.Point(611, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(271, 51);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // groupControl2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupControl2, 2);
+            this.groupControl2.Controls.Add(this.repairGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 103);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(906, 227);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "维修改造信息";
             // 
             // repairGrid
             // 
@@ -164,7 +197,7 @@
             this.repairGrid.EnableMultiSelect = true;
             this.repairGrid.Location = new System.Drawing.Point(2, 21);
             this.repairGrid.Name = "repairGrid";
-            this.repairGrid.ShowAddExpenseMenu = false;
+            this.repairGrid.ShowAddExpenseMenu = true;
             this.repairGrid.ShowAddMenu = false;
             this.repairGrid.ShowDeleteMenu = false;
             this.repairGrid.ShowEditMenu = false;
@@ -174,27 +207,79 @@
             this.repairGrid.ShowMenu = false;
             this.repairGrid.ShowModelTypeColumn = false;
             this.repairGrid.ShowNavigator = false;
-            this.repairGrid.Size = new System.Drawing.Size(902, 418);
+            this.repairGrid.Size = new System.Drawing.Size(902, 204);
             this.repairGrid.TabIndex = 0;
+            this.repairGrid.RowSelected += new System.Action<object, System.EventArgs>(this.repairGrid_RowSelected);
             // 
-            // btnDelete
+            // groupControl3
             // 
-            this.btnDelete.Location = new System.Drawing.Point(623, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(267, 22);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "删除维修改造";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.groupControl3.Controls.Add(this.repairRecordGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 336);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(450, 228);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "改造记录";
             // 
-            // layoutControlItem3
+            // repairRecordGrid
             // 
-            this.layoutControlItem3.Control = this.btnDelete;
-            this.layoutControlItem3.Location = new System.Drawing.Point(611, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(271, 71);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
+            this.repairRecordGrid.AllowFilter = true;
+            this.repairRecordGrid.AllowGroup = true;
+            this.repairRecordGrid.AllowSort = true;
+            this.repairRecordGrid.DataSource = null;
+            this.repairRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairRecordGrid.Editable = false;
+            this.repairRecordGrid.EnableMasterView = false;
+            this.repairRecordGrid.EnableMultiSelect = true;
+            this.repairRecordGrid.Location = new System.Drawing.Point(2, 21);
+            this.repairRecordGrid.Name = "repairRecordGrid";
+            this.repairRecordGrid.ShowAddMenu = false;
+            this.repairRecordGrid.ShowDeleteMenu = false;
+            this.repairRecordGrid.ShowEditMenu = false;
+            this.repairRecordGrid.ShowFindPanel = false;
+            this.repairRecordGrid.ShowFooter = true;
+            this.repairRecordGrid.ShowLineNumber = true;
+            this.repairRecordGrid.ShowMenu = false;
+            this.repairRecordGrid.ShowNavigator = false;
+            this.repairRecordGrid.Size = new System.Drawing.Size(446, 205);
+            this.repairRecordGrid.TabIndex = 0;
+            this.repairRecordGrid.UseCalculatePrice = false;
+            this.repairRecordGrid.UseFacilityName = true;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.expenseGrid);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(459, 336);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(450, 228);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "费用记录";
+            // 
+            // expenseGrid
+            // 
+            this.expenseGrid.AllowFilter = true;
+            this.expenseGrid.AllowGroup = true;
+            this.expenseGrid.AllowSort = true;
+            this.expenseGrid.DataSource = null;
+            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expenseGrid.Editable = false;
+            this.expenseGrid.EnableMasterView = false;
+            this.expenseGrid.EnableMultiCheckSelect = false;
+            this.expenseGrid.EnableMultiSelect = true;
+            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
+            this.expenseGrid.Name = "expenseGrid";
+            this.expenseGrid.ShowAddMenu = false;
+            this.expenseGrid.ShowAssembly = false;
+            this.expenseGrid.ShowDeleteMenu = false;
+            this.expenseGrid.ShowEditMenu = false;
+            this.expenseGrid.ShowFindPanel = false;
+            this.expenseGrid.ShowFooter = true;
+            this.expenseGrid.ShowLineNumber = true;
+            this.expenseGrid.ShowMenu = false;
+            this.expenseGrid.ShowNavigator = false;
+            this.expenseGrid.Size = new System.Drawing.Size(446, 205);
+            this.expenseGrid.TabIndex = 0;
             // 
             // FrmRepairManage
             // 
@@ -211,10 +296,14 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -233,5 +322,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private RepairRecordGrid repairRecordGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private Finance.Utility.ExpenseGrid expenseGrid;
     }
 }

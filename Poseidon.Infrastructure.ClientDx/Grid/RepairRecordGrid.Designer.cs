@@ -111,6 +111,8 @@
             this.colFacilityName.FieldName = "FacilityName";
             this.colFacilityName.Name = "colFacilityName";
             this.colFacilityName.OptionsColumn.AllowEdit = false;
+            this.colFacilityName.Visible = true;
+            this.colFacilityName.VisibleIndex = 1;
             // 
             // repoFacility
             // 
@@ -172,7 +174,7 @@
             this.colItemName.FieldName = "ItemName";
             this.colItemName.Name = "colItemName";
             this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 1;
+            this.colItemName.VisibleIndex = 2;
             // 
             // colCount
             // 
@@ -180,7 +182,7 @@
             this.colCount.FieldName = "Count";
             this.colCount.Name = "colCount";
             this.colCount.Visible = true;
-            this.colCount.VisibleIndex = 2;
+            this.colCount.VisibleIndex = 3;
             // 
             // colUnit
             // 
@@ -188,7 +190,7 @@
             this.colUnit.FieldName = "Unit";
             this.colUnit.Name = "colUnit";
             this.colUnit.Visible = true;
-            this.colUnit.VisibleIndex = 3;
+            this.colUnit.VisibleIndex = 4;
             // 
             // colUnitPrice
             // 
@@ -196,7 +198,7 @@
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 4;
+            this.colUnitPrice.VisibleIndex = 5;
             // 
             // colTotalPrice
             // 
@@ -206,7 +208,7 @@
             this.colTotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPrice", "合计={0:0.##}")});
             this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 6;
+            this.colTotalPrice.VisibleIndex = 7;
             // 
             // colRemark
             // 
@@ -214,7 +216,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 8;
             // 
             // colStatus
             // 
@@ -237,7 +239,7 @@
             this.colCalculatePrice.UnboundExpression = "[Count] * [UnitPrice]";
             this.colCalculatePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalculatePrice.Visible = true;
-            this.colCalculatePrice.VisibleIndex = 5;
+            this.colCalculatePrice.VisibleIndex = 6;
             // 
             // colFacilityId
             // 
