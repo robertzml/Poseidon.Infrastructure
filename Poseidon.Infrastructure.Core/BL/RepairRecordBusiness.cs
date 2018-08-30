@@ -28,7 +28,7 @@ namespace Poseidon.Infrastructure.Core.BL
         }
         #endregion //Constructor
 
-        #region CRUD
+        #region Method
         /// <summary>
         /// 根据维修改造查找记录
         /// </summary>
@@ -39,6 +39,18 @@ namespace Poseidon.Infrastructure.Core.BL
             return this.baseDal.FindListByField("repairId", repairId);
         }
 
+        /// <summary>
+        /// 根据设施查找记录
+        /// </summary>
+        /// <param name="facility">设施ID</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecord> FindByFacility(string facility)
+        {
+            return this.baseDal.FindListByField("facilityId", facility);
+        }
+        #endregion //Method
+
+        #region CRUD
         /// <summary>
         /// 添加一组维修改造记录
         /// </summary>

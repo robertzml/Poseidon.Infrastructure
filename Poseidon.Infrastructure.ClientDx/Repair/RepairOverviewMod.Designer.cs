@@ -29,26 +29,32 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.repairRecordGrid1 = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accGroupView = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accRepairItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accRecordItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.repairRecordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,6 +73,117 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 510);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // accordionControl1
+            // 
+            this.accordionControl1.AllowItemSelection = true;
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accGroupView});
+            this.accordionControl1.Location = new System.Drawing.Point(3, 3);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Auto;
+            this.accordionControl1.ShowGroupExpandButtons = false;
+            this.accordionControl1.Size = new System.Drawing.Size(194, 504);
+            this.accordionControl1.TabIndex = 2;
+            this.accordionControl1.Text = "accordionControl1";
+            this.accordionControl1.ElementClick += new DevExpress.XtraBars.Navigation.ElementClickEventHandler(this.accordionControl1_ElementClick);
+            // 
+            // accGroupView
+            // 
+            this.accGroupView.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accRepairItem,
+            this.accRecordItem});
+            this.accGroupView.Expanded = true;
+            this.accGroupView.Tag = "View";
+            this.accGroupView.Text = "查看方式";
+            // 
+            // accRepairItem
+            // 
+            this.accRepairItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accRepairItem.Tag = "Repair";
+            this.accRepairItem.Text = "维修改造项目";
+            // 
+            // accRecordItem
+            // 
+            this.accRecordItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accRecordItem.Tag = "Record";
+            this.accRecordItem.Text = "记录列表";
+            // 
+            // navFrame
+            // 
+            this.navFrame.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            this.navFrame.Controls.Add(this.navigationPage1);
+            this.navFrame.Controls.Add(this.navigationPage2);
+            this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navFrame.Location = new System.Drawing.Point(203, 3);
+            this.navFrame.Name = "navFrame";
+            this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
+            this.navigationPage1,
+            this.navigationPage2});
+            this.navFrame.SelectedPage = this.navigationPage1;
+            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.Size = new System.Drawing.Size(628, 504);
+            this.navFrame.TabIndex = 3;
+            this.navFrame.Text = "navigationFrame1";
+            // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Controls.Add(this.tableLayoutPanel2);
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(628, 504);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(628, 504);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.recordGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 255);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(622, 246);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "明细";
+            // 
+            // recordGrid
+            // 
+            this.recordGrid.AllowFilter = true;
+            this.recordGrid.AllowGroup = true;
+            this.recordGrid.AllowSort = true;
+            this.recordGrid.DataSource = null;
+            this.recordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recordGrid.Editable = false;
+            this.recordGrid.EnableMasterView = false;
+            this.recordGrid.EnableMultiSelect = true;
+            this.recordGrid.Location = new System.Drawing.Point(2, 21);
+            this.recordGrid.Name = "recordGrid";
+            this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowDeleteMenu = false;
+            this.recordGrid.ShowEditMenu = false;
+            this.recordGrid.ShowFindPanel = false;
+            this.recordGrid.ShowFooter = true;
+            this.recordGrid.ShowLineNumber = true;
+            this.recordGrid.ShowMenu = false;
+            this.recordGrid.ShowNavigator = false;
+            this.recordGrid.Size = new System.Drawing.Size(618, 223);
+            this.recordGrid.TabIndex = 0;
+            this.recordGrid.UseCalculatePrice = false;
+            this.recordGrid.UseFacilityName = true;
             // 
             // groupControl1
             // 
@@ -87,7 +204,7 @@
             this.repairGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.repairGrid.Editable = false;
             this.repairGrid.EnableMasterView = false;
-            this.repairGrid.EnableMultiSelect = false;
+            this.repairGrid.EnableMultiSelect = true;
             this.repairGrid.Location = new System.Drawing.Point(2, 21);
             this.repairGrid.Name = "repairGrid";
             this.repairGrid.ShowAddExpenseMenu = false;
@@ -95,121 +212,56 @@
             this.repairGrid.ShowDeleteMenu = false;
             this.repairGrid.ShowEditMenu = false;
             this.repairGrid.ShowFindPanel = false;
-            this.repairGrid.ShowFooter = false;
+            this.repairGrid.ShowFooter = true;
             this.repairGrid.ShowLineNumber = true;
             this.repairGrid.ShowMenu = false;
             this.repairGrid.ShowModelTypeColumn = false;
             this.repairGrid.ShowNavigator = false;
             this.repairGrid.Size = new System.Drawing.Size(618, 223);
             this.repairGrid.TabIndex = 0;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.repairRecordGrid1);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 255);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(622, 246);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "明细";
-            // 
-            // repairRecordGrid1
-            // 
-            this.repairRecordGrid1.AllowFilter = true;
-            this.repairRecordGrid1.AllowGroup = true;
-            this.repairRecordGrid1.AllowSort = true;
-            this.repairRecordGrid1.DataSource = null;
-            this.repairRecordGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repairRecordGrid1.Editable = false;
-            this.repairRecordGrid1.EnableMasterView = false;
-            this.repairRecordGrid1.EnableMultiSelect = false;
-            this.repairRecordGrid1.Location = new System.Drawing.Point(2, 21);
-            this.repairRecordGrid1.Name = "repairRecordGrid1";
-            this.repairRecordGrid1.ShowAddMenu = false;
-            this.repairRecordGrid1.ShowDeleteMenu = false;
-            this.repairRecordGrid1.ShowEditMenu = false;
-            this.repairRecordGrid1.ShowFindPanel = false;
-            this.repairRecordGrid1.ShowFooter = false;
-            this.repairRecordGrid1.ShowLineNumber = true;
-            this.repairRecordGrid1.ShowMenu = false;
-            this.repairRecordGrid1.ShowNavigator = false;
-            this.repairRecordGrid1.Size = new System.Drawing.Size(618, 223);
-            this.repairRecordGrid1.TabIndex = 0;
-            this.repairRecordGrid1.UseCalculatePrice = false;
-            this.repairRecordGrid1.UseFacilityName = false;
-            // 
-            // accordionControl1
-            // 
-            this.accordionControl1.AllowItemSelection = true;
-            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accGroupView});
-            this.accordionControl1.Location = new System.Drawing.Point(3, 3);
-            this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Auto;
-            this.accordionControl1.ShowGroupExpandButtons = false;
-            this.accordionControl1.Size = new System.Drawing.Size(194, 504);
-            this.accordionControl1.TabIndex = 2;
-            this.accordionControl1.Text = "accordionControl1";
-            this.accordionControl1.ElementClick += new DevExpress.XtraBars.Navigation.ElementClickEventHandler(this.accordionControl1_ElementClick);
-            // 
-            // accGroupView
-            // 
-            this.accGroupView.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accRepairItem});
-            this.accGroupView.Expanded = true;
-            this.accGroupView.Tag = "View";
-            this.accGroupView.Text = "查看方式";
-            // 
-            // accRepairItem
-            // 
-            this.accRepairItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accRepairItem.Tag = "Repair";
-            this.accRepairItem.Text = "维修改造项目";
-            // 
-            // navFrame
-            // 
-            this.navFrame.Controls.Add(this.navigationPage1);
-            this.navFrame.Controls.Add(this.navigationPage2);
-            this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navFrame.Location = new System.Drawing.Point(203, 3);
-            this.navFrame.Name = "navFrame";
-            this.navFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPage[] {
-            this.navigationPage1,
-            this.navigationPage2});
-            this.navFrame.SelectedPage = this.navigationPage1;
-            this.navFrame.SelectedPageIndex = 0;
-            this.navFrame.Size = new System.Drawing.Size(628, 504);
-            this.navFrame.TabIndex = 3;
-            this.navFrame.Text = "navigationFrame1";
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Controls.Add(this.tableLayoutPanel2);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(628, 504);
+            this.repairGrid.RowSelected += new System.Action<object, System.EventArgs>(this.repairGrid_RowSelected);
             // 
             // navigationPage2
             // 
             this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.groupControl3);
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(628, 504);
             // 
-            // tableLayoutPanel2
+            // groupControl3
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.groupControl2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(628, 504);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.groupControl3.Controls.Add(this.repairRecordGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(628, 504);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "记录列表";
+            // 
+            // repairRecordGrid
+            // 
+            this.repairRecordGrid.AllowFilter = true;
+            this.repairRecordGrid.AllowGroup = true;
+            this.repairRecordGrid.AllowSort = true;
+            this.repairRecordGrid.DataSource = null;
+            this.repairRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairRecordGrid.Editable = false;
+            this.repairRecordGrid.EnableMasterView = false;
+            this.repairRecordGrid.EnableMultiSelect = true;
+            this.repairRecordGrid.Location = new System.Drawing.Point(2, 21);
+            this.repairRecordGrid.Name = "repairRecordGrid";
+            this.repairRecordGrid.ShowAddMenu = false;
+            this.repairRecordGrid.ShowDeleteMenu = false;
+            this.repairRecordGrid.ShowEditMenu = false;
+            this.repairRecordGrid.ShowFindPanel = true;
+            this.repairRecordGrid.ShowFooter = true;
+            this.repairRecordGrid.ShowLineNumber = true;
+            this.repairRecordGrid.ShowMenu = false;
+            this.repairRecordGrid.ShowNavigator = false;
+            this.repairRecordGrid.Size = new System.Drawing.Size(624, 481);
+            this.repairRecordGrid.TabIndex = 0;
+            this.repairRecordGrid.UseCalculatePrice = false;
+            this.repairRecordGrid.UseFacilityName = true;
             // 
             // RepairOverviewMod
             // 
@@ -219,14 +271,17 @@
             this.Name = "RepairOverviewMod";
             this.Size = new System.Drawing.Size(834, 510);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -240,10 +295,13 @@
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accGroupView;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accRepairItem;
-        private RepairRecordGrid repairRecordGrid1;
+        private RepairRecordGrid recordGrid;
         private DevExpress.XtraBars.Navigation.NavigationFrame navFrame;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accRecordItem;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private RepairRecordGrid repairRecordGrid;
     }
 }

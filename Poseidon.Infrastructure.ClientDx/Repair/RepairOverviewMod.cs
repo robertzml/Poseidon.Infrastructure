@@ -58,6 +58,15 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
         }
+
+        /// <summary>
+        /// 载入设施相关记录
+        /// </summary>
+        private void LoadRecords()
+        {
+            var data = BusinessFactory<RepairRecordBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
+            this.repairRecordGrid.DataSource = data;
+        }
         #endregion //Function
 
         #region Method
@@ -79,7 +88,10 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
+            this.repairGrid.Clear();
+            this.recordGrid.Clear();
 
+            this.repairRecordGrid.Clear();
         }
         #endregion //Method
 
@@ -99,6 +111,30 @@ namespace Poseidon.Infrastructure.ClientDx
                     LoadRepair();
                     this.navFrame.SelectedPageIndex = 0;
                     break;
+                case "Record":
+                    LoadRecords();
+                    this.navFrame.SelectedPageIndex = 1;
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 维修改造项目选择
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void repairGrid_RowSelected(object arg1, EventArgs arg2)
+        {
+            var repair = this.repairGrid.GetCurrentSelect();
+            if (repair == null)
+            {
+                this.recordGrid.Clear();
+
+            }
+            else
+            {
+                var records = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(repair.Id);
+                this.recordGrid.DataSource = records.ToList();
             }
         }
         #endregion //Event
