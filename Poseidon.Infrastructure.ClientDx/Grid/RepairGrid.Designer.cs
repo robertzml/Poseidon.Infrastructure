@@ -46,6 +46,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSerialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -66,6 +67,7 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSerialNumber,
             this.colName,
             this.colType,
             this.colModelType,
@@ -116,7 +118,7 @@
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
+            this.colName.VisibleIndex = 1;
             // 
             // colType
             // 
@@ -125,7 +127,7 @@
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 1;
+            this.colType.VisibleIndex = 2;
             // 
             // colModelType
             // 
@@ -139,7 +141,7 @@
             this.colConstructionCompany.FieldName = "ConstructionCompany";
             this.colConstructionCompany.Name = "colConstructionCompany";
             this.colConstructionCompany.Visible = true;
-            this.colConstructionCompany.VisibleIndex = 2;
+            this.colConstructionCompany.VisibleIndex = 3;
             // 
             // colStartDate
             // 
@@ -147,7 +149,7 @@
             this.colStartDate.FieldName = "StartDate";
             this.colStartDate.Name = "colStartDate";
             this.colStartDate.Visible = true;
-            this.colStartDate.VisibleIndex = 3;
+            this.colStartDate.VisibleIndex = 4;
             // 
             // colEndDate
             // 
@@ -155,7 +157,7 @@
             this.colEndDate.FieldName = "EndDate";
             this.colEndDate.Name = "colEndDate";
             this.colEndDate.Visible = true;
-            this.colEndDate.VisibleIndex = 4;
+            this.colEndDate.VisibleIndex = 5;
             // 
             // colRepairFee
             // 
@@ -163,7 +165,7 @@
             this.colRepairFee.FieldName = "RepairFee";
             this.colRepairFee.Name = "colRepairFee";
             this.colRepairFee.Visible = true;
-            this.colRepairFee.VisibleIndex = 5;
+            this.colRepairFee.VisibleIndex = 6;
             // 
             // colIsProject
             // 
@@ -171,7 +173,7 @@
             this.colIsProject.FieldName = "IsProject";
             this.colIsProject.Name = "colIsProject";
             this.colIsProject.Visible = true;
-            this.colIsProject.VisibleIndex = 6;
+            this.colIsProject.VisibleIndex = 7;
             // 
             // colProjectId
             // 
@@ -193,7 +195,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 8;
             // 
             // colStatus
             // 
@@ -203,12 +205,20 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 8;
+            this.colStatus.VisibleIndex = 9;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            // 
+            // colSerialNumber
+            // 
+            this.colSerialNumber.Caption = "流水号";
+            this.colSerialNumber.FieldName = "SerialNumber";
+            this.colSerialNumber.Name = "colSerialNumber";
+            this.colSerialNumber.Visible = true;
+            this.colSerialNumber.VisibleIndex = 0;
             // 
             // RepairGrid
             // 
@@ -245,5 +255,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSerialNumber;
     }
 }

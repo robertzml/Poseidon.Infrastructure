@@ -38,6 +38,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             Repair entity = new Repair();
             entity.Id = doc["_id"].ToString();
+            entity.SerialNumber = doc["serialNumber"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Type = doc["type"].ToInt32();
             entity.ModelType = doc["modelType"].ToString();
@@ -91,6 +92,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
+                { "serialNumber", entity.SerialNumber },
                 { "name", entity.Name },
                 { "type", entity.Type },
                 { "modelType", entity.ModelType },
@@ -130,5 +132,18 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加维修改造信息
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override Repair Create(Repair entity)
+        {
+            entity.SerialNumber = this.GenerateSerialNumber(DateTime.Now);
+            return base.Create(entity);
+        }
+        #endregion //Method
     }
 }
