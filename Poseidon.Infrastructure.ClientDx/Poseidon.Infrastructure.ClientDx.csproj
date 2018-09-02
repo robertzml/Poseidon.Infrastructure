@@ -97,6 +97,12 @@
     <Compile Include="Elevator\ElevatorManagerReceiptMod.Designer.cs">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Overview\FrmRepairOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overview\FrmRepairOverview.Designer.cs">
+      <DependentUpon>FrmRepairOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repair\RepairOverviewMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
