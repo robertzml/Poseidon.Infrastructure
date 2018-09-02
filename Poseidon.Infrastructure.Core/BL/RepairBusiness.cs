@@ -114,6 +114,8 @@ namespace Poseidon.Infrastructure.Core.BL
                 Time = DateTime.Now
             };
 
+            entity.IsProject = false;
+            entity.ProjectId = "";
             entity.Status = 0;
             base.Create(entity);
         }

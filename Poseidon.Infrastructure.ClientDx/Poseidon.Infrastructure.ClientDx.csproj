@@ -466,6 +466,7 @@
     <EmbeddedResource Include="Repair\RepairReceiptMod.resx">
       <DependentUpon>RepairReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Facility.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />

@@ -48,10 +48,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.recordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
-            this.chkIsProject = new DevExpress.XtraEditors.CheckEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.luProject = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -80,10 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsProject.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luProject.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -136,8 +128,6 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.luProject);
-            this.layoutControl1.Controls.Add(this.chkIsProject);
             this.layoutControl1.Controls.Add(this.dpEndDate);
             this.layoutControl1.Controls.Add(this.dpStartDate);
             this.layoutControl1.Controls.Add(this.cmbType);
@@ -194,9 +184,9 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(63, 84);
+            this.txtRemark.Location = new System.Drawing.Point(63, 60);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(799, 75);
+            this.txtRemark.Size = new System.Drawing.Size(799, 99);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 8;
             // 
@@ -244,9 +234,7 @@
             this.layoutControlItem6,
             this.layoutControlItem3,
             this.layoutControlItem2,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9});
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(874, 171);
@@ -274,9 +262,9 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtRemark;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(854, 79);
+            this.layoutControlItem5.Size = new System.Drawing.Size(854, 103);
             this.layoutControlItem5.Text = "备注";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -349,43 +337,7 @@
             this.recordGrid.Size = new System.Drawing.Size(874, 273);
             this.recordGrid.TabIndex = 0;
             this.recordGrid.UseCalculatePrice = true;
-            // 
-            // chkIsProject
-            // 
-            this.chkIsProject.Location = new System.Drawing.Point(12, 60);
-            this.chkIsProject.Name = "chkIsProject";
-            this.chkIsProject.Properties.Caption = "是否工程项目";
-            this.chkIsProject.Size = new System.Drawing.Size(256, 19);
-            this.chkIsProject.StyleController = this.layoutControl1;
-            this.chkIsProject.TabIndex = 12;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.chkIsProject;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(260, 24);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
-            // 
-            // luProject
-            // 
-            this.luProject.Location = new System.Drawing.Point(323, 60);
-            this.luProject.Name = "luProject";
-            this.luProject.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luProject.Size = new System.Drawing.Size(539, 20);
-            this.luProject.StyleController = this.layoutControl1;
-            this.luProject.TabIndex = 13;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.luProject;
-            this.layoutControlItem9.Location = new System.Drawing.Point(260, 48);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(594, 24);
-            this.layoutControlItem9.Text = "关联工程";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
+            this.recordGrid.UseFacilityName = false;
             // 
             // FrmRepairAdd
             // 
@@ -422,10 +374,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkIsProject.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luProject.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,9 +400,5 @@
         private DevExpress.XtraEditors.DateEdit dpStartDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.LookUpEdit luProject;
-        private DevExpress.XtraEditors.CheckEdit chkIsProject;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

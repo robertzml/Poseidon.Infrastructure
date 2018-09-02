@@ -114,15 +114,6 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.ConstructionCompany = this.txtConstructionCompany.Text;
             entity.RepairFee = this.spRepairFee.Value;
             entity.StartDate = this.dpStartDate.DateTime;
-            entity.IsProject = this.chkIsProject.Checked;
-            if (entity.IsProject)
-            {
-                entity.ProjectId = this.luProject.EditValue.ToString();
-            }
-            else
-            {
-                entity.ProjectId = "";
-            }
 
             if (this.dpEndDate.EditValue == null)
                 entity.EndDate = null;
