@@ -71,6 +71,17 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 按年份查找维修改造信息
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByYear(int year)
+        {
+            var dal = this.baseDal as IRepairRepository;
+            return dal.FindByYear(year);
+        }
+
+        /// <summary>
         /// 检查维修改造信息是否能删除
         /// </summary>
         /// <param name="id">维修改造信息ID</param>

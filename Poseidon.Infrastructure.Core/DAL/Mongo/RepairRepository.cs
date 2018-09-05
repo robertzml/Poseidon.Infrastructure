@@ -169,6 +169,24 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
 
             return base.Create(entity);
         }
+
+        /// <summary>
+        /// 按年份查找维修改造信息
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByYear(int year)
+        {
+            var filter = new BsonDocument
+            {
+                { "number", new BsonDocument
+                {
+                    { "$regex", "^" + year.ToString() }
+                } }
+            };
+            var data = this.FindList(filter);
+            return data;
+        }
         #endregion //Method
     }
 }

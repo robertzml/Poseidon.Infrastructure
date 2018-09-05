@@ -22,6 +22,13 @@ namespace Poseidon.Infrastructure.ClientDx
     /// </summary>
     public partial class FrmRepairManage : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 起始年份
+        /// </summary>
+        private readonly int startYear = 2017;
+        #endregion //Field
+
         #region Constructor
         public FrmRepairManage()
         {
@@ -34,17 +41,33 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.repairGrid.Init();
 
-            LoadRepairs();
+            SetYearList();
 
             base.InitForm();
         }
 
         /// <summary>
-        /// 载入维修改造信息
+        /// 设置年度列表
         /// </summary>
-        private void LoadRepairs()
+        private void SetYearList()
         {
-            this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindAll().ToList();
+            this.lbYears.Items.Clear();
+
+            var nowYear = DateTime.Now.Year;
+            for (int i = nowYear; i >= startYear; i--)
+            {
+                this.lbYears.Items.Add(i + "年");
+            }
+        }
+
+        /// <summary>
+        /// 按年度载入维修改造信息
+        /// </summary>
+        /// <param name="year"></param>
+        private void LoadRepairs(int year)
+        {
+            var data = BusinessFactory<RepairBusiness>.Instance.FindByYear(year);
+            this.repairGrid.DataSource = data.ToList();
         }
         #endregion //Function
 
@@ -58,7 +81,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmRepairAdd), new object[] { ModelTypeCode.Elevator });
 
-            LoadRepairs();
+            SetYearList();
         }
 
         /// <summary>
@@ -73,7 +96,7 @@ namespace Poseidon.Infrastructure.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmRepairEdit), new object[] { repair.Id });
-            LoadRepairs();
+            SetYearList();
         }
 
         /// <summary>
@@ -101,12 +124,13 @@ namespace Poseidon.Infrastructure.ClientDx
                 if (result)
                 {
                     MessageUtil.ShowWarning("删除维修改造信息成功");
-                    LoadRepairs();
                 }
                 else
                 {
                     MessageUtil.ShowWarning("删除维修改造信息失败");
                 }
+
+                SetYearList();
             }
         }
 
@@ -131,6 +155,22 @@ namespace Poseidon.Infrastructure.ClientDx
                 var expense = BusinessFactory<ExpenseBusiness>.Instance.FindByDocumentId(repair.Id);
                 this.expenseGrid.DataSource = expense.ToList();
             }
+        }
+
+        /// <summary>
+        /// 年度选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbYears_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lbYears.SelectedIndex == -1)
+                return;
+
+            string text = this.lbYears.SelectedItem.ToString();
+            int year = Convert.ToInt32(text.Substring(0, 4));
+
+            LoadRepairs(year);
         }
         #endregion //Event
     }

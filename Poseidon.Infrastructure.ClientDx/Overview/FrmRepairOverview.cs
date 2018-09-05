@@ -25,5 +25,14 @@ namespace Poseidon.Infrastructure.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.repairReceiptMod.Init();
+
+            base.InitForm();
+        }
+        #endregion //Function
     }
 }

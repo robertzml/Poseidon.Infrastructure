@@ -14,5 +14,11 @@ namespace Poseidon.Infrastructure.Core.IDAL
     /// </summary>
     internal interface IRepairRepository : IBaseDAL<Repair>
     {
+        /// <summary>
+        /// 按年份查找维修改造信息
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        IEnumerable<Repair> FindByYear(int year);
     }
 }

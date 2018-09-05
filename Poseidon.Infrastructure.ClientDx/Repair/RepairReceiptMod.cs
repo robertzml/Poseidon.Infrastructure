@@ -27,9 +27,9 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 当前关联设施
+        /// 起始年份
         /// </summary>
-        private Facility currentFacility;
+        private readonly int startYear = 2017;
         #endregion //Field
 
         #region Constructor
@@ -41,34 +41,51 @@ namespace Poseidon.Infrastructure.ClientDx
 
         #region Function
         /// <summary>
-        /// 载入设施对象
+        /// 设置年度列表
         /// </summary>
-        /// <param name="id">设施ID</param>
-        private void LoadFacility(string id)
+        private void SetYearList()
         {
-            this.currentFacility = BusinessFactory<FacilityBusiness>.Instance.FindById(id);
+            this.lbYears.Items.Clear();
+
+            this.lbYears.Items.Add("全部");
+            this.lbYears.Items.Add("-----");
+            var nowYear = DateTime.Now.Year;
+            for (int i = nowYear; i >= startYear; i--)
+            {
+                this.lbYears.Items.Add(i + "年");
+            }
         }
 
         /// <summary>
-        /// 显示数据
+        /// 载入所有维修改造信息
         /// </summary>
-        private void DisplayInfo()
+        private void LoadRepairs()
         {
-            //this.repairGrid.DataSource = BusinessFactory<RepairBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
+            var data = BusinessFactory<RepairBusiness>.Instance.FindAll();
+            this.repairGrid.DataSource = data.ToList();
+        }
+
+        /// <summary>
+        /// 按年度载入维修改造信息
+        /// </summary>
+        /// <param name="year"></param>
+        private void LoadRepairs(int year)
+        {
+            var data = BusinessFactory<RepairBusiness>.Instance.FindByYear(year);
+            this.repairGrid.DataSource = data.ToList();
         }
         #endregion //Function
 
         #region Method
         /// <summary>
-        /// 设置设施
+        /// 初始化
         /// </summary>
-        /// <param name="id">设施ID</param>
-        public void SetFacility(string id)
+        public void Init()
         {
-            LoadFacility(id);
-
             this.repairGrid.Init();
-            DisplayInfo();
+            //DisplayInfo();
+
+            SetYearList();
         }
 
         /// <summary>
@@ -76,7 +93,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
-            this.currentFacility = null;
+            this.lbYears.Items.Clear();
             this.repairGrid.Clear();
             this.recordGrid.Clear();
             this.expenseGrid.Clear();
@@ -85,73 +102,29 @@ namespace Poseidon.Infrastructure.ClientDx
 
         #region Event
         /// <summary>
-        /// 新增维修改造
+        /// 年度选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void lbYears_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.currentFacility == null)
+            if (this.lbYears.SelectedIndex == -1)
                 return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmRepairAdd), new object[] { this.currentFacility.Id });
-
-            DisplayInfo();
-        }
-
-        /// <summary>
-        /// 编辑维修改造
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (this.currentFacility == null)
-                return;
-
-            var repair = this.repairGrid.GetCurrentSelect();
-            if (repair == null)
-                return;
-
-            ChildFormManage.ShowDialogForm(typeof(FrmRepairEdit), new object[] { repair.Id });
-            DisplayInfo();
-        }
-
-        /// <summary>
-        /// 删除维修改造
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (this.currentFacility == null)
-                return;
-
-            var repair = this.repairGrid.GetCurrentSelect();
-            if (repair == null)
-                return;
-
-            if (MessageUtil.ConfirmYesNo("是否删除该维修改造信息") == DialogResult.Yes)
+            else if (this.lbYears.SelectedIndex == 0)
             {
-                bool could = BusinessFactory<RepairBusiness>.Instance.CheckDelete(repair.Id);
-                if (!could)
-                {
-                    MessageUtil.ShowWarning("该维修改造包含费用记录，不能删除");
-                    return;
-                }
-
-                BusinessFactory<RepairRecordBusiness>.Instance.DeleteByRepair(repair.Id);
-                var result = BusinessFactory<RepairBusiness>.Instance.Delete(repair.Id);
-                if (result)
-                {
-                    MessageUtil.ShowWarning("删除维修改造信息成功");
-                    DisplayInfo();
-                }
-                else
-                {
-                    MessageUtil.ShowWarning("删除维修改造信息失败");
-                }
+                LoadRepairs();
+                return;
             }
+            else if (this.lbYears.SelectedIndex == 1)
+            {
+                this.repairGrid.Clear();
+                return;
+            }
+
+            string text = this.lbYears.SelectedItem.ToString();
+            int year = Convert.ToInt32(text.Substring(0, 4));
+
+            LoadRepairs(year);
         }
 
         /// <summary>

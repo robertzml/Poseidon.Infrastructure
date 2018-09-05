@@ -164,6 +164,8 @@
             this.colRepairFee.Caption = "费用(元)";
             this.colRepairFee.FieldName = "RepairFee";
             this.colRepairFee.Name = "colRepairFee";
+            this.colRepairFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "RepairFee", "合计={0:0.##}")});
             this.colRepairFee.Visible = true;
             this.colRepairFee.VisibleIndex = 6;
             // 
@@ -204,8 +206,6 @@
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 9;
             // 
             // colId
             // 
