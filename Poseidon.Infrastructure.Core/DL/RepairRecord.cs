@@ -48,6 +48,12 @@ namespace Poseidon.Infrastructure.Core.DL
         public string ItemName { get; set; }
 
         /// <summary>
+        /// 规格型号
+        /// </summary>
+        [Display(Name = "规格型号")]
+        public string Specification { get; set; }
+
+        /// <summary>
         /// 数量
         /// </summary>
         [Display(Name = "数量")]

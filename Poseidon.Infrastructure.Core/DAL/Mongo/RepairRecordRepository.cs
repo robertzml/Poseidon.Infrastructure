@@ -43,6 +43,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             entity.FacilityId = doc["facilityId"].ToString();
             entity.FacilityName = doc["facilityName"].ToString();
             entity.ItemName = doc["itemName"].ToString();
+            entity.Specification = doc["specification"].ToString();
             entity.Count = doc["count"].ToDecimal();
             entity.Unit = doc["unit"].ToString();
             entity.UnitPrice = doc["unitPrice"].ToDecimal();
@@ -67,6 +68,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
                 { "facilityId", entity.FacilityId },
                 { "facilityName", entity.FacilityName },
                 { "itemName", entity.ItemName },
+                { "specification", entity.Specification },
                 { "count", entity.Count },
                 { "unit", entity.Unit },
                 { "unitPrice", entity.UnitPrice },

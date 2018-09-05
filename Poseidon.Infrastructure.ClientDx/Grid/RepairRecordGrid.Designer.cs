@@ -49,6 +49,7 @@
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCalculatePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFacilityId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSpecification = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -75,6 +76,7 @@
             this.colFacilityId,
             this.colFacilityName,
             this.colItemName,
+            this.colSpecification,
             this.colCount,
             this.colUnit,
             this.colUnitPrice,
@@ -182,7 +184,7 @@
             this.colCount.FieldName = "Count";
             this.colCount.Name = "colCount";
             this.colCount.Visible = true;
-            this.colCount.VisibleIndex = 3;
+            this.colCount.VisibleIndex = 4;
             // 
             // colUnit
             // 
@@ -190,7 +192,7 @@
             this.colUnit.FieldName = "Unit";
             this.colUnit.Name = "colUnit";
             this.colUnit.Visible = true;
-            this.colUnit.VisibleIndex = 4;
+            this.colUnit.VisibleIndex = 5;
             // 
             // colUnitPrice
             // 
@@ -198,7 +200,7 @@
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 5;
+            this.colUnitPrice.VisibleIndex = 6;
             // 
             // colTotalPrice
             // 
@@ -208,7 +210,7 @@
             this.colTotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPrice", "合计={0:0.##}")});
             this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 7;
+            this.colTotalPrice.VisibleIndex = 8;
             // 
             // colRemark
             // 
@@ -216,7 +218,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
+            this.colRemark.VisibleIndex = 9;
             // 
             // colStatus
             // 
@@ -239,7 +241,7 @@
             this.colCalculatePrice.UnboundExpression = "[Count] * [UnitPrice]";
             this.colCalculatePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalculatePrice.Visible = true;
-            this.colCalculatePrice.VisibleIndex = 6;
+            this.colCalculatePrice.VisibleIndex = 7;
             // 
             // colFacilityId
             // 
@@ -249,6 +251,14 @@
             this.colFacilityId.Name = "colFacilityId";
             this.colFacilityId.Visible = true;
             this.colFacilityId.VisibleIndex = 0;
+            // 
+            // colSpecification
+            // 
+            this.colSpecification.Caption = "规格型号";
+            this.colSpecification.FieldName = "Specification";
+            this.colSpecification.Name = "colSpecification";
+            this.colSpecification.Visible = true;
+            this.colSpecification.VisibleIndex = 3;
             // 
             // RepairRecordGrid
             // 
@@ -289,5 +299,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus1;
         private DevExpress.XtraGrid.Columns.GridColumn colId1;
         private DevExpress.XtraGrid.Columns.GridColumn colFacilityId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSpecification;
     }
 }

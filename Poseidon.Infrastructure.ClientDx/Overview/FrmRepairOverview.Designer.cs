@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmRepairOverview
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FrmRepairOverview";
+            this.ClientSize = new System.Drawing.Size(731, 427);
+            this.Name = "FrmRepairOverview";
+            this.Text = "维修改造总览";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

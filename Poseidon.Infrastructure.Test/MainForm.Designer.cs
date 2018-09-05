@@ -39,6 +39,7 @@
             this.menuMaintenanceMan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRepair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRepairMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRepairOv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,21 +69,21 @@
             // menuElevatorMan
             // 
             this.menuElevatorMan.Name = "menuElevatorMan";
-            this.menuElevatorMan.Size = new System.Drawing.Size(152, 22);
+            this.menuElevatorMan.Size = new System.Drawing.Size(124, 22);
             this.menuElevatorMan.Text = "电梯管理";
             this.menuElevatorMan.Click += new System.EventHandler(this.menuElevatorMan_Click);
             // 
             // menuElevatorList
             // 
             this.menuElevatorList.Name = "menuElevatorList";
-            this.menuElevatorList.Size = new System.Drawing.Size(152, 22);
+            this.menuElevatorList.Size = new System.Drawing.Size(124, 22);
             this.menuElevatorList.Text = "电梯列表";
             this.menuElevatorList.Click += new System.EventHandler(this.menuElevatorList_Click);
             // 
             // menuElevatorOverview
             // 
             this.menuElevatorOverview.Name = "menuElevatorOverview";
-            this.menuElevatorOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuElevatorOverview.Size = new System.Drawing.Size(124, 22);
             this.menuElevatorOverview.Text = "电梯总览";
             this.menuElevatorOverview.Click += new System.EventHandler(this.menuElevatorOverview_Click);
             // 
@@ -119,7 +120,8 @@
             // menuRepair
             // 
             this.menuRepair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuRepairMan});
+            this.menuRepairMan,
+            this.menuRepairOv});
             this.menuRepair.Name = "menuRepair";
             this.menuRepair.Size = new System.Drawing.Size(68, 21);
             this.menuRepair.Text = "维修改造";
@@ -130,6 +132,13 @@
             this.menuRepairMan.Size = new System.Drawing.Size(152, 22);
             this.menuRepairMan.Text = "维修改造管理";
             this.menuRepairMan.Click += new System.EventHandler(this.menuRepairMan_Click);
+            // 
+            // menuRepairOv
+            // 
+            this.menuRepairOv.Name = "menuRepairOv";
+            this.menuRepairOv.Size = new System.Drawing.Size(152, 22);
+            this.menuRepairOv.Text = "维修改造总览";
+            this.menuRepairOv.Click += new System.EventHandler(this.menuRepairOv_Click);
             // 
             // MainForm
             // 
@@ -161,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuElevatorOverview;
         private System.Windows.Forms.ToolStripMenuItem menuRepair;
         private System.Windows.Forms.ToolStripMenuItem menuRepairMan;
+        private System.Windows.Forms.ToolStripMenuItem menuRepairOv;
     }
 }
 

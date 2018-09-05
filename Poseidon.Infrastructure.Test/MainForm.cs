@@ -49,5 +49,10 @@ namespace Poseidon.Infrastructure.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmRepairManage));
         }
+
+        private void menuRepairOv_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmRepairOverview));
+        }
     }
 }

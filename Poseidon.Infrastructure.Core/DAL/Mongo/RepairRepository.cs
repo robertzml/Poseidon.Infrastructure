@@ -9,6 +9,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
     using MongoDB.Bson;
     using MongoDB.Driver;
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Data;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.IDAL;
@@ -38,7 +39,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             Repair entity = new Repair();
             entity.Id = doc["_id"].ToString();
-            entity.SerialNumber = doc["serialNumber"].ToString();
+            entity.Number = doc["number"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Type = doc["type"].ToInt32();
             entity.ModelType = doc["modelType"].ToString();
@@ -92,7 +93,7 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
-                { "serialNumber", entity.SerialNumber },
+                { "number", entity.Number },
                 { "name", entity.Name },
                 { "type", entity.Type },
                 { "modelType", entity.ModelType },
@@ -131,6 +132,28 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
 
             return doc;
         }
+
+        /// <summary>
+        /// 检查重复项
+        /// </summary>
+        /// <param name="entity">对象实体</param>
+        /// <returns></returns>
+        private bool CheckDuplicate(Repair entity)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            FilterDefinition<BsonDocument> filter;
+
+            if (entity.Id == null)
+                filter = builder.Eq("number", entity.Number);
+            else
+                filter = builder.Eq("number", entity.Number) & builder.Ne("_id", new ObjectId(entity.Id));
+
+            long count = Count(filter);
+            if (count > 0)
+                return false;
+            else
+                return true;
+        }
         #endregion //Function
 
         #region Method
@@ -141,7 +164,9 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
         /// <returns></returns>
         public override Repair Create(Repair entity)
         {
-            entity.SerialNumber = this.GenerateSerialNumber(DateTime.Now);
+            if (!CheckDuplicate(entity))
+                throw new PoseidonException(ErrorCode.DuplicateNumber);
+
             return base.Create(entity);
         }
         #endregion //Method

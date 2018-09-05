@@ -59,6 +59,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
         protected override void InitForm()
         {
+            this.txtNumber.Text = this.currentRepair.Number;
             this.txtName.Text = this.currentRepair.Name;
             ControlUtil.BindDictToComboBox(this.cmbType, typeof(Repair), "Type");
 
@@ -85,6 +86,11 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             string errorMessage = "";
 
+            if (string.IsNullOrEmpty(this.txtNumber.Text.Trim()))
+            {
+                errorMessage = "请输入编号";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
             {
                 errorMessage = "请输入名称";
@@ -124,6 +130,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="entity">实体对象</param>
         private void SetEntity(Repair entity)
         {
+            entity.Number = this.txtNumber.Text;
             entity.Name = this.txtName.Text;
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
             entity.ConstructionCompany = this.txtConstructionCompany.Text;
@@ -149,6 +156,7 @@ namespace Poseidon.Infrastructure.ClientDx
             foreach (var item in records)
             {
                 item.ModelType = this.currentRepair.ModelType;
+                item.Specification = item.Specification ?? "";
                 item.TotalPrice = Math.Round(item.Count * item.UnitPrice, 2);
                 item.Remark = item.Remark ?? "";
             }

@@ -46,7 +46,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSerialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -67,7 +67,7 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSerialNumber,
+            this.colNumber,
             this.colName,
             this.colType,
             this.colModelType,
@@ -212,13 +212,13 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // colSerialNumber
+            // colNumber
             // 
-            this.colSerialNumber.Caption = "流水号";
-            this.colSerialNumber.FieldName = "SerialNumber";
-            this.colSerialNumber.Name = "colSerialNumber";
-            this.colSerialNumber.Visible = true;
-            this.colSerialNumber.VisibleIndex = 0;
+            this.colNumber.Caption = "编号";
+            this.colNumber.FieldName = "Number";
+            this.colNumber.Name = "colNumber";
+            this.colNumber.Visible = true;
+            this.colNumber.VisibleIndex = 0;
             // 
             // RepairGrid
             // 
@@ -255,6 +255,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colSerialNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumber;
     }
 }

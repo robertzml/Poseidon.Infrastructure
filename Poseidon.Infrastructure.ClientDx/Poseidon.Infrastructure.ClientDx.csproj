@@ -457,6 +457,9 @@
     <EmbeddedResource Include="Overview\FrmElevatorOverview.resx">
       <DependentUpon>FrmElevatorOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Overview\FrmRepairOverview.resx">
+      <DependentUpon>FrmRepairOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Repair\FrmRepairAdd.resx">
       <DependentUpon>FrmRepairAdd.cs</DependentUpon>
     </EmbeddedResource>

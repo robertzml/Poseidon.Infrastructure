@@ -18,10 +18,10 @@ namespace Poseidon.Infrastructure.Core.DL
     {
         #region Property
         /// <summary>
-        /// 流水号
+        /// 序号
         /// </summary>
-        [Display(Name = "流水号")]
-        public string SerialNumber { get; set; }
+        [Display(Name = "序号")]
+        public string Number { get; set; }
 
         /// <summary>
         /// 名称

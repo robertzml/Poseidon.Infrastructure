@@ -56,10 +56,14 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void elevatorTree_EntitySelected(object sender, EventArgs e)
         {
+            this.SuspendLayout();
+
             this.navFrame.SelectedPageIndex = 1;
             var id = this.elevatorTree.GetCurrentSelectId();
 
             this.elevatorOverviewMod.SetElevator(id);
+
+            this.ResumeLayout();
         }
         #endregion //Event
     }
