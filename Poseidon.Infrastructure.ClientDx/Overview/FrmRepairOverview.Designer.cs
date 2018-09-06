@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageOverview = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.repairReceiptMod = new Poseidon.Infrastructure.ClientDx.RepairReceiptMod();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -42,18 +42,18 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.SelectedTabPage = this.tabPageOverview;
             this.xtraTabControl1.Size = new System.Drawing.Size(907, 554);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
+            this.tabPageOverview,
             this.tabPageReceipt});
             // 
-            // xtraTabPage1
+            // tabPageOverview
             // 
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(901, 525);
-            this.xtraTabPage1.Text = "xtraTabPage1";
+            this.tabPageOverview.Name = "tabPageOverview";
+            this.tabPageOverview.Size = new System.Drawing.Size(901, 525);
+            this.tabPageOverview.Text = "总览";
             // 
             // tabPageReceipt
             // 
@@ -88,7 +88,7 @@
         #endregion
 
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage tabPageOverview;
         private DevExpress.XtraTab.XtraTabPage tabPageReceipt;
         private RepairReceiptMod repairReceiptMod;
     }

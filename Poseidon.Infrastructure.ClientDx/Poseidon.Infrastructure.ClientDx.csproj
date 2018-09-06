@@ -103,11 +103,11 @@
     <Compile Include="Overview\FrmRepairOverview.Designer.cs">
       <DependentUpon>FrmRepairOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repair\RepairOverviewMod.cs">
+    <Compile Include="Repair\FacilityRepairMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Repair\RepairOverviewMod.Designer.cs">
-      <DependentUpon>RepairOverviewMod.cs</DependentUpon>
+    <Compile Include="Repair\FacilityRepairMod.Designer.cs">
+      <DependentUpon>FacilityRepairMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Repair\FrmRepairManage.cs">
       <SubType>Form</SubType>
@@ -469,8 +469,8 @@
     <EmbeddedResource Include="Repair\FrmRepairManage.resx">
       <DependentUpon>FrmRepairManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Repair\RepairOverviewMod.resx">
-      <DependentUpon>RepairOverviewMod.cs</DependentUpon>
+    <EmbeddedResource Include="Repair\FacilityRepairMod.resx">
+      <DependentUpon>FacilityRepairMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\RepairReceiptMod.resx">
       <DependentUpon>RepairReceiptMod.cs</DependentUpon>

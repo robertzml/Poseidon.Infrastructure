@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Infrastructure.ClientDx
 {
-    partial class RepairOverviewMod
+    partial class FacilityRepairMod
     {
         /// <summary> 
         /// 必需的设计器变量。

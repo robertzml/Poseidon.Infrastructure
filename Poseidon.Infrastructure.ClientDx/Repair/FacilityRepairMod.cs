@@ -23,7 +23,7 @@ namespace Poseidon.Infrastructure.ClientDx
     /// <summary>
     /// 维修改造总览模块
     /// </summary>
-    public partial class RepairOverviewMod : DevExpress.XtraEditors.XtraUserControl
+    public partial class FacilityRepairMod : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -33,7 +33,7 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Field
 
         #region Constructor
-        public RepairOverviewMod()
+        public FacilityRepairMod()
         {
             InitializeComponent();
         }

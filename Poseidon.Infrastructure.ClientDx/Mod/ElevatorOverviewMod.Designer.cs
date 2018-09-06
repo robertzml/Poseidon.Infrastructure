@@ -37,7 +37,7 @@
             this.tabInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insOvMod = new Poseidon.Infrastructure.ClientDx.InspectionOverviewMod();
             this.tabRepair = new DevExpress.XtraTab.XtraTabPage();
-            this.repairOvMod = new Poseidon.Infrastructure.ClientDx.RepairOverviewMod();
+            this.repairOvMod = new Poseidon.Infrastructure.ClientDx.FacilityRepairMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -169,6 +169,6 @@
         private DevExpress.XtraTab.XtraTabPage tabInspection;
         private DevExpress.XtraTab.XtraTabPage tabRepair;
         private InspectionOverviewMod insOvMod;
-        private RepairOverviewMod repairOvMod;
+        private FacilityRepairMod repairOvMod;
     }
 }
