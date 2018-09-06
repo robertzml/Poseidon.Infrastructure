@@ -32,8 +32,10 @@
             this.tabPageOverview = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.repairReceiptMod = new Poseidon.Infrastructure.ClientDx.RepairReceiptMod();
+            this.repairOvMod = new Poseidon.Infrastructure.ClientDx.RepairOverivewMod();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            this.tabPageOverview.SuspendLayout();
             this.tabPageReceipt.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             // 
             // tabPageOverview
             // 
+            this.tabPageOverview.Controls.Add(this.repairOvMod);
             this.tabPageOverview.Name = "tabPageOverview";
             this.tabPageOverview.Size = new System.Drawing.Size(901, 525);
             this.tabPageOverview.Text = "总览";
@@ -70,6 +73,14 @@
             this.repairReceiptMod.Size = new System.Drawing.Size(901, 525);
             this.repairReceiptMod.TabIndex = 0;
             // 
+            // repairOvMod
+            // 
+            this.repairOvMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairOvMod.Location = new System.Drawing.Point(0, 0);
+            this.repairOvMod.Name = "repairOvMod";
+            this.repairOvMod.Size = new System.Drawing.Size(901, 525);
+            this.repairOvMod.TabIndex = 0;
+            // 
             // FrmRepairOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -80,6 +91,7 @@
             this.Text = "维修改造总览";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
+            this.tabPageOverview.ResumeLayout(false);
             this.tabPageReceipt.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -91,5 +103,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageOverview;
         private DevExpress.XtraTab.XtraTabPage tabPageReceipt;
         private RepairReceiptMod repairReceiptMod;
+        private RepairOverivewMod repairOvMod;
     }
 }

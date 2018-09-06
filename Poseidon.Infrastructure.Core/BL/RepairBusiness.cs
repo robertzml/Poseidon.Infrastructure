@@ -10,6 +10,7 @@ namespace Poseidon.Infrastructure.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.IDAL;
+    using Poseidon.Infrastructure.Core.Utility;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.Utility;
 
@@ -18,6 +19,13 @@ namespace Poseidon.Infrastructure.Core.BL
     /// </summary>
     public class RepairBusiness : AbstractBusiness<Repair>, IBaseBL<Repair>, IExpenseBusiness
     {
+        #region Field
+        /// <summary>
+        /// 起始年份
+        /// </summary>
+        private readonly int startYear = 2017;
+        #endregion //Field
+
         #region Constructor
         /// <summary>
         /// 维修改造业务类
@@ -103,6 +111,35 @@ namespace Poseidon.Infrastructure.Core.BL
             }
         }
         #endregion //Method
+
+        #region Statistic
+        /// <summary>
+        /// 获取维修改造年度汇总
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<RepairYearSummaryModel> GetYearSummary()
+        {
+            var dal = this.baseDal as IRepairRepository;
+            var data = new List<RepairYearSummaryModel>();
+
+            int nowYear = DateTime.Now.Year;
+            for (int i = nowYear; i >= startYear; i--)
+            {
+                var repairs = dal.FindByYear(i).ToList();
+
+                RepairYearSummaryModel item = new RepairYearSummaryModel
+                {
+                    Year = i,
+                    Count = repairs.Count,
+                    TotalFee = repairs.Sum(r => r.RepairFee)
+                };
+
+                data.Add(item);
+            }
+
+            return data;
+        }
+        #endregion //Statistic
 
         #region CRUD
         /// <summary>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,32 +12,19 @@ namespace Poseidon.Infrastructure.ClientDx
 {
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
-    /// 维修改造总览
+    /// 维修改造年度汇总表格
     /// </summary>
-    public partial class FrmRepairOverview : BaseMdiForm
+    public partial class RepairYearSummaryGrid : WinEntityGrid<RepairYearSummaryModel>
     {
         #region Constructor
-        public FrmRepairOverview()
+        public RepairYearSummaryGrid()
         {
             InitializeComponent();
         }
         #endregion //Constructor
-
-        #region Function
-        protected override void InitForm()
-        {
-            this.SuspendLayout();
-
-            this.repairOvMod.Init();
-            this.repairReceiptMod.Init();
-
-            base.InitForm();
-
-            this.ResumeLayout();
-        }
-        #endregion //Function
     }
 }
