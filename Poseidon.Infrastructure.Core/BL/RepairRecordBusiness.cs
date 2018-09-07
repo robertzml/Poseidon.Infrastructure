@@ -40,6 +40,16 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 按设施类型查找记录
+        /// </summary>
+        /// <param name="modelType">设施类型</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecord> FindByModelType(string modelType)
+        {
+            return this.baseDal.FindListByField("modelType", modelType);
+        }
+
+        /// <summary>
         /// 根据设施查找记录
         /// </summary>
         /// <param name="facility">设施ID</param>

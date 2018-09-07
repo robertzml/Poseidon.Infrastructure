@@ -33,6 +33,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.repairOvMod.Init();
             this.repairReceiptMod.Init();
+            this.repairRecordMod.Init();
 
             base.InitForm();
 

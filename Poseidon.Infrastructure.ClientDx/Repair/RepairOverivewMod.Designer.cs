@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(736, 480);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(864, 571);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -57,7 +57,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(362, 234);
+            this.groupControl1.Size = new System.Drawing.Size(426, 279);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "历年汇总";
             // 
@@ -81,7 +81,7 @@
             this.repairYearSumGrid.ShowLineNumber = true;
             this.repairYearSumGrid.ShowMenu = false;
             this.repairYearSumGrid.ShowNavigator = false;
-            this.repairYearSumGrid.Size = new System.Drawing.Size(358, 211);
+            this.repairYearSumGrid.Size = new System.Drawing.Size(422, 256);
             this.repairYearSumGrid.TabIndex = 0;
             // 
             // RepairOverivewMod
@@ -90,7 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RepairOverivewMod";
-            this.Size = new System.Drawing.Size(736, 480);
+            this.Size = new System.Drawing.Size(864, 571);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

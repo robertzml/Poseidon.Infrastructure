@@ -50,6 +50,7 @@
             this.colCalculatePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFacilityId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSpecification = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRepairNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -71,6 +72,7 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRepairNumber,
             this.colRepairId,
             this.colModelType,
             this.colFacilityId,
@@ -94,6 +96,7 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             this.dgvEntity.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dgvEntity_CellValueChanged);
+            this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
             // 
             // colRepairId
             // 
@@ -114,7 +117,7 @@
             this.colFacilityName.Name = "colFacilityName";
             this.colFacilityName.OptionsColumn.AllowEdit = false;
             this.colFacilityName.Visible = true;
-            this.colFacilityName.VisibleIndex = 1;
+            this.colFacilityName.VisibleIndex = 2;
             // 
             // repoFacility
             // 
@@ -176,7 +179,7 @@
             this.colItemName.FieldName = "ItemName";
             this.colItemName.Name = "colItemName";
             this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 2;
+            this.colItemName.VisibleIndex = 3;
             // 
             // colCount
             // 
@@ -184,7 +187,7 @@
             this.colCount.FieldName = "Count";
             this.colCount.Name = "colCount";
             this.colCount.Visible = true;
-            this.colCount.VisibleIndex = 4;
+            this.colCount.VisibleIndex = 5;
             // 
             // colUnit
             // 
@@ -192,7 +195,7 @@
             this.colUnit.FieldName = "Unit";
             this.colUnit.Name = "colUnit";
             this.colUnit.Visible = true;
-            this.colUnit.VisibleIndex = 5;
+            this.colUnit.VisibleIndex = 6;
             // 
             // colUnitPrice
             // 
@@ -200,7 +203,7 @@
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 6;
+            this.colUnitPrice.VisibleIndex = 7;
             // 
             // colTotalPrice
             // 
@@ -210,7 +213,7 @@
             this.colTotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPrice", "合计={0:0.##}")});
             this.colTotalPrice.Visible = true;
-            this.colTotalPrice.VisibleIndex = 8;
+            this.colTotalPrice.VisibleIndex = 9;
             // 
             // colRemark
             // 
@@ -218,7 +221,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 9;
+            this.colRemark.VisibleIndex = 10;
             // 
             // colStatus
             // 
@@ -241,7 +244,7 @@
             this.colCalculatePrice.UnboundExpression = "[Count] * [UnitPrice]";
             this.colCalculatePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalculatePrice.Visible = true;
-            this.colCalculatePrice.VisibleIndex = 7;
+            this.colCalculatePrice.VisibleIndex = 8;
             // 
             // colFacilityId
             // 
@@ -250,7 +253,7 @@
             this.colFacilityId.FieldName = "FacilityId";
             this.colFacilityId.Name = "colFacilityId";
             this.colFacilityId.Visible = true;
-            this.colFacilityId.VisibleIndex = 0;
+            this.colFacilityId.VisibleIndex = 1;
             // 
             // colSpecification
             // 
@@ -258,7 +261,17 @@
             this.colSpecification.FieldName = "Specification";
             this.colSpecification.Name = "colSpecification";
             this.colSpecification.Visible = true;
-            this.colSpecification.VisibleIndex = 3;
+            this.colSpecification.VisibleIndex = 4;
+            // 
+            // colRepairNumber
+            // 
+            this.colRepairNumber.Caption = "序号";
+            this.colRepairNumber.FieldName = "colRepairNumber";
+            this.colRepairNumber.Name = "colRepairNumber";
+            this.colRepairNumber.OptionsColumn.AllowEdit = false;
+            this.colRepairNumber.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.colRepairNumber.Visible = true;
+            this.colRepairNumber.VisibleIndex = 0;
             // 
             // RepairRecordGrid
             // 
@@ -300,5 +313,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId1;
         private DevExpress.XtraGrid.Columns.GridColumn colFacilityId;
         private DevExpress.XtraGrid.Columns.GridColumn colSpecification;
+        private DevExpress.XtraGrid.Columns.GridColumn colRepairNumber;
     }
 }

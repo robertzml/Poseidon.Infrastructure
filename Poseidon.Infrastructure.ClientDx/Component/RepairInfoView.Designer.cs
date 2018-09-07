@@ -173,6 +173,7 @@
             this.recordGrid.Location = new System.Drawing.Point(12, 193);
             this.recordGrid.Name = "recordGrid";
             this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowColRepairNumber = false;
             this.recordGrid.ShowDeleteMenu = false;
             this.recordGrid.ShowEditMenu = false;
             this.recordGrid.ShowFindPanel = false;

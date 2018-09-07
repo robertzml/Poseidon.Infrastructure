@@ -14,6 +14,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
+    using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
 
     /// <summary>
@@ -33,9 +34,19 @@ namespace Poseidon.Infrastructure.ClientDx
         private bool useFacilityName = false;
 
         /// <summary>
+        /// 是否显示维修改造序号列
+        /// </summary>
+        private bool showColRepairNumber = false;
+
+        /// <summary>
         /// 模型类型代码
         /// </summary>
         private string modelType;
+
+        /// <summary>
+        /// 缓存维修改造项目
+        /// </summary>
+        private List<Repair> repairs = new List<Repair>();
         #endregion //Field
 
         #region Constructor
@@ -50,12 +61,26 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 初始化
         /// </summary>
         /// <param name="modelType">模型类型</param>
+        /// <remarks>
+        /// 编辑状态下必须调用该初始化方法
+        /// </remarks>
         public void Init(string modelType)
         {
             this.modelType = modelType;
             var facilities = BusinessFactory<FacilityBusiness>.Instance.FindByModelType(modelType);
 
             this.bsFacility.DataSource = facilities;
+        }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <remarks>
+        /// 显示维修改造项目调用该初始化方法
+        /// </remarks>
+        public void Init()
+        {
+            this.repairs = BusinessFactory<RepairBusiness>.Instance.FindAll().ToList();
         }
         #endregion //Method
 
@@ -72,6 +97,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.colFacilityId.Visible = !this.useFacilityName;
             this.colFacilityName.Visible = this.useFacilityName;
+            this.colRepairNumber.Visible = this.showColRepairNumber;
         }
 
         /// <summary>
@@ -95,6 +121,33 @@ namespace Poseidon.Infrastructure.ClientDx
                 var fac = list.Find(r => r.Id == id);
 
                 record.FacilityName = fac.Name;
+            }
+        }
+
+        /// <summary>
+        /// 自定义数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            int rowIndex = e.ListSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            var record = this.bsEntity[rowIndex] as RepairRecord;
+            if (this.showColRepairNumber && e.Column.FieldName == "colRepairNumber" && e.IsGetData)
+            {
+                var repair = this.repairs.SingleOrDefault(r => r.Id == record.RepairId);
+                if (repair != null)
+                {
+                    e.Value = repair.Number;
+                }
+                else
+                {
+                    repair = BusinessFactory<RepairBusiness>.Instance.FindById(record.RepairId);
+                    e.Value = repair.Number;
+                }
             }
         }
         #endregion //Event
@@ -131,6 +184,23 @@ namespace Poseidon.Infrastructure.ClientDx
             set
             {
                 useFacilityName = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示维修改造序号列
+        /// </summary>
+        [Description("是否显示维修改造序号列"), Category("界面")]
+        public bool ShowColRepairNumber
+        {
+            get
+            {
+                return showColRepairNumber;
+            }
+
+            set
+            {
+                showColRepairNumber = value;
             }
         }
         #endregion //Property
