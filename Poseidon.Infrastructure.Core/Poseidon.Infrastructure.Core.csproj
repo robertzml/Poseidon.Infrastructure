@@ -78,11 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\ElevatorBusiness.cs" />
+    <Compile Include="BL\ElevatorLogBusiness.cs" />
     <Compile Include="BL\InspectionBusiness.cs" />
     <Compile Include="BL\MaintenanceCompanyBusiness.cs" />
     <Compile Include="BL\MaintenanceInfoBusiness.cs" />
     <Compile Include="BL\RepairBusiness.cs" />
     <Compile Include="BL\RepairRecordBusiness.cs" />
+    <Compile Include="DAL\Mongo\ElevatorLogRepository.cs" />
     <Compile Include="DAL\Mongo\ElevatorRepository.cs" />
     <Compile Include="DAL\Mongo\InspectionRepository.cs" />
     <Compile Include="DAL\Mongo\MaintenanceCompanyRepository.cs" />
@@ -90,11 +92,13 @@
     <Compile Include="DAL\Mongo\RepairRecordRepository.cs" />
     <Compile Include="DAL\Mongo\RepairRepository.cs" />
     <Compile Include="DL\Elevator.cs" />
+    <Compile Include="DL\ElevatorLog.cs" />
     <Compile Include="DL\Inspection.cs" />
     <Compile Include="DL\MaintenanceCompany.cs" />
     <Compile Include="DL\MaintenanceInfo.cs" />
     <Compile Include="DL\Repair.cs" />
     <Compile Include="DL\RepairRecord.cs" />
+    <Compile Include="IDAL\IElevatorLogRepository.cs" />
     <Compile Include="IDAL\IElevatorRepository.cs" />
     <Compile Include="IDAL\IInspectionRepository.cs" />
     <Compile Include="IDAL\IMaintenanceCompanyRepository.cs" />
