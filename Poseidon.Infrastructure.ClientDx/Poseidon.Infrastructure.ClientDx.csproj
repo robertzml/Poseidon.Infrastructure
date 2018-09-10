@@ -39,6 +39,8 @@
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
@@ -91,11 +93,23 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Elevator\ElevatorLogMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elevator\ElevatorLogMod.Designer.cs">
+      <DependentUpon>ElevatorLogMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Elevator\ElevatorManagerReceiptMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Elevator\ElevatorManagerReceiptMod.Designer.cs">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorLogAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elevator\FrmElevatorLogAdd.Designer.cs">
+      <DependentUpon>FrmElevatorLogAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Overview\FrmRepairOverview.cs">
       <SubType>Form</SubType>
@@ -388,6 +402,9 @@
     <EmbeddedResource Include="Component\RepairInfoView.resx">
       <DependentUpon>RepairInfoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\ElevatorLogMod.resx">
+      <DependentUpon>ElevatorLogMod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Elevator\ElevatorManagerReceiptMod.resx">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorList.resx">
       <DependentUpon>FrmElevatorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\FrmElevatorLogAdd.resx">
+      <DependentUpon>FrmElevatorLogAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorManagerAdd.resx">
       <DependentUpon>FrmElevatorManagerAdd.cs</DependentUpon>

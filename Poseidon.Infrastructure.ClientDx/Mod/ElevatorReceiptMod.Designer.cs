@@ -40,6 +40,7 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insMod = new Poseidon.Infrastructure.ClientDx.InspectionReceiptMod();
+            this.elevatorLogMod1 = new Poseidon.Infrastructure.ClientDx.ElevatorLogMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -48,6 +49,7 @@
             this.tabPageCompany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).BeginInit();
             this.tabManage.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             this.tabPageInspection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,6 +140,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.elevatorLogMod1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(911, 335);
             this.xtraTabPage1.Text = "日常运行";
@@ -157,6 +160,14 @@
             this.insMod.Size = new System.Drawing.Size(911, 335);
             this.insMod.TabIndex = 0;
             // 
+            // elevatorLogMod1
+            // 
+            this.elevatorLogMod1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorLogMod1.Location = new System.Drawing.Point(0, 0);
+            this.elevatorLogMod1.Name = "elevatorLogMod1";
+            this.elevatorLogMod1.Size = new System.Drawing.Size(911, 335);
+            this.elevatorLogMod1.TabIndex = 0;
+            // 
             // ElevatorReceiptMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -172,6 +183,7 @@
             this.tabPageCompany.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabManage)).EndInit();
             this.tabManage.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             this.tabPageInspection.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -191,5 +203,6 @@
         private InspectionReceiptMod insMod;
         private ElevatorManagerReceiptMod elevatorManagerMod;
         private MaintenanceInfoReceiptMod maintenanceInfoMod;
+        private ElevatorLogMod elevatorLogMod1;
     }
 }

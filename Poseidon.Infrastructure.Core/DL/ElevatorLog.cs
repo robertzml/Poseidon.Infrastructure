@@ -31,6 +31,7 @@ namespace Poseidon.Infrastructure.Core.DL
         /// <summary>
         /// 事件类型
         /// </summary>
+        [Dict("Infrastructure.ElevatorLogType")]
         [Display(Name = "事件类型")]
         public int LogType { get; set; }
 
