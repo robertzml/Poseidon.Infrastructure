@@ -72,6 +72,10 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Function
 
         #region Method
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="modelType">模型类型</param>
         public void Init(string modelType)
         {
             this.modelType = modelType;

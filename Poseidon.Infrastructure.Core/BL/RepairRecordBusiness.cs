@@ -61,6 +61,25 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 按年份查找维修改造记录
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecord> FindByYear(int year)
+        {
+            RepairBusiness repairBusiness = new RepairBusiness();
+            var repairList = repairBusiness.FindByYear(year);
+
+
+            var dal = this.baseDal as IRepairRecordRepository;
+
+            var repairIds = repairList.Select(r => r.Id).ToList();
+            var records = dal.FindListInRepairIds(repairIds);
+
+            return records;
+        }
+
+        /// <summary>
         /// 汇总查找记录
         /// </summary>
         /// <param name="modelType">设施类型</param>

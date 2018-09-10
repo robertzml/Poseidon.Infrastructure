@@ -26,10 +26,6 @@ namespace Poseidon.Infrastructure.ClientDx
     public partial class RepairReceiptMod : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
-        /// <summary>
-        /// 起始年份
-        /// </summary>
-        private readonly int startYear = 2017;
         #endregion //Field
 
         #region Constructor
@@ -50,7 +46,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.lbYears.Items.Add("全部");
             this.lbYears.Items.Add("-----");
             var nowYear = DateTime.Now.Year;
-            for (int i = nowYear; i >= startYear; i--)
+            for (int i = nowYear; i >= InfrastructureConstant.StartYear; i--)
             {
                 this.lbYears.Items.Add(i + "年");
             }
@@ -83,7 +79,6 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Init()
         {
             this.repairGrid.Init();
-            //DisplayInfo();
 
             SetYearList();
         }
@@ -95,7 +90,8 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.lbYears.Items.Clear();
             this.repairGrid.Clear();
-            this.recordGrid.Clear();
+
+            this.repairInfoView.Clear();
             this.expenseGrid.Clear();
         }
         #endregion //Method
@@ -137,13 +133,12 @@ namespace Poseidon.Infrastructure.ClientDx
             var repair = this.repairGrid.GetCurrentSelect();
             if (repair == null)
             {
-                this.recordGrid.Clear();
+                this.repairInfoView.Clear();
                 this.expenseGrid.Clear();
             }
             else
             {
-                var records = BusinessFactory<RepairRecordBusiness>.Instance.FindByRepair(repair.Id);
-                this.recordGrid.DataSource = records.ToList();
+                this.repairInfoView.Init(repair);
 
                 var expense = BusinessFactory<ExpenseBusiness>.Instance.FindByDocumentId(repair.Id);
                 this.expenseGrid.DataSource = expense.ToList();

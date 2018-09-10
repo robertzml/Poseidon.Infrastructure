@@ -34,18 +34,22 @@
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accGroupModelType = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElevatorItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accSubstationItem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accGroupYear = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.repairInfoView = new Poseidon.Infrastructure.ClientDx.RepairInfoView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.tabPageCategory = new DevExpress.XtraTab.XtraTabPage();
             this.recordSummaryMod = new Poseidon.Infrastructure.ClientDx.RepairRecordSummaryMod();
+            this.tabPageCategory = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -63,6 +67,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.accordionControl1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -108,6 +113,7 @@
             this.repairRecordGrid.TabIndex = 0;
             this.repairRecordGrid.UseCalculatePrice = false;
             this.repairRecordGrid.UseFacilityName = true;
+            this.repairRecordGrid.RowSelected += new System.Action<object, System.EventArgs>(this.repairRecordGrid_RowSelected);
             // 
             // accordionControl1
             // 
@@ -128,7 +134,7 @@
             // 
             this.accGroupModelType.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accElevatorItem,
-            this.accordionControlElement3});
+            this.accSubstationItem});
             this.accGroupModelType.Expanded = true;
             this.accGroupModelType.Text = "设施类型";
             // 
@@ -138,15 +144,33 @@
             this.accElevatorItem.Tag = "Infrastructure.Elevator";
             this.accElevatorItem.Text = "电梯";
             // 
-            // accordionControlElement3
+            // accSubstationItem
             // 
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Tag = "Infrastructure.Substation";
-            this.accordionControlElement3.Text = "变电所";
+            this.accSubstationItem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accSubstationItem.Tag = "Infrastructure.Substation";
+            this.accSubstationItem.Text = "变电所";
             // 
             // accGroupYear
             // 
             this.accGroupYear.Text = "年度";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.repairInfoView);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(203, 239);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(325, 231);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "项目信息";
+            // 
+            // repairInfoView
+            // 
+            this.repairInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repairInfoView.Location = new System.Drawing.Point(2, 21);
+            this.repairInfoView.Name = "repairInfoView";
+            this.repairInfoView.Size = new System.Drawing.Size(321, 208);
+            this.repairInfoView.TabIndex = 0;
             // 
             // xtraTabControl1
             // 
@@ -190,14 +214,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(425, 230);
             this.groupControl2.TabIndex = 0;
-            this.groupControl2.Text = "groupControl2";
-            // 
-            // tabPageCategory
-            // 
-            this.tabPageCategory.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageCategory.Name = "tabPageCategory";
-            this.tabPageCategory.Size = new System.Drawing.Size(862, 473);
-            this.tabPageCategory.Text = "分类统计";
+            this.groupControl2.Text = "年度设施汇总";
             // 
             // recordSummaryMod
             // 
@@ -206,6 +223,13 @@
             this.recordSummaryMod.Name = "recordSummaryMod";
             this.recordSummaryMod.Size = new System.Drawing.Size(421, 207);
             this.recordSummaryMod.TabIndex = 0;
+            // 
+            // tabPageCategory
+            // 
+            this.tabPageCategory.Controls.Add(this.tableLayoutPanel1);
+            this.tabPageCategory.Name = "tabPageCategory";
+            this.tabPageCategory.Size = new System.Drawing.Size(862, 473);
+            this.tabPageCategory.Text = "分类统计";
             // 
             // RepairRecordMod
             // 
@@ -218,6 +242,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.tabPageSummary.ResumeLayout(false);
@@ -237,7 +263,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accGroupModelType;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElevatorItem;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accSubstationItem;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accGroupYear;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage tabPageSummary;
@@ -245,5 +271,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraTab.XtraTabPage tabPageCategory;
         private RepairRecordSummaryMod recordSummaryMod;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private RepairInfoView repairInfoView;
     }
 }
