@@ -10,6 +10,7 @@ namespace Poseidon.Infrastructure.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.IDAL;
+    using Poseidon.Infrastructure.Core.Utility;
     using Poseidon.Finance.Core.BL;
     using Poseidon.Finance.Core.Utility;
 
@@ -57,6 +58,40 @@ namespace Poseidon.Infrastructure.Core.BL
         public IEnumerable<RepairRecord> FindByFacility(string facility)
         {
             return this.baseDal.FindListByField("facilityId", facility);
+        }
+
+        /// <summary>
+        /// 汇总查找记录
+        /// </summary>
+        /// <param name="modelType">设施类型</param>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecordSummaryModel> FindBySummary(string modelType, int year)
+        {
+            List<RepairRecordSummaryModel> data = new List<RepairRecordSummaryModel>();
+
+            RepairBusiness repairBusiness = new RepairBusiness();
+            var repairList = repairBusiness.FindByModelTypeAndYear(modelType, year);
+
+            var dal = this.baseDal as IRepairRecordRepository;
+
+            var repairIds = repairList.Select(r => r.Id).ToList();
+            var records = dal.FindListInRepairIds(repairIds);
+
+            var summary = records.GroupBy(r => r.FacilityId)
+                .Select(s => new { FacilityId = s.Key, Count = s.Count(), TotalFee = s.Sum(item => item.TotalPrice) });
+
+            foreach (var item in summary)
+            {
+                RepairRecordSummaryModel model = new RepairRecordSummaryModel();
+                model.FacilityId = item.FacilityId;
+                model.FacilityName = records.First(r => r.FacilityId == item.FacilityId).FacilityName;
+                model.Count = item.Count;
+                model.TotalFee = item.TotalFee;
+
+                data.Add(model);
+            }
+            return data;
         }
         #endregion //Method
 

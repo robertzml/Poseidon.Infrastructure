@@ -38,10 +38,10 @@
             this.accGroupYear = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
-            this.tabPageCategory = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.repairRecordSummaryGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordSummaryGrid();
+            this.tabPageCategory = new DevExpress.XtraTab.XtraTabPage();
+            this.recordSummaryMod = new Poseidon.Infrastructure.ClientDx.RepairRecordSummaryMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -49,10 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
-            this.tabPageCategory.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            this.tabPageCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -167,13 +167,6 @@
             this.tabPageSummary.Size = new System.Drawing.Size(862, 473);
             this.tabPageSummary.Text = "汇总统计";
             // 
-            // tabPageCategory
-            // 
-            this.tabPageCategory.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageCategory.Name = "tabPageCategory";
-            this.tabPageCategory.Size = new System.Drawing.Size(862, 473);
-            this.tabPageCategory.Text = "分类统计";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -191,7 +184,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.repairRecordSummaryGrid);
+            this.groupControl2.Controls.Add(this.recordSummaryMod);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
@@ -199,28 +192,20 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "groupControl2";
             // 
-            // repairRecordSummaryGrid
+            // tabPageCategory
             // 
-            this.repairRecordSummaryGrid.AllowFilter = true;
-            this.repairRecordSummaryGrid.AllowGroup = false;
-            this.repairRecordSummaryGrid.AllowSort = true;
-            this.repairRecordSummaryGrid.DataSource = null;
-            this.repairRecordSummaryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repairRecordSummaryGrid.Editable = false;
-            this.repairRecordSummaryGrid.EnableMasterView = false;
-            this.repairRecordSummaryGrid.EnableMultiSelect = true;
-            this.repairRecordSummaryGrid.Location = new System.Drawing.Point(2, 21);
-            this.repairRecordSummaryGrid.Name = "repairRecordSummaryGrid";
-            this.repairRecordSummaryGrid.ShowAddMenu = false;
-            this.repairRecordSummaryGrid.ShowDeleteMenu = false;
-            this.repairRecordSummaryGrid.ShowEditMenu = false;
-            this.repairRecordSummaryGrid.ShowFindPanel = false;
-            this.repairRecordSummaryGrid.ShowFooter = true;
-            this.repairRecordSummaryGrid.ShowLineNumber = true;
-            this.repairRecordSummaryGrid.ShowMenu = false;
-            this.repairRecordSummaryGrid.ShowNavigator = false;
-            this.repairRecordSummaryGrid.Size = new System.Drawing.Size(421, 207);
-            this.repairRecordSummaryGrid.TabIndex = 0;
+            this.tabPageCategory.Controls.Add(this.tableLayoutPanel1);
+            this.tabPageCategory.Name = "tabPageCategory";
+            this.tabPageCategory.Size = new System.Drawing.Size(862, 473);
+            this.tabPageCategory.Text = "分类统计";
+            // 
+            // recordSummaryMod
+            // 
+            this.recordSummaryMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recordSummaryMod.Location = new System.Drawing.Point(2, 21);
+            this.recordSummaryMod.Name = "recordSummaryMod";
+            this.recordSummaryMod.Size = new System.Drawing.Size(421, 207);
+            this.recordSummaryMod.TabIndex = 0;
             // 
             // RepairRecordMod
             // 
@@ -236,10 +221,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.tabPageSummary.ResumeLayout(false);
-            this.tabPageCategory.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.tabPageCategory.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +243,7 @@
         private DevExpress.XtraTab.XtraTabPage tabPageSummary;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private RepairRecordSummaryGrid repairRecordSummaryGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageCategory;
+        private RepairRecordSummaryMod recordSummaryMod;
     }
 }

@@ -15,11 +15,16 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Infrastructure.Core.Utility;
 
+    /// <summary>
+    /// 维修改造记录汇总表格
+    /// </summary>
     public partial class RepairRecordSummaryGrid : WinEntityGrid<RepairRecordSummaryModel>
     {
+        #region Constructor
         public RepairRecordSummaryGrid()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
     }
 }

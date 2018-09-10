@@ -31,6 +31,11 @@ namespace Poseidon.Infrastructure.Core.Utility
         /// 维修改造类集合名称
         /// </summary>
         public static readonly string RepairCollectionName = "infrastructure_repair";
+
+        /// <summary>
+        /// 记录起始年份
+        /// </summary>
+        public static readonly int StartYear = 2016;
         #endregion //Field
     }
 }

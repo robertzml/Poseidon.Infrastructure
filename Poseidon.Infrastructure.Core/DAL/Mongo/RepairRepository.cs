@@ -187,6 +187,29 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             var data = this.FindList(filter);
             return data;
         }
+
+        /// <summary>
+        /// 按设施类型和年份查找维修改造项目
+        /// </summary>
+        /// <param name="modelType">设施类型</param>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<Repair> FindByModelTypeAndYear(string modelType, int year)
+        {
+            var filter = new BsonDocument
+            {
+                {
+                    "modelType", modelType
+                },
+                { "number", new BsonDocument
+                    {
+                        { "$regex", "^" + year.ToString() }
+                    }
+                }
+            };
+            var data = this.FindList(filter);
+            return data;
+        }
         #endregion //Method
     }
 }

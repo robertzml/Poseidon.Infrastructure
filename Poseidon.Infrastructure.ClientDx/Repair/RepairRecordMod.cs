@@ -36,7 +36,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private void LoadRepairRecordSummary()
         {
-
+            this.recordSummaryMod.Init(ModelTypeCode.Elevator);
         }
 
 
@@ -62,6 +62,7 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Init()
         {
             LoadRepairRecords();
+            LoadRepairRecordSummary();
         }
         #endregion //Method
 

@@ -115,6 +115,12 @@
     <Compile Include="Grid\RepairRecordSummaryGrid.Designer.cs">
       <DependentUpon>RepairRecordSummaryGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repair\RepairRecordSummaryMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairRecordSummaryMod.Designer.cs">
+      <DependentUpon>RepairRecordSummaryMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repair\RepairRecordMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\RepairRecordMod.resx">
       <DependentUpon>RepairRecordMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repair\RepairRecordSummaryMod.resx">
+      <DependentUpon>RepairRecordSummaryMod.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.Facility.datasource" />

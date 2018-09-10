@@ -14,5 +14,11 @@ namespace Poseidon.Infrastructure.Core.IDAL
     /// </summary>
     internal interface IRepairRecordRepository : IBaseDAL<RepairRecord>
     {
+        /// <summary>
+        /// 按维修改造项目ID列表查找记录
+        /// </summary>
+        /// <param name="repairIds">维修改造项目ID列表</param>
+        /// <returns></returns>
+        IEnumerable<RepairRecord> FindListInRepairIds(List<string> repairIds);
     }
 }

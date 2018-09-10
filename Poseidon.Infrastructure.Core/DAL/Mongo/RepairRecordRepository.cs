@@ -80,5 +80,20 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 按维修改造项目ID列表查找记录
+        /// </summary>
+        /// <param name="repairIds">维修改造项目ID列表</param>
+        /// <returns></returns>
+        public IEnumerable<RepairRecord> FindListInRepairIds(List<string> repairIds)
+        {
+            var filter = Builders<BsonDocument>.Filter.In("repairId", repairIds);
+            var data = this.FindList(filter);
+
+            return data;
+        }
+        #endregion //Method
     }
 }
