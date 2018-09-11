@@ -23,10 +23,22 @@ namespace Poseidon.Infrastructure.Core.DL
         public string ElevatorId { get; set; }
 
         /// <summary>
-        /// 日期
+        /// 主题
         /// </summary>
-        [Display(Name = "日期")]
-        public DateTime LogDate { get; set; }
+        [Display(Name = "主题")]
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 开始日期
+        /// </summary>
+        [Display(Name = "开始日期")]
+        public DateTime StartDate { get; set; }
+
+        /// <summary>
+        /// 结束日期
+        /// </summary>
+        [Display(Name = "结束日期")]
+        public DateTime EndDate { get; set; }
 
         /// <summary>
         /// 事件类型
@@ -40,6 +52,12 @@ namespace Poseidon.Infrastructure.Core.DL
         /// </summary>
         [Display(Name = "事件内容")]
         public string Info { get; set; }
+
+        /// <summary>
+        /// 事件状态
+        /// </summary>
+        [Display(Name = "事件状态")]
+        public int LogStatus { get; set; }
         #endregion //Property
     }
 }

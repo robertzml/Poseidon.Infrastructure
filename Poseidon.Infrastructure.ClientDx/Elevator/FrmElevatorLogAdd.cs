@@ -67,7 +67,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void SetEntity(ElevatorLog entity)
         {
             // entity.Number = this.txtNumber.Text;
-            entity.LogDate = this.dpLogDate.DateTime;
+            //entity.LogDate = this.dpLogDate.DateTime;
             entity.LogType = Convert.ToInt32(this.cmbLogType.EditValue);
             entity.Info = this.txtInfo.Text;
             entity.Remark = "";

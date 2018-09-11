@@ -545,6 +545,7 @@
     <None Include="Properties\DataSources\Poseidon.Core.DL.Group.datasource" />
     <None Include="Properties\DataSources\Poseidon.Core.DL.ModelType.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Elevator.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.ElevatorLog.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.ElevatorManager.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.Inspection.datasource" />
     <None Include="Properties\DataSources\Poseidon.Infrastructure.Core.DL.MaintenanceCompany.datasource" />

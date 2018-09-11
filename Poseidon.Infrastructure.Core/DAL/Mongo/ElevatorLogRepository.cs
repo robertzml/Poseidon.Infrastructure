@@ -39,9 +39,12 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             ElevatorLog entity = new ElevatorLog();
             entity.Id = doc["_id"].ToString();
             entity.ElevatorId = doc["elevatorId"].ToString();
-            entity.LogDate = doc["logDate"].ToLocalTime();
+            entity.Subject = doc["subject"].ToString();
+            entity.StartDate = doc["startDate"].ToLocalTime();
+            entity.EndDate = doc["endDate"].ToLocalTime();
             entity.LogType = doc["logType"].ToInt32();
             entity.Info = doc["info"].ToString();
+            entity.LogStatus = doc["logStatus"].ToInt32();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -75,9 +78,12 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             BsonDocument doc = new BsonDocument
             {
                 { "elevatorId", entity.ElevatorId },
-                { "logDate", entity.LogDate },
+                { "subject", entity.Subject },
+                { "startDate", entity.StartDate },
+                { "endDate", entity.EndDate },
                 { "logType", entity.LogType },
                 { "info", entity.Info },
+                { "logStatus", entity.LogStatus },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
