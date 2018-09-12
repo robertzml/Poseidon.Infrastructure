@@ -39,6 +39,7 @@
             this.bsElevatorLog = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
+            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -48,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -98,6 +100,7 @@
             // storage
             // 
             this.storage.Appointments.DataSource = this.bsElevatorLog;
+            this.storage.Resources.DataSource = this.bsElevator;
             this.storage.AppointmentInserting += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentInserting);
             // 
             // bsElevatorLog
@@ -125,6 +128,10 @@
             this.dateNavigator1.Size = new System.Drawing.Size(190, 295);
             this.dateNavigator1.TabIndex = 0;
             // 
+            // bsElevator
+            // 
+            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
+            // 
             // ElevatorLogMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -141,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +162,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
         private System.Windows.Forms.BindingSource bsElevatorLog;
+        private System.Windows.Forms.BindingSource bsElevator;
     }
 }

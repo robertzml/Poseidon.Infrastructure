@@ -55,6 +55,14 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorManagerMod.SetElevator(currentElevator);
             this.maintenanceInfoMod.SetElevator(currentElevator);
         }
+
+        /// <summary>
+        /// 显示电梯运行日志
+        /// </summary>
+        private void DisplayLog()
+        {
+            this.elevatorLogMod.Init(currentElevator.Id);
+        }
         #endregion //Function
 
         #region Method
@@ -66,6 +74,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             LoadElevator(id);
             DisplayInfo();
+            DisplayLog();
 
             insMod.SetFacility(id);
         }
@@ -79,6 +88,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorManagerMod.Clear();
             this.maintenanceInfoMod.Clear();
 
+            this.elevatorLogMod.Clear();
             this.insMod.Clear();
         }
         #endregion //Method
