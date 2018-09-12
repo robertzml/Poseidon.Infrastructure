@@ -14,6 +14,8 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Common;
+    using Poseidon.Core.DL;
+    using Poseidon.Core.Utility;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
     using Poseidon.Winform.Base;
@@ -33,6 +35,22 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 当前关联电梯
         /// </summary>
         private Elevator currentElevator;
+
+        private Color[] labelColors = new Color[] {
+            Color.FromArgb(0xFF, 0xFF, 0xC2, 0xBE),
+            Color.FromArgb(0xFF, 0xA8, 0xD5, 0xFF),
+            Color.FromArgb(0xFF, 0xC1, 0xF4, 0x9C)
+                };
+
+        /// <summary>
+        /// 日志类型字典
+        /// </summary>
+        private List<DictItem> logTypeDict;
+
+        /// <summary>
+        /// 日志状态字典
+        /// </summary>
+        private List<DictItem> logStatusDict;
         #endregion //Field
 
         #region Constructor
@@ -71,18 +89,33 @@ namespace Poseidon.Infrastructure.ClientDx
             this.storage.Resources.Mappings.Caption = "Name";
         }
 
+        /// <summary>
+        /// 设置事件标签
+        /// </summary>
         private void SetAppointmentLabels()
         {
-            //this.storage.Appointments.Labels.Add(new AppointmentLabel
-            //{
-            //    d
-            //})
+            this.storage.Appointments.Labels.Clear();
+
+            var dictItems = DictUtility.GetDictItem(typeof(ElevatorLog), "LogType");
+
+            for (int i = 0; i < dictItems.Count; i++)
+            {
+                AppointmentLabel label = new AppointmentLabel(dictItems[i].Value);
+
+                label.MenuCaption = dictItems[i].Key.ToString();
+                label.Color = labelColors[i];
+
+                this.storage.Appointments.Labels.Add(label);
+            }
         }
 
-        private ElevatorLog MapToEntity(Appointment apt)
+        /// <summary>
+        /// 映射事件到日志对象
+        /// </summary>
+        /// <param name="apt">事件</param>
+        /// <param name="entity">日志对象</param>
+        private void MapToEntity(Appointment apt, ElevatorLog entity)
         {
-            ElevatorLog entity = new ElevatorLog();
-
             entity.ElevatorId = apt.ResourceId.ToString();
             entity.Subject = apt.Subject;
             entity.StartDate = apt.Start;
@@ -92,7 +125,7 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.LogStatus = apt.StatusId;
 
             entity.Remark = "";
-            return entity;
+            return;
         }
 
         /// <summary>
@@ -122,6 +155,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             MappingAppointmentData();
             MappingResourceData();
+            SetAppointmentLabels();
         }
 
         /// <summary>
@@ -153,17 +187,13 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void storage_AppointmentInserting(object sender, PersistentObjectCancelEventArgs e)
         {
-            Appointment apt = e.Object as Appointment;
-                       
             try
             {
-                ElevatorLog entity = MapToEntity(apt);
-            
+                Appointment apt = e.Object as Appointment;
+                ElevatorLog entity = new ElevatorLog();
+                MapToEntity(apt, entity);
 
                 BusinessFactory<ElevatorLogBusiness>.Instance.Create(entity, this.currentUser);
-
-                //MessageUtil.ShowInfo("保存成功");
-               
             }
             catch (PoseidonException pe)
             {
@@ -172,6 +202,40 @@ namespace Poseidon.Infrastructure.ClientDx
             }
 
             e.Cancel = false;
+        }
+
+        /// <summary>
+        /// 修改事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void storage_AppointmentChanging(object sender, PersistentObjectCancelEventArgs e)
+        {
+            try
+            {
+                Appointment apt = e.Object as Appointment;
+                ElevatorLog entity = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(apt.Id.ToString());
+                MapToEntity(apt, entity);
+
+                BusinessFactory<ElevatorLogBusiness>.Instance.Update(entity, this.currentUser);
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("编辑日志失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
+
+            e.Cancel = false;
+        }
+
+        /// <summary>
+        /// 删除事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void storage_AppointmentDeleting(object sender, PersistentObjectCancelEventArgs e)
+        {
+
         }
         #endregion //Event
     }

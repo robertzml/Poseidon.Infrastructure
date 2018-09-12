@@ -73,12 +73,21 @@ namespace Poseidon.Infrastructure.ClientDx
             this.luElevator.EditValue = this.currentElevator.Id;
             this.txtSubject.Text = this.appointment.Subject;
             this.dpStartDate.EditValue = this.appointment.Start;
-
+            //this.aptLabel.sele
             this.txtInfo.Text = this.appointment.Description;
+
+            if (this.appointment.Id != null)
+            {
+                var log = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(appointment.Id.ToString());
+                this.txtCreator.Text = log.CreateBy.Name;
+                this.txtCreateTime.Text = log.CreateBy.Time.ToDateTimeString();
+                this.txtEditor.Text = log.UpdateBy.Name;
+                this.txtEditTime.Text = log.UpdateBy.Time.ToDateTimeString();
+            }
 
             base.InitForm();
         }
-
+    
         /// <summary>
         /// 输入检查
         /// </summary>
@@ -92,11 +101,11 @@ namespace Poseidon.Infrastructure.ClientDx
                 errorMessage = "请输入主题";
                 return new Tuple<bool, string>(false, errorMessage);
             }
-            if (this.cmbLogType.EditValue == null)
-            {
-                errorMessage = "请选择事件类型";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
+            //if (this.cmbLogType.EditValue == null)
+            //{
+            //    errorMessage = "请选择事件类型";
+            //    return new Tuple<bool, string>(false, errorMessage);
+            //}
             if (this.dpStartDate.EditValue == null)
             {
                 errorMessage = "请选择日期";
@@ -106,14 +115,17 @@ namespace Poseidon.Infrastructure.ClientDx
             return new Tuple<bool, string>(true, "");
         }
 
+        /// <summary>
+        /// 设置事件
+        /// </summary>
         private void SetAppointment()
         {
             this.controller.ResourceId = this.currentElevator.Id;
             this.controller.Subject = this.txtSubject.Text;
             this.controller.Start = this.dpStartDate.DateTime;
             this.controller.End = this.dpStartDate.DateTime.AddDays(1);
-            this.controller.Description = this.txtInfo.Text;
-            this.controller.LabelId = this.aptLabel.SelectedIndex;
+            this.controller.Description = this.txtInfo.Text ?? "";
+            this.controller.LabelId = this.aptLabel.SelectedIndex;            
         }
         #endregion //Function
 

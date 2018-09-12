@@ -31,29 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.txtInfo = new DevExpress.XtraEditors.MemoEdit();
-            this.cmbLogType = new DevExpress.XtraEditors.ImageComboBoxEdit();
-            this.dpStartDate = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtSubject = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.imageComboBoxEdit1 = new DevExpress.XtraEditors.ImageComboBoxEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
+            this.aptLabel = new DevExpress.XtraScheduler.UI.AppointmentLabelEdit();
             this.luElevator = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRegistrationNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInstallDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,12 +45,29 @@
             this.colPosition = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRecordBag = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRecordNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.aptLabel = new DevExpress.XtraScheduler.UI.AppointmentLabelEdit();
+            this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtEditor = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreator = new DevExpress.XtraEditors.TextEdit();
+            this.txtSubject = new DevExpress.XtraEditors.TextEdit();
+            this.txtInfo = new DevExpress.XtraEditors.MemoEdit();
+            this.dpStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.aptStatus = new DevExpress.XtraScheduler.UI.AppointmentStatusEdit();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -78,32 +76,30 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubject.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInfo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbLogType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSubject.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -141,16 +137,15 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.aptStatus);
             this.layoutControl1.Controls.Add(this.aptLabel);
             this.layoutControl1.Controls.Add(this.luElevator);
-            this.layoutControl1.Controls.Add(this.textEdit4);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.imageComboBoxEdit1);
+            this.layoutControl1.Controls.Add(this.txtEditTime);
+            this.layoutControl1.Controls.Add(this.txtEditor);
+            this.layoutControl1.Controls.Add(this.txtCreateTime);
+            this.layoutControl1.Controls.Add(this.txtCreator);
             this.layoutControl1.Controls.Add(this.txtSubject);
             this.layoutControl1.Controls.Add(this.txtInfo);
-            this.layoutControl1.Controls.Add(this.cmbLogType);
             this.layoutControl1.Controls.Add(this.dpStartDate);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
@@ -160,205 +155,15 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // txtInfo
+            // aptLabel
             // 
-            this.txtInfo.Location = new System.Drawing.Point(63, 156);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(425, 111);
-            this.txtInfo.StyleController = this.layoutControl1;
-            this.txtInfo.TabIndex = 7;
-            // 
-            // cmbLogType
-            // 
-            this.cmbLogType.Location = new System.Drawing.Point(63, 60);
-            this.cmbLogType.Name = "cmbLogType";
-            this.cmbLogType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.aptLabel.Location = new System.Drawing.Point(63, 60);
+            this.aptLabel.Name = "aptLabel";
+            this.aptLabel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbLogType.Size = new System.Drawing.Size(185, 20);
-            this.cmbLogType.StyleController = this.layoutControl1;
-            this.cmbLogType.TabIndex = 6;
-            // 
-            // dpStartDate
-            // 
-            this.dpStartDate.EditValue = null;
-            this.dpStartDate.Location = new System.Drawing.Point(303, 36);
-            this.dpStartDate.Name = "dpStartDate";
-            this.dpStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpStartDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpStartDate.Size = new System.Drawing.Size(185, 20);
-            this.dpStartDate.StyleController = this.layoutControl1;
-            this.dpStartDate.TabIndex = 4;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem1,
-            this.layoutControlItem2});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(500, 279);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.dpStartDate;
-            this.layoutControlItem1.Location = new System.Drawing.Point(240, 24);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem1.Text = "日期";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.cmbLogType;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem3.Text = "事件类型";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtInfo;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(480, 115);
-            this.layoutControlItem4.Text = "事件内容";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtSubject
-            // 
-            this.txtSubject.Location = new System.Drawing.Point(63, 36);
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(185, 20);
-            this.txtSubject.StyleController = this.layoutControl1;
-            this.txtSubject.TabIndex = 8;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txtSubject;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem5.Text = "主题";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // imageComboBoxEdit1
-            // 
-            this.imageComboBoxEdit1.Location = new System.Drawing.Point(303, 60);
-            this.imageComboBoxEdit1.Name = "imageComboBoxEdit1";
-            this.imageComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.imageComboBoxEdit1.Size = new System.Drawing.Size(185, 20);
-            this.imageComboBoxEdit1.StyleController = this.layoutControl1;
-            this.imageComboBoxEdit1.TabIndex = 9;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.imageComboBoxEdit1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(240, 48);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem6.Text = "事件状态";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(63, 108);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(185, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 10;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.textEdit1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem7.Text = "创建人";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(303, 108);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.ReadOnly = true;
-            this.textEdit2.Size = new System.Drawing.Size(185, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 11;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.textEdit2;
-            this.layoutControlItem8.Location = new System.Drawing.Point(240, 96);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem8.Text = "创建时间";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(63, 132);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(185, 20);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 12;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.textEdit3;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem9.Text = "编辑人";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(303, 132);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit4.Properties.ReadOnly = true;
-            this.textEdit4.Size = new System.Drawing.Size(185, 20);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 13;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.textEdit4;
-            this.layoutControlItem10.Location = new System.Drawing.Point(240, 120);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(240, 24);
-            this.layoutControlItem10.Text = "编辑时间";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // bsElevator
-            // 
-            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
+            this.aptLabel.Size = new System.Drawing.Size(185, 20);
+            this.aptLabel.StyleController = this.layoutControl1;
+            this.aptLabel.TabIndex = 15;
             // 
             // luElevator
             // 
@@ -375,15 +180,6 @@
             this.luElevator.Size = new System.Drawing.Size(425, 20);
             this.luElevator.StyleController = this.layoutControl1;
             this.luElevator.TabIndex = 14;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.luElevator;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(480, 24);
-            this.layoutControlItem11.Text = "电梯";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
             // 
             // searchLookUpEdit1View
             // 
@@ -409,6 +205,13 @@
             this.searchLookUpEdit1View.OptionsCustomization.AllowGroup = false;
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
             // 
             // colModel
             // 
@@ -470,13 +273,6 @@
             this.colRecordNumber.FieldName = "RecordNumber";
             this.colRecordNumber.Name = "colRecordNumber";
             // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
@@ -492,24 +288,203 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
-            // aptLabel
+            // txtEditTime
             // 
-            this.aptLabel.Location = new System.Drawing.Point(63, 84);
-            this.aptLabel.Name = "aptLabel";
-            this.aptLabel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtEditTime.Location = new System.Drawing.Point(303, 108);
+            this.txtEditTime.Name = "txtEditTime";
+            this.txtEditTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditTime.Properties.ReadOnly = true;
+            this.txtEditTime.Size = new System.Drawing.Size(185, 20);
+            this.txtEditTime.StyleController = this.layoutControl1;
+            this.txtEditTime.TabIndex = 13;
+            // 
+            // txtEditor
+            // 
+            this.txtEditor.Location = new System.Drawing.Point(63, 108);
+            this.txtEditor.Name = "txtEditor";
+            this.txtEditor.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditor.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditor.Properties.ReadOnly = true;
+            this.txtEditor.Size = new System.Drawing.Size(185, 20);
+            this.txtEditor.StyleController = this.layoutControl1;
+            this.txtEditor.TabIndex = 12;
+            // 
+            // txtCreateTime
+            // 
+            this.txtCreateTime.Location = new System.Drawing.Point(303, 84);
+            this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreateTime.Properties.ReadOnly = true;
+            this.txtCreateTime.Size = new System.Drawing.Size(185, 20);
+            this.txtCreateTime.StyleController = this.layoutControl1;
+            this.txtCreateTime.TabIndex = 11;
+            // 
+            // txtCreator
+            // 
+            this.txtCreator.Location = new System.Drawing.Point(63, 84);
+            this.txtCreator.Name = "txtCreator";
+            this.txtCreator.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreator.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreator.Properties.ReadOnly = true;
+            this.txtCreator.Size = new System.Drawing.Size(185, 20);
+            this.txtCreator.StyleController = this.layoutControl1;
+            this.txtCreator.TabIndex = 10;
+            // 
+            // txtSubject
+            // 
+            this.txtSubject.Location = new System.Drawing.Point(63, 36);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(185, 20);
+            this.txtSubject.StyleController = this.layoutControl1;
+            this.txtSubject.TabIndex = 8;
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.Location = new System.Drawing.Point(63, 132);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(425, 135);
+            this.txtInfo.StyleController = this.layoutControl1;
+            this.txtInfo.TabIndex = 7;
+            // 
+            // dpStartDate
+            // 
+            this.dpStartDate.EditValue = null;
+            this.dpStartDate.Location = new System.Drawing.Point(303, 36);
+            this.dpStartDate.Name = "dpStartDate";
+            this.dpStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.aptLabel.Size = new System.Drawing.Size(425, 20);
-            this.aptLabel.StyleController = this.layoutControl1;
-            this.aptLabel.TabIndex = 15;
+            this.dpStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpStartDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpStartDate.Size = new System.Drawing.Size(185, 20);
+            this.dpStartDate.StyleController = this.layoutControl1;
+            this.dpStartDate.TabIndex = 4;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem11,
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem12});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(500, 279);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtInfo;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(480, 139);
+            this.layoutControlItem4.Text = "事件内容";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtSubject;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem5.Text = "主题";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.txtCreator;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem7.Text = "创建人";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.txtCreateTime;
+            this.layoutControlItem8.Location = new System.Drawing.Point(240, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem8.Text = "创建时间";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.txtEditor;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem9.Text = "编辑人";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtEditTime;
+            this.layoutControlItem10.Location = new System.Drawing.Point(240, 96);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem10.Text = "编辑时间";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.luElevator;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(480, 24);
+            this.layoutControlItem11.Text = "电梯";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.dpStartDate;
+            this.layoutControlItem1.Location = new System.Drawing.Point(240, 24);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem1.Text = "日期";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.aptLabel;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(480, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(240, 24);
             this.layoutControlItem2.Text = "类型";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // aptStatus
+            // 
+            this.aptStatus.Location = new System.Drawing.Point(303, 60);
+            this.aptStatus.Name = "aptStatus";
+            this.aptStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.aptStatus.Size = new System.Drawing.Size(185, 20);
+            this.aptStatus.StyleController = this.layoutControl1;
+            this.aptStatus.TabIndex = 16;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.aptStatus;
+            this.layoutControlItem12.Location = new System.Drawing.Point(240, 48);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem12.Text = "事件状态";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // bsElevator
+            // 
+            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
             // 
             // FrmElevatorLogAppointment
             // 
@@ -528,32 +503,30 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreator.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubject.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInfo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbLogType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpStartDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSubject.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageComboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,20 +536,16 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.MemoEdit txtInfo;
-        private DevExpress.XtraEditors.ImageComboBoxEdit cmbLogType;
         private DevExpress.XtraEditors.DateEdit dpStartDate;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.TextEdit txtSubject;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.ImageComboBoxEdit imageComboBoxEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtEditTime;
+        private DevExpress.XtraEditors.TextEdit txtEditor;
+        private DevExpress.XtraEditors.TextEdit txtCreateTime;
+        private DevExpress.XtraEditors.TextEdit txtCreator;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
@@ -601,5 +570,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraScheduler.UI.AppointmentLabelEdit aptLabel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraScheduler.UI.AppointmentStatusEdit aptStatus;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

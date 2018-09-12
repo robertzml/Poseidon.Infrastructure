@@ -37,19 +37,19 @@
             this.mainScheduler = new DevExpress.XtraScheduler.SchedulerControl();
             this.storage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.bsElevatorLog = new System.Windows.Forms.BindingSource(this.components);
+            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
-            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainScheduler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevatorLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -102,10 +102,16 @@
             this.storage.Appointments.DataSource = this.bsElevatorLog;
             this.storage.Resources.DataSource = this.bsElevator;
             this.storage.AppointmentInserting += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentInserting);
+            this.storage.AppointmentChanging += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentChanging);
+            this.storage.AppointmentDeleting += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentDeleting);
             // 
             // bsElevatorLog
             // 
             this.bsElevatorLog.DataSource = typeof(Poseidon.Infrastructure.Core.DL.ElevatorLog);
+            // 
+            // bsElevator
+            // 
+            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
             // 
             // groupControl2
             // 
@@ -128,10 +134,6 @@
             this.dateNavigator1.Size = new System.Drawing.Size(190, 295);
             this.dateNavigator1.TabIndex = 0;
             // 
-            // bsElevator
-            // 
-            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
-            // 
             // ElevatorLogMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -145,10 +147,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainScheduler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevatorLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             this.ResumeLayout(false);
 
         }
