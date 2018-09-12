@@ -108,11 +108,12 @@ namespace Poseidon.Infrastructure.ClientDx
 
         private void SetAppointment()
         {
-            this.appointment.ResourceId = this.currentElevator.Id;
-            this.appointment.Subject = this.txtSubject.Text;
-            this.appointment.Start = this.dpStartDate.DateTime;
-            this.appointment.Description = this.txtInfo.Text;
-
+            this.controller.ResourceId = this.currentElevator.Id;
+            this.controller.Subject = this.txtSubject.Text;
+            this.controller.Start = this.dpStartDate.DateTime;
+            this.controller.End = this.dpStartDate.DateTime.AddDays(1);
+            this.controller.Description = this.txtInfo.Text;
+            this.controller.LabelId = this.aptLabel.SelectedIndex;
         }
         #endregion //Function
 
@@ -127,10 +128,13 @@ namespace Poseidon.Infrastructure.ClientDx
             this.schedulerControl.Storage.BeginUpdate();
             SetAppointment();
 
+            bool cha = this.controller.IsAppointmentChanged();
             
             this.controller.ApplyChanges();
 
             this.schedulerControl.Storage.EndUpdate();
+
+            this.Close();
         }
         #endregion //Event
 

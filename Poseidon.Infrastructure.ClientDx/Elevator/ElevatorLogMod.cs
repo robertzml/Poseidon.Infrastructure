@@ -86,11 +86,12 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.ElevatorId = apt.ResourceId.ToString();
             entity.Subject = apt.Subject;
             entity.StartDate = apt.Start;
-            entity.EndDate = apt.Start.AddDays(1);
+            entity.EndDate = apt.End;
             entity.LogType = apt.LabelId;
             entity.Info = apt.Description;
             entity.LogStatus = apt.StatusId;
 
+            entity.Remark = "";
             return entity;
         }
 
