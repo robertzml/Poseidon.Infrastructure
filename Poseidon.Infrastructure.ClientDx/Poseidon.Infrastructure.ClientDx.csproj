@@ -158,10 +158,10 @@
     <Compile Include="Repair\RepairOverivewMod.Designer.cs">
       <DependentUpon>RepairOverivewMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repair\FacilityRepairMod.cs">
+    <Compile Include="Component\FacilityRepairMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Repair\FacilityRepairMod.Designer.cs">
+    <Compile Include="Component\FacilityRepairMod.Designer.cs">
       <DependentUpon>FacilityRepairMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Repair\FrmRepairManage.cs">
@@ -543,7 +543,7 @@
     <EmbeddedResource Include="Repair\FrmRepairManage.resx">
       <DependentUpon>FrmRepairManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Repair\FacilityRepairMod.resx">
+    <EmbeddedResource Include="Component\FacilityRepairMod.resx">
       <DependentUpon>FacilityRepairMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\RepairOverivewMod.resx">

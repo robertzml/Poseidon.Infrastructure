@@ -21,7 +21,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Finance.Utility;
 
     /// <summary>
-    /// 维修改造总览模块
+    /// 设施相关维修改造模块
     /// </summary>
     public partial class FacilityRepairMod : DevExpress.XtraEditors.XtraUserControl
     {
@@ -50,7 +50,7 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
-        /// 载入维修改造项目
+        /// 载入设施维修改造项目
         /// </summary>
         private void LoadRepair()
         {
@@ -60,12 +60,12 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
-        /// 载入设施相关记录
+        /// 载入设施维修改造全部记录
         /// </summary>
         private void LoadRecords()
         {
             var data = BusinessFactory<RepairRecordBusiness>.Instance.FindByFacility(this.currentFacility.Id).ToList();
-            this.repairRecordGrid.DataSource = data;
+            this.fullRecordGrid.DataSource = data;
         }
         #endregion //Function
 
@@ -79,6 +79,7 @@ namespace Poseidon.Infrastructure.ClientDx
             LoadFacility(id);
 
             LoadRepair();
+
             this.accordionControl1.SelectedElement = this.accRepairItem;
             this.navFrame.SelectedPageIndex = 0;
         }
@@ -91,7 +92,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.repairGrid.Clear();
             this.recordGrid.Clear();
 
-            this.repairRecordGrid.Clear();
+            this.fullRecordGrid.Clear();
         }
         #endregion //Method
 
@@ -129,7 +130,6 @@ namespace Poseidon.Infrastructure.ClientDx
             if (repair == null)
             {
                 this.recordGrid.Clear();
-
             }
             else
             {

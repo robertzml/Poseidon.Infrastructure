@@ -42,7 +42,7 @@
             this.repairGrid = new Poseidon.Infrastructure.ClientDx.RepairGrid();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.repairRecordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
+            this.fullRecordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.navFrame.SuspendLayout();
@@ -173,6 +173,7 @@
             this.recordGrid.Location = new System.Drawing.Point(2, 21);
             this.recordGrid.Name = "recordGrid";
             this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowColRepairNumber = false;
             this.recordGrid.ShowDeleteMenu = false;
             this.recordGrid.ShowEditMenu = false;
             this.recordGrid.ShowFindPanel = false;
@@ -230,7 +231,7 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.repairRecordGrid);
+            this.groupControl3.Controls.Add(this.fullRecordGrid);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
@@ -238,37 +239,38 @@
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "记录列表";
             // 
-            // repairRecordGrid
+            // fullRecordGrid
             // 
-            this.repairRecordGrid.AllowFilter = true;
-            this.repairRecordGrid.AllowGroup = true;
-            this.repairRecordGrid.AllowSort = true;
-            this.repairRecordGrid.DataSource = null;
-            this.repairRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repairRecordGrid.Editable = false;
-            this.repairRecordGrid.EnableMasterView = false;
-            this.repairRecordGrid.EnableMultiSelect = true;
-            this.repairRecordGrid.Location = new System.Drawing.Point(2, 21);
-            this.repairRecordGrid.Name = "repairRecordGrid";
-            this.repairRecordGrid.ShowAddMenu = false;
-            this.repairRecordGrid.ShowDeleteMenu = false;
-            this.repairRecordGrid.ShowEditMenu = false;
-            this.repairRecordGrid.ShowFindPanel = true;
-            this.repairRecordGrid.ShowFooter = true;
-            this.repairRecordGrid.ShowLineNumber = true;
-            this.repairRecordGrid.ShowMenu = false;
-            this.repairRecordGrid.ShowNavigator = false;
-            this.repairRecordGrid.Size = new System.Drawing.Size(624, 481);
-            this.repairRecordGrid.TabIndex = 0;
-            this.repairRecordGrid.UseCalculatePrice = false;
-            this.repairRecordGrid.UseFacilityName = true;
+            this.fullRecordGrid.AllowFilter = true;
+            this.fullRecordGrid.AllowGroup = true;
+            this.fullRecordGrid.AllowSort = true;
+            this.fullRecordGrid.DataSource = null;
+            this.fullRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fullRecordGrid.Editable = false;
+            this.fullRecordGrid.EnableMasterView = false;
+            this.fullRecordGrid.EnableMultiSelect = true;
+            this.fullRecordGrid.Location = new System.Drawing.Point(2, 21);
+            this.fullRecordGrid.Name = "fullRecordGrid";
+            this.fullRecordGrid.ShowAddMenu = false;
+            this.fullRecordGrid.ShowColRepairNumber = false;
+            this.fullRecordGrid.ShowDeleteMenu = false;
+            this.fullRecordGrid.ShowEditMenu = false;
+            this.fullRecordGrid.ShowFindPanel = true;
+            this.fullRecordGrid.ShowFooter = true;
+            this.fullRecordGrid.ShowLineNumber = true;
+            this.fullRecordGrid.ShowMenu = false;
+            this.fullRecordGrid.ShowNavigator = false;
+            this.fullRecordGrid.Size = new System.Drawing.Size(624, 481);
+            this.fullRecordGrid.TabIndex = 0;
+            this.fullRecordGrid.UseCalculatePrice = false;
+            this.fullRecordGrid.UseFacilityName = true;
             // 
-            // RepairOverviewMod
+            // FacilityRepairMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "RepairOverviewMod";
+            this.Name = "FacilityRepairMod";
             this.Size = new System.Drawing.Size(834, 510);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
@@ -302,6 +304,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accRecordItem;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private RepairRecordGrid repairRecordGrid;
+        private RepairRecordGrid fullRecordGrid;
     }
 }
