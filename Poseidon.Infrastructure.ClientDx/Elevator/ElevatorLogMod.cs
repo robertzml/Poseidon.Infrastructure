@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Infrastructure.ClientDx
 {
+    using DevExpress.XtraEditors.Controls;
     using DevExpress.XtraScheduler;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
@@ -35,6 +36,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 当前关联电梯
         /// </summary>
         private Elevator currentElevator;
+
+        /// <summary>
+        /// 日志数据
+        /// </summary>
+        private List<ElevatorLog> logData;
 
         /// <summary>
         /// 标签颜色列表
@@ -74,6 +80,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 日志状态字典
         /// </summary>
         private List<DictItem> logStatusDict;
+
+        /// <summary>
+        /// 是否可以编辑
+        /// </summary>
+        private bool editable = true;
         #endregion //Field
 
         #region Constructor
@@ -113,22 +124,20 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
-        /// 设置事件标签
+        /// 设置事件类型
         /// </summary>
         private void SetAppointmentLabels()
         {
             this.storage.Appointments.Labels.Clear();
-
-            this.logTypeDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogType");
 
             for (int i = 0; i < logTypeDict.Count; i++)
             {
                 if (i >= labelColors.Length)
                     return;
 
-                AppointmentLabel label = new AppointmentLabel(logTypeDict[i].Value);        
+                AppointmentLabel label = new AppointmentLabel(logTypeDict[i].Value);
                 label.Color = labelColors[i];
-                
+
                 this.storage.Appointments.Labels.Add(label);
             }
         }
@@ -139,9 +148,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void SetAppointmentStatus()
         {
             this.storage.Appointments.Statuses.Clear();
-
-            this.logStatusDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogStatus");
-
+            
             for (int i = 0; i < logStatusDict.Count; i++)
             {
                 if (i >= statusColors.Length)
@@ -167,7 +174,6 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.EndDate = apt.End;
             entity.Info = apt.Description;
             entity.LogType = apt.LabelId;
-           
             entity.LogStatus = apt.StatusId;
 
             entity.Remark = "";
@@ -175,15 +181,31 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
+        /// 载入日志类型筛选
+        /// </summary>
+        private void LoadTypeFilter()
+        {
+            this.chkListLogType.Items.Clear();
+
+            foreach(var item in this.logTypeDict)
+            {
+                this.chkListLogType.Items.Add(item.Key, item.Value, CheckState.Checked, true);
+            }
+        }
+
+        /// <summary>
         /// 载入相关数据
         /// </summary>
         private void LoadData()
         {
-            var logData = BusinessFactory<ElevatorLogBusiness>.Instance.FindAll();
+            this.logData = BusinessFactory<ElevatorLogBusiness>.Instance.FindByElevator(this.currentElevator.Id).ToList();
             this.bsElevatorLog.DataSource = logData;
 
             var elevatorData = BusinessFactory<ElevatorBusiness>.Instance.FindAll();
             this.bsElevator.DataSource = elevatorData;
+
+            this.logTypeDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogType");
+            this.logStatusDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogStatus");
         }
         #endregion //Function
 
@@ -203,6 +225,8 @@ namespace Poseidon.Infrastructure.ClientDx
             MappingResourceData();
             SetAppointmentLabels();
             SetAppointmentStatus();
+
+            LoadTypeFilter();
         }
 
         /// <summary>
@@ -210,11 +234,25 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
-
+            this.bsElevatorLog.Clear();
         }
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ElevatorLogMod_Load(object sender, EventArgs e)
+        {
+            this.mainScheduler.OptionsCustomization.AllowAppointmentCreate = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            this.mainScheduler.OptionsCustomization.AllowAppointmentEdit = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            this.mainScheduler.OptionsCustomization.AllowAppointmentDelete = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            this.mainScheduler.OptionsCustomization.AllowAppointmentResize = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+        }
+
         /// <summary>
         /// 显示事件窗体
         /// </summary>
@@ -298,6 +336,42 @@ namespace Poseidon.Infrastructure.ClientDx
 
             e.Cancel = false;
         }
+
+        /// <summary>
+        /// 日志类型筛选
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkListLogType_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+        {
+            var checkedItems = this.chkListLogType.CheckedItems;
+
+            List<int> types = new List<int>();
+            foreach (ListBoxItem item in checkedItems)
+            {
+                types.Add(Convert.ToInt32(item.Value));
+            }
+
+            this.bsElevatorLog.DataSource = this.logData.Where(r => types.Contains(r.LogType));
+        }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 能否编辑
+        /// </summary>
+        [Description("能否编辑"), Category("功能")]
+        public bool Editable
+        {
+            get
+            {
+                return this.editable;
+            }
+            set
+            {
+                this.editable = value;
+            }
+        }
+        #endregion //Property
     }
 }

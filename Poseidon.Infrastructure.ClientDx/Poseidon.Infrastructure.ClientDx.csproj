@@ -105,12 +105,6 @@
     <Compile Include="Elevator\ElevatorManagerReceiptMod.Designer.cs">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Elevator\FrmElevatorLogAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Elevator\FrmElevatorLogAdd.Designer.cs">
-      <DependentUpon>FrmElevatorLogAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Elevator\FrmElevatorLogAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,9 +418,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorList.resx">
       <DependentUpon>FrmElevatorList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Elevator\FrmElevatorLogAdd.resx">
-      <DependentUpon>FrmElevatorLogAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorLogAppointment.resx">
       <DependentUpon>FrmElevatorLogAppointment.cs</DependentUpon>

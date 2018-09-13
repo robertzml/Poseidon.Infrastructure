@@ -43,9 +43,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void elevatorTree_EntitySelected(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             var id = this.elevatorTree.GetCurrentSelectId();
 
             this.elevatorReceiptMod.SetElevator(id);
+            this.ResumeLayout();
         }
         #endregion //Event
     }

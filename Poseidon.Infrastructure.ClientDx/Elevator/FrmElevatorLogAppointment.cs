@@ -107,6 +107,11 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             string errorMessage = "";
 
+            if (this.luElevator.EditValue == null)
+            {
+                errorMessage = "请选择电梯";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (string.IsNullOrEmpty(this.txtSubject.Text.Trim()))
             {
                 errorMessage = "请输入主题";
@@ -115,6 +120,11 @@ namespace Poseidon.Infrastructure.ClientDx
             if (this.aptLabel.EditValue == null)
             {
                 errorMessage = "请选择事件类型";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.aptStatus.EditValue == null)
+            {
+                errorMessage = "请选择事件状态";
                 return new Tuple<bool, string>(false, errorMessage);
             }
             if (this.dpStartDate.EditValue == null)
@@ -135,7 +145,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.controller.Subject = this.txtSubject.Text;
             this.controller.Start = this.dpStartDate.DateTime;
             this.controller.End = this.dpStartDate.DateTime.AddDays(1);
-            this.controller.Description = this.txtInfo.Text ?? "";            
+            this.controller.Description = this.txtInfo.Text ?? "";
             this.controller.Label = (AppointmentLabel)this.aptLabel.EditValue;
             this.controller.Status = (AppointmentStatus)this.aptStatus.EditValue;
         }
@@ -149,12 +159,15 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.schedulerControl.Storage.BeginUpdate();
-            SetAppointment();
-            this.controller.ApplyChanges();
+            if (this.controller.IsNewAppointment || this.controller.IsAppointmentChanged())
+            {
+                this.schedulerControl.Storage.BeginUpdate();
 
-            this.schedulerControl.Storage.EndUpdate();
+                SetAppointment();
+                this.controller.ApplyChanges();
 
+                this.schedulerControl.Storage.EndUpdate();
+            }
             this.Close();
         }
         #endregion //Event

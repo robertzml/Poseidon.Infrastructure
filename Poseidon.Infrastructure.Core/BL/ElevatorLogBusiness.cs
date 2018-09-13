@@ -26,6 +26,18 @@ namespace Poseidon.Infrastructure.Core.BL
         }
         #endregion //Constructor
 
+        #region Method
+        /// <summary>
+        /// 根据电梯查找日志
+        /// </summary>
+        /// <param name="elevatorId">电梯ID</param>
+        /// <returns></returns>
+        public IEnumerable<ElevatorLog> FindByElevator(string elevatorId)
+        {
+            return this.baseDal.FindListByField("elevatorId", elevatorId);
+        }
+        #endregion //Method
+
         #region CRUD
         /// <summary>
         /// 添加电梯日志
