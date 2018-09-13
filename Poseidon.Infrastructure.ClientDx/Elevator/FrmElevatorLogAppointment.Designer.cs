@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.aptStatus = new DevExpress.XtraScheduler.UI.AppointmentStatusEdit();
             this.aptLabel = new DevExpress.XtraScheduler.UI.AppointmentLabelEdit();
             this.luElevator = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,7 +66,6 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.aptStatus = new DevExpress.XtraScheduler.UI.AppointmentStatusEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
@@ -76,6 +76,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -97,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +154,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(500, 279);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // aptStatus
+            // 
+            this.aptStatus.Location = new System.Drawing.Point(303, 60);
+            this.aptStatus.Name = "aptStatus";
+            this.aptStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.aptStatus.Size = new System.Drawing.Size(185, 20);
+            this.aptStatus.StyleController = this.layoutControl1;
+            this.aptStatus.TabIndex = 16;
             // 
             // aptLabel
             // 
@@ -463,16 +473,6 @@
             this.layoutControlItem2.Text = "类型";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // aptStatus
-            // 
-            this.aptStatus.Location = new System.Drawing.Point(303, 60);
-            this.aptStatus.Name = "aptStatus";
-            this.aptStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.aptStatus.Size = new System.Drawing.Size(185, 20);
-            this.aptStatus.StyleController = this.layoutControl1;
-            this.aptStatus.TabIndex = 16;
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.aptStatus;
@@ -503,6 +503,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
@@ -524,7 +525,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             this.ResumeLayout(false);

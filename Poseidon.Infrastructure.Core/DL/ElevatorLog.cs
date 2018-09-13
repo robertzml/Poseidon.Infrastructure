@@ -56,6 +56,7 @@ namespace Poseidon.Infrastructure.Core.DL
         /// <summary>
         /// 事件状态
         /// </summary>
+        [Dict("Infrastructure.ElevatorLogStatus")]
         [Display(Name = "事件状态")]
         public int LogStatus { get; set; }
         #endregion //Property

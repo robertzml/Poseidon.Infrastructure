@@ -69,25 +69,36 @@ namespace Poseidon.Infrastructure.ClientDx
             this.bsElevator.DataSource = BusinessFactory<ElevatorBusiness>.Instance.FindAll();
 
             this.aptLabel.Storage = schedulerControl.Storage;
+            this.aptStatus.Storage = schedulerControl.Storage;
 
+            DisplayInfo();
+
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 显示信息
+        /// </summary>
+        private void DisplayInfo()
+        {
             this.luElevator.EditValue = this.currentElevator.Id;
             this.txtSubject.Text = this.appointment.Subject;
             this.dpStartDate.EditValue = this.appointment.Start;
-            //this.aptLabel.sele
             this.txtInfo.Text = this.appointment.Description;
 
             if (this.appointment.Id != null)
             {
+                this.aptLabel.SelectedIndex = this.appointment.LabelId;
+                this.aptStatus.SelectedIndex = this.appointment.StatusId;
+
                 var log = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(appointment.Id.ToString());
                 this.txtCreator.Text = log.CreateBy.Name;
                 this.txtCreateTime.Text = log.CreateBy.Time.ToDateTimeString();
                 this.txtEditor.Text = log.UpdateBy.Name;
                 this.txtEditTime.Text = log.UpdateBy.Time.ToDateTimeString();
             }
-
-            base.InitForm();
         }
-    
+
         /// <summary>
         /// 输入检查
         /// </summary>
@@ -101,11 +112,11 @@ namespace Poseidon.Infrastructure.ClientDx
                 errorMessage = "请输入主题";
                 return new Tuple<bool, string>(false, errorMessage);
             }
-            //if (this.cmbLogType.EditValue == null)
-            //{
-            //    errorMessage = "请选择事件类型";
-            //    return new Tuple<bool, string>(false, errorMessage);
-            //}
+            if (this.aptLabel.EditValue == null)
+            {
+                errorMessage = "请选择事件类型";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.dpStartDate.EditValue == null)
             {
                 errorMessage = "请选择日期";
@@ -124,8 +135,9 @@ namespace Poseidon.Infrastructure.ClientDx
             this.controller.Subject = this.txtSubject.Text;
             this.controller.Start = this.dpStartDate.DateTime;
             this.controller.End = this.dpStartDate.DateTime.AddDays(1);
-            this.controller.Description = this.txtInfo.Text ?? "";
-            this.controller.LabelId = this.aptLabel.SelectedIndex;            
+            this.controller.Description = this.txtInfo.Text ?? "";            
+            this.controller.Label = (AppointmentLabel)this.aptLabel.EditValue;
+            this.controller.Status = (AppointmentStatus)this.aptStatus.EditValue;
         }
         #endregion //Function
 
@@ -139,9 +151,6 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.schedulerControl.Storage.BeginUpdate();
             SetAppointment();
-
-            bool cha = this.controller.IsAppointmentChanged();
-            
             this.controller.ApplyChanges();
 
             this.schedulerControl.Storage.EndUpdate();
@@ -158,8 +167,6 @@ namespace Poseidon.Infrastructure.ClientDx
                 return controller;
             }
         }
-        #endregion //Property
-
-        
+        #endregion //Property        
     }
 }

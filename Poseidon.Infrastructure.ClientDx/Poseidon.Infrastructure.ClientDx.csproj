@@ -135,6 +135,11 @@
     <Compile Include="Grid\RepairRecordSummaryGrid.Designer.cs">
       <DependentUpon>RepairRecordSummaryGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Repair\RepairRecordSummaryMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -524,6 +529,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Overview\FrmRepairOverview.resx">
       <DependentUpon>FrmRepairOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Repair\FrmRepairAdd.resx">
       <DependentUpon>FrmRepairAdd.cs</DependentUpon>

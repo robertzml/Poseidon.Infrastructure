@@ -93,6 +93,7 @@
             this.mainScheduler.Views.DayView.TimeRulers.Add(timeRuler1);
             this.mainScheduler.Views.FullWeekView.Enabled = true;
             this.mainScheduler.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.mainScheduler.Views.MonthView.AppointmentDisplayOptions.StatusDisplayType = DevExpress.XtraScheduler.AppointmentStatusDisplayType.Bounds;
             this.mainScheduler.Views.WeekView.Enabled = false;
             this.mainScheduler.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.mainScheduler.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.mainScheduler_EditAppointmentFormShowing);

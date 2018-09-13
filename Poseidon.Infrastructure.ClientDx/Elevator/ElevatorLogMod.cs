@@ -36,11 +36,34 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private Elevator currentElevator;
 
+        /// <summary>
+        /// 标签颜色列表
+        /// </summary>
         private Color[] labelColors = new Color[] {
-            Color.FromArgb(0xFF, 0xFF, 0xC2, 0xBE),
-            Color.FromArgb(0xFF, 0xA8, 0xD5, 0xFF),
-            Color.FromArgb(0xFF, 0xC1, 0xF4, 0x9C)
+            System.Drawing.SystemColors.Window,
+            ColorTranslator.FromHtml("#FFFFC2BE"),
+            ColorTranslator.FromHtml("#FFA8D5FF"),
+            ColorTranslator.FromHtml("#FFC1F49C"),
+            ColorTranslator.FromHtml("#FFF3E4C7"),
+            ColorTranslator.FromHtml("#FFF4CE93"),
+            ColorTranslator.FromHtml("#FFC7F4FF"),
+            ColorTranslator.FromHtml("#FFCFDB98"),
+            ColorTranslator.FromHtml("#FFE0CFE9"),
+            ColorTranslator.FromHtml("#FF8DE9DF"),
+            ColorTranslator.FromHtml("#FFFFF7A5"),
                 };
+
+        /// <summary>
+        /// 状态颜色列表
+        /// </summary>
+        private Color[] statusColors = new Color[]
+        {
+            ColorTranslator.FromHtml("#FFFFFFFF"),
+            ColorTranslator.FromHtml("#FF4A87E2"),
+            ColorTranslator.FromHtml("#FF4A87E2"),
+            ColorTranslator.FromHtml("#FF800080"),
+            ColorTranslator.FromHtml("#FF937BD1")
+        };
 
         /// <summary>
         /// 日志类型字典
@@ -96,16 +119,38 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.storage.Appointments.Labels.Clear();
 
-            var dictItems = DictUtility.GetDictItem(typeof(ElevatorLog), "LogType");
+            this.logTypeDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogType");
 
-            for (int i = 0; i < dictItems.Count; i++)
+            for (int i = 0; i < logTypeDict.Count; i++)
             {
-                AppointmentLabel label = new AppointmentLabel(dictItems[i].Value);
+                if (i >= labelColors.Length)
+                    return;
 
-                label.MenuCaption = dictItems[i].Key.ToString();
+                AppointmentLabel label = new AppointmentLabel(logTypeDict[i].Value);        
                 label.Color = labelColors[i];
-
+                
                 this.storage.Appointments.Labels.Add(label);
+            }
+        }
+
+        /// <summary>
+        /// 设置事件状态
+        /// </summary>
+        private void SetAppointmentStatus()
+        {
+            this.storage.Appointments.Statuses.Clear();
+
+            this.logStatusDict = DictUtility.GetDictItem(typeof(ElevatorLog), "LogStatus");
+
+            for (int i = 0; i < logStatusDict.Count; i++)
+            {
+                if (i >= statusColors.Length)
+                    return;
+
+                AppointmentStatus status = new AppointmentStatus((AppointmentStatusType)i, logStatusDict[i].Value);
+                status.Color = statusColors[i];
+
+                this.storage.Appointments.Statuses.Add(status);
             }
         }
 
@@ -120,8 +165,9 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.Subject = apt.Subject;
             entity.StartDate = apt.Start;
             entity.EndDate = apt.End;
-            entity.LogType = apt.LabelId;
             entity.Info = apt.Description;
+            entity.LogType = apt.LabelId;
+           
             entity.LogStatus = apt.StatusId;
 
             entity.Remark = "";
@@ -156,6 +202,7 @@ namespace Poseidon.Infrastructure.ClientDx
             MappingAppointmentData();
             MappingResourceData();
             SetAppointmentLabels();
+            SetAppointmentStatus();
         }
 
         /// <summary>
@@ -235,7 +282,21 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void storage_AppointmentDeleting(object sender, PersistentObjectCancelEventArgs e)
         {
+            try
+            {
+                if (MessageUtil.ConfirmYesNo("是否删除该事件日志") == DialogResult.Yes)
+                {
+                    Appointment apt = e.Object as Appointment;
+                    BusinessFactory<ElevatorLogBusiness>.Instance.Delete(apt.Id.ToString());
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                Logger.Instance.Exception("删除日志失败", pe);
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
 
+            e.Cancel = false;
         }
         #endregion //Event
     }
