@@ -91,6 +91,7 @@
             this.mainScheduler.Location = new System.Drawing.Point(2, 21);
             this.mainScheduler.Name = "mainScheduler";
             this.mainScheduler.OptionsCustomization.AllowAppointmentCopy = DevExpress.XtraScheduler.UsedAppointmentType.None;
+            this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDragBetweenResources = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowInplaceEditor = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.mainScheduler.Size = new System.Drawing.Size(555, 512);

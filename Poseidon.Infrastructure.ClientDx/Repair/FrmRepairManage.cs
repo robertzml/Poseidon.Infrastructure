@@ -23,10 +23,6 @@ namespace Poseidon.Infrastructure.ClientDx
     public partial class FrmRepairManage : BaseMdiForm
     {
         #region Field
-        /// <summary>
-        /// 起始年份
-        /// </summary>
-        private readonly int startYear = 2017;
         #endregion //Field
 
         #region Constructor
@@ -54,7 +50,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.lbYears.Items.Clear();
 
             var nowYear = DateTime.Now.Year;
-            for (int i = nowYear; i >= startYear; i--)
+            for (int i = nowYear; i >= InfrastructureConstant.StartYear; i--)
             {
                 this.lbYears.Items.Add(i + "年");
             }

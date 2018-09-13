@@ -251,7 +251,7 @@ namespace Poseidon.Infrastructure.ClientDx
             this.mainScheduler.OptionsCustomization.AllowAppointmentCreate = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             //this.mainScheduler.OptionsCustomization.AllowAppointmentEdit = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDelete = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
-            this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            //this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentResize = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
         }
 
