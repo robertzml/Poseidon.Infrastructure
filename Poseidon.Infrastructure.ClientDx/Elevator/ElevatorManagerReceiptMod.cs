@@ -27,6 +27,11 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 当前关联电梯
         /// </summary>
         private Elevator currentElevator;
+
+        /// <summary>
+        /// 能否编辑
+        /// </summary>
+        private bool editable = true;
         #endregion //Field
 
         #region Constructor
@@ -68,6 +73,19 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ElevatorManagerReceiptMod_Load(object sender, EventArgs e)
+        {
+            if (this.editable)
+                this.lcgAction.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            else
+                this.lcgAction.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+        }
+
         /// <summary>
         /// 添加电梯管理员
         /// </summary>
@@ -135,5 +153,23 @@ namespace Poseidon.Infrastructure.ClientDx
             }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 能否编辑
+        /// </summary>
+        [Description("能否编辑"), Category("功能")]
+        public bool Editable
+        {
+            get
+            {
+                return this.editable;
+            }
+            set
+            {
+                this.editable = value;
+            }
+        }
+        #endregion //Property
     }
 }

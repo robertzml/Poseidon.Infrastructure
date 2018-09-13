@@ -36,38 +36,40 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.mainScheduler = new DevExpress.XtraScheduler.SchedulerControl();
             this.storage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.bsElevatorLog = new System.Windows.Forms.BindingSource(this.components);
             this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.chkListLogType = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.logInfoView = new Poseidon.Infrastructure.ClientDx.ElevatorLogInfoView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainScheduler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevatorLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkListLogType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateNavigator1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(865, 541);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -78,7 +80,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
-            this.groupControl1.Size = new System.Drawing.Size(659, 535);
+            this.groupControl1.Size = new System.Drawing.Size(559, 535);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "运行日志";
             // 
@@ -90,7 +92,8 @@
             this.mainScheduler.Name = "mainScheduler";
             this.mainScheduler.OptionsCustomization.AllowAppointmentCopy = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDragBetweenResources = DevExpress.XtraScheduler.UsedAppointmentType.None;
-            this.mainScheduler.Size = new System.Drawing.Size(655, 512);
+            this.mainScheduler.OptionsCustomization.AllowInplaceEditor = DevExpress.XtraScheduler.UsedAppointmentType.None;
+            this.mainScheduler.Size = new System.Drawing.Size(555, 512);
             this.mainScheduler.Start = new System.DateTime(2018, 9, 9, 0, 0, 0, 0);
             this.mainScheduler.Storage = this.storage;
             this.mainScheduler.TabIndex = 0;
@@ -104,6 +107,7 @@
             this.mainScheduler.Views.WeekView.Enabled = false;
             this.mainScheduler.Views.WorkWeekView.Enabled = false;
             this.mainScheduler.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.mainScheduler.SelectionChanged += new System.EventHandler(this.mainScheduler_SelectionChanged);
             this.mainScheduler.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.mainScheduler_EditAppointmentFormShowing);
             // 
             // storage
@@ -114,16 +118,6 @@
             this.storage.AppointmentChanging += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentChanging);
             this.storage.AppointmentDeleting += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.storage_AppointmentDeleting);
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.chkListLogType);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(668, 3);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(194, 318);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "事件类型";
-            // 
             // bsElevatorLog
             // 
             this.bsElevatorLog.DataSource = typeof(Poseidon.Infrastructure.Core.DL.ElevatorLog);
@@ -132,24 +126,42 @@
             // 
             this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.chkListLogType);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(568, 273);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(294, 265);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "事件类型";
+            // 
             // chkListLogType
             // 
             this.chkListLogType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkListLogType.Location = new System.Drawing.Point(2, 21);
             this.chkListLogType.Name = "chkListLogType";
-            this.chkListLogType.Size = new System.Drawing.Size(190, 295);
+            this.chkListLogType.Size = new System.Drawing.Size(290, 242);
             this.chkListLogType.TabIndex = 0;
             this.chkListLogType.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.chkListLogType_ItemCheck);
             // 
-            // dateNavigator1
+            // groupControl3
             // 
-            this.dateNavigator1.HighlightTodayCell = DevExpress.Utils.DefaultBoolean.Default;
-            this.dateNavigator1.HotDate = null;
-            this.dateNavigator1.Location = new System.Drawing.Point(668, 327);
-            this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.SchedulerControl = this.mainScheduler;
-            this.dateNavigator1.Size = new System.Drawing.Size(194, 183);
-            this.dateNavigator1.TabIndex = 2;
+            this.groupControl3.Controls.Add(this.logInfoView);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(568, 3);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(294, 264);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "日志信息";
+            // 
+            // logInfoView
+            // 
+            this.logInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logInfoView.Location = new System.Drawing.Point(2, 21);
+            this.logInfoView.Name = "logInfoView";
+            this.logInfoView.Size = new System.Drawing.Size(290, 241);
+            this.logInfoView.TabIndex = 0;
             // 
             // ElevatorLogMod
             // 
@@ -164,12 +176,13 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainScheduler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsElevatorLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkListLogType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -184,6 +197,7 @@
         private System.Windows.Forms.BindingSource bsElevatorLog;
         private System.Windows.Forms.BindingSource bsElevator;
         private DevExpress.XtraEditors.CheckedListBoxControl chkListLogType;
-        private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private ElevatorLogInfoView logInfoView;
     }
 }

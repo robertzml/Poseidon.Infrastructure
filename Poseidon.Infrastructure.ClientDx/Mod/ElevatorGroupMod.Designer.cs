@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.elevatorGrid = new Poseidon.Infrastructure.ClientDx.ElevatorGrid();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElevator = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.elevatorGrid = new Poseidon.Infrastructure.ClientDx.ElevatorGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
@@ -44,7 +43,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Controls.Add(this.tabBusiness, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tabBusiness, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -53,6 +52,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(812, 513);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tabBusiness
+            // 
+            this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBusiness.Location = new System.Drawing.Point(3, 3);
+            this.tabBusiness.Name = "tabBusiness";
+            this.tableLayoutPanel1.SetRowSpan(this.tabBusiness, 2);
+            this.tabBusiness.SelectedTabPage = this.tabPageElevator;
+            this.tabBusiness.Size = new System.Drawing.Size(806, 507);
+            this.tabBusiness.TabIndex = 2;
+            this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElevator});
+            // 
+            // tabPageElevator
+            // 
+            this.tabPageElevator.Controls.Add(this.elevatorGrid);
+            this.tabPageElevator.Name = "tabPageElevator";
+            this.tabPageElevator.Size = new System.Drawing.Size(800, 478);
+            this.tabPageElevator.Text = "电梯列表";
             // 
             // elevatorGrid
             // 
@@ -67,37 +85,15 @@
             this.elevatorGrid.Location = new System.Drawing.Point(0, 0);
             this.elevatorGrid.Name = "elevatorGrid";
             this.elevatorGrid.ShowAddMenu = false;
+            this.elevatorGrid.ShowDeleteMenu = false;
+            this.elevatorGrid.ShowEditMenu = false;
+            this.elevatorGrid.ShowFindPanel = false;
             this.elevatorGrid.ShowFooter = false;
             this.elevatorGrid.ShowLineNumber = true;
             this.elevatorGrid.ShowMenu = false;
             this.elevatorGrid.ShowNavigator = false;
-            this.elevatorGrid.Size = new System.Drawing.Size(800, 315);
+            this.elevatorGrid.Size = new System.Drawing.Size(800, 478);
             this.elevatorGrid.TabIndex = 0;
-            // 
-            // tabBusiness
-            // 
-            this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBusiness.Location = new System.Drawing.Point(3, 166);
-            this.tabBusiness.Name = "tabBusiness";
-            this.tabBusiness.SelectedTabPage = this.tabPageElevator;
-            this.tabBusiness.Size = new System.Drawing.Size(806, 344);
-            this.tabBusiness.TabIndex = 2;
-            this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPageElevator,
-            this.xtraTabPage2});
-            // 
-            // tabPageElevator
-            // 
-            this.tabPageElevator.Controls.Add(this.elevatorGrid);
-            this.tabPageElevator.Name = "tabPageElevator";
-            this.tabPageElevator.Size = new System.Drawing.Size(800, 315);
-            this.tabPageElevator.Text = "电梯列表";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(294, 271);
-            this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // ElevatorGroupMod
             // 
@@ -120,6 +116,5 @@
         private ElevatorGrid elevatorGrid;
         private DevExpress.XtraTab.XtraTabControl tabBusiness;
         private DevExpress.XtraTab.XtraTabPage tabPageElevator;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
     }
 }

@@ -43,10 +43,14 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void elevatorTree_GroupSelected(object sender, EventArgs e)
         {
+            this.SuspendLayout();
+
             this.navFrame.SelectedPageIndex = 0;
             var id = this.elevatorTree.GetCurrentSelectId();
-            
-            this.elevatorGroupMod.Init(id);            
+
+            this.elevatorGroupMod.Init(id);
+
+            this.ResumeLayout();
         }
 
         /// <summary>

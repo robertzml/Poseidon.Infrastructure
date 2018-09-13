@@ -93,6 +93,12 @@
     <Compile Include="Component\InspectionInfoView.Designer.cs">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\ElevatorLogInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\ElevatorLogInfoView.Designer.cs">
+      <DependentUpon>ElevatorLogInfoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Elevator\ElevatorLogMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -397,6 +403,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Component\ElevatorInfoView.resx">
       <DependentUpon>ElevatorInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\ElevatorLogInfoView.resx">
+      <DependentUpon>ElevatorLogInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\InspectionInfoView.resx">
       <DependentUpon>InspectionInfoView.cs</DependentUpon>

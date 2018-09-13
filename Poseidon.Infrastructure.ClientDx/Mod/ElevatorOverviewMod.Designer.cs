@@ -32,8 +32,11 @@
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorInfoView = new Poseidon.Infrastructure.ClientDx.ElevatorInfoView();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageManager = new DevExpress.XtraTab.XtraTabPage();
+            this.elevatorManagerMod = new Poseidon.Infrastructure.ClientDx.ElevatorManagerReceiptMod();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
+            this.tabLog = new DevExpress.XtraTab.XtraTabPage();
+            this.elevatorLogMod = new Poseidon.Infrastructure.ClientDx.ElevatorLogMod();
             this.tabInspection = new DevExpress.XtraTab.XtraTabPage();
             this.insOvMod = new Poseidon.Infrastructure.ClientDx.InspectionOverviewMod();
             this.tabRepair = new DevExpress.XtraTab.XtraTabPage();
@@ -42,8 +45,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
+            this.tabPageManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
+            this.tabLog.SuspendLayout();
             this.tabInspection.SuspendLayout();
             this.tabRepair.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +79,7 @@
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageInfo,
-            this.xtraTabPage2});
+            this.tabPageManager});
             // 
             // tabPageInfo
             // 
@@ -91,23 +96,50 @@
             this.elevatorInfoView.Size = new System.Drawing.Size(950, 198);
             this.elevatorInfoView.TabIndex = 0;
             // 
-            // xtraTabPage2
+            // tabPageManager
             // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(950, 198);
-            this.xtraTabPage2.Text = "xtraTabPage2";
+            this.tabPageManager.Controls.Add(this.elevatorManagerMod);
+            this.tabPageManager.Name = "tabPageManager";
+            this.tabPageManager.Size = new System.Drawing.Size(950, 198);
+            this.tabPageManager.Text = "管理员信息";
+            // 
+            // elevatorManagerMod
+            // 
+            this.elevatorManagerMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorManagerMod.Editable = false;
+            this.elevatorManagerMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorManagerMod.Name = "elevatorManagerMod";
+            this.elevatorManagerMod.Size = new System.Drawing.Size(950, 198);
+            this.elevatorManagerMod.TabIndex = 0;
             // 
             // tabBusiness
             // 
             this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabBusiness.Location = new System.Drawing.Point(3, 236);
             this.tabBusiness.Name = "tabBusiness";
-            this.tabBusiness.SelectedTabPage = this.tabInspection;
+            this.tabBusiness.SelectedTabPage = this.tabLog;
             this.tabBusiness.Size = new System.Drawing.Size(956, 411);
             this.tabBusiness.TabIndex = 1;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabLog,
             this.tabInspection,
             this.tabRepair});
+            // 
+            // tabLog
+            // 
+            this.tabLog.Controls.Add(this.elevatorLogMod);
+            this.tabLog.Name = "tabLog";
+            this.tabLog.Size = new System.Drawing.Size(950, 382);
+            this.tabLog.Text = "运行日志";
+            // 
+            // elevatorLogMod
+            // 
+            this.elevatorLogMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorLogMod.Editable = false;
+            this.elevatorLogMod.Location = new System.Drawing.Point(0, 0);
+            this.elevatorLogMod.Name = "elevatorLogMod";
+            this.elevatorLogMod.Size = new System.Drawing.Size(950, 382);
+            this.elevatorLogMod.TabIndex = 0;
             // 
             // tabInspection
             // 
@@ -150,8 +182,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).EndInit();
             this.tabInfo.ResumeLayout(false);
             this.tabPageInfo.ResumeLayout(false);
+            this.tabPageManager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
+            this.tabLog.ResumeLayout(false);
             this.tabInspection.ResumeLayout(false);
             this.tabRepair.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -163,12 +197,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraTab.XtraTabControl tabInfo;
         private DevExpress.XtraTab.XtraTabPage tabPageInfo;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTab.XtraTabPage tabPageManager;
         private ElevatorInfoView elevatorInfoView;
         private DevExpress.XtraTab.XtraTabControl tabBusiness;
         private DevExpress.XtraTab.XtraTabPage tabInspection;
         private DevExpress.XtraTab.XtraTabPage tabRepair;
         private InspectionOverviewMod insOvMod;
         private FacilityRepairMod repairOvMod;
+        private DevExpress.XtraTab.XtraTabPage tabLog;
+        private ElevatorLogMod elevatorLogMod;
+        private ElevatorManagerReceiptMod elevatorManagerMod;
     }
 }

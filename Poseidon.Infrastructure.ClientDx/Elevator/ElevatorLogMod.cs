@@ -148,7 +148,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void SetAppointmentStatus()
         {
             this.storage.Appointments.Statuses.Clear();
-            
+
             for (int i = 0; i < logStatusDict.Count; i++)
             {
                 if (i >= statusColors.Length)
@@ -187,7 +187,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.chkListLogType.Items.Clear();
 
-            foreach(var item in this.logTypeDict)
+            foreach (var item in this.logTypeDict)
             {
                 this.chkListLogType.Items.Add(item.Key, item.Value, CheckState.Checked, true);
             }
@@ -214,7 +214,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 初始化
         /// </summary>
         /// <param name="elevatorId">电梯ID</param>
-        public void Init(string elevatorId)
+        public void SetElevator(string elevatorId)
         {
             this.currentUser = Cache.Instance.Get("CurrentUser") as LoginUser;
             this.currentElevator = BusinessFactory<ElevatorBusiness>.Instance.FindById(elevatorId);
@@ -234,7 +234,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
+            this.currentElevator = null;
             this.bsElevatorLog.Clear();
+            this.logInfoView.Clear();
         }
         #endregion //Method
 
@@ -247,7 +249,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void ElevatorLogMod_Load(object sender, EventArgs e)
         {
             this.mainScheduler.OptionsCustomization.AllowAppointmentCreate = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
-            this.mainScheduler.OptionsCustomization.AllowAppointmentEdit = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
+            //this.mainScheduler.OptionsCustomization.AllowAppointmentEdit = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDelete = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentResize = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
@@ -260,6 +262,12 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void mainScheduler_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
         {
+            if (this.currentElevator == null)
+            {
+                e.Handled = true;
+                return;
+            }
+
             FrmElevatorLogAppointment form = new FrmElevatorLogAppointment(this.currentElevator, this.mainScheduler, e.Appointment);
             form.ShowDialog();
             e.Handled = true;
@@ -272,6 +280,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void storage_AppointmentInserting(object sender, PersistentObjectCancelEventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             try
             {
                 Appointment apt = e.Object as Appointment;
@@ -296,6 +307,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void storage_AppointmentChanging(object sender, PersistentObjectCancelEventArgs e)
         {
+            if (this.currentElevator == null || !this.editable)
+                return;
+
             try
             {
                 Appointment apt = e.Object as Appointment;
@@ -320,6 +334,9 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void storage_AppointmentDeleting(object sender, PersistentObjectCancelEventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             try
             {
                 if (MessageUtil.ConfirmYesNo("是否删除该事件日志") == DialogResult.Yes)
@@ -338,12 +355,38 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
+        /// 选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mainScheduler_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.currentElevator == null)
+                return;
+
+            var data = this.mainScheduler.SelectedAppointments;
+            if (data.Count == 0)
+            {
+                this.logInfoView.Clear();
+                return;
+            }
+
+            var apt = data[0];
+            var log = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(apt.Id.ToString());
+         
+            this.logInfoView.SetElevator(log, this.currentElevator);
+        }
+
+        /// <summary>
         /// 日志类型筛选
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void chkListLogType_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
         {
+            if (this.currentElevator == null)
+                return;
+
             var checkedItems = this.chkListLogType.CheckedItems;
 
             List<int> types = new List<int>();

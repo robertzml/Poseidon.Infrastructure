@@ -52,7 +52,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void DisplayInfo()
         {
             this.elevatorInfoView.SetElevator(currentElevator);
-            //this.managersGrid.DataSource = this.currentElevator.Managers;
+            this.elevatorManagerMod.SetElevator(currentElevator);
         }
         #endregion //Function
 
@@ -67,6 +67,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             DisplayInfo();
 
+            elevatorLogMod.SetElevator(id);
             insOvMod.SetFacility(id);
             repairOvMod.SetFacility(id);
             //DisplayMaintenanceInfo();            
@@ -78,9 +79,9 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Clear()
         {
             this.elevatorInfoView.Clear();
-            //this.managersGrid.Clear();
-            //this.mainInfoGrid.Clear();
-                       
+            this.elevatorManagerMod.Clear();
+
+            this.elevatorLogMod.Clear();
             this.insOvMod.Clear();
             this.repairOvMod.Clear();
         }
