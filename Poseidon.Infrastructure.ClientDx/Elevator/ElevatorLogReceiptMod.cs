@@ -18,9 +18,9 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Infrastructure.Core.DL;
 
     /// <summary>
-    /// 电梯总览模块
+    /// 电梯日志查看模块
     /// </summary>
-    public partial class ElevatorOverviewMod : DevExpress.XtraEditors.XtraUserControl
+    public partial class ElevatorLogReceiptMod : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -30,7 +30,7 @@ namespace Poseidon.Infrastructure.ClientDx
         #endregion //Field
 
         #region Constructor
-        public ElevatorOverviewMod()
+        public ElevatorLogReceiptMod()
         {
             InitializeComponent();
         }
@@ -44,23 +44,9 @@ namespace Poseidon.Infrastructure.ClientDx
         private void LoadElevator(string id)
         {
             this.currentElevator = BusinessFactory<ElevatorBusiness>.Instance.FindById(id);
-        }
 
-        /// <summary>
-        /// 显示电梯基本信息
-        /// </summary>
-        private void DisplayInfo()
-        {
-            this.elevatorInfoView.SetElevator(currentElevator);
-            this.elevatorManagerMod.SetElevator(currentElevator);
-        }
-
-        /// <summary>
-        /// 显示单据信息
-        /// </summary>
-        private void DisplayReceipt()
-        {
-            this.logReceiptMod.SetElevator(currentElevator.Id);
+            var data = BusinessFactory<ElevatorLogBusiness>.Instance.FindByElevator(id);
+            this.logGrid.DataSource = data.ToList();
         }
         #endregion //Function
 
@@ -72,15 +58,6 @@ namespace Poseidon.Infrastructure.ClientDx
         public void SetElevator(string id)
         {
             LoadElevator(id);
-
-            DisplayInfo();
-
-            elevatorLogMod.SetElevator(id);
-            insOvMod.SetFacility(id);
-            repairOvMod.SetFacility(id);
-            //DisplayMaintenanceInfo();            
-
-            DisplayReceipt();
         }
 
         /// <summary>
@@ -88,14 +65,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         public void Clear()
         {
-            this.elevatorInfoView.Clear();
-            this.elevatorManagerMod.Clear();
-
-            this.elevatorLogMod.Clear();
-            this.insOvMod.Clear();
-            this.repairOvMod.Clear();
-
-            this.logReceiptMod.Clear();
+            this.logGrid.Clear();
         }
         #endregion //Method
     }

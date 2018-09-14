@@ -159,15 +159,13 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (this.controller.IsNewAppointment || this.controller.IsAppointmentChanged())
-            {
-                this.schedulerControl.Storage.BeginUpdate();
+            this.schedulerControl.Storage.BeginUpdate();
 
-                SetAppointment();
-                this.controller.ApplyChanges();
+            SetAppointment();
+            this.controller.ApplyChanges();
 
-                this.schedulerControl.Storage.EndUpdate();
-            }
+            this.schedulerControl.Storage.EndUpdate();
+
             this.Close();
         }
         #endregion //Event

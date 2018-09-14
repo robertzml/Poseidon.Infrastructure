@@ -99,6 +99,12 @@
     <Compile Include="Component\ElevatorLogInfoView.Designer.cs">
       <DependentUpon>ElevatorLogInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Elevator\ElevatorLogReceiptMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elevator\ElevatorLogReceiptMod.Designer.cs">
+      <DependentUpon>ElevatorLogReceiptMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\ElevatorLogGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\ElevatorLogMod.resx">
       <DependentUpon>ElevatorLogMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elevator\ElevatorLogReceiptMod.resx">
+      <DependentUpon>ElevatorLogReceiptMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\ElevatorManagerReceiptMod.resx">
       <DependentUpon>ElevatorManagerReceiptMod.cs</DependentUpon>
