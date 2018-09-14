@@ -194,12 +194,20 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
+        /// 载入日志数据
+        /// </summary>
+        private void LoadLogData()
+        {
+            this.logData = BusinessFactory<ElevatorLogBusiness>.Instance.FindByElevator(this.currentElevator.Id).ToList();
+            this.bsElevatorLog.DataSource = logData;
+        }
+
+        /// <summary>
         /// 载入相关数据
         /// </summary>
         private void LoadData()
         {
-            this.logData = BusinessFactory<ElevatorLogBusiness>.Instance.FindByElevator(this.currentElevator.Id).ToList();
-            this.bsElevatorLog.DataSource = logData;
+            LoadLogData();
 
             var elevatorData = BusinessFactory<ElevatorBusiness>.Instance.FindAll();
             this.bsElevator.DataSource = elevatorData;
@@ -249,9 +257,7 @@ namespace Poseidon.Infrastructure.ClientDx
         private void ElevatorLogMod_Load(object sender, EventArgs e)
         {
             this.mainScheduler.OptionsCustomization.AllowAppointmentCreate = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
-            //this.mainScheduler.OptionsCustomization.AllowAppointmentEdit = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentDelete = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
-            //this.mainScheduler.OptionsCustomization.AllowAppointmentDrag = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
             this.mainScheduler.OptionsCustomization.AllowAppointmentResize = editable ? UsedAppointmentType.All : UsedAppointmentType.None;
         }
 
@@ -290,6 +296,8 @@ namespace Poseidon.Infrastructure.ClientDx
                 MapToEntity(apt, entity);
 
                 BusinessFactory<ElevatorLogBusiness>.Instance.Create(entity, this.currentUser);
+
+                LoadLogData();
             }
             catch (PoseidonException pe)
             {
@@ -317,6 +325,8 @@ namespace Poseidon.Infrastructure.ClientDx
                 MapToEntity(apt, entity);
 
                 BusinessFactory<ElevatorLogBusiness>.Instance.Update(entity, this.currentUser);
+
+                LoadLogData();
             }
             catch (PoseidonException pe)
             {
@@ -343,6 +353,8 @@ namespace Poseidon.Infrastructure.ClientDx
                 {
                     Appointment apt = e.Object as Appointment;
                     BusinessFactory<ElevatorLogBusiness>.Instance.Delete(apt.Id.ToString());
+
+                    LoadLogData();
                 }
             }
             catch (PoseidonException pe)
@@ -372,8 +384,10 @@ namespace Poseidon.Infrastructure.ClientDx
             }
 
             var apt = data[0];
+            if (apt.Id == null)
+                return;
             var log = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(apt.Id.ToString());
-         
+
             this.logInfoView.SetElevator(log, this.currentElevator);
         }
 

@@ -18,9 +18,11 @@ namespace Poseidon.Infrastructure.ClientDx
     /// </summary>
     public partial class MaintenanceInfoGrid : WinEntityGrid<MaintenanceInfo>
     {
+        #region Constructor
         public MaintenanceInfoGrid()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
     }
 }

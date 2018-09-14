@@ -99,6 +99,12 @@
     <Compile Include="Component\ElevatorLogInfoView.Designer.cs">
       <DependentUpon>ElevatorLogInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\ElevatorLogGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\ElevatorLogGrid.Designer.cs">
+      <DependentUpon>ElevatorLogGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Elevator\ElevatorLogMod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Elevator\FrmElevatorManagerEdit.resx">
       <DependentUpon>FrmElevatorManagerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\ElevatorLogGrid.resx">
+      <DependentUpon>ElevatorLogGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\ElevatorManagerGrid.resx">
       <DependentUpon>ElevatorManagerGrid.cs</DependentUpon>
