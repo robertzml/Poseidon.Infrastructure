@@ -61,8 +61,8 @@
             this.colStartDate,
             this.colEndDate,
             this.colLogType,
-            this.colInfo,
             this.colLogStatus,
+            this.colInfo,
             this.colCreateBy,
             this.colUpdateBy,
             this.colRemark,
@@ -80,6 +80,7 @@
             // 
             // colElevatorId
             // 
+            this.colElevatorId.Caption = "电梯名称";
             this.colElevatorId.FieldName = "ElevatorId";
             this.colElevatorId.Name = "colElevatorId";
             this.colElevatorId.Visible = true;
@@ -87,6 +88,7 @@
             // 
             // colSubject
             // 
+            this.colSubject.Caption = "主题";
             this.colSubject.FieldName = "Subject";
             this.colSubject.Name = "colSubject";
             this.colSubject.Visible = true;
@@ -94,6 +96,7 @@
             // 
             // colStartDate
             // 
+            this.colStartDate.Caption = "日志时间";
             this.colStartDate.FieldName = "StartDate";
             this.colStartDate.Name = "colStartDate";
             this.colStartDate.Visible = true;
@@ -106,6 +109,9 @@
             // 
             // colLogType
             // 
+            this.colLogType.AppearanceCell.Options.UseTextOptions = true;
+            this.colLogType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colLogType.Caption = "事件类型";
             this.colLogType.FieldName = "LogType";
             this.colLogType.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colLogType.Name = "colLogType";
@@ -114,6 +120,7 @@
             // 
             // colInfo
             // 
+            this.colInfo.Caption = "事件内容";
             this.colInfo.FieldName = "Info";
             this.colInfo.Name = "colInfo";
             this.colInfo.Visible = true;
@@ -121,6 +128,9 @@
             // 
             // colLogStatus
             // 
+            this.colLogStatus.AppearanceCell.Options.UseTextOptions = true;
+            this.colLogStatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colLogStatus.Caption = "事件状态";
             this.colLogStatus.FieldName = "LogStatus";
             this.colLogStatus.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colLogStatus.Name = "colLogStatus";

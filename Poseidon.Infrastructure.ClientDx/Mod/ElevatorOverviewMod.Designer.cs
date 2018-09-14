@@ -35,10 +35,8 @@
             this.tabPageManager = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorManagerMod = new Poseidon.Infrastructure.ClientDx.ElevatorManagerReceiptMod();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
-            this.tabLog = new DevExpress.XtraTab.XtraTabPage();
+            this.tabLogSummary = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorLogMod = new Poseidon.Infrastructure.ClientDx.ElevatorLogMod();
-            this.tabInspection = new DevExpress.XtraTab.XtraTabPage();
-            this.insOvMod = new Poseidon.Infrastructure.ClientDx.InspectionOverviewMod();
             this.tabRepair = new DevExpress.XtraTab.XtraTabPage();
             this.repairOvMod = new Poseidon.Infrastructure.ClientDx.FacilityRepairMod();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
@@ -47,6 +45,8 @@
             this.tabReceipt = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageLogReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.logReceiptMod = new Poseidon.Infrastructure.ClientDx.ElevatorLogReceiptMod();
+            this.tabPageInspectionReceipt = new DevExpress.XtraTab.XtraTabPage();
+            this.insOvMod = new Poseidon.Infrastructure.ClientDx.InspectionOverviewMod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
@@ -54,8 +54,7 @@
             this.tabPageManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
-            this.tabLog.SuspendLayout();
-            this.tabInspection.SuspendLayout();
+            this.tabLogSummary.SuspendLayout();
             this.tabRepair.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
@@ -64,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabReceipt)).BeginInit();
             this.tabReceipt.SuspendLayout();
             this.tabPageLogReceipt.SuspendLayout();
+            this.tabPageInspectionReceipt.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -130,20 +130,19 @@
             this.tabBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabBusiness.Location = new System.Drawing.Point(3, 236);
             this.tabBusiness.Name = "tabBusiness";
-            this.tabBusiness.SelectedTabPage = this.tabLog;
+            this.tabBusiness.SelectedTabPage = this.tabLogSummary;
             this.tabBusiness.Size = new System.Drawing.Size(950, 382);
             this.tabBusiness.TabIndex = 1;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabLog,
-            this.tabInspection,
+            this.tabLogSummary,
             this.tabRepair});
             // 
-            // tabLog
+            // tabLogSummary
             // 
-            this.tabLog.Controls.Add(this.elevatorLogMod);
-            this.tabLog.Name = "tabLog";
-            this.tabLog.Size = new System.Drawing.Size(944, 353);
-            this.tabLog.Text = "运行日志";
+            this.tabLogSummary.Controls.Add(this.elevatorLogMod);
+            this.tabLogSummary.Name = "tabLogSummary";
+            this.tabLogSummary.Size = new System.Drawing.Size(944, 353);
+            this.tabLogSummary.Text = "运行日志";
             // 
             // elevatorLogMod
             // 
@@ -153,21 +152,6 @@
             this.elevatorLogMod.Name = "elevatorLogMod";
             this.elevatorLogMod.Size = new System.Drawing.Size(944, 353);
             this.elevatorLogMod.TabIndex = 0;
-            // 
-            // tabInspection
-            // 
-            this.tabInspection.Controls.Add(this.insOvMod);
-            this.tabInspection.Name = "tabInspection";
-            this.tabInspection.Size = new System.Drawing.Size(944, 353);
-            this.tabInspection.Text = "设施检验";
-            // 
-            // insOvMod
-            // 
-            this.insOvMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.insOvMod.Location = new System.Drawing.Point(0, 0);
-            this.insOvMod.Name = "insOvMod";
-            this.insOvMod.Size = new System.Drawing.Size(944, 353);
-            this.insOvMod.TabIndex = 0;
             // 
             // tabRepair
             // 
@@ -219,14 +203,15 @@
             this.tabReceipt.Size = new System.Drawing.Size(956, 621);
             this.tabReceipt.TabIndex = 0;
             this.tabReceipt.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPageLogReceipt});
+            this.tabPageLogReceipt,
+            this.tabPageInspectionReceipt});
             // 
             // tabPageLogReceipt
             // 
             this.tabPageLogReceipt.Controls.Add(this.logReceiptMod);
             this.tabPageLogReceipt.Name = "tabPageLogReceipt";
             this.tabPageLogReceipt.Size = new System.Drawing.Size(950, 592);
-            this.tabPageLogReceipt.Text = "运行日志";
+            this.tabPageLogReceipt.Text = "日志记录";
             // 
             // logReceiptMod
             // 
@@ -235,6 +220,21 @@
             this.logReceiptMod.Name = "logReceiptMod";
             this.logReceiptMod.Size = new System.Drawing.Size(950, 592);
             this.logReceiptMod.TabIndex = 0;
+            // 
+            // tabPageInspectionReceipt
+            // 
+            this.tabPageInspectionReceipt.Controls.Add(this.insOvMod);
+            this.tabPageInspectionReceipt.Name = "tabPageInspectionReceipt";
+            this.tabPageInspectionReceipt.Size = new System.Drawing.Size(950, 592);
+            this.tabPageInspectionReceipt.Text = "检验记录";
+            // 
+            // insOvMod
+            // 
+            this.insOvMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.insOvMod.Location = new System.Drawing.Point(0, 0);
+            this.insOvMod.Name = "insOvMod";
+            this.insOvMod.Size = new System.Drawing.Size(950, 592);
+            this.insOvMod.TabIndex = 1;
             // 
             // ElevatorOverviewMod
             // 
@@ -250,8 +250,7 @@
             this.tabPageManager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
-            this.tabLog.ResumeLayout(false);
-            this.tabInspection.ResumeLayout(false);
+            this.tabLogSummary.ResumeLayout(false);
             this.tabRepair.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
@@ -260,6 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabReceipt)).EndInit();
             this.tabReceipt.ResumeLayout(false);
             this.tabPageLogReceipt.ResumeLayout(false);
+            this.tabPageInspectionReceipt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -272,11 +272,9 @@
         private DevExpress.XtraTab.XtraTabPage tabPageManager;
         private ElevatorInfoView elevatorInfoView;
         private DevExpress.XtraTab.XtraTabControl tabBusiness;
-        private DevExpress.XtraTab.XtraTabPage tabInspection;
         private DevExpress.XtraTab.XtraTabPage tabRepair;
-        private InspectionOverviewMod insOvMod;
         private FacilityRepairMod repairOvMod;
-        private DevExpress.XtraTab.XtraTabPage tabLog;
+        private DevExpress.XtraTab.XtraTabPage tabLogSummary;
         private ElevatorLogMod elevatorLogMod;
         private ElevatorManagerReceiptMod elevatorManagerMod;
         private DevExpress.XtraTab.XtraTabControl tabMain;
@@ -285,5 +283,7 @@
         private DevExpress.XtraTab.XtraTabControl tabReceipt;
         private DevExpress.XtraTab.XtraTabPage tabPageLogReceipt;
         private ElevatorLogReceiptMod logReceiptMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageInspectionReceipt;
+        private InspectionOverviewMod insOvMod;
     }
 }

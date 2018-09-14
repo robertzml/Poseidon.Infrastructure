@@ -47,20 +47,23 @@ namespace Poseidon.Infrastructure.ClientDx
         }
 
         /// <summary>
-        /// 显示电梯基本信息
+        /// 显示摘要页
         /// </summary>
-        private void DisplayInfo()
+        private void DisplaySummary()
         {
             this.elevatorInfoView.SetElevator(currentElevator);
             this.elevatorManagerMod.SetElevator(currentElevator);
+            this.elevatorLogMod.SetElevator(currentElevator.Id);
+            this.repairOvMod.SetFacility(currentElevator.Id);
         }
 
         /// <summary>
-        /// 显示单据信息
+        /// 显示单据页
         /// </summary>
         private void DisplayReceipt()
         {
             this.logReceiptMod.SetElevator(currentElevator.Id);
+            this.insOvMod.SetFacility(currentElevator.Id);
         }
         #endregion //Function
 
@@ -73,13 +76,7 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             LoadElevator(id);
 
-            DisplayInfo();
-
-            elevatorLogMod.SetElevator(id);
-            insOvMod.SetFacility(id);
-            repairOvMod.SetFacility(id);
-            //DisplayMaintenanceInfo();            
-
+            DisplaySummary();
             DisplayReceipt();
         }
 
@@ -92,10 +89,10 @@ namespace Poseidon.Infrastructure.ClientDx
             this.elevatorManagerMod.Clear();
 
             this.elevatorLogMod.Clear();
-            this.insOvMod.Clear();
             this.repairOvMod.Clear();
 
             this.logReceiptMod.Clear();
+            this.insOvMod.Clear();
         }
         #endregion //Method
     }

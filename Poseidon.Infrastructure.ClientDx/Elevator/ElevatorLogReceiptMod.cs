@@ -57,6 +57,8 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="id">电梯ID</param>
         public void SetElevator(string id)
         {
+            this.logGrid.Init();
+
             LoadElevator(id);
         }
 
