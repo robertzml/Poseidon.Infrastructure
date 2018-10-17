@@ -110,10 +110,17 @@ namespace Poseidon.Infrastructure.ClientDx
                 MaintenanceCompany entity = BusinessFactory<MaintenanceCompanyBusiness>.Instance.FindById(this.currentCompany.Id);
                 SetEntity(entity);
 
-                BusinessFactory<MaintenanceCompanyBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<MaintenanceCompanyBusiness>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

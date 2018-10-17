@@ -138,10 +138,17 @@ namespace Poseidon.Infrastructure.ClientDx
             {
                 try
                 {
-                    BusinessFactory<MaintenanceInfoBusiness>.Instance.Delete(info);
-                    DisplayMaintenanceInfo();
+                    var result = BusinessFactory<MaintenanceInfoBusiness>.Instance.Delete(info);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        DisplayMaintenanceInfo();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除维保信息失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

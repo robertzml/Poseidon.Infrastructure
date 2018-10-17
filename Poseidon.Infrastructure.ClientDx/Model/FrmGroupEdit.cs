@@ -121,16 +121,16 @@ namespace Poseidon.Infrastructure.ClientDx
                 var entity = BusinessFactory<GroupBusiness>.Instance.FindById(this.currentEntity.Id);
                 SetEntity(entity);
 
-                bool result = BusinessFactory<GroupBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<GroupBusiness>.Instance.Update(entity);
 
-                if (result)
+                if (result.success)
                 {
                     MessageUtil.ShowInfo("保存成功");
                     this.Close();
                 }
                 else
                 {
-                    MessageUtil.ShowInfo("保存失败");
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
                 }
             }
             catch (PoseidonException pe)

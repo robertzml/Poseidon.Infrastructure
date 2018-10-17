@@ -117,13 +117,14 @@ namespace Poseidon.Infrastructure.ClientDx
 
                 BusinessFactory<RepairRecordBusiness>.Instance.DeleteByRepair(repair.Id);
                 var result = BusinessFactory<RepairBusiness>.Instance.Delete(repair.Id);
-                if (result)
+
+                if (result.success)
                 {
                     MessageUtil.ShowWarning("删除维修改造信息成功");
                 }
                 else
                 {
-                    MessageUtil.ShowWarning("删除维修改造信息失败");
+                    MessageUtil.ShowWarning("删除维修改造信息失败: " + result.errorMessage);
                 }
 
                 SetYearList();

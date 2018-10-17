@@ -133,10 +133,17 @@ namespace Poseidon.Infrastructure.ClientDx
                 Elevator entity = BusinessFactory<ElevatorBusiness>.Instance.FindById(this.currentElevator.Id);
                 SetEntity(entity);
 
-                BusinessFactory<ElevatorBusiness>.Instance.Update(entity);
+                var result = BusinessFactory<ElevatorBusiness>.Instance.Update(entity);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

@@ -189,7 +189,14 @@ namespace Poseidon.Infrastructure.ClientDx
 
                 List<RepairRecord> records = SetRecords();
 
-                BusinessFactory<RepairBusiness>.Instance.Update(entity, this.currentUser);
+                var result = BusinessFactory<RepairBusiness>.Instance.Update(entity, this.currentUser);
+
+                if (!result.success)
+                {
+                    MessageUtil.ShowClaim("编辑维修改造失败: " + result.errorMessage);
+                    return;
+                }
+
                 BusinessFactory<RepairRecordBusiness>.Instance.Update(entity, records);
 
                 MessageUtil.ShowInfo("保存成功");

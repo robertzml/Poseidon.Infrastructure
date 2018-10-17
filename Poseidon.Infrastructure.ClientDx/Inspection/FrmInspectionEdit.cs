@@ -144,10 +144,17 @@ namespace Poseidon.Infrastructure.ClientDx
                 var inspection = BusinessFactory<InspectionBusiness>.Instance.FindById(this.currentInspection.Id);
                 SetEntity(inspection);
 
-                BusinessFactory<InspectionBusiness>.Instance.Update(inspection, this.currentUser);
+                var result = BusinessFactory<InspectionBusiness>.Instance.Update(inspection, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

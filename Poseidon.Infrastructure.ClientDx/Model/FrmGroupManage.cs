@@ -132,10 +132,17 @@ namespace Poseidon.Infrastructure.ClientDx
             {
                 try
                 {
-                    BusinessFactory<GroupBusiness>.Instance.Delete(this.currentGroup);
-                    LoadGroups();
+                    var result = BusinessFactory<GroupBusiness>.Instance.Delete(this.currentGroup);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadGroups();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除分组失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

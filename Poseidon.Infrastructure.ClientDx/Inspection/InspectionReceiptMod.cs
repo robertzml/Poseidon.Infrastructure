@@ -140,14 +140,15 @@ namespace Poseidon.Infrastructure.ClientDx
                 }
 
                 var result = BusinessFactory<InspectionBusiness>.Instance.Delete(inspection.Id);
-                if (result)
+
+                if (result.success)
                 {
                     MessageUtil.ShowWarning("删除检验信息成功");
                     DisplayInfo();
                 }
                 else
                 {
-                    MessageUtil.ShowWarning("删除检验信息失败");
+                    MessageUtil.ShowWarning("删除检验信息失败: " + result.errorMessage);
                 }
             }
         }

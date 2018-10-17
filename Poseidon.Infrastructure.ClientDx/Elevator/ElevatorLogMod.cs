@@ -324,9 +324,16 @@ namespace Poseidon.Infrastructure.ClientDx
                 ElevatorLog entity = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(apt.Id.ToString());
                 MapToEntity(apt, entity);
 
-                BusinessFactory<ElevatorLogBusiness>.Instance.Update(entity, this.currentUser);
+                var resutl = BusinessFactory<ElevatorLogBusiness>.Instance.Update(entity, this.currentUser);
 
-                LoadLogData();
+                if (resutl.success)
+                {
+                    LoadLogData();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("编辑日志失败: " + resutl.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {
@@ -352,9 +359,16 @@ namespace Poseidon.Infrastructure.ClientDx
                 if (MessageUtil.ConfirmYesNo("是否删除该事件日志") == DialogResult.Yes)
                 {
                     Appointment apt = e.Object as Appointment;
-                    BusinessFactory<ElevatorLogBusiness>.Instance.Delete(apt.Id.ToString());
+                    var result = BusinessFactory<ElevatorLogBusiness>.Instance.Delete(apt.Id.ToString());
 
-                    LoadLogData();
+                    if (result.success)
+                    {
+                        LoadLogData();
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除日志失败: " + result.errorMessage);
+                    }
                 }
             }
             catch (PoseidonException pe)
