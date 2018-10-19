@@ -88,8 +88,8 @@ namespace Poseidon.Infrastructure.ClientDx
 
             if (this.appointment.Id != null)
             {
-                this.aptLabel.SelectedIndex = this.appointment.LabelId;
-                this.aptStatus.SelectedIndex = this.appointment.StatusId;
+                this.aptLabel.AppointmentLabel = controller.AppointmentLabel;
+                this.aptStatus.AppointmentStatus = controller.AppointmentStatus;
 
                 var log = BusinessFactory<ElevatorLogBusiness>.Instance.FindById(appointment.Id.ToString());
                 this.txtCreator.Text = log.CreateBy.Name;
@@ -146,8 +146,10 @@ namespace Poseidon.Infrastructure.ClientDx
             this.controller.Start = this.dpStartDate.DateTime;
             this.controller.End = this.dpStartDate.DateTime.AddDays(1);
             this.controller.Description = this.txtInfo.Text ?? "";
-            this.controller.Label = (AppointmentLabel)this.aptLabel.EditValue;
-            this.controller.Status = (AppointmentStatus)this.aptStatus.EditValue;
+            this.controller.AppointmentLabel = this.aptLabel.AppointmentLabel;
+            this.controller.AppointmentStatus = this.aptStatus.AppointmentStatus;
+            //this.controller.LabelKey = Convert.ToInt32(this.aptLabel.AppointmentLabel.Id);
+            //this.controller.StatusKey = Convert.ToInt32(this.aptStatus.AppointmentStatus.Id);
         }
         #endregion //Function
 

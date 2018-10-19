@@ -34,6 +34,7 @@
             this.aptStatus = new DevExpress.XtraScheduler.UI.AppointmentStatusEdit();
             this.aptLabel = new DevExpress.XtraScheduler.UI.AppointmentLabelEdit();
             this.luElevator = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,7 +68,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -79,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).BeginInit();
@@ -99,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -184,12 +184,16 @@
             this.luElevator.Properties.DataSource = this.bsElevator;
             this.luElevator.Properties.DisplayMember = "Name";
             this.luElevator.Properties.NullText = "请选择";
+            this.luElevator.Properties.PopupView = this.searchLookUpEdit1View;
             this.luElevator.Properties.ShowClearButton = false;
             this.luElevator.Properties.ValueMember = "Id";
-            this.luElevator.Properties.View = this.searchLookUpEdit1View;
             this.luElevator.Size = new System.Drawing.Size(425, 20);
             this.luElevator.StyleController = this.layoutControl1;
             this.luElevator.TabIndex = 14;
+            // 
+            // bsElevator
+            // 
+            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
             // 
             // searchLookUpEdit1View
             // 
@@ -387,7 +391,6 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem12});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(500, 279);
             this.layoutControlGroup1.TextVisible = false;
@@ -482,10 +485,6 @@
             this.layoutControlItem12.Text = "事件状态";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // bsElevator
-            // 
-            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
-            // 
             // FrmElevatorLogAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -506,6 +505,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.aptStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aptLabel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luElevator.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditor.Properties)).EndInit();
@@ -526,7 +526,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
             this.ResumeLayout(false);
 
         }

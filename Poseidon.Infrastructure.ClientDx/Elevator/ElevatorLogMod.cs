@@ -62,13 +62,13 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <summary>
         /// 状态颜色列表
         /// </summary>
-        private Color[] statusColors = new Color[]
+        private Brush[] statusBrushes = new Brush[]
         {
-            ColorTranslator.FromHtml("#FFFFFFFF"),
-            ColorTranslator.FromHtml("#FF4A87E2"),
-            ColorTranslator.FromHtml("#FF4A87E2"),
-            ColorTranslator.FromHtml("#FF800080"),
-            ColorTranslator.FromHtml("#FF937BD1")
+            new SolidBrush(ColorTranslator.FromHtml("#FFFFFFFF")),
+            new SolidBrush(ColorTranslator.FromHtml("#FF4A87E2")),
+            new SolidBrush(ColorTranslator.FromHtml("#FFFFF7A5")),
+            new SolidBrush(ColorTranslator.FromHtml("#FF800080")),
+            new SolidBrush(ColorTranslator.FromHtml("#FF937BD1"))
         };
 
         /// <summary>
@@ -130,13 +130,14 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.storage.Appointments.Labels.Clear();
 
+            var collection = new AppointmentLabelCollection();
+
             for (int i = 0; i < logTypeDict.Count; i++)
             {
                 if (i >= labelColors.Length)
                     return;
 
-                AppointmentLabel label = new AppointmentLabel(logTypeDict[i].Value);
-                label.Color = labelColors[i];
+                AppointmentLabel label = collection.CreateNewLabel(logTypeDict[i].Key, logTypeDict[i].Value, logTypeDict[i].Value, labelColors[i]);
 
                 this.storage.Appointments.Labels.Add(label);
             }
@@ -149,13 +150,15 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.storage.Appointments.Statuses.Clear();
 
+            var collection = new AppointmentStatusCollection();
+
             for (int i = 0; i < logStatusDict.Count; i++)
             {
-                if (i >= statusColors.Length)
+                if (i >= statusBrushes.Length)
                     return;
 
-                AppointmentStatus status = new AppointmentStatus((AppointmentStatusType)i, logStatusDict[i].Value);
-                status.Color = statusColors[i];
+                var status = collection.CreateNewStatus(logStatusDict[i].Key, logStatusDict[i].Value, logStatusDict[i].Value, statusBrushes[i]);
+                status.Type = (AppointmentStatusType)logStatusDict[i].Key;
 
                 this.storage.Appointments.Statuses.Add(status);
             }
@@ -173,8 +176,8 @@ namespace Poseidon.Infrastructure.ClientDx
             entity.StartDate = apt.Start;
             entity.EndDate = apt.End;
             entity.Info = apt.Description;
-            entity.LogType = apt.LabelId;
-            entity.LogStatus = apt.StatusId;
+            entity.LogType = Convert.ToInt32(apt.LabelKey);
+            entity.LogStatus = Convert.ToInt32(apt.StatusKey);
 
             entity.Remark = "";
             return;
