@@ -43,9 +43,9 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.repairRecordGrid = new Poseidon.Infrastructure.ClientDx.RepairRecordGrid();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
-            this.lbYears = new DevExpress.XtraEditors.ListBoxControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.lbYears = new DevExpress.XtraEditors.ListBoxControl();
+            this.expenseGrid = new Poseidon.Finance.Utility.ExpenseGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -61,9 +61,9 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbYears)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbYears)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -149,7 +149,6 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(742, 71);
             this.layoutControlGroup1.TextVisible = false;
@@ -241,6 +240,7 @@
             this.repairRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.repairRecordGrid.Name = "repairRecordGrid";
             this.repairRecordGrid.ShowAddMenu = false;
+            this.repairRecordGrid.ShowColRepairNumber = false;
             this.repairRecordGrid.ShowDeleteMenu = false;
             this.repairRecordGrid.ShowEditMenu = false;
             this.repairRecordGrid.ShowFindPanel = false;
@@ -262,6 +262,26 @@
             this.groupControl4.Size = new System.Drawing.Size(370, 228);
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "费用记录";
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.lbYears);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(3, 3);
+            this.groupControl5.Name = "groupControl5";
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl5, 3);
+            this.groupControl5.Size = new System.Drawing.Size(154, 561);
+            this.groupControl5.TabIndex = 5;
+            this.groupControl5.Text = "年度";
+            // 
+            // lbYears
+            // 
+            this.lbYears.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbYears.Location = new System.Drawing.Point(2, 21);
+            this.lbYears.Name = "lbYears";
+            this.lbYears.Size = new System.Drawing.Size(150, 538);
+            this.lbYears.TabIndex = 4;
+            this.lbYears.SelectedIndexChanged += new System.EventHandler(this.lbYears_SelectedIndexChanged);
             // 
             // expenseGrid
             // 
@@ -288,26 +308,6 @@
             this.expenseGrid.Size = new System.Drawing.Size(366, 205);
             this.expenseGrid.TabIndex = 0;
             // 
-            // lbYears
-            // 
-            this.lbYears.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbYears.Location = new System.Drawing.Point(2, 21);
-            this.lbYears.Name = "lbYears";
-            this.lbYears.Size = new System.Drawing.Size(150, 538);
-            this.lbYears.TabIndex = 4;
-            this.lbYears.SelectedIndexChanged += new System.EventHandler(this.lbYears_SelectedIndexChanged);
-            // 
-            // groupControl5
-            // 
-            this.groupControl5.Controls.Add(this.lbYears);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(3, 3);
-            this.groupControl5.Name = "groupControl5";
-            this.tableLayoutPanel1.SetRowSpan(this.groupControl5, 3);
-            this.groupControl5.Size = new System.Drawing.Size(154, 561);
-            this.groupControl5.TabIndex = 5;
-            this.groupControl5.Text = "年度";
-            // 
             // FrmRepairManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -331,9 +331,9 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lbYears)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lbYears)).EndInit();
             this.ResumeLayout(false);
 
         }

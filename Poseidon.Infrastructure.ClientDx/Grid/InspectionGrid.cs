@@ -87,6 +87,27 @@ namespace Poseidon.Infrastructure.ClientDx
                 ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId, inspectionBusiness });
             }
         }
+
+        /// <summary>
+        /// 绑定费用记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuBindExpense_Click(object sender, EventArgs e)
+        {
+            var inspection = this.GetCurrentSelect();
+
+            if (inspection != null)
+            {
+                string moduleName = typeof(InspectionInfoView).FullName;
+                string assemblyName = typeof(InspectionInfoView).Assembly.GetName().Name;
+                string collectionName = InfrastructureConstant.InspectionCollectionName;
+                string documentId = inspection.Id;
+
+                var inspectionBusiness = BusinessFactory<InspectionBusiness>.Instance;
+                ChildFormManage.ShowDialogForm(typeof(FrmExpenseBind), new object[] { moduleName, assemblyName, collectionName, documentId, inspectionBusiness });
+            }
+        }
         #endregion //Event
 
         #region Property

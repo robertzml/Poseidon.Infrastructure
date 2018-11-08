@@ -47,6 +47,7 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.menuBindExpense = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -101,14 +102,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAddExpense});
+            this.menuAddExpense,
+            this.menuBindExpense});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // menuAddExpense
             // 
             this.menuAddExpense.Name = "menuAddExpense";
-            this.menuAddExpense.Size = new System.Drawing.Size(148, 22);
+            this.menuAddExpense.Size = new System.Drawing.Size(180, 22);
             this.menuAddExpense.Text = "添加费用记录";
             this.menuAddExpense.Click += new System.EventHandler(this.menuAddExpense_Click);
             // 
@@ -220,6 +222,13 @@
             this.colNumber.Visible = true;
             this.colNumber.VisibleIndex = 0;
             // 
+            // menuBindExpense
+            // 
+            this.menuBindExpense.Name = "menuBindExpense";
+            this.menuBindExpense.Size = new System.Drawing.Size(180, 22);
+            this.menuBindExpense.Text = "绑定费用记录";
+            this.menuBindExpense.Click += new System.EventHandler(this.menuBindExpense_Click);
+            // 
             // RepairGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -256,5 +265,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colNumber;
+        private System.Windows.Forms.ToolStripMenuItem menuBindExpense;
     }
 }

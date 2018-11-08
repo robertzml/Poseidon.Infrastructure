@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace Poseidon.Infrastructure.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Core.BL;
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.Utility;
 
@@ -29,8 +30,13 @@ namespace Poseidon.Infrastructure.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.elevatorTree.SetGroupCode(InfrastructureConstant.ElevatorGroupCode, true);
-            
+            //this.elevatorTree.SetGroupCode(InfrastructureConstant.ElevatorGroupCode, true);
+
+            var groups = BusinessFactory<GroupBusiness>.Instance.FindByModelType(ModelTypeCode.Elevator);
+            var codes = groups.Where(r => string.IsNullOrEmpty(r.ParentId)).Select(s => s.Code);
+
+            this.elevatorTree.SetGroupCodes(codes.ToArray(), true);
+
             base.InitForm();
         }
         #endregion //Function

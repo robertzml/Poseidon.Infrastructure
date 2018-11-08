@@ -64,6 +64,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.colModelType.Visible = this.showModelTypeColumn;
             this.menuAddExpense.Visible = this.showAddExpenseMenu;
+            this.menuBindExpense.Visible = this.showAddExpenseMenu;
         }
 
         /// <summary>
@@ -84,6 +85,27 @@ namespace Poseidon.Infrastructure.ClientDx
 
                 var repairBusiness = BusinessFactory<RepairBusiness>.Instance;
                 ChildFormManage.ShowDialogForm(typeof(FrmExpenseAdd), new object[] { moduleName, assemblyName, collectionName, documentId, repairBusiness });
+            }
+        }
+
+        /// <summary>
+        /// 绑定费用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuBindExpense_Click(object sender, EventArgs e)
+        {
+            var repair = this.GetCurrentSelect();
+
+            if (repair != null)
+            {
+                string moduleName = typeof(RepairInfoView).FullName;
+                string assemblyName = typeof(RepairInfoView).Assembly.GetName().Name;
+                string collectionName = InfrastructureConstant.RepairCollectionName;
+                string documentId = repair.Id;
+
+                var repairBusiness = BusinessFactory<RepairBusiness>.Instance;
+                ChildFormManage.ShowDialogForm(typeof(FrmExpenseBind), new object[] { moduleName, assemblyName, collectionName, documentId, repairBusiness });
             }
         }
         #endregion //Event
