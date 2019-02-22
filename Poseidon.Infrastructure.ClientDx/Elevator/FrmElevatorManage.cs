@@ -30,8 +30,6 @@ namespace Poseidon.Infrastructure.ClientDx
         #region Function
         protected override void InitForm()
         {
-            //this.elevatorTree.SetGroupCode(InfrastructureConstant.ElevatorGroupCode, true);
-
             var groups = BusinessFactory<GroupBusiness>.Instance.FindByModelType(ModelTypeCode.Elevator);
             var codes = groups.Where(r => string.IsNullOrEmpty(r.ParentId)).Select(s => s.Code);
 
@@ -43,6 +41,21 @@ namespace Poseidon.Infrastructure.ClientDx
 
         #region Event
         /// <summary>
+        /// 分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void elevatorTree_GroupSelected(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+
+            this.navFrame.SelectedPageIndex = 1;
+            this.elevatorBatchMod.Init();
+
+           this.ResumeLayout();
+        }
+
+        /// <summary>
         /// 电梯选择
         /// </summary>
         /// <param name="sender"></param>
@@ -50,9 +63,12 @@ namespace Poseidon.Infrastructure.ClientDx
         private void elevatorTree_EntitySelected(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            var id = this.elevatorTree.GetCurrentSelectId();
 
+            this.navFrame.SelectedPageIndex = 0;
+           
+            var id = this.elevatorTree.GetCurrentSelectId();
             this.elevatorReceiptMod.SetElevator(id);
+
             this.ResumeLayout();
         }
         #endregion //Event

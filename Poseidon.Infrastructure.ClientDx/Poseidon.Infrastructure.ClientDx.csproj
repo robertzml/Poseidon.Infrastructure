@@ -130,6 +130,18 @@
     <Compile Include="Elevator\FrmElevatorLogAppointment.Designer.cs">
       <DependentUpon>FrmElevatorLogAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maintenance\FrmMaintenanceInfoBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FrmMaintenanceInfoBatch.Designer.cs">
+      <DependentUpon>FrmMaintenanceInfoBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ElevatorBatchMod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ElevatorBatchMod.Designer.cs">
+      <DependentUpon>ElevatorBatchMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Overview\FrmRepairOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +510,9 @@
     <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoAdd.resx">
       <DependentUpon>FrmMaintenanceInfoAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoBatch.resx">
+      <DependentUpon>FrmMaintenanceInfoBatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\FrmMaintenanceInfoEdit.resx">
       <DependentUpon>FrmMaintenanceInfoEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmModelTypeBind.resx">
       <DependentUpon>FrmModelTypeBind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ElevatorBatchMod.resx">
+      <DependentUpon>ElevatorBatchMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElevatorGroupMod.resx">
       <DependentUpon>ElevatorGroupMod.cs</DependentUpon>
