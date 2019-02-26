@@ -78,8 +78,8 @@
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageInfo,
-            this.tabPageManager,
-            this.tabPageCompany});
+            this.tabPageCompany,
+            this.tabPageManager});
             // 
             // tabPageInfo
             // 
@@ -106,6 +106,7 @@
             // elevatorManagerMod
             // 
             this.elevatorManagerMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorManagerMod.Editable = true;
             this.elevatorManagerMod.Location = new System.Drawing.Point(0, 0);
             this.elevatorManagerMod.Name = "elevatorManagerMod";
             this.elevatorManagerMod.Size = new System.Drawing.Size(911, 185);
@@ -148,6 +149,7 @@
             // elevatorLogMod
             // 
             this.elevatorLogMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elevatorLogMod.Editable = true;
             this.elevatorLogMod.Location = new System.Drawing.Point(0, 0);
             this.elevatorLogMod.Name = "elevatorLogMod";
             this.elevatorLogMod.Size = new System.Drawing.Size(911, 335);

@@ -32,6 +32,8 @@
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorInfoView = new Poseidon.Infrastructure.ClientDx.ElevatorInfoView();
+            this.tabPageMaintenance = new DevExpress.XtraTab.XtraTabPage();
+            this.maintenanceInfoReceiptMod = new Poseidon.Infrastructure.ClientDx.MaintenanceInfoReceiptMod();
             this.tabPageManager = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorManagerMod = new Poseidon.Infrastructure.ClientDx.ElevatorManagerReceiptMod();
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
@@ -51,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
+            this.tabPageMaintenance.SuspendLayout();
             this.tabPageManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
@@ -92,6 +95,7 @@
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageInfo,
+            this.tabPageMaintenance,
             this.tabPageManager});
             // 
             // tabPageInfo
@@ -108,6 +112,22 @@
             this.elevatorInfoView.Name = "elevatorInfoView";
             this.elevatorInfoView.Size = new System.Drawing.Size(944, 198);
             this.elevatorInfoView.TabIndex = 0;
+            // 
+            // tabPageMaintenance
+            // 
+            this.tabPageMaintenance.Controls.Add(this.maintenanceInfoReceiptMod);
+            this.tabPageMaintenance.Name = "tabPageMaintenance";
+            this.tabPageMaintenance.Size = new System.Drawing.Size(944, 198);
+            this.tabPageMaintenance.Text = "维保信息";
+            // 
+            // maintenanceInfoReceiptMod
+            // 
+            this.maintenanceInfoReceiptMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maintenanceInfoReceiptMod.Editable = false;
+            this.maintenanceInfoReceiptMod.Location = new System.Drawing.Point(0, 0);
+            this.maintenanceInfoReceiptMod.Name = "maintenanceInfoReceiptMod";
+            this.maintenanceInfoReceiptMod.Size = new System.Drawing.Size(944, 198);
+            this.maintenanceInfoReceiptMod.TabIndex = 0;
             // 
             // tabPageManager
             // 
@@ -247,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).EndInit();
             this.tabInfo.ResumeLayout(false);
             this.tabPageInfo.ResumeLayout(false);
+            this.tabPageMaintenance.ResumeLayout(false);
             this.tabPageManager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
@@ -285,5 +306,7 @@
         private ElevatorLogReceiptMod logReceiptMod;
         private DevExpress.XtraTab.XtraTabPage tabPageInspectionReceipt;
         private InspectionOverviewMod insOvMod;
+        private DevExpress.XtraTab.XtraTabPage tabPageMaintenance;
+        private MaintenanceInfoReceiptMod maintenanceInfoReceiptMod;
     }
 }

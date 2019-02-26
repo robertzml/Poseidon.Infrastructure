@@ -52,7 +52,9 @@ namespace Poseidon.Infrastructure.ClientDx
         private void DisplaySummary()
         {
             this.elevatorInfoView.SetElevator(currentElevator);
+            this.maintenanceInfoReceiptMod.SetElevator(currentElevator);
             this.elevatorManagerMod.SetElevator(currentElevator);
+
             this.elevatorLogMod.SetElevator(currentElevator.Id);
             this.repairOvMod.SetFacility(currentElevator.Id);
         }
@@ -86,6 +88,7 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Clear()
         {
             this.elevatorInfoView.Clear();
+            this.maintenanceInfoReceiptMod.Clear();
             this.elevatorManagerMod.Clear();
 
             this.elevatorLogMod.Clear();
