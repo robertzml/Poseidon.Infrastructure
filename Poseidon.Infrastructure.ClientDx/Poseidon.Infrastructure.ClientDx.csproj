@@ -130,6 +130,12 @@
     <Compile Include="Elevator\FrmElevatorLogAppointment.Designer.cs">
       <DependentUpon>FrmElevatorLogAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inspection\FrmInspectionBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspection\FrmInspectionBatch.Designer.cs">
+      <DependentUpon>FrmInspectionBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintenance\FrmMaintenanceInfoBatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inspection\FrmInspectionAdd.resx">
       <DependentUpon>FrmInspectionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspection\FrmInspectionBatch.resx">
+      <DependentUpon>FrmInspectionBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inspection\FrmInspectionEdit.resx">
       <DependentUpon>FrmInspectionEdit.cs</DependentUpon>

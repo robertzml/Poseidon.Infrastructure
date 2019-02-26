@@ -50,6 +50,8 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             var type = InspectionBusiness.GetInspectionType(modelType);
             ControlUtil.BindDictToComboBox(this.cmbType, type, "Type");
+
+            this.bsElevator.DataSource = BusinessFactory<ElevatorBusiness>.Instance.FindAll();
         }
         #endregion //Method
 
@@ -65,8 +67,39 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.colModelType.Visible = this.showModelTypeColumn;
             this.menuAddExpense.Visible = this.showAddExpenseMenu;
+
+            this.colFacilityId.Visible = this.editable;
+            this.colFacilityName.Visible = !this.editable;
+
+            this.colInspectionDate.Visible = !this.editable;
+            this.colIsDone.Visible = !this.editable;
+            this.colInspectionResult.Visible = !this.editable;
         }
-       
+
+        /// <summary>
+        /// 单元格更改事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            int bsIndex = this.dgvEntity.GetDataSourceRowIndex(e.RowHandle);
+            if (bsIndex < 0 || bsIndex >= this.bsEntity.Count)
+                return;
+
+            var record = this.bsEntity[bsIndex] as Inspection;
+
+            if (e.Column.FieldName == "FacilityId" && e.Value != null)
+            {
+                var id = e.Value.ToString();
+
+                var list = this.bsElevator.DataSource as List<Elevator>;
+                var elevator = list.Find(r => r.Id == id);
+
+                record.FacilityName = elevator.Name;
+            }
+        }
+
         /// <summary>
         /// 添加费用
         /// </summary>

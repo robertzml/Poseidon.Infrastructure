@@ -30,6 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.colFacilityId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoLuFacility = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInstallDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCapacity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSpeed = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVendor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPosition = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFacilityName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModelType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,6 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoLuFacility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,8 +74,9 @@
             // dgcEntity
             // 
             this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmbType});
-            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            this.cmbType,
+            this.repoLuFacility});
+            this.dgcEntity.Size = new System.Drawing.Size(746, 378);
             // 
             // dgvEntity
             // 
@@ -87,25 +102,122 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dgvEntity_CellValueChanged);
             // 
             // colFacilityId
             // 
+            this.colFacilityId.Caption = "设施名称";
+            this.colFacilityId.ColumnEdit = this.repoLuFacility;
             this.colFacilityId.FieldName = "FacilityId";
             this.colFacilityId.Name = "colFacilityId";
+            this.colFacilityId.Visible = true;
+            this.colFacilityId.VisibleIndex = 0;
+            // 
+            // repoLuFacility
+            // 
+            this.repoLuFacility.AutoHeight = false;
+            this.repoLuFacility.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoLuFacility.DataSource = this.bsElevator;
+            this.repoLuFacility.DisplayMember = "Name";
+            this.repoLuFacility.Name = "repoLuFacility";
+            this.repoLuFacility.NullText = "请选择设施";
+            this.repoLuFacility.PopupFormSize = new System.Drawing.Size(500, 300);
+            this.repoLuFacility.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.repoLuFacility.ValueMember = "Id";
+            // 
+            // bsElevator
+            // 
+            this.bsElevator.DataSource = typeof(Poseidon.Infrastructure.Core.DL.Elevator);
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
+            this.colModel,
+            this.colInstallDate,
+            this.colCapacity,
+            this.colSpeed,
+            this.colStation,
+            this.colVendor,
+            this.colPosition});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsBehavior.Editable = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsCustomization.AllowFilter = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsCustomization.AllowGroup = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colModel
+            // 
+            this.colModel.FieldName = "Model";
+            this.colModel.Name = "colModel";
+            this.colModel.Visible = true;
+            this.colModel.VisibleIndex = 1;
+            // 
+            // colInstallDate
+            // 
+            this.colInstallDate.FieldName = "InstallDate";
+            this.colInstallDate.Name = "colInstallDate";
+            this.colInstallDate.Visible = true;
+            this.colInstallDate.VisibleIndex = 2;
+            // 
+            // colCapacity
+            // 
+            this.colCapacity.FieldName = "Capacity";
+            this.colCapacity.Name = "colCapacity";
+            this.colCapacity.Visible = true;
+            this.colCapacity.VisibleIndex = 3;
+            // 
+            // colSpeed
+            // 
+            this.colSpeed.FieldName = "Speed";
+            this.colSpeed.Name = "colSpeed";
+            this.colSpeed.Visible = true;
+            this.colSpeed.VisibleIndex = 4;
+            // 
+            // colStation
+            // 
+            this.colStation.FieldName = "Station";
+            this.colStation.Name = "colStation";
+            this.colStation.Visible = true;
+            this.colStation.VisibleIndex = 5;
+            // 
+            // colVendor
+            // 
+            this.colVendor.FieldName = "Vendor";
+            this.colVendor.Name = "colVendor";
+            this.colVendor.Visible = true;
+            this.colVendor.VisibleIndex = 6;
+            // 
+            // colPosition
+            // 
+            this.colPosition.FieldName = "Position";
+            this.colPosition.Name = "colPosition";
+            this.colPosition.Visible = true;
+            this.colPosition.VisibleIndex = 7;
             // 
             // colFacilityName
             // 
             this.colFacilityName.FieldName = "FacilityName";
             this.colFacilityName.Name = "colFacilityName";
             this.colFacilityName.Visible = true;
-            this.colFacilityName.VisibleIndex = 0;
+            this.colFacilityName.VisibleIndex = 1;
             // 
             // colModelType
             // 
             this.colModelType.FieldName = "ModelType";
             this.colModelType.Name = "colModelType";
             this.colModelType.Visible = true;
-            this.colModelType.VisibleIndex = 1;
+            this.colModelType.VisibleIndex = 2;
             // 
             // colType
             // 
@@ -115,7 +227,7 @@
             this.colType.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 2;
+            this.colType.VisibleIndex = 3;
             // 
             // cmbType
             // 
@@ -129,14 +241,14 @@
             this.colPlanDate.FieldName = "PlanDate";
             this.colPlanDate.Name = "colPlanDate";
             this.colPlanDate.Visible = true;
-            this.colPlanDate.VisibleIndex = 3;
+            this.colPlanDate.VisibleIndex = 4;
             // 
             // colInspectionDate
             // 
             this.colInspectionDate.FieldName = "InspectionDate";
             this.colInspectionDate.Name = "colInspectionDate";
             this.colInspectionDate.Visible = true;
-            this.colInspectionDate.VisibleIndex = 5;
+            this.colInspectionDate.VisibleIndex = 6;
             // 
             // colInspectionFee
             // 
@@ -145,35 +257,35 @@
             this.colInspectionFee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "InspectionFee", "合计={0:0.##}")});
             this.colInspectionFee.Visible = true;
-            this.colInspectionFee.VisibleIndex = 6;
+            this.colInspectionFee.VisibleIndex = 7;
             // 
             // colInspectionCompany
             // 
             this.colInspectionCompany.FieldName = "InspectionCompany";
             this.colInspectionCompany.Name = "colInspectionCompany";
             this.colInspectionCompany.Visible = true;
-            this.colInspectionCompany.VisibleIndex = 7;
+            this.colInspectionCompany.VisibleIndex = 8;
             // 
             // colInspectionResult
             // 
             this.colInspectionResult.FieldName = "InspectionResult";
             this.colInspectionResult.Name = "colInspectionResult";
             this.colInspectionResult.Visible = true;
-            this.colInspectionResult.VisibleIndex = 8;
+            this.colInspectionResult.VisibleIndex = 9;
             // 
             // colIsDone
             // 
             this.colIsDone.FieldName = "IsDone";
             this.colIsDone.Name = "colIsDone";
             this.colIsDone.Visible = true;
-            this.colIsDone.VisibleIndex = 4;
+            this.colIsDone.VisibleIndex = 5;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 9;
+            this.colRemark.VisibleIndex = 10;
             // 
             // colStatus
             // 
@@ -191,19 +303,19 @@
             this.menuAddExpense,
             this.menuBindExpense});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
             // 
             // menuAddExpense
             // 
             this.menuAddExpense.Name = "menuAddExpense";
-            this.menuAddExpense.Size = new System.Drawing.Size(180, 22);
+            this.menuAddExpense.Size = new System.Drawing.Size(148, 22);
             this.menuAddExpense.Text = "添加费用记录";
             this.menuAddExpense.Click += new System.EventHandler(this.menuAddExpense_Click);
             // 
             // menuBindExpense
             // 
             this.menuBindExpense.Name = "menuBindExpense";
-            this.menuBindExpense.Size = new System.Drawing.Size(180, 22);
+            this.menuBindExpense.Size = new System.Drawing.Size(148, 22);
             this.menuBindExpense.Text = "绑定费用记录";
             this.menuBindExpense.Click += new System.EventHandler(this.menuBindExpense_Click);
             // 
@@ -212,12 +324,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "InspectionGrid";
+            this.Size = new System.Drawing.Size(746, 378);
             this.Load += new System.EventHandler(this.InspectionGrid_Load);
             this.Controls.SetChildIndex(this.dataNavigator, 0);
             this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoLuFacility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsElevator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -243,5 +359,16 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuAddExpense;
         private System.Windows.Forms.ToolStripMenuItem menuBindExpense;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoLuFacility;
+        private System.Windows.Forms.BindingSource bsElevator;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colModel;
+        private DevExpress.XtraGrid.Columns.GridColumn colInstallDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCapacity;
+        private DevExpress.XtraGrid.Columns.GridColumn colSpeed;
+        private DevExpress.XtraGrid.Columns.GridColumn colStation;
+        private DevExpress.XtraGrid.Columns.GridColumn colVendor;
+        private DevExpress.XtraGrid.Columns.GridColumn colPosition;
     }
 }

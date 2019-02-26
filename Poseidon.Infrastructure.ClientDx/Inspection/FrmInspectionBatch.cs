@@ -14,16 +14,18 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Base.System;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
-    /// 批量设置维保公司
+    /// 批量添加检验计划
     /// </summary>
-    public partial class FrmMaintenanceInfoBatch : BaseSingleForm
+    public partial class FrmInspectionBatch : BaseSingleForm
     {
         #region Constructor
-        public FrmMaintenanceInfoBatch()
+        public FrmInspectionBatch()
         {
             InitializeComponent();
         }
@@ -32,10 +34,11 @@ namespace Poseidon.Infrastructure.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.maintenanceInfoGrid.DataSource = new List<MaintenanceInfo>();
-            this.maintenanceInfoGrid.Init();
+            var type = InspectionBusiness.GetInspectionType(ModelTypeCode.Elevator);
+            ControlUtil.BindDictToComboBox(this.cmbInspectionType, type, "Type");
 
-            this.bsMaintenanceCompany.DataSource = BusinessFactory<MaintenanceCompanyBusiness>.Instance.FindAll();
+            this.inspectionGrid.DataSource = new List<Inspection>();
+            this.inspectionGrid.Init(ModelTypeCode.Elevator);
 
             base.InitForm();
         }
@@ -46,23 +49,19 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <returns></returns>
         private (bool success, string errorMessage) CheckInput()
         {
-            foreach (var item in this.maintenanceInfoGrid.DataSource)
+            foreach (var item in this.inspectionGrid.DataSource)
             {
                 if (string.IsNullOrEmpty(item.FacilityId))
                 {
                     return (false, "请选择设施");
                 }
-                if (string.IsNullOrEmpty(item.MaintenanceCompanyId))
+                if (item.Type == 0)
                 {
-                    return (false, "请选择维保公司");
+                    return (false, "请选择检验类型");
                 }
-                if (item.StartDate == null || item.StartDate == DateTime.MinValue)
+                if (item.PlanDate == null || item.PlanDate == DateTime.MinValue)
                 {
-                    return (false, "请选择开始日期");
-                }
-                if (item.EndDate == null || item.StartDate == DateTime.MinValue)
-                {
-                    return (false, "请选择结束日期");
+                    return (false, "请选择计划日期");
                 }
             }
 
@@ -73,81 +72,78 @@ namespace Poseidon.Infrastructure.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(List<MaintenanceInfo> data)
+        private void SetEntity(List<Inspection> data)
         {
-            var companys = this.bsMaintenanceCompany.DataSource as List<MaintenanceCompany>;
-
             foreach (var item in data)
             {
-                var com = companys.Find(r => r.Id == item.MaintenanceCompanyId);
-                item.MaintenanceCompanyName = com.Name;
+                item.ModelType = ModelTypeCode.Elevator;
+                item.IsDone = false;
+                item.InspectionResult = "";
                 item.Remark = item.Remark ?? "";
             }
         }
-        #endregion //Funtion
+        #endregion //Function
 
         #region Event
         /// <summary>
-        /// 设置维保公司
+        /// 设置检验类型
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void luMaintenanceCompany_EditValueChanged(object sender, EventArgs e)
+        private void cmbInspectionType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.maintenanceInfoGrid.DataSource.ForEach(r =>
+            this.inspectionGrid.DataSource.ForEach(r =>
             {
-                if (this.luMaintenanceCompany.EditValue == null)
-                    r.MaintenanceCompanyId = null;
-                else
-                    r.MaintenanceCompanyId = this.luMaintenanceCompany.EditValue.ToString();
+                var type = Convert.ToInt32(this.cmbInspectionType.EditValue);
+                r.Type = type;
             });
 
-            this.maintenanceInfoGrid.UpdateBindingData();
+            this.inspectionGrid.UpdateBindingData();
         }
 
         /// <summary>
-        /// 设置维保费用
+        /// 设置计划时间
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void spMaintenanceFee_EditValueChanged(object sender, EventArgs e)
+        private void dpPlanDate_EditValueChanged(object sender, EventArgs e)
         {
-            this.maintenanceInfoGrid.DataSource.ForEach(r =>
+            this.inspectionGrid.DataSource.ForEach(r =>
             {
-                r.MaintenanceFee = this.spMaintenanceFee.Value;
+                r.PlanDate = this.dpPlanDate.DateTime;
             });
 
-            this.maintenanceInfoGrid.UpdateBindingData();
+            this.inspectionGrid.UpdateBindingData();
         }
 
         /// <summary>
-        /// 设置开始日期
+        /// 设置检验费用
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dpStart_EditValueChanged(object sender, EventArgs e)
+        private void spInspectionFee_EditValueChanged(object sender, EventArgs e)
         {
-            this.maintenanceInfoGrid.DataSource.ForEach(r =>
+            this.inspectionGrid.DataSource.ForEach(r =>
             {
-                r.StartDate = this.dpStart.DateTime;
+                r.InspectionFee = this.spInspectionFee.Value;
             });
 
-            this.maintenanceInfoGrid.UpdateBindingData();
+            this.inspectionGrid.UpdateBindingData();
         }
 
         /// <summary>
-        /// 设置结束日期
+        /// 设置检验单位
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dpEnd_EditValueChanged(object sender, EventArgs e)
+        private void txtInspectionCompany_EditValueChanged(object sender, EventArgs e)
         {
-            this.maintenanceInfoGrid.DataSource.ForEach(r =>
+            this.inspectionGrid.DataSource.ForEach(r =>
             {
-                r.EndDate = this.dpEnd.DateTime;
+                r.InspectionCompany = this.txtInspectionCompany.Text;
             });
 
-            this.maintenanceInfoGrid.UpdateBindingData();
+            this.inspectionGrid.UpdateBindingData();
         }
 
         /// <summary>
@@ -157,7 +153,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.maintenanceInfoGrid.CloseEditor();
+            this.inspectionGrid.CloseEditor();
             var result = CheckInput();
             if (!result.success)
             {
@@ -167,12 +163,12 @@ namespace Poseidon.Infrastructure.ClientDx
 
             try
             {
-                var data = this.maintenanceInfoGrid.DataSource;
+                var data = this.inspectionGrid.DataSource;
                 SetEntity(data);
 
                 foreach (var item in data)
                 {
-                    BusinessFactory<MaintenanceInfoBusiness>.Instance.Create(item, this.currentUser);
+                    BusinessFactory<InspectionBusiness>.Instance.Create(item, this.currentUser);
                 }
 
                 MessageUtil.ShowInfo("保存成功");
@@ -183,6 +179,16 @@ namespace Poseidon.Infrastructure.ClientDx
                 Logger.Instance.Exception("新增维保信息失败", pe);
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
+        }
+
+        /// <summary>
+        /// 取消
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion //Event
     }

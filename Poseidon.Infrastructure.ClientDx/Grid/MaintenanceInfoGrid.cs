@@ -53,7 +53,6 @@ namespace Poseidon.Infrastructure.ClientDx
             this.colMaintenanceCompanyName.Visible = !this.editable;
         }
 
-
         /// <summary>
         /// 单元格选择
         /// </summary>

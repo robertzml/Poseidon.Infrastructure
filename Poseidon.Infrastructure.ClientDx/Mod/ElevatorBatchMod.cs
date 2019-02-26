@@ -48,6 +48,16 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmMaintenanceInfoBatch));
         }
+        
+        /// <summary>
+        /// 批量添加检验计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddInspectionPlan_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmInspectionBatch));
+        }
         #endregion //Event
     }
 }
