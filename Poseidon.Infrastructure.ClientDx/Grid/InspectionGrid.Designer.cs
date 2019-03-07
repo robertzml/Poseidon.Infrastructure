@@ -57,6 +57,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAddExpense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBindExpense = new System.Windows.Forms.ToolStripMenuItem();
+            this.colRecordNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -134,6 +135,7 @@
             // 
             this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
+            this.colRecordNumber,
             this.colModel,
             this.colInstallDate,
             this.colCapacity,
@@ -161,14 +163,12 @@
             this.colModel.FieldName = "Model";
             this.colModel.Name = "colModel";
             this.colModel.Visible = true;
-            this.colModel.VisibleIndex = 1;
+            this.colModel.VisibleIndex = 2;
             // 
             // colInstallDate
             // 
             this.colInstallDate.FieldName = "InstallDate";
             this.colInstallDate.Name = "colInstallDate";
-            this.colInstallDate.Visible = true;
-            this.colInstallDate.VisibleIndex = 2;
             // 
             // colCapacity
             // 
@@ -319,6 +319,14 @@
             this.menuBindExpense.Text = "绑定费用记录";
             this.menuBindExpense.Click += new System.EventHandler(this.menuBindExpense_Click);
             // 
+            // colRecordNumber
+            // 
+            this.colRecordNumber.Caption = "档案号";
+            this.colRecordNumber.FieldName = "RecordNumber";
+            this.colRecordNumber.Name = "colRecordNumber";
+            this.colRecordNumber.Visible = true;
+            this.colRecordNumber.VisibleIndex = 1;
+            // 
             // InspectionGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -370,5 +378,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStation;
         private DevExpress.XtraGrid.Columns.GridColumn colVendor;
         private DevExpress.XtraGrid.Columns.GridColumn colPosition;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecordNumber;
     }
 }
