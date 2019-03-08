@@ -98,6 +98,10 @@
             this.insGrid.Name = "insGrid";
             this.insGrid.ShowAddExpenseMenu = true;
             this.insGrid.ShowAddMenu = false;
+            this.insGrid.ShowBindExpenseMenu = true;
+            this.insGrid.ShowDeleteMenu = false;
+            this.insGrid.ShowEditMenu = false;
+            this.insGrid.ShowFindPanel = false;
             this.insGrid.ShowFooter = false;
             this.insGrid.ShowLineNumber = true;
             this.insGrid.ShowMenu = true;
@@ -168,7 +172,6 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(890, 71);
             this.layoutControlGroup1.TextVisible = false;
@@ -225,6 +228,9 @@
             this.expGrid.Name = "expGrid";
             this.expGrid.ShowAddMenu = false;
             this.expGrid.ShowAssembly = false;
+            this.expGrid.ShowDeleteMenu = false;
+            this.expGrid.ShowEditMenu = false;
+            this.expGrid.ShowFindPanel = false;
             this.expGrid.ShowFooter = true;
             this.expGrid.ShowLineNumber = true;
             this.expGrid.ShowMenu = false;

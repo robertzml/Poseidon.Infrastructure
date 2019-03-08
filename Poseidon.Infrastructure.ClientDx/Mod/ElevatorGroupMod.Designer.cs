@@ -32,10 +32,25 @@
             this.tabBusiness = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElevator = new DevExpress.XtraTab.XtraTabPage();
             this.elevatorGrid = new Poseidon.Infrastructure.ClientDx.ElevatorGrid();
+            this.tabPageInspection = new DevExpress.XtraTab.XtraTabPage();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.dpInspectionYear = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.inspectionGrid = new Poseidon.Infrastructure.ClientDx.InspectionGrid();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).BeginInit();
             this.tabBusiness.SuspendLayout();
             this.tabPageElevator.SuspendLayout();
+            this.tabPageInspection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInspectionYear.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInspectionYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -63,7 +78,8 @@
             this.tabBusiness.Size = new System.Drawing.Size(806, 507);
             this.tabBusiness.TabIndex = 2;
             this.tabBusiness.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPageElevator});
+            this.tabPageElevator,
+            this.tabPageInspection});
             // 
             // tabPageElevator
             // 
@@ -95,6 +111,98 @@
             this.elevatorGrid.Size = new System.Drawing.Size(800, 478);
             this.elevatorGrid.TabIndex = 0;
             // 
+            // tabPageInspection
+            // 
+            this.tabPageInspection.Controls.Add(this.layoutControl1);
+            this.tabPageInspection.Name = "tabPageInspection";
+            this.tabPageInspection.Size = new System.Drawing.Size(800, 478);
+            this.tabPageInspection.Text = "检验信息";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.inspectionGrid);
+            this.layoutControl1.Controls.Add(this.dpInspectionYear);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(800, 478);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(800, 478);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // dpInspectionYear
+            // 
+            this.dpInspectionYear.EditValue = null;
+            this.dpInspectionYear.Location = new System.Drawing.Point(64, 12);
+            this.dpInspectionYear.Name = "dpInspectionYear";
+            this.dpInspectionYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInspectionYear.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dpInspectionYear.Properties.DisplayFormat.FormatString = "yyyy年";
+            this.dpInspectionYear.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dpInspectionYear.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dpInspectionYear.Properties.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearsGroupView;
+            this.dpInspectionYear.Properties.VistaCalendarViewStyle = ((DevExpress.XtraEditors.VistaCalendarViewStyle)((DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView | DevExpress.XtraEditors.VistaCalendarViewStyle.CenturyView)));
+            this.dpInspectionYear.Size = new System.Drawing.Size(724, 20);
+            this.dpInspectionYear.StyleController = this.layoutControl1;
+            this.dpInspectionYear.TabIndex = 4;
+            this.dpInspectionYear.EditValueChanged += new System.EventHandler(this.dpInspectionYear_EditValueChanged);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.dpInspectionYear;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(780, 24);
+            this.layoutControlItem1.Text = "计划年度";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // inspectionGrid
+            // 
+            this.inspectionGrid.AllowFilter = true;
+            this.inspectionGrid.AllowGroup = true;
+            this.inspectionGrid.AllowSort = true;
+            this.inspectionGrid.DataSource = null;
+            this.inspectionGrid.Editable = false;
+            this.inspectionGrid.EnableMasterView = false;
+            this.inspectionGrid.EnableMultiSelect = true;
+            this.inspectionGrid.Location = new System.Drawing.Point(12, 36);
+            this.inspectionGrid.Name = "inspectionGrid";
+            this.inspectionGrid.ShowAddExpenseMenu = false;
+            this.inspectionGrid.ShowAddMenu = false;
+            this.inspectionGrid.ShowBindExpenseMenu = false;
+            this.inspectionGrid.ShowDeleteMenu = false;
+            this.inspectionGrid.ShowEditMenu = false;
+            this.inspectionGrid.ShowFindPanel = false;
+            this.inspectionGrid.ShowFooter = false;
+            this.inspectionGrid.ShowLineNumber = true;
+            this.inspectionGrid.ShowMenu = false;
+            this.inspectionGrid.ShowModelTypeColumn = false;
+            this.inspectionGrid.ShowNavigator = false;
+            this.inspectionGrid.Size = new System.Drawing.Size(776, 430);
+            this.inspectionGrid.TabIndex = 5;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.inspectionGrid;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(780, 434);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
             // ElevatorGroupMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -106,6 +214,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabBusiness)).EndInit();
             this.tabBusiness.ResumeLayout(false);
             this.tabPageElevator.ResumeLayout(false);
+            this.tabPageInspection.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInspectionYear.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dpInspectionYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +232,12 @@
         private ElevatorGrid elevatorGrid;
         private DevExpress.XtraTab.XtraTabControl tabBusiness;
         private DevExpress.XtraTab.XtraTabPage tabPageElevator;
+        private DevExpress.XtraTab.XtraTabPage tabPageInspection;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.DateEdit dpInspectionYear;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private InspectionGrid inspectionGrid;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

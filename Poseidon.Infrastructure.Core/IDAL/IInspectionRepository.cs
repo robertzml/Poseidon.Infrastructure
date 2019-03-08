@@ -14,5 +14,11 @@ namespace Poseidon.Infrastructure.Core.IDAL
     /// </summary>
     internal interface IInspectionRepository : IBaseDAL<Inspection>
     {
+        /// <summary>
+        /// 根据设施列表获取检验数据
+        /// </summary>
+        /// <param name="ids">设施ID列表</param>
+        /// <returns></returns>
+        IEnumerable<Inspection> FindByFacilityIds(List<string> ids);
     }
 }

@@ -24,9 +24,19 @@ namespace Poseidon.Infrastructure.ClientDx
     {
         #region Field
         /// <summary>
-        /// 当前关联账户
+        /// 当前关联分组
         /// </summary>
         private Group currentGroup;
+
+        /// <summary>
+        /// 分组记录
+        /// </summary>
+        private List<GroupItem> groupItems;
+
+        /// <summary>
+        /// 相关检验记录
+        /// </summary>
+        private List<Inspection> inspectionList = new List<Inspection>();
         #endregion //Field
 
         #region Constructor
@@ -43,10 +53,18 @@ namespace Poseidon.Infrastructure.ClientDx
         /// <param name="group">分组</param>
         private void LoadElevatorData(Group group)
         {
-            var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
-
-            var data = BusinessFactory<ElevatorBusiness>.Instance.FindListInIds(items.Select(r => r.EntityId).ToList());
+            var data = BusinessFactory<ElevatorBusiness>.Instance.FindListInIds(groupItems.Select(r => r.EntityId).ToList());
             this.elevatorGrid.DataSource = data.ToList();
+        }
+
+        /// <summary>
+        /// 载入检验信息
+        /// </summary>
+        /// <param name="group">分组</param>
+        private void LoadInspectionData(Group group)
+        {
+            this.inspectionList = BusinessFactory<InspectionBusiness>.Instance.FindByFacilityIds(groupItems.Select(r => r.EntityId).ToList()).ToList();
+            this.inspectionGrid.DataSource = inspectionList;
         }
         #endregion //Function
 
@@ -57,13 +75,33 @@ namespace Poseidon.Infrastructure.ClientDx
         public void Init(string groupId)
         {
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(groupId);
+            this.groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(currentGroup.Id).ToList();
 
             LoadElevatorData(currentGroup);
+            LoadInspectionData(currentGroup);
         }
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 检验年度选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dpInspectionYear_EditValueChanged(object sender, EventArgs e)
+        {
+            if  (this.dpInspectionYear.EditValue == null)
+            {
+                this.inspectionGrid.DataSource = inspectionList;
+            }
+            else
+            {
+                var year = this.dpInspectionYear.DateTime.Year;
 
+                var data = inspectionList.Where(r => r.PlanDate.Year == year).ToList();
+                this.inspectionGrid.DataSource = data;
+            }
+        }
         #endregion //Event
     }
 }

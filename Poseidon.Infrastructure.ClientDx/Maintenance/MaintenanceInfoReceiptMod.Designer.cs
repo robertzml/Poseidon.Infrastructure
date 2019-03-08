@@ -31,30 +31,30 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.maintenanceCompanyInfo = new Poseidon.Infrastructure.ClientDx.MaintenanceCompanyInfo();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.maintenanceInfoGrid = new Poseidon.Infrastructure.ClientDx.MaintenanceInfoGrid();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcgAction = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.maintenanceCompanyInfo = new Poseidon.Infrastructure.ClientDx.MaintenanceCompanyInfo();
-            this.maintenanceInfoGrid = new Poseidon.Infrastructure.ClientDx.MaintenanceInfoGrid();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -92,6 +92,13 @@
             this.btnDelete.Text = "删除维保信息";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // maintenanceCompanyInfo
+            // 
+            this.maintenanceCompanyInfo.Location = new System.Drawing.Point(594, 43);
+            this.maintenanceCompanyInfo.Name = "maintenanceCompanyInfo";
+            this.maintenanceCompanyInfo.Size = new System.Drawing.Size(244, 203);
+            this.maintenanceCompanyInfo.TabIndex = 0;
+            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(866, 69);
@@ -101,6 +108,29 @@
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "编辑维保信息";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // maintenanceInfoGrid
+            // 
+            this.maintenanceInfoGrid.AllowFilter = true;
+            this.maintenanceInfoGrid.AllowGroup = true;
+            this.maintenanceInfoGrid.AllowSort = true;
+            this.maintenanceInfoGrid.DataSource = null;
+            this.maintenanceInfoGrid.Editable = false;
+            this.maintenanceInfoGrid.EnableMasterView = false;
+            this.maintenanceInfoGrid.EnableMultiSelect = false;
+            this.maintenanceInfoGrid.Location = new System.Drawing.Point(12, 12);
+            this.maintenanceInfoGrid.Name = "maintenanceInfoGrid";
+            this.maintenanceInfoGrid.ShowAddMenu = false;
+            this.maintenanceInfoGrid.ShowDeleteMenu = false;
+            this.maintenanceInfoGrid.ShowEditMenu = false;
+            this.maintenanceInfoGrid.ShowFindPanel = false;
+            this.maintenanceInfoGrid.ShowFooter = false;
+            this.maintenanceInfoGrid.ShowLineNumber = true;
+            this.maintenanceInfoGrid.ShowMenu = false;
+            this.maintenanceInfoGrid.ShowNavigator = false;
+            this.maintenanceInfoGrid.Size = new System.Drawing.Size(566, 246);
+            this.maintenanceInfoGrid.TabIndex = 0;
+            this.maintenanceInfoGrid.RowSelected += new System.Action<object, System.EventArgs>(this.maintenanceInfoGrid_RowSelected);
             // 
             // btnAdd
             // 
@@ -124,6 +154,15 @@
             this.layoutControlGroup2.Size = new System.Drawing.Size(1003, 270);
             this.layoutControlGroup2.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.maintenanceInfoGrid;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(570, 250);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -133,6 +172,15 @@
             this.layoutControlGroup3.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlGroup3.Size = new System.Drawing.Size(272, 250);
             this.layoutControlGroup3.Text = "维保公司信息";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.maintenanceCompanyInfo;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(248, 207);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // lcgAction
             // 
@@ -173,54 +221,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // maintenanceCompanyInfo
-            // 
-            this.maintenanceCompanyInfo.Location = new System.Drawing.Point(594, 43);
-            this.maintenanceCompanyInfo.Name = "maintenanceCompanyInfo";
-            this.maintenanceCompanyInfo.Size = new System.Drawing.Size(244, 203);
-            this.maintenanceCompanyInfo.TabIndex = 0;
-            // 
-            // maintenanceInfoGrid
-            // 
-            this.maintenanceInfoGrid.AllowFilter = true;
-            this.maintenanceInfoGrid.AllowGroup = true;
-            this.maintenanceInfoGrid.AllowSort = true;
-            this.maintenanceInfoGrid.DataSource = null;
-            this.maintenanceInfoGrid.Editable = false;
-            this.maintenanceInfoGrid.EnableMasterView = false;
-            this.maintenanceInfoGrid.EnableMultiSelect = false;
-            this.maintenanceInfoGrid.Location = new System.Drawing.Point(12, 12);
-            this.maintenanceInfoGrid.Name = "maintenanceInfoGrid";
-            this.maintenanceInfoGrid.ShowAddMenu = false;
-            this.maintenanceInfoGrid.ShowDeleteMenu = false;
-            this.maintenanceInfoGrid.ShowEditMenu = false;
-            this.maintenanceInfoGrid.ShowFindPanel = false;
-            this.maintenanceInfoGrid.ShowFooter = false;
-            this.maintenanceInfoGrid.ShowLineNumber = true;
-            this.maintenanceInfoGrid.ShowMenu = false;
-            this.maintenanceInfoGrid.ShowNavigator = false;
-            this.maintenanceInfoGrid.Size = new System.Drawing.Size(566, 246);
-            this.maintenanceInfoGrid.TabIndex = 0;
-            this.maintenanceInfoGrid.RowSelected += new System.Action<object, System.EventArgs>(this.maintenanceInfoGrid_RowSelected);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.maintenanceInfoGrid;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(570, 250);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.maintenanceCompanyInfo;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(248, 207);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
             // MaintenanceInfoReceiptMod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -234,13 +234,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgAction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }

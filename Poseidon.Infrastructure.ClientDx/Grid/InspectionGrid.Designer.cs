@@ -34,6 +34,7 @@
             this.bsElevator = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecordNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInstallDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCapacity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,7 +58,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAddExpense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBindExpense = new System.Windows.Forms.ToolStripMenuItem();
-            this.colRecordNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -157,6 +157,14 @@
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
+            // 
+            // colRecordNumber
+            // 
+            this.colRecordNumber.Caption = "档案号";
+            this.colRecordNumber.FieldName = "RecordNumber";
+            this.colRecordNumber.Name = "colRecordNumber";
+            this.colRecordNumber.Visible = true;
+            this.colRecordNumber.VisibleIndex = 1;
             // 
             // colModel
             // 
@@ -318,14 +326,6 @@
             this.menuBindExpense.Size = new System.Drawing.Size(148, 22);
             this.menuBindExpense.Text = "绑定费用记录";
             this.menuBindExpense.Click += new System.EventHandler(this.menuBindExpense_Click);
-            // 
-            // colRecordNumber
-            // 
-            this.colRecordNumber.Caption = "档案号";
-            this.colRecordNumber.FieldName = "RecordNumber";
-            this.colRecordNumber.Name = "colRecordNumber";
-            this.colRecordNumber.Visible = true;
-            this.colRecordNumber.VisibleIndex = 1;
             // 
             // InspectionGrid
             // 

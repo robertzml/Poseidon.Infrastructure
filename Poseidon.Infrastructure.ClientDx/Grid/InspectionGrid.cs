@@ -30,6 +30,11 @@ namespace Poseidon.Infrastructure.ClientDx
         private bool showAddExpenseMenu = false;
 
         /// <summary>
+        /// 是否显示绑定费用菜单
+        /// </summary>
+        private bool showBindExpenseMenu = false;
+
+        /// <summary>
         /// 是否显示设施类型
         /// </summary>
         private bool showModelTypeColumn = false;
@@ -67,6 +72,7 @@ namespace Poseidon.Infrastructure.ClientDx
 
             this.colModelType.Visible = this.showModelTypeColumn;
             this.menuAddExpense.Visible = this.showAddExpenseMenu;
+            this.menuBindExpense.Visible = this.showBindExpenseMenu;
 
             this.colFacilityId.Visible = this.editable;
             this.colFacilityName.Visible = !this.editable;
@@ -158,6 +164,23 @@ namespace Poseidon.Infrastructure.ClientDx
             set
             {
                 showAddExpenseMenu = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示绑定费用菜单
+        /// </summary>
+        [Description("是否显示绑定费用菜单"), Category("菜单")]
+        public bool ShowBindExpenseMenu
+        {
+            get
+            {
+                return showBindExpenseMenu;
+            }
+
+            set
+            {
+                showBindExpenseMenu = value;
             }
         }
 

@@ -40,6 +40,18 @@ namespace Poseidon.Infrastructure.Core.BL
         }
 
         /// <summary>
+        /// 根据设施列表获取检验数据
+        /// </summary>
+        /// <param name="ids">设施ID列表</param>
+        /// <returns></returns>
+        public IEnumerable<Inspection> FindByFacilityIds(List<string> ids)
+        {
+            var dal = this.baseDal as IInspectionRepository;
+
+            return dal.FindByFacilityIds(ids);
+        }
+
+        /// <summary>
         /// 检查检验信息是否能删除
         /// </summary>
         /// <param name="id">检验信息ID</param>

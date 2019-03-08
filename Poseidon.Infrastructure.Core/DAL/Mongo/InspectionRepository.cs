@@ -132,5 +132,21 @@ namespace Poseidon.Infrastructure.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 根据设施列表获取检验数据
+        /// </summary>
+        /// <param name="ids">设施ID列表</param>
+        /// <returns></returns>
+        public IEnumerable<Inspection> FindByFacilityIds(List<string> ids)
+        {
+            var filter = Builders<BsonDocument>.Filter.In("facilityId", ids);
+
+            var data = this.FindList(filter);
+
+            return data;
+        }
+        #endregion //Method
     }
 }

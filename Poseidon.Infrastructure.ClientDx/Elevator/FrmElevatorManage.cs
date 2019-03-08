@@ -50,7 +50,9 @@ namespace Poseidon.Infrastructure.ClientDx
             this.SuspendLayout();
 
             this.navFrame.SelectedPageIndex = 1;
-            this.elevatorBatchMod.Init();
+
+            var id = this.elevatorTree.GetCurrentSelectId();
+            this.elevatorBatchMod.Init(id);
 
            this.ResumeLayout();
         }
@@ -67,6 +69,8 @@ namespace Poseidon.Infrastructure.ClientDx
             this.navFrame.SelectedPageIndex = 0;
            
             var id = this.elevatorTree.GetCurrentSelectId();
+
+            this.elevatorReceiptMod.Clear();
             this.elevatorReceiptMod.SetElevator(id);
 
             this.ResumeLayout();

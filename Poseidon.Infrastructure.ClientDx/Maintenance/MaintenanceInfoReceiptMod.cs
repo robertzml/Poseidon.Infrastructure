@@ -47,7 +47,7 @@ namespace Poseidon.Infrastructure.ClientDx
         /// </summary>
         private void DisplayMaintenanceInfo()
         {
-            this.maintenanceInfoGrid.DataSource = BusinessFactory<MaintenanceInfoBusiness>.Instance.FindByFacility(this.currentElevator.Id).ToList();
+            this.maintenanceInfoGrid.DataSource = BusinessFactory<MaintenanceInfoBusiness>.Instance.FindByFacility(this.currentElevator.Id).OrderByDescending(r => r.StartDate).ToList();
         }
         #endregion //Function
 
