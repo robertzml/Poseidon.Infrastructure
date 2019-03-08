@@ -60,7 +60,6 @@ namespace Poseidon.Infrastructure.ClientDx
         private void LoadInspectionData(Group group)
         {
             var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
-
             var data =  BusinessFactory<InspectionBusiness>.Instance.FindByFacilityIds(items.Select(r => r.EntityId).ToList());
 
             this.inspectionGrid.DataSource = data.ToList();

@@ -16,6 +16,7 @@ namespace Poseidon.Infrastructure.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Infrastructure.Core.BL;
     using Poseidon.Infrastructure.Core.DL;
+    using Poseidon.Infrastructure.Core.Utility;
 
     /// <summary>
     /// 电梯分组管理组件
@@ -76,6 +77,8 @@ namespace Poseidon.Infrastructure.ClientDx
         {
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(groupId);
             this.groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(currentGroup.Id).ToList();
+
+            this.inspectionGrid.Init(ModelTypeCode.Elevator);
 
             LoadElevatorData(currentGroup);
             LoadInspectionData(currentGroup);
